@@ -27,27 +27,19 @@
     <a class="skip-link screen-reader-text"
       href="#primary"><?php esc_html_e( 'Skip to content', 'cyberize-app-dev' ); ?></a>
 
-    <header id="masthead" class="site-header container py-5">
-      <div class="site-branding">
+    <header id="header-both" class="site-header container py-5 text-center">
 
-        <!-- <h1 class="site-title">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-        </h1> -->
+      <figure class="logo-container">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 
-      </div><!-- .site-branding -->
+          <img class="mx-auto d-block" src="/wp-content/uploads/2020/07/SelfListLogo.png" alt="">
 
-      <nav id="site-navigation" class="main-navigation">
+        </a>
+      </figure>
 
-        <?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-          'menu_id'        => 'primary-menu',
-          'menu_class'     => '',
-          'container_class' => '',
-				)
-			);
-			?>
+      <section class="link-box d-flex justify-content-around mx-auto">
+        <a href="/list-insert" class="list-links display-4 text-danger d-block">LIST</a>
+        <a href="/list-index" class="list-links display-4 text-danger d-block">LISTINGS</a>
+      </section>
 
-      </nav><!-- #site-navigation -->
     </header><!-- #masthead -->

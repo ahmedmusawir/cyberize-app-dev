@@ -28,26 +28,5 @@
       href="#primary"><?php esc_html_e( 'Skip to content', 'cyberize-app-dev' ); ?></a>
 
     <header id="masthead" class="site-header container py-5">
-      <div class="site-branding">
 
-        <!-- <h1 class="site-title">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-        </h1> -->
-
-      </div><!-- .site-branding -->
-
-      <nav id="site-navigation" class="main-navigation">
-
-        <?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-          'menu_id'        => 'primary-menu',
-          'menu_class'     => '',
-          'container_class' => '',
-				)
-			);
-			?>
-
-      </nav><!-- #site-navigation -->
     </header><!-- #masthead -->
