@@ -43,24 +43,26 @@ function listingsSearchResults(WP_REST_Request $request){
 
  // if no posts found return 
     if( empty($query->posts) ){
-        return new WP_Error( 'no_posts', __('No post found'), array( 'status' => 404 ) );
+        // return new WP_Error( 'no_posts', __('No post found'), array( 'status' => 404 ) );
+        $nothing = array();
+        return $nothing;
     }
 
 // MOOSE START - NUMBER 8 IS THE CURRENT WORKING VERSION
 
-$result = array();
+// $result = array();
 
-while($query->have_posts()) {
-  $query->the_post();
+// while($query->have_posts()) {
+//   $query->the_post();
 
-  array_push($result, array(
-    'title' => get_the_title(),
-    'permalink' => get_the_permalink(),
-    'postType' => get_post_type(),
-    'authorName' => get_the_author()
-  ));
+//   array_push($result, array(
+//     'title' => get_the_title(),
+//     'permalink' => get_the_permalink(),
+//     'postType' => get_post_type(),
+//     'authorName' => get_the_author()
+//   ));
 
-}  
+// }  
 
 // echo "<pre>";
 // print_r($result);

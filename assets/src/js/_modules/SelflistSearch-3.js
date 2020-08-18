@@ -48,42 +48,14 @@ class SelflistSearch {
       `http://selflist-dev.local/wp-json/listings/v1/search?term=${this.searchInput.val()}`,
       (listings) => {
         // alert(post[0].id);
-
         console.log(listings);
         this.searchResultBox.html(`
-        ${
-          listings.length
-            ? '<article class="link-list min-list">'
-            : '<p>No general information matches that search.</p>'
-        }
-            ${listings
-              .map(
-                (list) => `
-
-                <header class="entry-header">
-                  <h2 class="entry-title">
-                  ${list.title.rendered}
-                  </h2>
-                </header><!-- .entry-header -->
-
-              
-                <div class="entry-content">
-                  ${list.content.rendered}
-                </div><!-- .entry-content -->
-          
-                <footer class="entry-footer">
-                </footer><!-- .entry-footer -->
-              
-              `
-              )
-              .join('')}
-
-              ${listings.length ? '</article>' : ''}
-
+          <ul>
+            ${listings.map((list) => `<li>${list.title.rendered}</li>`)}
+          <ul>
         `);
       }
     );
-
     this.isSpinnerVisible = false;
   }
 }
