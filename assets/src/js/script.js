@@ -1,11 +1,11 @@
-// import ASMDropdownMenu from './_modules/ASMDropdownMenu';
+import SelflistSearch from './_modules/SelflistSearch';
 
 class App {
   constructor() {
     console.info('ES6 Script Initialized!');
 
-    // ASM Global Dropdown Navigation
-    // new ASMDropdownMenu();
+    // Selflist Search Module
+    new SelflistSearch();
   }
 }
 
