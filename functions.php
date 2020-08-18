@@ -78,3 +78,8 @@ require get_template_directory() . '/_functions/breadcrum-function.php';
  */
 
 require get_template_directory() . '/_functions/wp-logon-screen.php';
+
+/**
+ * CUSTOM REST ROUTE FOR LISTING		
+ */
+require get_theme_file_path('/_functions/selflist/selflist-search-route.php');
