@@ -8,15 +8,29 @@
   // border: 4px dotted red;
   .selflist-search-input-box {
     // border: 4px dotted red;
+    background-color: red;
+    height: 5rem !important;
+
     .selflist-search-input {
       height: 5rem !important;
+      width: 87% !important;
       font-size: 2.5rem;
       font-weight: 600;
       color: white;
-      background-color: red;
       padding-left: 1rem;
       caret-color: white;
-      // caret-style: block;
+      background-color: red;
+      border-color: red;
+      &:focus {
+        outline: 1px dashed red;
+      }
+    }
+    .fas.fa-search {
+      font-size: 3rem;
+      float: right;
+      color: white;
+      padding-right: 1rem;
+      padding-top: 1rem;
     }
   }
   .selflist-search-result-box {

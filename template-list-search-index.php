@@ -20,12 +20,14 @@ get_header('list');
 
   <section id="selflist-search-input-box" class="selflist-search-input-box">
 
-    <input type="text" id="selflist-search-input" class="selflist-search-input form-control">
+    <input type="text" id="selflist-search-input" class="selflist-search-input">
+    <i class="fas fa-search"></i>
 
   </section>
 
   <section id="selflist-search-result-box" class="selflist-search-result-box">
 
+    <!-- AJAX CONTENT GO HERE -->
     <article id="post-192" class="post-192 listings type-listings status-publish hentry">
       <header class="entry-header">
         <h2 class="entry-title">
@@ -36,46 +38,7 @@ get_header('list');
 
       <div class="entry-content">
         <p>
-          Private tutoring, Houston Heights location, Certified Teachers. 27 years experience in both Public and Private
-          schools. Payment cash $100 per 190 minute session. Bernadette Sweeny
 
-        </p>
-      </div><!-- .entry-content -->
-
-      <footer class="entry-footer">
-      </footer><!-- .entry-footer -->
-    </article>
-
-    <article id="post-192" class="post-192 listings type-listings status-publish hentry">
-      <header class="entry-header">
-        <h2 class="entry-title">
-          Tutoring Copy 2
-        </h2>
-      </header><!-- .entry-header -->
-
-
-      <div class="entry-content">
-        <p>
-          Private tutoring, Houston Heights location, Certified Teachers. 27 years experience in both Public and Private
-          schools. Payment cash $100 per 190 minute session. Bernadette Sweeny
-
-        </p>
-      </div><!-- .entry-content -->
-
-      <footer class="entry-footer">
-      </footer><!-- .entry-footer -->
-    </article>
-
-    <article id="post-192" class="post-192 listings type-listings status-publish hentry">
-      <header class="entry-header">
-        <h2 class="entry-title">
-          Tutoring Copy 3
-        </h2>
-      </header><!-- .entry-header -->
-
-
-      <div class="entry-content">
-        <p>
           Private tutoring, Houston Heights location, Certified Teachers. 27 years experience in both Public and Private
           schools. Payment cash $100 per 190 minute session. Bernadette Sweeny
 
