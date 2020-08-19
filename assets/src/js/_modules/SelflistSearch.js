@@ -48,12 +48,12 @@ class SelflistSearch {
     this.previousValue = this.searchInput.val();
   }
 
-  getSearchResults = async () => {
+  async getSearchResults() {
     try {
-      const response = axios.get(
-        selflistData.root_url +
-          '/wp-json/listings/v1/search?term=' +
-          this.searchInput.value
+      const response = await axios.get(
+        `${
+          selflistData.root_url
+        }/wp-json/listings/v1/search?term=${this.searchInput.val()}`
       );
       const listings = response.data;
 
@@ -61,7 +61,22 @@ class SelflistSearch {
     } catch (e) {
       console.log(e);
     }
-  };
+  }
+
+  // getSearchResults = async () => {
+  //   try {
+  //     const response = axios.get(
+  //       selflistData.root_url +
+  //         '/wp-json/listings/v1/search?term=' +
+  //         this.searchInput.value
+  //     );
+  //     const listings = response.data;
+
+  //     console.log(listings);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
   // getSearchResults(currentPageNumber) {
   //   // console.log(`${e.keyCode} ... this key was pressed!`);
