@@ -11,13 +11,15 @@ function cyberize_scripts() {
 	wp_enqueue_style( 'cyberize-framework-1-style', get_stylesheet_uri(), '', 3.0 );	
 
 	//CYBERIZE FRAMEWORK 1.0 JAVASCRIPTS UNIFIED AND MINIFIED
-	wp_enqueue_script( 'cyberize-framework-1-script', get_template_directory_uri() . '/assets/dist/js/script.min.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'selflist-main-js', get_template_directory_uri() . '/assets/dist/js/script.min.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-
+  wp_localize_script('selflist-main-js', 'selflistData', array(
+    'root_url' => get_site_url()
+  ));
 
 }
 add_action( 'wp_enqueue_scripts', 'cyberize_scripts' );

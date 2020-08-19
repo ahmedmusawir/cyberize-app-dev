@@ -1,4 +1,6 @@
+import 'babel-polyfill';
 import $ from 'jquery';
+import axios from 'axios';
 
 class SelflistSearch {
   constructor() {
@@ -6,9 +8,13 @@ class SelflistSearch {
     // COLLECTING BUTTON
     this.searchInput = $('#selflist-search-input');
     this.searchResultBox = $('#selflist-search-result-box');
+    this.paginationNextBtn = $('#list-next-page-btn');
     this.isSpinnerVisible = false;
     this.previousValue;
     this.typeTimer;
+    this.totalPages;
+    this.currentPageNumber;
+
     this.setEvents();
   }
 
@@ -18,6 +24,7 @@ class SelflistSearch {
 
   setEvents = () => {
     this.searchInput.on('keyup', this.typeTimeLogic.bind(this));
+    this.paginationNextBtn.on('click', this.paginationNext.bind(this));
   };
 
   typeTimeLogic(e) {
@@ -31,7 +38,7 @@ class SelflistSearch {
           this.isSpinnerVisible = true;
         }
 
-        this.typeTimer = setTimeout(this.getSearchResults.bind(this, e), 1000);
+        this.typeTimer = setTimeout(this.getSearchResults.bind(this, 1), 1000);
       } else {
         this.searchResultBox.html('');
         this.isSpinnerVisible = false;
@@ -41,60 +48,93 @@ class SelflistSearch {
     this.previousValue = this.searchInput.val();
   }
 
-  getSearchResults(e) {
-    // console.log(`${e.keyCode} ... this key was pressed!`);
-    // this.searchResultBox.html(`Ajax results go here ...`);
-    $.getJSON(
-      `http://selflist-dev.local/wp-json/listings/v1/search?term=${this.searchInput.val()}`,
-      (listings, textStatus, request) => {
-        // alert(post[0].id);
-        const totalPages = request.getResponseHeader('X-WP-TotalPages');
-        const totalPosts = request.getResponseHeader('X-WP-Total');
+  getSearchResults = async () => {
+    try {
+      const response = axios.get(
+        selflistData.root_url +
+          '/wp-json/listings/v1/search?term=' +
+          this.searchInput.value
+      );
+      const listings = response.data;
 
-        console.log('Total Pages: ', totalPages);
-        console.log('Total Posts: ', totalPosts);
-        console.log(`Text Status: ${textStatus}`);
+      console.log(listings);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
-        console.log(listings);
-        this.searchResultBox.html(`
-        ${
-          listings.length
-            ? '<article class="link-list min-list">'
-            : '<p>No general information matches that search.</p>'
-        }
-            ${listings
-              .map(
-                (list) => `
+  // getSearchResults(currentPageNumber) {
+  //   // console.log(`${e.keyCode} ... this key was pressed!`);
+  //   // this.searchResultBox.html(`Ajax results go here ...`);
 
-                <header class="entry-header">
-                  <h2 class="entry-title">
-                  ${list.title}
-                  </h2>
-                  <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Primo:</span> ${list.subTitlePrimo}</h5>
-                  <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Secondo:</span> ${list.subTitleSecondo}</h5>
-                  <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Terzo:</span> ${list.subTitleTerzo}</h5>
-                </header><!-- .entry-header -->
+  //   $.getJSON(
+  //     `${
+  //       selflistData.root_url
+  //     }/wp-json/listings/v1/search?term=${this.searchInput.val()}&page=${currentPageNumber}`,
+  //     (listings, textStatus, request) => {
+  //       // alert(post[0].id);
+  //       const totalPages = request.getResponseHeader('X-WP-TotalPages');
+  //       // this.currentPageNumber = currentPageNumber;
+  //       // const totalPosts = request.getResponseHeader('X-WP-Total');
 
-              
-                <div class="entry-content">
-                  ${list.content}
-                </div><!-- .entry-content -->
-          
-                <footer class="entry-footer">
-                <hr>
-                </footer><!-- .entry-footer -->
-              
-              `
-              )
-              .join('')}
+  //       console.log('Total Pages: ', totalPages);
+  //       // console.log('Total Posts: ', totalPosts);
+  //       // console.log(`Text Status: ${textStatus}`);
 
-              ${listings.length ? '</article>' : ''}
+  //       console.log(listings);
+  //       this.searchResultBox.html(`
+  //       ${
+  //         listings.length
+  //           ? '<article class="link-list min-list">'
+  //           : '<p>No general information matches that search.</p>'
+  //       }
+  //           ${listings
+  //             .map(
+  //               (list) => `
 
-        `);
-      }
-    );
+  //               <header class="entry-header">
+  //                 <h2 class="entry-title">
+  //                 ${list.title}
+  //                 </h2>
+  //                 <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Primo:</span> ${list.subTitlePrimo}</h5>
+  //                 <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Secondo:</span> ${list.subTitleSecondo}</h5>
+  //                 <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Terzo:</span> ${list.subTitleTerzo}</h5>
+  //               </header><!-- .entry-header -->
 
-    this.isSpinnerVisible = false;
+  //               <div class="entry-content">
+  //                 ${list.content}
+  //               </div><!-- .entry-content -->
+
+  //               <footer class="entry-footer">
+  //               <hr>
+  //               </footer><!-- .entry-footer -->
+
+  //             `
+  //             )
+  //             .join('')}
+
+  //             ${listings.length ? '</article>' : ''}
+
+  //       `);
+  //     }
+  //   );
+  //   this.isSpinnerVisible = false;
+  // }
+
+  paginationNext() {
+    // console.log('Current: ', currentPageNumber);
+    // console.log('Total: ', totalPages);
+    const totalPages = 4;
+    let currentPage = 1;
+    let nextPage = currentPage + 1;
+
+    this.getSearchResults(nextPage);
+
+    console.log('nextPage: ', nextPage);
+
+    if (nextPage >= totalPages) {
+      this.paginationNextBtn.addClass('disabled');
+    }
   }
 }
 

@@ -103,10 +103,10 @@ img {
 }
 a {
   text-decoration: none !important;
-  color: $cg-button;
+  // color: $cg-button;
 
   &:hover {
-    color: lighten($cg-button, 30%);
+    // color: lighten($cg-button, 30%);
   }
 }
 
