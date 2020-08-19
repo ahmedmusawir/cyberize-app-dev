@@ -46,14 +46,10 @@ class SelflistSearch {
     // this.searchResultBox.html(`Ajax results go here ...`);
     $.getJSON(
       `http://selflist-dev.local/wp-json/listings/v1/search?term=${this.searchInput.val()}`,
-      (listings, textStatus, request) => {
+      (listings) => {
         // alert(post[0].id);
-        const totalPages = request.getResponseHeader('X-WP-TotalPages');
-        const totalPosts = request.getResponseHeader('X-WP-Total');
-
-        console.log('Total Pages: ', totalPages);
-        console.log('Total Posts: ', totalPosts);
-        console.log(`Text Status: ${textStatus}`);
+        // const totalPages = listings.headers('X-WP-TotalPages');
+        // console.log(`Total Pages: ${totalPages}`);
 
         console.log(listings);
         this.searchResultBox.html(`
@@ -70,9 +66,6 @@ class SelflistSearch {
                   <h2 class="entry-title">
                   ${list.title}
                   </h2>
-                  <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Primo:</span> ${list.subTitlePrimo}</h5>
-                  <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Secondo:</span> ${list.subTitleSecondo}</h5>
-                  <h5 class="text-danger list-inline-item"><span class="badge badge-danger">Terzo:</span> ${list.subTitleTerzo}</h5>
                 </header><!-- .entry-header -->
 
               
@@ -81,7 +74,6 @@ class SelflistSearch {
                 </div><!-- .entry-content -->
           
                 <footer class="entry-footer">
-                <hr>
                 </footer><!-- .entry-footer -->
               
               `

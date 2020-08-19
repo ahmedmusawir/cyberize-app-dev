@@ -50,45 +50,49 @@ function listingsSearchResults(WP_REST_Request $request){
 
 // MOOSE START - NUMBER 8 IS THE CURRENT WORKING VERSION
 
-$results = array();
+// $result = array();
 
-while($query->have_posts()) {
-  $query->the_post();
+// while($query->have_posts()) {
+//   $query->the_post();
 
-  array_push($results, array(
-    'title' => get_the_title(),
-    'subTitlePrimo' => get_field('subtitle_primo'),
-    'subTitleSecondo' => get_field('subtitle_secondo'),
-    'subTitleTerzo' => get_field('subtitle_terzo'),
-    'content' => get_the_content(),
-    'postType' => get_post_type(),
-    'authorName' => get_the_author()
-  ));
+//   array_push($result, array(
+//     'title' => get_the_title(),
+//     'permalink' => get_the_permalink(),
+//     'postType' => get_post_type(),
+//     'authorName' => get_the_author()
+//   ));
 
-}  
-
-// return $results;
-// set max number of pages and total num of posts
-$max_pages = $query->max_num_pages;
-$total = $query->found_posts;
-
-// set headers and return response      
-$response = new WP_REST_Response($results, 200);
-
-$response->header( 'X-WP-Total', $total ); 
-$response->header( 'X-WP-TotalPages', $max_pages );
-
-return $response;
-
+// }  
 
 // echo "<pre>";
 // print_r($result);
-// print_r($query->posts);
 // echo "</pre>";
 // die();
 
 // MOOSE END
+     
+// set max number of pages and total num of posts
+    $max_pages = $query->max_num_pages;
+    $total = $query->found_posts;
 
+    $posts = $query->posts;
+
+
+// prepare data for output
+    $controller = new WP_REST_Posts_Controller('post');
+
+    foreach ( $posts as $post ) {
+        $response = $controller->prepare_item_for_response( $post, $request );
+        $data[] = $controller->prepare_response_for_collection( $response );  
+    }
+
+// set headers and return response      
+    $response = new WP_REST_Response($data, 200);
+
+    $response->header( 'X-WP-Total', $total ); 
+    $response->header( 'X-WP-TotalPages', $max_pages );
+
+    return $response;
 }
 
  /**
@@ -103,24 +107,20 @@ return $response;
 
 // add_action('rest_api_init', 'listing_custom_rest');
 
-/**
- * THE FOLLOWING IS NO LONGER NEEDED CUZ ALL ADDED TO THE CUSTOM END POINT NOW
- */
-
 function acf_custom_rest() {
-  register_rest_field('listings', 'titlePrimo', array(
+  register_rest_field('post', 'titlePrimo', array(
     'get_callback' => function() {
       $titlePrimo = get_field('subtitle_primo');
       return $titlePrimo;
     }
   ));
-  register_rest_field('listings', 'titleSecondo', array(
+  register_rest_field('post', 'titleSecondo', array(
     'get_callback' => function() {
       $titleSecondo = get_field('subtitle_secondo');
       return $titleSecondo;
     }
   ));
-  register_rest_field('listings', 'titleTerzo', array(
+  register_rest_field('post', 'titleTerzo', array(
     'get_callback' => function() {
       $titleTerzo = get_field('subtitle_terzo');
       return $titleTerzo;
@@ -130,16 +130,10 @@ function acf_custom_rest() {
 
 add_action('rest_api_init', 'acf_custom_rest');
 
-// THIS WILL BREAK LISTINGS REST API ENDPOINT
-// function get_pagination_info() {
-//   register_rest_field('listings', 'totalPages', array(
-//     'get_callback' => function() {
-//       // WP_REST_Request::get_header( string $key );
-//       $pageTotal = WP_REST_Request::get_header('X-WP-TotalPages');
-//       // $pageTotal = $request->get_header('X-WP-TotalPages');
-//       return $pageTotal;
-//     }
+// function post_custom_rest() {
+//   register_rest_field('post', 'authorName', array(
+//     'get_callback' => function() {return get_the_author();}
 //   ));
 // }
 
-// add_action('rest_api_init', 'get_pagination_info');
+// add_action('rest_api_init', 'post_custom_rest');

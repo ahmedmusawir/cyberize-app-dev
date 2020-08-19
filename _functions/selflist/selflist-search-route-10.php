@@ -67,18 +67,7 @@ while($query->have_posts()) {
 
 }  
 
-// return $results;
-// set max number of pages and total num of posts
-$max_pages = $query->max_num_pages;
-$total = $query->found_posts;
-
-// set headers and return response      
-$response = new WP_REST_Response($results, 200);
-
-$response->header( 'X-WP-Total', $total ); 
-$response->header( 'X-WP-TotalPages', $max_pages );
-
-return $response;
+return $results;
 
 
 // echo "<pre>";
@@ -130,16 +119,10 @@ function acf_custom_rest() {
 
 add_action('rest_api_init', 'acf_custom_rest');
 
-// THIS WILL BREAK LISTINGS REST API ENDPOINT
-// function get_pagination_info() {
-//   register_rest_field('listings', 'totalPages', array(
-//     'get_callback' => function() {
-//       // WP_REST_Request::get_header( string $key );
-//       $pageTotal = WP_REST_Request::get_header('X-WP-TotalPages');
-//       // $pageTotal = $request->get_header('X-WP-TotalPages');
-//       return $pageTotal;
-//     }
+// function post_custom_rest() {
+//   register_rest_field('post', 'authorName', array(
+//     'get_callback' => function() {return get_the_author();}
 //   ));
 // }
 
-// add_action('rest_api_init', 'get_pagination_info');
+// add_action('rest_api_init', 'post_custom_rest');
