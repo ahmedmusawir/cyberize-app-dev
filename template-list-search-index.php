@@ -31,7 +31,7 @@ get_header('list');
 
   </section>
 
-  <div class="list-index-pagination-box text-center">
+  <div class="list-index-pagination-box text-center d-none">
     <a href="#" id="list-prev-page-btn" class="btn btn-danger disabled">Previous</a>
     <a href="#" id="list-next-page-btn" class="btn btn-danger">Next</a>
   </div>
