@@ -37,6 +37,10 @@ class SelflistSearch {
 
       if (this.searchInput.val()) {
         if (!this.isSpinnerVisible) {
+          if (!this.listIndexPaginationBox.hasClass('d-none')) {
+            this.listIndexPaginationBox.addClass('d-none');
+            // this.listIndexPaginationBox.css('background-color', 'yellow');
+          }
           this.searchResultBox.html('<div class="spinner-loader"></div>');
           this.isSpinnerVisible = true;
         }
@@ -45,6 +49,7 @@ class SelflistSearch {
       } else {
         this.searchResultBox.html('');
         this.isSpinnerVisible = false;
+        this.listIndexPaginationBox.addClass('d-none');
       }
     }
 
@@ -61,10 +66,9 @@ class SelflistSearch {
       const listings = response.data;
       this.totalPages = response.headers['x-wp-totalpages'];
       this.currentPage = currentPage;
-      // const totalPages = response.headers['x-wp-totalpages'];
-      // const currentPage = currentPage;
 
       this.showListings(listings);
+
       this.makePagination(this.currentPage, this.totalPages);
 
       // console.log(response);
@@ -79,6 +83,11 @@ class SelflistSearch {
 
     if (Number(totalPages) > 1) {
       this.listIndexPaginationBox.removeClass('d-none');
+
+      if (currentPage <= 1) {
+        this.paginationPrevBtn.addClass('disabled');
+        this.paginationNextBtn.removeClass('disabled');
+      }
     } else {
       this.listIndexPaginationBox.addClass('d-none');
     }
@@ -106,7 +115,7 @@ class SelflistSearch {
 
     console.log('prevPage: ', prevPage);
 
-    if (prevPage == 1) {
+    if (prevPage <= 1) {
       this.paginationPrevBtn.addClass('disabled');
       this.paginationNextBtn.removeClass('disabled');
     }

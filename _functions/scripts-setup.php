@@ -5,7 +5,7 @@
  */
 function cyberize_scripts() {
 	//CYBERIZE FRAMEWORK 1.0 STYLES UNIFIED & MINIFIED
-	wp_enqueue_style( 'cyberize-framework-1-main-style', get_template_directory_uri() . '/assets/dist/css/main.min.css', '', 12.0 );
+	wp_enqueue_style( 'cyberize-framework-1-main-style', get_template_directory_uri() . '/assets/dist/css/main.min.css', '', 13.1 );
 
 	//CYBERIZE FRAMEWORK 1.0 STYLE.CSS - USED FOR POST PRODUCTION UPDATES ONLY
 	wp_enqueue_style( 'cyberize-framework-1-style', get_stylesheet_uri(), '', 3.0 );	

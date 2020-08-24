@@ -11,7 +11,7 @@
 
 ?>
 <!-- TEMP NAV FOR DEV ONLY. PLZ REMOVE. START -->
-<div class="navbar fixed-bottom navbar-light bg-light" style="margin-bottom: 50px">
+<div class="navbar fixed-bottom navbar-light bg-light d-none" style="margin-bottom: 50px">
   <nav id="site-navigation" class="main-navigation mx-auto d-block">
 
     <?php
