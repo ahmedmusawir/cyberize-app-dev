@@ -42,7 +42,7 @@ html {
 body {
   min-height: 100%;
   font-family: $secondary-font;
-
+  // margin-top: 50px;
   // padding-top: 50px;
 
   p {
@@ -157,9 +157,6 @@ a {
   }
 }
 
-.container-fluid {
-  // width: 98% !important;
-}
 .general-page-header {
   width: 100vw;
   height: 120px;

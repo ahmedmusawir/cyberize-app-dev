@@ -1,18 +1,18 @@
 /*=============================
 =            GLOBALS            =
 =============================*/
-@import 'wp_default';
-@import 'global';
-@import 'custom';
+@import "wp_default";
+@import "global";
+@import "custom";
 // @import "contents/sidebar/sidebar-global";
 
 /*=======================================
 =    HEADER & FOOTER & SIDEBAR            =
 =======================================*/
 
-@import 'headers/header-selflist';
-// @import "headers/header-general";
-@import 'footers/footer-general';
+@import "headers/header-selflist";
+@import "headers/header-general";
+@import "footers/footer-general";
 
 /*=====  End of HEADER & FOOTER  ======*/
 
@@ -29,9 +29,9 @@
 ========================================*/
 
 // @import "contents/page/page-dashboard";
-@import 'contents/page/page-global';
-@import 'contents/page/page-selflist';
-@import 'contents/page/page-selflist-listings-index';
+@import "contents/page/page-global";
+@import "contents/page/page-selflist";
+@import "contents/page/page-selflist-listings-index";
 
 /*=====  End of PAGE GENERAL  ======*/
 
@@ -39,7 +39,9 @@
 =            BLOG INDEX PAGE            =
 =======================================*/
 
-// @import "contents/blog-index-page/blog-index-asm";
+@import "contents/index-pages/blog-index";
+@import "contents/index-pages/archive-index";
+@import "contents/index-pages/search-index";
 
 /*=====  End of BLOG INDEX PAGE  ======*/
 
@@ -47,7 +49,7 @@
 =            SINGLE BLOG POST            =
 ========================================*/
 
-// @import "contents/single-post/post-asm";
+@import "contents/singles/single-post";
 
 /*=====  End of SINGLE BLOG POST  ======*/
 

@@ -23,7 +23,7 @@
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
-  <div class="site">
+  <div id="page" class="site">
     <a class="skip-link screen-reader-text"
       href="#primary"><?php esc_html_e( 'Skip to content', 'cyberize-app-dev' ); ?></a>
 
@@ -33,7 +33,7 @@
       <section class="main-navigation">
         <div class="main-navbar container-fluid">
           <a class="navbar-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <img src="/wp-content/uploads/2020/08/moose-oragebg.png" class="w-25" style="padding-top: .8rem;" alt="">
+            <img src="/wp-content/uploads/2020/01/logo-round.png" class="w-50" alt="">
           </a>
           <?php
 					wp_nav_menu( array(
@@ -41,9 +41,9 @@
 						'menu_id'        => 'primary-menu',
 						'container'			 => 'div',
 						'container_class' => 'main-nav',  	
-						// 'menu_class'     => 'mx-auto', //CENTER ALIGN
+						'menu_class'     => 'mx-auto', //CENTER ALIGN
 						// 'menu_class'     => 'ml-auto', //RIGHT ALIGN
-						'menu_class'     => 'mr-auto', //LEFT ALIGN
+						// 'menu_class'     => 'mr-auto', //LEFT ALIGN
 					) );
 				?>
         </div>

@@ -6,6 +6,10 @@
 
 .page {
   // border: 4px dotted blue;
-  // THIS IS A TEMP MOVE WHILE DEV
-  margin-bottom: 15rem;
+  padding-bottom: 5rem;
+
+  .type-page {
+    // border: 3px dotted green;
+    padding-top: 8rem;
+  }
 }
