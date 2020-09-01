@@ -18,6 +18,7 @@ get_header('both');
 <main id="primary" class="site-main container">
   <hr>
 
+  <?php echo do_shortcode('[ yobro_chatbox]'); ?>
 
 </main><!-- #main -->
 

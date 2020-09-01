@@ -61,7 +61,7 @@ require get_template_directory() . '/_functions/helpers-setup.php';
  * React App Setup
  *
  */
-require get_template_directory() . '/_functions/react-setup.php';
+// require get_template_directory() . '/_functions/react-setup.php';
 
 /**
  *
