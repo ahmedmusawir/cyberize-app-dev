@@ -5,7 +5,7 @@
  */
 function cyberize_scripts() {
 	//CYBERIZE FRAMEWORK 1.0 STYLES UNIFIED & MINIFIED
-	wp_enqueue_style( 'cyberize-framework-1-main-style', get_template_directory_uri() . '/assets/dist/css/main.min.css', '', 12.0 );
+	// wp_enqueue_style( 'cyberize-framework-1-main-style', get_template_directory_uri() . '/assets/dist/css/main.min.css', '', 12.0 );
 
 	//CYBERIZE FRAMEWORK 1.0 STYLES UNIFIED & MINIFIED
 	wp_enqueue_style( 'cyberize-framework-1-feather-light-style', get_template_directory_uri() . '/assets/dist/css/featherlight.min.css', '', 2.0 );

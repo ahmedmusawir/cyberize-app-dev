@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages
- * Template Name: List Chat
+ * Template Name: List Customer Home
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -12,13 +12,12 @@
  * @package cyberize-app-dev
  */
 
-get_header('both');
+get_header('listings');
 ?>
 
 <main id="primary" class="site-main container">
-  <hr>
 
-  <?php echo do_shortcode('[yobro_chatbox]'); ?>
+  <hr>
 
 </main><!-- #main -->
 

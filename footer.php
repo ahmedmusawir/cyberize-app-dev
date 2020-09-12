@@ -10,24 +10,7 @@
  */
 
 ?>
-<!-- TEMP NAV FOR DEV ONLY. PLZ REMOVE. START -->
-<div class="navbar fixed-bottom navbar-light bg-light d-none" style="margin-bottom: 50px">
-  <nav id="site-navigation" class="main-navigation mx-auto d-block">
 
-    <?php
-    wp_nav_menu(
-      array(
-        'theme_location' => 'menu-1',
-        'menu_id'        => 'primary-menu',
-        'menu_class'     => '',
-        'container_class' => '',
-      )
-    );
-  ?>
-
-  </nav><!-- #site-navigation -->
-</div>
-<!-- TEMP NAV FOR DEV ONLY. PLZ REMOVE. END -->
 
 <footer id="colophon" class="site-footer navbar fixed-bottom navbar-light bg-light">
   <div class="site-info">

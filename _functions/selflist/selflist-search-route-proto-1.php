@@ -33,7 +33,7 @@ function listingsSearchResults(WP_REST_Request $request){
     // $posts_per_page = 8;
      
     $args = array(
-        'post_type' => array('post'),
+        'post_type' => array('listing'),
         's' => sanitize_text_field($request['term']),
         'posts_per_page'    => $posts_per_page,
         'paged'             => $page,
@@ -52,22 +52,20 @@ function listingsSearchResults(WP_REST_Request $request){
 
 $results = array();
 
+while($query->have_posts()) {
+  $query->the_post();
 
+  array_push($results, array(
+    'title' => get_the_title(),
+    'subTitlePrimo' => get_field('subtitle_primo'),
+    'subTitleSecondo' => get_field('subtitle_secondo'),
+    'subTitleTerzo' => get_field('subtitle_terzo'),
+    'content' => get_the_content(),
+    'postType' => get_post_type(),
+    'authorName' => get_the_author()
+  ));
 
-// while($query->have_posts()) {
-//   $query->the_post();
-
-//   array_push($results, array(
-//     'title' => get_the_title(),
-//     'subTitlePrimo' => get_field('subtitle_primo'),
-//     'subTitleSecondo' => get_field('subtitle_secondo'),
-//     'subTitleTerzo' => get_field('subtitle_terzo'),
-//     'content' => get_the_content(),
-//     'postType' => get_post_type(),
-//     'authorName' => get_the_author()
-//   ));
-
-// }  
+}  
 
 // set max number of pages and total num of posts
 $max_pages = $query->max_num_pages;

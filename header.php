@@ -27,7 +27,7 @@
     <a class="skip-link screen-reader-text"
       href="#primary"><?php esc_html_e( 'Skip to content', 'cyberize-app-dev' ); ?></a>
 
-    <header id="header-cyberize" class="site-header">
+    <header id="" class="site-header">
       <!-- Moose_Framework_2 NAVIGATION GOES HERE -->
 
       <section class="main-navigation">
@@ -45,7 +45,17 @@
 						// 'menu_class'     => 'ml-auto', //RIGHT ALIGN
 						'menu_class'     => 'mr-auto', //LEFT ALIGN
 					) );
-				?>
+        ?>
+          <section>
+            <?php global $current_user; wp_get_current_user(); ?>
+            <?php if ( is_user_logged_in() ) { 
+            // echo 'Username: ' . $current_user->user_login . "\n"; 
+            echo '<span class="text-light float-right">User: ' . $current_user->display_name . "</span>"; } 
+            else { 
+              //wp_loginout(); 
+            } 
+            ?>
+          </section>
         </div>
       </section>
 

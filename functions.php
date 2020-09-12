@@ -49,8 +49,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Bootstrap 4 Nav Walker
  */
-require get_template_directory() . '/_functions/bootstrap-navwalker.php';
-require get_template_directory() . '/_functions/moose-navwalker.php';
+// require get_template_directory() . '/_functions/bootstrap-navwalker.php';
+// require get_template_directory() . '/_functions/moose-navwalker.php';
 /**
  * Helper Functions
  */
@@ -69,7 +69,7 @@ require get_template_directory() . '/_functions/helpers-setup.php';
  *
  */
 
-require get_template_directory() . '/_functions/breadcrum-function.php';
+// require get_template_directory() . '/_functions/breadcrum-function.php';
 
 /**
  *
@@ -77,9 +77,24 @@ require get_template_directory() . '/_functions/breadcrum-function.php';
  *
  */
 
-require get_template_directory() . '/_functions/wp-logon-screen.php';
+// require get_template_directory() . '/_functions/wp-logon-screen.php';
 
 /**
  * CUSTOM REST ROUTE FOR LISTING		
  */
 require get_theme_file_path('/_functions/selflist/selflist-search-route.php');
+
+/**
+ * CUSTOM REST ROUTE FOR LISTING		
+ */
+require get_theme_file_path('/_functions/selflist/selflist-listing-cpt.php');
+
+/**
+ * CUSTOM REST ROUTE FOR LISTING		
+ */
+require get_theme_file_path('/_functions/selflist/selflist-user-roles.php');
+
+/**
+ * CUSTOM REST ROUTE FOR LISTING		
+ */
+require get_theme_file_path('/_functions/selflist/selflist-user-logins.php');
