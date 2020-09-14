@@ -30,7 +30,7 @@
     <header id="" class="site-header">
       <!-- Moose_Framework_2 NAVIGATION GOES HERE -->
 
-      <section class="main-navigation">
+      <div class="main-navigation">
         <div class="main-navbar container-fluid">
           <a class="navbar-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
             <img src="/wp-content/uploads/2020/08/moose-oragebg.png" class="w-25" style="padding-top: .8rem;" alt="">
@@ -57,7 +57,7 @@
             ?>
           </section>
         </div>
-      </section>
+      </div>
 
 
       <!-- Moose_Framework_2 NAVIGATION ENDS HERE -->

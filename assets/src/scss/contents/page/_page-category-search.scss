@@ -1,0 +1,28 @@
+/**
+ *
+ * STYLE: Page Category Search
+ *
+ */
+
+#category-search-page {
+  // border: 4px dotted dodgerblue;
+
+  ul {
+    list-style: none;
+    li {
+      margin-bottom: 0.25rem;
+    }
+  }
+  .primo {
+    // border: 4px dotted blue;
+    padding-inline-start: 0px !important;
+  }
+  .secondo {
+    // border: 4px dotted dodgerblue;
+    padding-inline-start: 20px !important;
+  }
+  .terzo {
+    // border: 4px dotted lime;
+    padding-inline-start: 40px !important;
+  }
+}

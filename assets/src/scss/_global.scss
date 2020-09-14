@@ -37,10 +37,7 @@ html {
 }
 
 body {
-  // min-height: 100%;
   font-family: $secondary-font;
-  // margin-top: 50px;
-  // padding-top: 50px;
 
   p {
     font-size: 1rem;
@@ -90,10 +87,6 @@ body.logged-in {
   padding-top: 18px !important;
 }
 
-#content {
-  min-height: 100%;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -120,54 +113,6 @@ a {
   border-top-color: red;
   -webkit-animation: spin 1s infinite linear;
   animation: spin 1s infinite linear;
-}
-
-/**
- *
- * WP Admin Bar Lowering
- *
- */
-// .logged-in {
-//   .navbar.fixed-top {
-//     top: 32px;
-//     border: 1px solid red;
-//   }
-//   body.admin-bar {
-//     top: 0px !important;
-//   }
-// }
-
-.block-after-header {
-  background-color: $cg-primary-light;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-top: 90px;
-  text-align: center;
-
-  @media (min-width: 1367px) {
-    margin-top: 50px !important;
-  }
-
-  h1 {
-    color: $white;
-    text-transform: uppercase;
-  }
-}
-
-.general-page-header {
-  width: 100vw;
-  height: 120px;
-  background-color: $cg-primary-light;
-  background-size: cover;
-  background-position: top center;
-  color: $white !important;
-  margin-top: 50px;
-  display: inline-block;
-  text-align: center;
-
-  h1 {
-    color: $white;
-  }
 }
 
 /**
@@ -199,77 +144,6 @@ a {
     color: white;
     background-color: $cg-button;
     padding: 1rem 3rem;
-  }
-}
-
-/*=====================================================================
-=            MOBILE MENU REMOVAL FROM THRIVE LANDING PAGES            =
-=======================================================================*/
-// .page-template .page-template-page-thrive-landing {
-//   border: 1rem dotted pink;
-// }
-#responsive-menu-pro-container {
-  // border: 1rem solid red;
-}
-/*=====  End of MOBILE MENU REMOVAL FROM THRIVE LANDING PAGES  ======*/
-
-/**
- *
- * SITE WIDE GLOBALS
- *
- */
-
-/**
- * 
- * ACF GOOGLE MAP STYLES
- *   
- * */
-
-.acf-map {
-  width: 50%; // 100% for NON fixed
-  height: 800px;
-  position: fixed !important;
-  border: #ccc solid 1px;
-}
-.acf-map-single {
-  height: 300px !important;
-}
-
-/**
- *
- * Private Training breadcrum-holder
- *
- */
-.breadcrumb-holder {
-  .breadcrumb {
-    a {
-      padding-right: 0.5rem;
-    }
-  }
-}
-
-/**
- *
- * Simple Author Box Plugin Styles
- *
- */
-.saboxplugin-wrap {
-  border: 0rem solid white !important;
-  border-top: 2px solid $cg-primary !important;
-  margin-top: 5rem !important;
-  margin-bottom: 5rem !important;
-
-  .saboxplugin-gravatar {
-    // padding-top: 3rem !important;
-    img {
-      // border-radius: 50% !important;
-      padding: 0.3rem;
-      // border: 3px solid $cg-primary;
-      box-shadow: 3px 3px 6px gray;
-    }
-  }
-  .saboxplugin-authorname {
-    text-transform: capitalize !important;
   }
 }
 
