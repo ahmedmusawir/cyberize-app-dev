@@ -1,4 +1,5 @@
 import SelflistSearch from './_modules/SelflistSearch';
+import SelflistCatSearch from './_modules/SelflistCatSearch';
 
 class App {
   constructor() {
@@ -6,6 +7,8 @@ class App {
 
     // Selflist Search Module
     new SelflistSearch();
+    // Selflist Category Search Filter - non REST
+    new SelflistCatSearch();
   }
 }
 

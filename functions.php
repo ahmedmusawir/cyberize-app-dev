@@ -80,21 +80,20 @@ require get_template_directory() . '/_functions/helpers-setup.php';
 // require get_template_directory() . '/_functions/wp-logon-screen.php';
 
 /**
- * CUSTOM REST ROUTE FOR LISTING		
+ * SELFLIST CUSTOM FUNCTIONS		
  */
+
+// CUSTOM REST ROUTE FOR LISTING 1ST PROTOTYPE
 require get_theme_file_path('/_functions/selflist/selflist-search-route.php');
 
-/**
- * CUSTOM REST ROUTE FOR LISTING		
- */
+// SELFLIST CUSTOM POST TYPE 1ST PROTOTYPE
 require get_theme_file_path('/_functions/selflist/selflist-listing-cpt.php');
 
-/**
- * CUSTOM REST ROUTE FOR LISTING		
- */
+// SELFLIST CUSTOM USER ROLES & PERMISSIONS
 require get_theme_file_path('/_functions/selflist/selflist-user-roles.php');
 
-/**
- * CUSTOM REST ROUTE FOR LISTING		
- */
+// SELFLIST CUSTOM USER LOGIN LOGOUT RELATED FUNCTIONS (ADMIN BAR, LOGIN/LOGOUT BTN, REDIRECTION ETC.)
 require get_theme_file_path('/_functions/selflist/selflist-user-logins.php');
+
+// SELFLIST SUB CATEGORIES LISTING FUNCTION
+require get_theme_file_path('/_functions/selflist/selflist-get-category-list.php');

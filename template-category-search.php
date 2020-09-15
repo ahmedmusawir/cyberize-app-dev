@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages
- * Template Name: Category Test
+ * Template Name: Category Search Index
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -21,7 +21,7 @@ get_header();
 
   <section id="selflist-search-input-box" class="selflist-search-input-box">
 
-    <input type="text" id="selflist-search-input" class="selflist-search-input">
+    <input type="text" id="cat-search-input" class="selflist-search-input">
     <i class="fas fa-search"></i>
 
   </section>
@@ -46,7 +46,8 @@ get_header();
 
     <a href="<?php echo get_category_link( $category->term_id ); ?>">
 
-      <div class="card border-danger mb-3">
+      <div class="card border-danger mb-3 animate__animated animate__zoomIn">
+        <!-- <div class="card border-danger mb-3 animate__animated"> -->
         <div class="card-header bg-danger">
           <span class="text-light">List Count:</span>
           <span class="badge badge-pill badge-light">

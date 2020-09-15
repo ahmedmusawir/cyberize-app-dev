@@ -4,25 +4,65 @@
  *
  */
 
-#category-search-page {
+.page-template-template-category-search {
   // border: 4px dotted dodgerblue;
+  .selflist-search-input-box {
+    // border: 4px dotted red;
+    background-color: red;
+    height: 5rem !important;
 
-  ul {
-    list-style: none;
-    li {
-      margin-bottom: 0.25rem;
+    .selflist-search-input {
+      height: 5rem !important;
+      width: 87% !important;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: white;
+      padding-left: 1rem;
+      caret-color: white;
+      background-color: red;
+      border-color: red;
+      &:focus {
+        // outline: 0.5px solid white;
+        outline: none;
+      }
+    }
+    .fas.fa-search {
+      font-size: 3rem;
+      float: right;
+      color: white;
+      padding-right: 1rem;
+      padding-top: 1rem;
     }
   }
-  .primo {
-    // border: 4px dotted blue;
-    padding-inline-start: 0px !important;
-  }
-  .secondo {
-    // border: 4px dotted dodgerblue;
-    padding-inline-start: 20px !important;
-  }
-  .terzo {
-    // border: 4px dotted lime;
-    padding-inline-start: 40px !important;
+
+  #category-search-result {
+    margin-top: 2rem;
+    ul {
+      list-style: none;
+      li {
+        // border: 4px dotted dodgerblue;
+        margin-bottom: 0.25rem;
+
+        a {
+          font-size: 0.75rem;
+          text-transform: lowercase !important;
+          .badge.badge-pill {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+    .primo {
+      // border: 4px dotted blue;
+      padding-inline-start: 0px !important;
+    }
+    .secondo {
+      // border: 4px dotted dodgerblue;
+      padding-inline-start: 20px !important;
+    }
+    .terzo {
+      // border: 4px dotted lime;
+      padding-inline-start: 40px !important;
+    }
   }
 }

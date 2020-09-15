@@ -21,7 +21,7 @@ class SelflistSearch {
   }
 
   init = () => {
-    console.log('SelfList Search Main ...');
+    // console.log('SelfList Search Main ...');
   };
 
   setEvents = () => {
