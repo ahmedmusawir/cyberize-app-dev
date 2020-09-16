@@ -5,14 +5,15 @@
  */
 
 .page-template-template-category-search {
+  // transition: all 2.5s ease;
   // border: 4px dotted dodgerblue;
   .selflist-search-input-box {
     // border: 4px dotted red;
     background-color: red;
-    height: 5rem !important;
+    height: 3.5rem !important;
 
     .selflist-search-input {
-      height: 5rem !important;
+      height: 3.5rem !important;
       width: 87% !important;
       font-size: 2.5rem;
       font-weight: 600;
@@ -27,17 +28,24 @@
       }
     }
     .fas.fa-search {
-      font-size: 3rem;
+      font-size: 2rem;
       float: right;
       color: white;
       padding-right: 1rem;
-      padding-top: 1rem;
+      padding-top: 0.75rem;
     }
   }
 
   #category-search-result {
     margin-top: 2rem;
+    // transition: all 2.5s ease;
+    // -webkit-transition: all 500ms ease;
+    // -moz-transition: all 500ms ease;
+    // -o-transition: all 500ms ease;
+    // transition: all 500ms ease;
+
     ul {
+      // transition: all 0.5s ease;
       list-style: none;
       li {
         // border: 4px dotted dodgerblue;

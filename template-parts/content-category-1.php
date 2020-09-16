@@ -14,7 +14,7 @@
 		if ( is_singular() ) :
 			// the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h5 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h5>' );
+			// the_title( '<h5 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h5>' );
 		endif;
 
 		if ( 'post' === get_post_type() ) :
@@ -22,7 +22,7 @@
     <div class="entry-meta">
       <?php
 				cyberize_app_dev_posted_on();
-				cyberize_app_dev_posted_by();
+				// cyberize_app_dev_posted_by();
 				?>
     </div><!-- .entry-meta -->
     <?php endif; ?>

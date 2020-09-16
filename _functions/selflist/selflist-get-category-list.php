@@ -15,7 +15,7 @@
        */
       foreach($sub2_cats as $sub_cat) {
         
-          echo '<li>';
+          echo '<li class="primo-item">';
             echo '<a href="'. get_category_link( $sub_cat->term_id ) .'" class="btn btn-outline-danger btn-sm">&nbsp;' . $sub_cat->name .
               '<span class="badge badge-pill badge-dark">' . $sub_cat->count . '</span>
              </a>';
