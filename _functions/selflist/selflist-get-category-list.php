@@ -6,7 +6,7 @@
        */
       $args = array( 
         'parent' => $cat_id, // Gives 1st child only. child_of give all the children
-        'hide_empty' => 0 
+        'hide_empty' => 1 
       );
       $sub2_cats = get_categories($args);
 
@@ -37,7 +37,7 @@
          */
         $args = array( 
           'parent' => $sub_cat->term_id, // Gives 1st child only. child_of give all the children
-          'hide_empty' => 0 
+          'hide_empty' => 1 
         );
         $sub3_cats = get_categories($args);
         /**
@@ -58,7 +58,7 @@
              */
             $args = array( 
               'parent' => $sub2_cat->term_id, // Gives 1st child only. child_of give all the children
-              'hide_empty' => 0 
+              'hide_empty' => 1 
             );
             $sub4_cats = get_categories($args);
 

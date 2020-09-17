@@ -68,7 +68,7 @@ get_header();
           </section>
         </div>
         <div class="card-footer border-danger bg-light">
-          <small class="text-italic"> * Click Subcategoris to narrow down search ...</small>
+          <small class="text-italic"> * Click Subcategoris to find quickly</small>
         </div>
       </div> <!-- END of card -->
 
