@@ -10,6 +10,17 @@
       );
       $sub2_cats = get_categories($args);
 
+      if (! $sub2_cats ) {
+        echo '
+        <section id="no-cat-found" class="card text-center">
+
+          No More Categories ...
+          <p>Back to Category Search<p>
+          <a class="btn btn-danger btn-sm btn-block" href="/category-search-index/">Back</a>
+          
+        </section>
+        ';
+      }
       /**
        * 2ND LEVEL CATEGORY LOOP
        */

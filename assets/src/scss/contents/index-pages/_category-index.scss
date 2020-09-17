@@ -43,11 +43,12 @@
 
     .page-title {
       font-weight: 700;
+      .badge {
+        font-size: 1rem;
+        // margin-top: -20px;
+        line-height: 1.25rem;
+      }
     }
-
-    // .post-item {
-    //   border: 1px solid red;
-    // }
 
     .post-item-cat-list {
       // border: 4px dotted blue;
@@ -75,6 +76,23 @@
     .category-sidebar {
       // border: 4px dotted blue;
       margin-top: -1rem; //Balancing the .primo margin
+
+      // No Category Found
+      #no-cat-found {
+        margin-top: 0.95rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: 1px solid darken($color: #e7e7e7, $amount: 10%);
+        background-color: lighten($color: #e3e3e3, $amount: 8%);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: $cg-primary;
+
+        p {
+          font-size: 0.7rem;
+        }
+      }
 
       ul {
         // transition: all 0.5s ease;

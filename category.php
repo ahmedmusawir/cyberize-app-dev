@@ -8,6 +8,13 @@
  */
 
 get_header();
+
+$current_category = $wp_query->get_queried_object();
+$current_cat_id = $current_category->term_id;
+$current_post_count = $current_category->count;
+// echo "<pre>";
+//   print_r($current_category);
+// echo "</pre>";
 ?>
 <main id="primary" class="site-main container">
 
@@ -24,10 +31,13 @@ get_header();
       <?php if ( have_posts() ) : ?>
 
       <header class="page-header">
+        <!-- <span class="badge badge-dark float-right"><?php echo $current_post_count ?></span> -->
+
         <?php
-			the_archive_title( '<h3 class="page-title">', '</h3>' );
-			// the_archive_description( '<div class="archive-description">', '</div>' );
-			?>
+			the_archive_title( '<h3 class="page-title">', '<span class="badge badge-pill badge-dark ml-2">' . $current_post_count . '</span>
+        </h3>' );
+        // the_archive_description( '<div class="archive-description">', '</div>' );
+        ?>
       </header><!-- .page-header -->
 
       <?php
@@ -65,10 +75,10 @@ get_header();
       <article class="category-sidebar">
         <ul class="primo">
           <?php 
-        $current_category = $wp_query->get_queried_object();
-        $current_cat_id = $current_category->term_id;
         
-        get_selflist_sub_cats($current_cat_id)
+        
+        $cat_list = get_selflist_sub_cats($current_cat_id);
+        
       ?>
         </ul>
 
