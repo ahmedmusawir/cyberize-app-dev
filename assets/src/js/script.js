@@ -1,6 +1,7 @@
 import SelflistSearch from './_modules/SelflistSearch';
 import SelflistCatSearch from './_modules/SelflistCatSearch';
 import SelflistPostSearch from './_modules/SelflistPostSearch';
+import SelflistCatInsertUI from './_modules/SelflistCatInsertUI';
 
 class App {
   constructor() {
@@ -12,6 +13,8 @@ class App {
     new SelflistCatSearch();
     // Selflist Post Item Search Filter - non REST
     new SelflistPostSearch();
+    // Selflist Insert Category UI - List Insert Page
+    new SelflistCatInsertUI();
   }
 }
 
