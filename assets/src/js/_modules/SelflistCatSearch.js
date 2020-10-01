@@ -22,7 +22,7 @@ class SelflistCatSearch {
     // SETTING SEARCH INPUT TEXT TO LOWER CASE
     const searchText = this.search.val().toLowerCase();
     // COLLECTING DATA CARDS
-    const cards = $('.card');
+    const cards = $('.card-moose');
 
     cards.each((i, elm) => {
       const title = $(elm).children().find('.card-title').text().toLowerCase();

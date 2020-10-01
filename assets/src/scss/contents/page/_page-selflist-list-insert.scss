@@ -42,9 +42,11 @@
     flex-wrap: wrap;
 
     .card-moose {
-      border: 4px solid blue;
-      // flex-basis: 50px !important;
-      width: 150px !important;
+      width: 48% !important;
+      // width: 200px !important;
+      border: 1px solid crimson;
+      margin-right: 2px;
+      margin-left: 2px;
     }
 
     ul {

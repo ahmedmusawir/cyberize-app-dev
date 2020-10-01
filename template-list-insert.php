@@ -264,7 +264,7 @@ get_header();
                 <small id="textHelp" class="form-text text-muted">This is the Terzo Category</small>
               </div>
 
-              <button id="main-cat-insert-submit-btn" type="submit" class="btn btn-primary btn-block">Submit</button>
+              <button id="main-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Submit</button>
             </form>
 
           </div>
@@ -305,7 +305,7 @@ foreach($categories as $category) : ?>
 
             <div class="card-moose border-danger mb-3 animate__animated animate__zoomIn">
               <!-- <div class="card border-danger mb-3 animate__animated"> -->
-              <div class="card-header bg-danger">
+              <div class="card-header bg-dark">
                 <span class="text-light">List Count:</span>
                 <span class="badge badge-pill badge-light">
                   <?php echo $category->count ?></span>
@@ -324,7 +324,7 @@ foreach($categories as $category) : ?>
                   </div>
                 </section>
               </div>
-              <div class="card-footer border-danger bg-light">
+              <div class="card-footer border-danger bg-light d-none">
                 <small class="text-italic"> * Click Subcategoris to find quickly</small>
               </div>
             </div> <!-- END of card -->
