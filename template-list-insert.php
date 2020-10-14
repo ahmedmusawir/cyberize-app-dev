@@ -40,15 +40,15 @@ get_header();
 
           <!-- THIS IS JUST A MOCK UI UNIT START -->
 
-          <ul id="test-ui-cat-box" class="card p-5 animate__animated animate__zoomIn d-none">
-            <p class="font-weight-bold">Your current categories for your List</p>
-            <li>Tutoring</li>
+          <ul id="test-ui-cat-box" class="card  bg-light p-5 animate__animated animate__zoomIn d-none">
+            <h5 class="font-weight-bold text-dark">Current categories for your List:</h5>
+            <li class="text-dark font-weight-bold ml-1" style="list-style: none;">Tutoring</li>
             <ul>
-              <li>Math</li>
+              <li class="text-danger">Math</li>
               <ul>
-                <li>Grade 10</li>
+                <li class="text-danger">Grade 10</li>
                 <ul>
-                  <li>Jackson Heights</li>
+                  <li class="text-danger">Jackson Heights</li>
                 </ul>
               </ul>
             </ul>
@@ -65,8 +65,8 @@ get_header();
               <div class="col-sm-8">
                 <article class="main-cat-box">
                   <select id="select-state" placeholder="Pick A Main Category...">
-                    <option value="">Select a state...</option>
-                    <option value="AL">Alabama</option>
+                    <option value="">Select a Main Caterory...</option>
+                    <option value="AL">Tutoring</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
                     <option value="AR">Arkansas</option>
@@ -85,7 +85,7 @@ get_header();
                 </article>
               </div>
               <div class="col-sm-4">
-                <a href="#" id="main-cat-insert-btn" class="btn btn-dark btn-sm btn-block">
+                <a href="#" id="main-cat-new-btn" class="btn btn-dark btn-sm btn-block">
                   New Category
                 </a>
               </div>
@@ -99,8 +99,8 @@ get_header();
               <div class="col-sm-8">
                 <article class="main-cat-box">
                   <select id="select-state" placeholder="Pick A Primo">
-                    <option value="">Select a state...</option>
-                    <option value="AL">Alabama</option>
+                    <option value="">Select a Primo...</option>
+                    <option value="AL">Math</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
                     <option value="AR">Arkansas</option>
@@ -119,7 +119,7 @@ get_header();
                 </article>
               </div>
               <div class="col-sm-4">
-                <a href="#" class="btn btn-danger btn-sm btn-block">
+                <a id="primo-cat-new-btn" href="#" class="btn btn-danger btn-sm btn-block">
                   New Primo
                 </a>
               </div>
@@ -133,8 +133,8 @@ get_header();
               <div class="col-sm-8">
                 <article class="main-cat-box">
                   <select id="select-state" placeholder="Pick A Secondo">
-                    <option value="">Select a state...</option>
-                    <option value="AL">Alabama</option>
+                    <option value="">Select a Secondo...</option>
+                    <option value="AL">Grade 10</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
                     <option value="AR">Arkansas</option>
@@ -153,7 +153,7 @@ get_header();
                 </article>
               </div>
               <div class="col-sm-4">
-                <a href="#" class="btn btn-danger btn-sm btn-block">
+                <a id="secondo-cat-new-btn" href="#" class="btn btn-danger btn-sm btn-block">
                   New Secondo
                 </a>
               </div>
@@ -167,8 +167,8 @@ get_header();
               <div class="col-sm-8">
                 <article class="main-cat-box">
                   <select id="select-state" placeholder="Pick A Terzo">
-                    <option value="">Select a state...</option>
-                    <option value="AL">Alabama</option>
+                    <option value="">Select a Terzo</option>
+                    <option value="AL">Jackson Heights</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
                     <option value="AR">Arkansas</option>
@@ -187,7 +187,7 @@ get_header();
                 </article>
               </div>
               <div class="col-sm-4">
-                <a href="#" class="btn btn-danger btn-sm btn-block">
+                <a id="terzo-cat-new-btn" href="#" class="btn btn-danger btn-sm btn-block">
                   New Terzo
                 </a>
               </div>
@@ -233,43 +233,31 @@ get_header();
 
           <!-- END OTHER INFO INPUTS  -->
 
-        </article>
+        </article> <!-- END OF id="create-new-list-box" -->
 
-        <section id="main-cat-insert-box" class="card p-5 d-none  animate__animated animate__zoomIn">
+        <!-- START OF MAIN CAT INSERT FORM -->
 
-          <div class="form-box">
+        <?php get_template_part('_custom-template-parts/insert-pg-main-cat-insert-form'); ?>
 
-            <form>
-              <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert New Category and
-                Subcategories</label>
+        <!-- END OF MAIN CAT INSERT FORM -->
 
-              <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
-                  placeholder="New Main Category">
-                <small id="textHelp" class="form-text text-muted">This is the Main Category</small>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
-                  placeholder="New Primo Category">
-                <small id="textHelp" class="form-text text-muted">This is the Primo Category</small>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
-                  placeholder="New Secondo Category">
-                <small id="textHelp" class="form-text text-muted">This is the Secondo Category</small>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
-                  placeholder="New Terzo Category">
-                <small id="textHelp" class="form-text text-muted">This is the Terzo Category</small>
-              </div>
+        <!-- START OF PRIMO CAT INSERT FORM -->
 
-              <button id="main-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Submit</button>
-            </form>
+        <?php get_template_part('_custom-template-parts/insert-pg-primo-cat-insert-form'); ?>
 
-          </div>
+        <!-- END OF PRIMO CAT INSERT FORM -->
 
-        </section>
+        <!-- START OF SECONDO CAT INSERT FORM -->
+
+        <?php get_template_part('_custom-template-parts/insert-pg-secondo-cat-insert-form'); ?>
+
+        <!-- END OF SECONDO CAT INSERT FORM -->
+
+        <!-- START OF TERZO CAT INSERT FORM -->
+
+        <?php get_template_part('_custom-template-parts/insert-pg-terzo-cat-insert-form'); ?>
+
+        <!-- END OF TERZO CAT INSERT FORM -->
 
       </section>
       <!-- LEFT COLUMN ENDS HERE -->
