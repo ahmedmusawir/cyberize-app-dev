@@ -11,7 +11,7 @@ class SelflistCatSearch {
   }
 
   init = () => {
-    console.log('Selflist cat list ...');
+    // console.log('Selflist cat list ...');
   };
 
   setEvents = () => {

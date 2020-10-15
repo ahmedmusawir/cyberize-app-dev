@@ -7,9 +7,14 @@ import SelflistPrimoCatInsertUI from './_modules/SelflistPrimoCatInsertUI';
 import SelflistSecondoCatInsertUI from './_modules/SelflistSecondoCatInsertUI';
 import SelflistTerzoCatInsertUI from './_modules/SelflistTerzoCatInsertUI';
 
+// TEST CODE HERE
+import InsertPost from './_modules/_test/insertPost';
+
 class App {
   constructor() {
     console.info('ES6 Script Initialized!');
+
+    this.runTestCode();
 
     // Selflist Search Module
     new SelflistSearch();
@@ -28,6 +33,10 @@ class App {
     new SelflistSecondoCatInsertUI();
     // Selflist Insert Terzo Category UI - List Insert Page
     new SelflistTerzoCatInsertUI();
+  }
+
+  runTestCode = () => {
+    new InsertPost();
   }
 }
 

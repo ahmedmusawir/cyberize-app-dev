@@ -98,6 +98,17 @@ require get_theme_file_path('/_functions/selflist/selflist-user-logins.php');
 // SELFLIST SUB CATEGORIES LISTING FUNCTION
 require get_theme_file_path('/_functions/selflist/selflist-get-category-list.php');
 
+// SELFLIST SUB CATEGORIES LISTING FUNCTION
+require get_theme_file_path('/_functions/selflist/selflist-post-acf-to-rest.php');
+
+
 // SELFTLIST CREATE CATEGORIES TEST
 // require get_theme_file_path('/_functions/selflist/selflist-create-categories.php');
 // include get_theme_file_path('/_functions/selflist/selflist-create-categories.php');
+
+// FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN
+// Enable the option show in rest
+// add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
+
+// Enable the option edit in rest
+// add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );

@@ -12,7 +12,7 @@ class SelflistPostSearch {
   }
 
   init = () => {
-    console.log('Selflist post search ...');
+    // console.log('Selflist post search ...');
   };
 
   setEvents = () => {

@@ -16,7 +16,7 @@ class SelflistMainCatInsertUI {
   }
 
   init = () => {
-    console.log('Selflist cat INSERT ...');
+    // console.log('Selflist cat INSERT ...');
   };
 
   setEvents = () => {
