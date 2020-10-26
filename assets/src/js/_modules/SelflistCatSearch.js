@@ -4,14 +4,14 @@ class SelflistCatSearch {
   constructor() {
     // COLLECTING SEARCH INPUT
     this.search = $('#cat-search-input');
-
+    console.info(this.search);
     // SETTING EVENTS
     this.setEvents();
     this.init();
   }
 
   init = () => {
-    // console.log('Selflist cat list ...');
+    console.log('Selflist cat list ...');
   };
 
   setEvents = () => {

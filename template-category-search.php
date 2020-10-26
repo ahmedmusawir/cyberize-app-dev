@@ -46,7 +46,7 @@ get_header();
 
     <a href="<?php echo get_category_link( $category->term_id ); ?>">
 
-      <div class="card border-danger mb-3 animate__animated animate__zoomIn">
+      <div class="card card-moose border-danger mb-3 animate__animated animate__zoomIn">
         <!-- <div class="card border-danger mb-3 animate__animated"> -->
         <div class="card-header bg-danger">
           <span class="text-light">List Count:</span>

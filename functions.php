@@ -97,6 +97,7 @@ require get_theme_file_path('/_functions/selflist/selflist-user-logins.php');
 
 // SELFLIST SUB CATEGORIES LISTING FUNCTION
 require get_theme_file_path('/_functions/selflist/selflist-get-category-list.php');
+require get_theme_file_path('/_functions/selflist/selflist-get-category-json.php');
 
 // SELFLIST SUB CATEGORIES LISTING FUNCTION
 require get_theme_file_path('/_functions/selflist/selflist-post-acf-to-rest.php');

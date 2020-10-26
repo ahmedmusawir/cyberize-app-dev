@@ -26,11 +26,10 @@ class InsertPost {
     let newPostData = {
       title: $('.new-note-title').val(),
       content: $('.new-note-body').val(),
-      "fields[your_name]": name,
-      "fields[your_address]": address,
+      "fields[your_name]": name, // ACF Item
+      "fields[your_address]": address, // ACF Item
       status: 'publish'
     }
-    console.log(newPostData);
 
     $.ajax({
       beforeSend: (xhr) => {
