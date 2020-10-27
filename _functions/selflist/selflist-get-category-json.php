@@ -18,17 +18,6 @@
         // print_r($sub2_cats);
         // echo '</pre>';
 
-      // if (! $sub2_cats ) {
-      //   echo '
-      //   <section id="no-cat-found" class="card text-center">
-
-      //     No More Categories ...
-      //     <p>Back to Category Search<p>
-      //     <a class="btn btn-danger btn-sm btn-block" href="/category-search-index/">Back</a>
-          
-      //   </section>
-      //   ';
-      // }
       /**
        * PRIMO LEVEL CATEGORY LOOP
        */
@@ -36,10 +25,10 @@
       foreach($sub2_cats as $sub_cat) {
 
         array_push($results['primo'], array(
-          'primo-name' => $sub_cat->name,
-          'primo-slug' => $sub_cat->slug,
-          'primo-id' => $sub_cat->term_id,
-          'parent-id' => $sub_cat->parent
+          'primoName' => $sub_cat->name,
+          'primoSlug' => $sub_cat->slug,
+          'primoId' => $sub_cat->term_id,
+          'parentId' => $sub_cat->parent
         )); 
 
         /**
@@ -56,10 +45,10 @@
         foreach($sub3_cats as $sub2_cat) {
     
         array_push($results['secondo'], array(
-          'secondo-name' => $sub2_cat->name,
-          'secondo-slug' => $sub2_cat->slug,
-          'secondo-id' => $sub2_cat->term_id,
-          'parent-id' => $sub2_cat->parent
+          'secondoName' => $sub2_cat->name,
+          'secondoSlug' => $sub2_cat->slug,
+          'secondoId' => $sub2_cat->term_id,
+          'parentId' => $sub2_cat->parent
         )); 
 
 
@@ -75,10 +64,10 @@
             foreach($sub4_cats as $sub3_cat) {
 
               array_push($results['terzo'], array(
-                'terzo-name' => $sub3_cat->name,
-                'terzo-slug' => $sub3_cat->slug,
-                'terzo-id' => $sub3_cat->term_id,
-                'parent-id' => $sub3_cat->parent
+                'terzoName' => $sub3_cat->name,
+                'terzoSlug' => $sub3_cat->slug,
+                'terzoId' => $sub3_cat->term_id,
+                'parentId' => $sub3_cat->parent
               )); 
 
             

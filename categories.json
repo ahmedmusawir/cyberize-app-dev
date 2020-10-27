@@ -1,0 +1,461 @@
+{
+    "mainCat": [
+        {
+            "mainCatName": "App Dev",
+            "mainCatSlug": "app-dev",
+            "mainCatId": 39,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Easy",
+                        "primoSlug": "easy",
+                        "primoId": 40,
+                        "parentId": 39
+                    },
+                    {
+                        "primoName": "Hard",
+                        "primoSlug": "hard",
+                        "primoId": 43,
+                        "parentId": 39
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "Web App",
+                        "secondoSlug": "web-app",
+                        "secondoId": 41,
+                        "parentId": 40
+                    },
+                    {
+                        "secondoName": "Desktop Application",
+                        "secondoSlug": "desktop-application",
+                        "secondoId": 44,
+                        "parentId": 43
+                    }
+                ],
+                "terzo": [
+                    {
+                        "terzoName": "Atlanta",
+                        "terzoSlug": "atlanta",
+                        "terzoId": 42,
+                        "parentId": 41
+                    },
+                    {
+                        "terzoName": "JACKSON HEIGHTS",
+                        "terzoSlug": "jackson-heights-hard",
+                        "terzoId": 45,
+                        "parentId": 44
+                    }
+                ]
+            }
+        },
+        {
+            "mainCatName": "Better Apps for Developers",
+            "mainCatSlug": "better-apps-for-developers",
+            "mainCatId": 46,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Starter",
+                        "primoSlug": "starter",
+                        "primoId": 47,
+                        "parentId": 46
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "ES 6 Javascript",
+                        "secondoSlug": "es-6-javascript-applications",
+                        "secondoId": 48,
+                        "parentId": 47
+                    }
+                ],
+                "terzo": [
+                    {
+                        "terzoName": "React Apps",
+                        "terzoSlug": "react-based-applications",
+                        "terzoId": 49,
+                        "parentId": 48
+                    }
+                ]
+            }
+        },
+        {
+            "mainCatName": "Better Apps for Tutors",
+            "mainCatSlug": "better-apps-for-tutors",
+            "mainCatId": 50,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Good Apps",
+                        "primoSlug": "good-apps",
+                        "primoId": 51,
+                        "parentId": 50
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "Math Apps",
+                        "secondoSlug": "math-apps",
+                        "secondoId": 52,
+                        "parentId": 51
+                    }
+                ],
+                "terzo": [
+                    {
+                        "terzoName": "WOOD LAND HEIGHTS",
+                        "terzoSlug": "wood-land-heights-math-apps",
+                        "terzoId": 53,
+                        "parentId": 52
+                    }
+                ]
+            }
+        },
+        {
+            "mainCatName": "Cat Apps That is Better",
+            "mainCatSlug": "cat-apps-that-is-better",
+            "mainCatId": 54,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Math Apps",
+                        "primoSlug": "math-apps-cat-apps-that-is-better",
+                        "primoId": 55,
+                        "parentId": 54
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "GRADE 10",
+                        "secondoSlug": "grade-10-math-apps-cat-apps-that-is-better",
+                        "secondoId": 56,
+                        "parentId": 55
+                    }
+                ],
+                "terzo": [
+                    {
+                        "terzoName": "Atlanta",
+                        "terzoSlug": "atlanta-grade-10-math-apps-cat-apps-that-is-better",
+                        "terzoId": 57,
+                        "parentId": 56
+                    }
+                ]
+            }
+        },
+        {
+            "mainCatName": "Category Moose 0",
+            "mainCatSlug": "category-moose-0",
+            "mainCatId": 196,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Sub-Mosh-category Level One",
+                        "primoSlug": "sub-mosh-category-level-one",
+                        "primoId": 197,
+                        "parentId": 196
+                    }
+                ],
+                "secondo": [],
+                "terzo": []
+            }
+        },
+        {
+            "mainCatName": "Category Moose 1",
+            "mainCatSlug": "category-moose-1",
+            "mainCatId": 199,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Sub-Mosh-category Level One",
+                        "primoSlug": "sub-mosh-category-level-one-category-moose-1",
+                        "primoId": 200,
+                        "parentId": 199
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "Sub-Mosh-category Level Two",
+                        "secondoSlug": "sub-mosh-category-level-two",
+                        "secondoId": 201,
+                        "parentId": 200
+                    }
+                ],
+                "terzo": []
+            }
+        },
+        {
+            "mainCatName": "Category Moose 3",
+            "mainCatSlug": "category-moose-3",
+            "mainCatId": 207,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Sub-Mosh-category Level One",
+                        "primoSlug": "sub-mosh-category-level-one-category-moose-3",
+                        "primoId": 208,
+                        "parentId": 207
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "Sub-Mosh-category Level Two",
+                        "secondoSlug": "sub-mosh-category-level-two-sub-mosh-category-level-one-category-moose-3",
+                        "secondoId": 209,
+                        "parentId": 208
+                    }
+                ],
+                "terzo": []
+            }
+        },
+        {
+            "mainCatName": "Teaching",
+            "mainCatSlug": "teaching",
+            "mainCatId": 29,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Physics",
+                        "primoSlug": "physics",
+                        "primoId": 30,
+                        "parentId": 29
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "Grade 2",
+                        "secondoSlug": "grade-2",
+                        "secondoId": 31,
+                        "parentId": 30
+                    }
+                ],
+                "terzo": [
+                    {
+                        "terzoName": "New York",
+                        "terzoSlug": "new-york",
+                        "terzoId": 32,
+                        "parentId": 31
+                    }
+                ]
+            }
+        },
+        {
+            "mainCatName": "Tutoring",
+            "mainCatSlug": "tutoring",
+            "mainCatId": 4,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Biology",
+                        "primoSlug": "biology",
+                        "primoId": 58,
+                        "parentId": 4
+                    },
+                    {
+                        "primoName": "English",
+                        "primoSlug": "english",
+                        "primoId": 13,
+                        "parentId": 4
+                    },
+                    {
+                        "primoName": "MATH",
+                        "primoSlug": "math",
+                        "primoId": 16,
+                        "parentId": 4
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "College",
+                        "secondoSlug": "college",
+                        "secondoId": 62,
+                        "parentId": 58
+                    },
+                    {
+                        "secondoName": "GRADE 10",
+                        "secondoSlug": "grade-10-biology",
+                        "secondoId": 61,
+                        "parentId": 58
+                    },
+                    {
+                        "secondoName": "Grade 8",
+                        "secondoSlug": "grade-8",
+                        "secondoId": 59,
+                        "parentId": 58
+                    },
+                    {
+                        "secondoName": "GRADE 10",
+                        "secondoSlug": "grade-10",
+                        "secondoId": 14,
+                        "parentId": 13
+                    },
+                    {
+                        "secondoName": "GRADE 10",
+                        "secondoSlug": "grade-10-math",
+                        "secondoId": 25,
+                        "parentId": 16
+                    },
+                    {
+                        "secondoName": "GRADE 9",
+                        "secondoSlug": "grade-9",
+                        "secondoId": 17,
+                        "parentId": 16
+                    }
+                ],
+                "terzo": [
+                    {
+                        "terzoName": "Atlanta",
+                        "terzoSlug": "atlanta-college",
+                        "terzoId": 65,
+                        "parentId": 62
+                    },
+                    {
+                        "terzoName": "Georgia",
+                        "terzoSlug": "georgia-college",
+                        "terzoId": 66,
+                        "parentId": 62
+                    },
+                    {
+                        "terzoName": "JACKSON HEIGHTS",
+                        "terzoSlug": "jackson-heights-college",
+                        "terzoId": 63,
+                        "parentId": 62
+                    },
+                    {
+                        "terzoName": "Atlanta",
+                        "terzoSlug": "atlanta-grade-10-biology",
+                        "terzoId": 67,
+                        "parentId": 61
+                    },
+                    {
+                        "terzoName": "JACKSON HEIGHTS",
+                        "terzoSlug": "jackson-heights-grade-10-biology",
+                        "terzoId": 68,
+                        "parentId": 61
+                    },
+                    {
+                        "terzoName": "WOOD LAND HEIGHTS",
+                        "terzoSlug": "wood-land-heights-grade-10-biology",
+                        "terzoId": 69,
+                        "parentId": 61
+                    },
+                    {
+                        "terzoName": "JACKSON HEIGHTS",
+                        "terzoSlug": "jackson-heights-grade-8",
+                        "terzoId": 71,
+                        "parentId": 59
+                    },
+                    {
+                        "terzoName": "WOOD LAND HEIGHTS",
+                        "terzoSlug": "wood-land-heights-grade-8",
+                        "terzoId": 70,
+                        "parentId": 59
+                    },
+                    {
+                        "terzoName": "JACKSON HEIGHTS",
+                        "terzoSlug": "jackson-heights",
+                        "terzoId": 15,
+                        "parentId": 14
+                    },
+                    {
+                        "terzoName": "JACKSON HEIGHTS",
+                        "terzoSlug": "jackson-heights-grade-10-math",
+                        "terzoId": 26,
+                        "parentId": 25
+                    },
+                    {
+                        "terzoName": "WOOD LAND HEIGHTS",
+                        "terzoSlug": "wood-land-heights",
+                        "terzoId": 18,
+                        "parentId": 17
+                    }
+                ]
+            }
+        },
+        {
+            "mainCatName": "Tutors",
+            "mainCatSlug": "tutors",
+            "mainCatId": 33,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "Java",
+                        "primoSlug": "java",
+                        "primoId": 34,
+                        "parentId": 33
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "Basic",
+                        "secondoSlug": "basic",
+                        "secondoId": 35,
+                        "parentId": 34
+                    }
+                ],
+                "terzo": [
+                    {
+                        "terzoName": "California",
+                        "terzoSlug": "california",
+                        "terzoId": 36,
+                        "parentId": 35
+                    },
+                    {
+                        "terzoName": "Georgia",
+                        "terzoSlug": "georgia",
+                        "terzoId": 37,
+                        "parentId": 35
+                    },
+                    {
+                        "terzoName": "Ohio",
+                        "terzoSlug": "ohio",
+                        "terzoId": 38,
+                        "parentId": 35
+                    }
+                ]
+            }
+        },
+        {
+            "mainCatName": "Tuts",
+            "mainCatSlug": "tuts",
+            "mainCatId": 19,
+            "0": {
+                "primo": [
+                    {
+                        "primoName": "PHP Tutorial",
+                        "primoSlug": "php-tutorial",
+                        "primoId": 20,
+                        "parentId": 19
+                    }
+                ],
+                "secondo": [
+                    {
+                        "secondoName": "Advance",
+                        "secondoSlug": "advance",
+                        "secondoId": 27,
+                        "parentId": 20
+                    },
+                    {
+                        "secondoName": "Beginners",
+                        "secondoSlug": "beginners",
+                        "secondoId": 23,
+                        "parentId": 20
+                    }
+                ],
+                "terzo": [
+                    {
+                        "terzoName": "WOOD LAND HEIGHTS",
+                        "terzoSlug": "wood-land-heights-advance",
+                        "terzoId": 28,
+                        "parentId": 27
+                    },
+                    {
+                        "terzoName": "JACKSON HEIGHTS",
+                        "terzoSlug": "jackson-heights-beginners",
+                        "terzoId": 24,
+                        "parentId": 23
+                    }
+                ]
+            }
+        }
+    ]
+}

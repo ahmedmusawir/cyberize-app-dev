@@ -9,6 +9,7 @@ import SelflistTerzoCatInsertUI from './_modules/SelflistTerzoCatInsertUI';
 
 // TEST CODE HERE
 import InsertPost from './_modules/_test/insertPost';
+import TestGetJson from './_modules/_test/testGetJson';
 
 class App {
   constructor() {
@@ -37,6 +38,7 @@ class App {
 
   runTestCode = () => {
     new InsertPost();
+    new TestGetJson();
   }
 }
 

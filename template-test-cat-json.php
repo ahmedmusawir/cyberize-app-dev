@@ -25,7 +25,7 @@ get_header();
 
       <?php 
     
-           /**
+      /**
        * 1ST LEVEL BEGINS
        */
       $args = array( 
@@ -37,9 +37,7 @@ get_header();
       $main_cats = get_categories($args);
 
       $results = array(
-        'mainCat' => array(
-          // 'primo' => array()
-        )
+        'mainCat' => array()
       );
       
       /**
@@ -50,15 +48,22 @@ get_header();
         $new_results = get_selflist_sub_cats_to_json($main_cat->term_id);
 
         array_push($results['mainCat'], array(
-          'main-cat-name' => $main_cat->name,
-          'main-cat-slug' => $main_cat->slug,
-          'main-cat-id' => $main_cat->term_id,
+          'mainCatName' => $main_cat->name,
+          'mainCatSlug' => $main_cat->slug,
+          'mainCatId' => $main_cat->term_id,
           $new_results
         ));
       }
 
       $json_data = json_encode($results, JSON_PRETTY_PRINT);
       echo $json_data;
+
+      // WRITING TO A JSON FILE
+      $cat_json_dir = wp_upload_dir()['basedir'];
+      $json_file = '/categories.json';
+      $file_location = $cat_json_dir . $json_file;
+      // print_r($file_location);
+      file_put_contents($file_location, $json_data);
     
     ?>
 
