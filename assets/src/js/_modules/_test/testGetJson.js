@@ -36,24 +36,21 @@ class TestGetJson {
         console.log(catData.mainCatName, catData.mainCatId);
       })
     });
-
-
-
   }
   makeMainCatList = (thePromise) => {
     // console.log(thePromise);
     thePromise.then((d) => {
       let data = d.mainCat;
-      console.log(data);
+      // console.log(data);
       const selected = data.filter(cat => cat.mainCatId == '4');
-      // console.log(selected);
-      // console.log(selected[0].mainCatName);
-      // console.log(selected[0][0].primo);
+      console.log(selected);
+      console.log(selected[0].mainCatName);
+      console.log(selected[0][0].primo);
       // console.log(selected[0][0]);
-      // const secondo = selected[0][0].secondo.filter(sec => sec.parentId == '58');
-      // console.log(secondo);
-      // const terzo = selected[0][0].terzo.filter(sec => sec.parentId == '61');
-      // console.log(terzo);
+      const secondo = selected[0][0].secondo.filter(sec => sec.parentId == '58');
+      console.log(secondo);
+      const terzo = selected[0][0].terzo.filter(sec => sec.parentId == '61');
+      console.log(terzo);
     });
   }
 

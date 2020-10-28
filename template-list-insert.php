@@ -64,9 +64,9 @@ get_header();
 
               <div class="col-sm-8">
                 <article class="main-cat-box">
-                  <select id="select-state" placeholder="Pick A Main Category...">
+                  <select id="select-main-cats" class="select-main-cats" placeholder="Pick A Main Category...">
                     <option value="">Select a Main Caterory...</option>
-                    <option value="AL">Tutoring</option>
+                    <!-- <option value="AL">Tutoring</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
                     <option value="AR">Arkansas</option>
@@ -80,7 +80,7 @@ get_header();
                     <option value="HI">Hawaii</option>
                     <option value="ID">Idaho</option>
                     <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
+                    <option value="IN">Indiana</option> -->
                   </select>
                 </article>
               </div>
@@ -329,11 +329,11 @@ foreach($categories as $category) : ?>
 
   <footer>
     <script>
-    $(document).ready(function() {
-      $('select').selectize({
-        sortField: 'text'
-      });
-    });
+    // $(document).ready(function() {
+    //   $('select').selectize({
+    //     sortField: 'text'
+    //   });
+    // });
     </script>
   </footer>
 

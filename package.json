@@ -83,6 +83,8 @@
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "selectize": "^0.12.6",
+    "selectize.js": "^0.12.12"
   }
 }

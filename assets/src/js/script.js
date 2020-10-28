@@ -6,6 +6,7 @@ import SelflistMainCatInsertUI from './_modules/SelflistMainCatInsertUI';
 import SelflistPrimoCatInsertUI from './_modules/SelflistPrimoCatInsertUI';
 import SelflistSecondoCatInsertUI from './_modules/SelflistSecondoCatInsertUI';
 import SelflistTerzoCatInsertUI from './_modules/SelflistTerzoCatInsertUI';
+import SelfListCatInsertDropdowns from './_modules/SelflistCatInsertDropdowns';
 
 // TEST CODE HERE
 import InsertPost from './_modules/_test/insertPost';
@@ -34,11 +35,14 @@ class App {
     new SelflistSecondoCatInsertUI();
     // Selflist Insert Terzo Category UI - List Insert Page
     new SelflistTerzoCatInsertUI();
+
+    // SELFLIST CAT INSERT DROPDOWNS
+    new SelfListCatInsertDropdowns();
   }
 
   runTestCode = () => {
-    new InsertPost();
-    new TestGetJson();
+    // new InsertPost();
+    // new TestGetJson();
   }
 }
 
