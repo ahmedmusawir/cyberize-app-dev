@@ -1,13 +1,12 @@
 import SelflistSearch from './_modules/SelflistSearch';
 import SelflistCatSearch from './_modules/SelflistCatSearch';
 import SelflistPostSearch from './_modules/SelflistPostSearch';
-import SelflistCatInsertUI from './_modules/SelflistCatInsertUI';
 import SelflistMainCatInsertUI from './_modules/SelflistMainCatInsertUI';
 import SelflistPrimoCatInsertUI from './_modules/SelflistPrimoCatInsertUI';
 import SelflistSecondoCatInsertUI from './_modules/SelflistSecondoCatInsertUI';
 import SelflistTerzoCatInsertUI from './_modules/SelflistTerzoCatInsertUI';
-import SelfListCatInsertDropdowns from './_modules/SelflistCatInsertDropdowns';
-
+import CatInsertDataParent from './_modules/selflist-crud/cat-dropdowns/CatInsertDataParent';
+import CatInsertEvents from './_modules/selflist-crud/cat-dropdowns/CatInsertEvents';
 // TEST CODE HERE
 import InsertPost from './_modules/_test/insertPost';
 import TestGetJson from './_modules/_test/testGetJson';
@@ -24,8 +23,6 @@ class App {
     new SelflistCatSearch();
     // Selflist Post Item Search Filter - non REST
     new SelflistPostSearch();
-    // ORIGINAL: Selflist Insert Category UI - List Insert Page
-    // new SelflistCatInsertUI();
 
     // Selflist Insert Main Category UI - List Insert Page
     new SelflistMainCatInsertUI();
@@ -37,7 +34,8 @@ class App {
     new SelflistTerzoCatInsertUI();
 
     // SELFLIST CAT INSERT DROPDOWNS
-    new SelfListCatInsertDropdowns();
+    new CatInsertDataParent();
+    new CatInsertEvents();
   }
 
   runTestCode = () => {
