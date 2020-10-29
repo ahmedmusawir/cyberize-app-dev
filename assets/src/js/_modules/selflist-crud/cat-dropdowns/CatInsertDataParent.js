@@ -26,6 +26,8 @@ class CatInsertDataParent {
     // this.selectize = this.selectMainCats[0].selectize;
     this.selectizeMain = this.selectMainCats[0].selectize;
     this.selectizePrimo = this.selectPrimoCats[0].selectize;
+    this.selectizeSecondo = this.selectSecondoCats[0].selectize;
+    this.selectizeTerzo = this.selectTerzoCats[0].selectize;
   }
 
   init = () => {

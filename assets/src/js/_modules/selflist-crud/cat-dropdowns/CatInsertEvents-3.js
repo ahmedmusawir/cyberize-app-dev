@@ -47,44 +47,6 @@ class CatInsertEvents extends CatInsertDataParent {
   secondoCatsSelectHandler() {
     this.selectizeSecondo.clear(); // Resets all selected items from selectize 
     this.selectizeSecondo.clearOptions(); // Removes all options from selectize 
-
-    // COLLECTING MAIN CAT SELECTED ID
-    const currentMainId = this.selectizeMain.getValue();
-    // console.log(currentMainId);
-
-    // COLLECTED PRIMO CAT SELECTED ID
-    const currentPrimoId = this.selectizePrimo.getValue();
-    // console.log(currentPrimoId);
-
-    if (currentMainId && currentPrimoId) {
-      this.thePromise.then((d) => {
-        let data = d.mainCat;
-
-        // ISOLATING CATS ACCORDING TO MAIN CAT SELECTION AT THE TOP MAIN CAT SELECT
-        const selected = data.filter(cat => cat.mainCatId == currentMainId);
-        // COLLECTING SECONDO CATS ACCORDING TO MAN CAT SELECTION AT THE MAIN CAT SELECT
-        let secondoCats = selected[0][0].secondo;
-        // console.log(secondoCats);
-
-        // FILTERING SECONDO CATS ACCORDING TO PRIMO CAT SELECTED AT THE PRIMO SELECT 
-        const selectedSecondo = secondoCats.filter(cat => cat.parentId == currentPrimoId);
-        console.log(selectedSecondo);
-
-        // POPULATING SECONDO SELECT WITH FILTERED SECONDO DATA 
-        selectedSecondo.map(secondoData => {
-          // console.log(secondoData.secondoName, secondoData.secondoId);
-          // ADDING ITEMS DYNAMICALLY
-          const selectOptions = { value: secondoData.secondoId, text: secondoData.secondoName };
-          this.selectizeSecondo.addOption(selectOptions);
-          this.selectizeSecondo.refreshItems();
-        });
-      });
-    }
-  }
-
-  _secondoCatsSelectHandler() {
-    this.selectizeSecondo.clear(); // Resets all selected items from selectize 
-    this.selectizeSecondo.clearOptions(); // Removes all options from selectize 
     const currentPrimoId = this.selectizePrimo.getValue();
     console.log(currentPrimoId);
     // console.log(this.thePromise);
