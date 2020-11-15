@@ -26,12 +26,14 @@ class CatInsertDataParent {
     // this.selectize = this.selectMainCats[0].selectize;
     this.selectizeMain = this.selectMainCats[0].selectize;
     this.selectizePrimo = this.selectPrimoCats[0].selectize;
+    // console.log(this.selectizePrimo);
     this.selectizeSecondo = this.selectSecondoCats[0].selectize;
+    // console.log(this.selectizeSecondo);
     this.selectizeTerzo = this.selectTerzoCats[0].selectize;
   }
 
   init = () => {
-    console.log('Cat Data Parent ...');
+    // console.log('Cat Data Parent ...');
   };
 
   async getData(url) {
