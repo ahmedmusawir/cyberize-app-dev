@@ -22,7 +22,7 @@ class ListInsertEvents extends CatInsertDataParent {
   };
 
   clickInsertListHandler = () => {
-    console.log('List Submit Clicked');
+    // console.log('List Submit Clicked');
     // COLLECTING FORM DATA
     // COLLECTING MAIN CAT SELECTED ID
     const currentMainId = this.selectizeMain.getValue();
@@ -40,35 +40,29 @@ class ListInsertEvents extends CatInsertDataParent {
     const currentTerzoId = this.selectizeTerzo.getValue();
     console.log('Current Terzo ID: ', currentTerzoId);
 
-    // PREPARING FORM DATA FOR REST API
+    // COLLECTING FORM DATA
     const name = $('#lister-name').val();
+    const listTitle = `This List Posted by: ${name}`;
     const address = $('#lister-address').val();
     const description = $('#lister-description').val();
-    const categoryId = `${currentMainId}, ${currentPrimoId}, ${currentSecondoId}, ${currentTerzoId}`
+    const categoryIds = `${currentMainId}, ${currentPrimoId}, ${currentSecondoId}, ${currentTerzoId}`;
 
     console.log(`NAME: ${name}`);
     console.log(`ADDRESS: ${address}`);
     console.log(`DESCRIPTION: ${description}`);
-    console.log(`CATEGORY: ${categoryId}`);
+    console.log(`CATEGORY: ${categoryIds}`);
 
-  }
-
-  // DELETE ME LATER ... JUST EXAMPLE
-  clickInsertHandler() {
-    let name = $('#new-note-name').val();
-    let address = $('#new-note-address').val();
-
-    console.log(`NAME: ${name}`);
-    console.log(`ADDRESS: ${address}`);
-
+    // PREPARING FORM DATA FOR REST API
     let newPostData = {
-      title: $('.new-note-title').val(),
-      content: $('.new-note-body').val(),
+      title: listTitle,
+      content: description,
+      categories: categoryIds,
       "fields[your_name]": name, // ACF Item
       "fields[your_address]": address, // ACF Item
       status: 'publish'
     }
 
+    // AJAX POST INSERT
     $.ajax({
       beforeSend: (xhr) => {
         xhr.setRequestHeader('X-WP-Nonce', selflistData.nonce);
@@ -88,7 +82,15 @@ class ListInsertEvents extends CatInsertDataParent {
       .always(() => {
         console.info('Ajax finished as always...');
       });
+
+    // RESET FORM
+    this.selectizeMain.clear();
+    this.selectizePrimo.clear();
+    this.selectizeSecondo.clear();
+    this.selectizeTerzo.clear();
+
   }
+
 
 }
 
