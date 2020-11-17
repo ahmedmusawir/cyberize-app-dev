@@ -88,9 +88,11 @@ class ListInsertEvents extends CatInsertDataParent {
     this.selectizePrimo.clear();
     this.selectizeSecondo.clear();
     this.selectizeTerzo.clear();
+    $('#lister-name').val('');
+    $('#lister-address').val('');
+    $('#lister-description').val();
 
   }
-
 
 }
 
