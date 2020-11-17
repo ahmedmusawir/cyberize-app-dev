@@ -68,18 +68,6 @@ get_header();
                     <option value="">Select a Main Caterory...</option>
                     <!-- <option value="AL">Tutoring</option>
                     <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
                     <option value="IN">Indiana</option> -->
                   </select>
                 </article>
@@ -102,18 +90,6 @@ get_header();
                     <option value="">Select a Primo...</option>
                     <!-- <option value="AL">Math</option>
                     <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
                     <option value="IN">Indiana</option> -->
                   </select>
                 </article>
@@ -136,18 +112,6 @@ get_header();
                     <option value="">Select a Secondo...</option>
                     <!-- <option value="AL">Grade 10</option>
                     <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
                     <option value="IN">Indiana</option> -->
                   </select>
                 </article>
@@ -170,18 +134,6 @@ get_header();
                     <option value="">Select a Terzo</option>
                     <!-- <option value="AL">Jackson Heights</option>
                     <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
                     <option value="IN">Indiana</option> -->
                   </select>
                 </article>
@@ -199,19 +151,19 @@ get_header();
           </section>
 
           <div class="form-group mt-5">
-            <label class="font-weight-bold" for="exampleFormControlTextarea1">Description:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+            <label class="font-weight-bold" for="lister-description">Description:</label>
+            <textarea class="form-control" id="lister-description" rows="3"
               placeholder="Add details of your list ..."></textarea>
           </div>
 
           <div class="form-group">
-            <label class="font-weight-bold" for="exampleFormControlTextarea1">Contact Info:</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
+            <label class="font-weight-bold" for="lister-name">Contact Info:</label>
+            <input type="text" class="form-control" id="lister-name" aria-describedby="textHelp"
               placeholder="Your Name">
             <small id="textHelp" class="form-text text-muted">Example: Donald Trump</small>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
+            <input type="text" class="form-control" id="lister-address" aria-describedby="textHelp"
               placeholder="Your Address">
             <small id="textHelp" class="form-text text-muted">Example: Trump Tower, 721 Fifth Avenue New York City, NY
               10022 United States </small>
@@ -229,7 +181,9 @@ get_header();
             <small id="textHelp" class="form-text text-muted">Example: https://instagram.com/mypage</small>
           </div>
 
-          <button id="#" type="submit" class="btn btn-primary">Submit</button>
+          <button id="list-insert-button" type="button" class="btn btn-primary">
+            Submit Your List
+          </button>
 
           <!-- END OTHER INFO INPUTS  -->
 

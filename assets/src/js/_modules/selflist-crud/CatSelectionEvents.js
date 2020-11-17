@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { selectize } from 'selectize';
 import CatInsertDataParent from './CatInsertDataParent';
 
-class CatInsertEvents extends CatInsertDataParent {
+class CatSelectionEvents extends CatInsertDataParent {
   constructor() {
     super();
     this.setEvents();
@@ -133,7 +133,6 @@ class CatInsertEvents extends CatInsertDataParent {
     }
   }
 
-
 }
 
-export default CatInsertEvents;
+export default CatSelectionEvents;

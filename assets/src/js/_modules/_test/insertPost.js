@@ -5,6 +5,7 @@ class InsertPost {
     this.init();
     // COLLECTING BUTTON
     this.button = $('#insert-test-post');
+    // SETTING EVENTS
     this.setEvents();
   }
 
