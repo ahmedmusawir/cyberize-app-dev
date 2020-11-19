@@ -105,6 +105,7 @@ require get_theme_file_path('/_functions/selflist/selflist-post-acf-to-rest.php'
 // require get_theme_file_path('/_functions/selflist/selflist-post-title.php');
 
 // SELFTLIST CREATE CATEGORIES TEST
+require get_theme_file_path('/_functions/selflist/ajax/selflist-main-cat-insert-ajax.php');
 // require get_theme_file_path('/_functions/selflist/selflist-create-categories.php');
 // include get_theme_file_path('/_functions/selflist/selflist-create-categories.php');
 

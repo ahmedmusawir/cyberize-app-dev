@@ -13,7 +13,7 @@ class ListInsertEvents extends CatInsertDataParent {
   }
 
   init = () => {
-    console.log('ListInsertEvents - Insert Post');
+    // console.log('ListInsertEvents - Insert Post');
   };
 
   setEvents = () => {

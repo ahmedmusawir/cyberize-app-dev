@@ -1,12 +1,12 @@
 <?php 
 
-$category_name = 'Category Moose 7';
-$sub_cat_1 = 'Sub Cat Primo';
-// $sub_cat_1_slug = sanitize_title($title);
-$sub_cat_2 = 'Sub Cat Secondo';
-// $sub_cat_2_slug = sanitize_title($sub_cat_2);
-$sub_cat_3 = 'Sub Cat Terzo';
-// $sub_cat_3_slug = sanitize_title($sub_cat_3);
+$category_name = 'Category Moose 4';
+$sub_cat_1 = 'Sub-Mosh-category Level One';
+$sub_cat_1_slug = sanitize_title($title);
+$sub_cat_2 = 'Sub-Mosh-category Level Two';
+$sub_cat_2_slug = sanitize_title($sub_cat_2);
+$sub_cat_3 = 'Sub-Mosh-category Level Three';
+$sub_cat_3_slug = sanitize_title($sub_cat_3);
 
 
 /**
@@ -43,7 +43,7 @@ $sub_cat_1_info = wp_insert_term(
 
   array(
   // what to use in the url for term archive
-  // 'slug' => $sub_cat_1_slug, 
+  'slug' => $sub_cat_1_slug, 
 
   // link with main category. In the case, become a child of the "Category A" parent  
   'parent'=> $main_cat_id
@@ -68,7 +68,7 @@ $sub_cat_2_info = wp_insert_term(
 
   array(
   // what to use in the url for term archive
-  // 'slug' => $sub_cat_2_slug, 
+  'slug' => $sub_cat_2_slug, 
 
   // link with main category. In the case, become a child of the "Category A" parent  
   'parent'=> $sub_cat_1_id
@@ -91,12 +91,29 @@ $sub_cat_3_info = wp_insert_term(
 
   array(
   // what to use in the url for term archive
-  // 'slug' => $sub_cat_3_slug, 
+  'slug' => $sub_cat_3_slug, 
 
   // link with main category. In the case, become a child of the "Category A" parent  
   'parent'=> $sub_cat_2_id
 
   )
 );
-
+// COLLECTING SUB CATEGORY 3 ID
+$sub_cat_3_id = $sub_cat_3_info['term_id'];
     
+/**
+ * INSERT LIST
+ */
+// Gather post data.
+$list_content = 'List content with cats and subcats for testing 1';
+
+$list_args = array(
+  // 'post_title'    => '',
+  // 'post_author'   => 1,
+  'post_content'  => $list_content,
+  'post_status'   => 'draft',
+  'post_category' => array( $main_cat_id, $sub_cat_1_id, $sub_cat_2_id, $sub_cat_3_id )
+);
+
+// Insert the post into the database.
+wp_insert_post( $list_args );

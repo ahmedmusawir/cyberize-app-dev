@@ -13,9 +13,15 @@ class CatSelectionEvents extends CatInsertDataParent {
   };
 
   setEvents = () => {
-    this.selectizeMain.on('change', this.mainCatsSelectHandler.bind(this));
-    this.selectizePrimo.on('change', this.primoCatsSelectHandler.bind(this));
-    this.selectizeSecondo.on('change', this.secondoCatsSelectHandler.bind(this));
+    if (this.selectizeMain) {
+      this.selectizeMain.on('change', this.mainCatsSelectHandler.bind(this));
+    }
+    if (this.selectizePrimo) {
+      this.selectizePrimo.on('change', this.primoCatsSelectHandler.bind(this));
+    }
+    if (this.selectizeSecondo) {
+      this.selectizeSecondo.on('change', this.secondoCatsSelectHandler.bind(this));
+    }
   };
 
   mainCatsSelectHandler() {
@@ -98,8 +104,8 @@ class CatSelectionEvents extends CatInsertDataParent {
     const currentMainId = this.selectizeMain.getValue();
     // console.log('Current Main Cat ID: ', currentMainId);
 
-    // COLLECTED PRIMO CAT SELECTED ID
-    const currentPrimoId = this.selectizePrimo.getValue();
+    // COLLECTED PRIMO CAT SELECTED ID - NO NEED
+    // const currentPrimoId = this.selectizePrimo.getValue();
     // console.log('Current Primo ID: ', currentPrimoId);
 
     // COLLECTED SECONDO CAT SELECTED ID
@@ -107,7 +113,7 @@ class CatSelectionEvents extends CatInsertDataParent {
     // console.log('Current Secondo ID: ', currentSecondoId);
 
     // COLLECTING DATA FROM FILE READ PROMISE WITHOUT MAKING ANOTHER AJAX CALL
-    if (currentMainId && currentPrimoId && currentSecondoId) {
+    if (currentMainId && currentSecondoId) {
       this.thePromise.then((d) => {
         let data = d.mainCat;
 

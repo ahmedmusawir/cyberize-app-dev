@@ -16,6 +16,7 @@ function cyberize_scripts() {
 
   wp_localize_script('selflist-main-js', 'selflistData', array(
 		'root_url' => get_site_url(),
+		'ajax_url' => admin_url('admin-ajax.php'),
 		'nonce' => wp_create_nonce('wp_rest')
 	));
 	

@@ -34,11 +34,11 @@ class SelflistCatInsertUI {
   }
 
   testUICatSubmitHandler() {
-    console.log('clicked');
-    this.mainCategoryInsertContainer.addClass('d-none');
-    this.newListContainer.removeClass('d-none');
-    this.categoryChoiceContainer.addClass('d-none');
-    this.testUICatContainer.removeClass('d-none');
+    console.log('clicked now');
+    // this.mainCategoryInsertContainer.addClass('d-none');
+    // this.newListContainer.removeClass('d-none');
+    // this.categoryChoiceContainer.addClass('d-none');
+    // this.testUICatContainer.removeClass('d-none');
   }
 }
 
