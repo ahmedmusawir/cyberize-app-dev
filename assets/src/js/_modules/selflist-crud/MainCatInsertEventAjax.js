@@ -11,9 +11,9 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
     this.submitMainCatBtn = $('#main-cat-insert-submit-btn');
     // COLLECTING AJAX INFO
     this.ajaxUrl = selflistData.ajax_url;
-    console.log(this.ajaxUrl);
+    // console.log(this.ajaxUrl);
     this.ajaxFunction = 'selflist_main_cat_insert_ajax';
-    console.log(this.ajaxFunction);
+    // console.log(this.ajaxFunction);
     this.setEvents();
   }
 
@@ -26,6 +26,8 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
   };
 
   mainCatSubmitHandler = (e) => {
+    e.stopImmediatePropagation();
+
     console.log('Main Cat Submit Clicked');
     const mainCat = $('#main-input-main-cat').val();
     const primoCat = $('#main-input-primo-cat').val();
@@ -37,7 +39,6 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
     console.log(secondoCat);
     console.log(terzoCat);
 
-    e.stopImmediatePropagation();
 
     $.ajax({
       url: this.ajaxUrl,
@@ -52,6 +53,8 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
     })
       .done(function (res) {
         $('#main-cat-insert-box').append(res);
+
+        console.log(res);
         console.log('Ajax Main Cat Insert Success!');
 
       })
