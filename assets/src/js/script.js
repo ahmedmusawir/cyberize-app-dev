@@ -12,6 +12,7 @@ import MainCatInsertEventAjax from './_modules/selflist-crud/MainCatInsertEventA
 // TEST CODE HERE
 import InsertPost from './_modules/_test/insertPost';
 import TestGetJson from './_modules/_test/testGetJson';
+import FormValdationTest from './_modules/_test/formVaidationTest';
 
 class App {
   constructor() {
@@ -47,6 +48,7 @@ class App {
   runTestCode = () => {
     // new InsertPost();
     // new TestGetJson();
+    new FormValdationTest();
   }
 }
 

@@ -57,6 +57,16 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
         console.log(res);
         console.log('Ajax Main Cat Insert Success!');
 
+        // STORING CAT DATA
+        localStorage.setItem('catData', JSON.stringify(res));
+        // COLLECTING CAT DATA
+        const catData = JSON.parse(localStorage.getItem('catData'));
+        // console.log('catData from LocalStorage: ', catData);
+        console.log('main cat from LocalStorage: ', catData.main_cat);
+        console.log('primo cat from LocalStorage: ', catData.primo_cat);
+        console.log('secondo cat from LocalStorage: ', catData.secondo_cat);
+        console.log('terzo cat from LocalStorage: ', catData.terzo_cat);
+
       })
       .fail(function () {
         console.log('Ajax Failed!');
