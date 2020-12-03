@@ -1,3 +1,8 @@
+// TEST CODE HERE
+import InsertPost from './_modules/_test/insertPost';
+import TestGetJson from './_modules/_test/testGetJson';
+import FormValdationTest from './_modules/_test/formVaidationTest';
+// PRODUCTION CODE HERE
 import SelflistSearch from './_modules/SelflistSearch';
 import SelflistCatSearch from './_modules/SelflistCatSearch';
 import SelflistPostSearch from './_modules/SelflistPostSearch';
@@ -9,10 +14,7 @@ import CatInsertDataParent from './_modules/selflist-crud/CatInsertDataParent';
 import CatSelectionEvents from './_modules/selflist-crud/CatSelectionEvents';
 import ListInsertEvents from './_modules/selflist-crud/ListInsertEvents';
 import MainCatInsertEventAjax from './_modules/selflist-crud/MainCatInsertEventAjax';
-// TEST CODE HERE
-import InsertPost from './_modules/_test/insertPost';
-import TestGetJson from './_modules/_test/testGetJson';
-import FormValdationTest from './_modules/_test/formVaidationTest';
+import MainCatFormValdation from './_modules/selflist-crud/MainCatFormVaidation';
 
 class App {
   constructor() {
@@ -41,8 +43,10 @@ class App {
     new CatSelectionEvents();
     // LIST INSERT PAGE MAIN POST INSERT EVENTS
     new ListInsertEvents();
-    // LIST INSERT PAGE CAT INSERT EVENTS
+    // CAT INSERT PAGE AJAX
     new MainCatInsertEventAjax();
+    // CAT INSERT PAGE FORM VALIDATION
+    new MainCatFormValdation();
   }
 
   runTestCode = () => {

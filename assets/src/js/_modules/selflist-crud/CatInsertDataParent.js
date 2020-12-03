@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import { selectize } from 'selectize';
+// FOLLOWING NEEDED EVERY TIME ASYNC AWAIT IS USED
+import regeneratorRuntime from "regenerator-runtime";
 
 class CatInsertDataParent {
   constructor() {

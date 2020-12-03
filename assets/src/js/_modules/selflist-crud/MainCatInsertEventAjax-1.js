@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { selectize } from 'selectize';
 import CatInsertDataParent from './CatInsertDataParent';
 
 // LOOK INTO SelflistCatInsertUI.js FILE ... THIS IS NOTHING
@@ -51,7 +52,7 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
       },
     })
       .done(function (res) {
-        $('#ajax-failed-message').append(res);
+        $('#main-cat-insert-box').append(res);
 
         console.log(res);
         console.log('Ajax Main Cat Insert Success!');

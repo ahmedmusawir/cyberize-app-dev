@@ -8,37 +8,81 @@
 <section id="main-cat-insert-box" class="card p-5 animate__animated animate__zoomIn">
   <!-- PUT THE FOLLOWING LINE BACK ON AFTER DEV -->
   <!-- <section id="main-cat-insert-box" class="card p-5 d-none animate__animated animate__zoomIn"> -->
+  <style>
+  .error {
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+
+  input {
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+  </style>
 
   <div class="form-box">
 
-    <form>
+    <form action="" name="main-cat-insert-form" id="main-cat-insert-form" class="form">
+
       <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert New Category and
         Subcategories</label>
+      <div class="form-group">
+        <input type="text" class="form-control" id="main-input-main-cat" name="main-input-main-cat"
+          aria-describedby="textHelp" placeholder="New Main Category" required>
+        <small id="textHelp" class="form-text text-muted">
+          Main Category (25 Char Limit. Letters & Space only)
+        </small>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="main-input-primo-cat" name="main-input-primo-cat"
+          aria-describedby="textHelp" placeholder="New Primo Category" required>
+        <small id="textHelp" class="form-text text-muted">
+          Primo Category (20 Char Limit. Letters & Space only)
+        </small>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="main-input-secondo-cat" name="main-input-secondo-cat"
+          aria-describedby="textHelp" placeholder="New Secondo Category" required>
+        <small id="textHelp" class="form-text text-muted">
+          Secondo Category (20 Char Limit. Letters & Space only)
+        </small>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="main-input-terzo-cat" name="main-input-terzo-cat"
+          aria-describedby="textHelp" placeholder="New Terzo Category" required>
+        <small id="textHelp" class="form-text text-muted">
+          Terzo Category (20 Char Limit. Letters & Space only)
+        </small>
+      </div>
 
-      <div class="form-group">
-        <input type="text" class="form-control" id="main-input-main-cat" aria-describedby="textHelp"
-          placeholder="New Main Category">
-        <small id="textHelp" class="form-text text-muted">This is the Main Category</small>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="main-input-primo-cat" aria-describedby="textHelp"
-          placeholder="New Primo Category">
-        <small id="textHelp" class="form-text text-muted">This is the Primo Category</small>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="main-input-secondo-cat" aria-describedby="textHelp"
-          placeholder="New Secondo Category">
-        <small id="textHelp" class="form-text text-muted">This is the Secondo Category</small>
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="main-input-terzo-cat" aria-describedby="textHelp"
-          placeholder="New Terzo Category">
-        <small id="textHelp" class="form-text text-muted">This is the Terzo Category</small>
-      </div>
-
-      <button id="main-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Submit</button>
+      <button id="main-cat-insert-validation-btn" type="submit" class="btn btn-primary btn-block">Submit</button>
     </form>
 
   </div>
+
+</section>
+
+<section id="main-cat-user-validation-box" class="card p-5 animate__animated animate__zoomIn">
+
+
+  <ul class="list-group">
+    <li class="list-group-item active bg-light text-primary">Please Verify Categories Before Creating:<br>
+      <small>(You cannot edit categories once they are created)</small>
+    </li>
+    <li class="list-group-item">Main Category: <span class="pl-3 font-weight-bold" id="main-input"></span></li>
+    <li class="list-group-item">Primo Category: <span class="pl-3 font-weight-bold" id="primo-input"></span></li>
+    <li class="list-group-item">Secondo Category: <span class="pl-3 font-weight-bold" id="secondo-input"></span></li>
+    <li class="list-group-item">Terzo Category: <span class="pl-3 font-weight-bold" id="terzo-input"></span></li>
+  </ul>
+
+  <button id="main-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Create Categories</button>
+  <button id="main-cat-insert-submit-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
+
+  <div class="p-3">
+    <span id="ajax-failed-message"></span>
+  </div>
+
 
 </section>
