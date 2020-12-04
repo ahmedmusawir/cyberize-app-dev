@@ -80,7 +80,7 @@
   <button id="main-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Create Categories</button>
   <button id="main-cat-insert-submit-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
 
-  <div class="p-3">
+  <div class="my-3">
     <span id="ajax-failed-message"></span>
   </div>
 

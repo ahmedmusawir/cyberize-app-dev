@@ -32,7 +32,14 @@ $sub_cat_3 = $terzo_cat;
  * CHECKING IF CATEGORY EXISTS
  */
 if (term_exists( $category_name, 'category' )) {
-  echo 'CATEGORY EXITS!';
+  echo "
+  
+  <div class='alert alert-danger rounded-0' role='alert'>
+    The Main Category <strong>$category_name</strong> already exists ... 
+    Please try again ...
+  </div>
+  
+  ";
   die();
 }
 
@@ -133,8 +140,10 @@ $cat_set_array = array(
                 'terzo_cat_id' => $sub_cat_3_id,
               );
 
+  // FOLLOWING WAS TRIED BUT NOT NECESSARY SINCE wp_send_json IS PRESENT            
   // $cat_set_array_json = json_encode($cat_set_array);
-
+  
+  // SENDING JSON OBJECT
   wp_send_json( $cat_set_array );
               
   // THE FOLLOWING IS A MUST FOR AJAX PHP FUNCTIONS

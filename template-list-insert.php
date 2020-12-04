@@ -38,23 +38,11 @@ get_header();
 
         <article id="create-new-list-box" class="card p-3  animate__animated animate__zoomIn">
 
-          <!-- THIS IS JUST A MOCK UI UNIT START -->
+          <!-- MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
-          <ul id="test-ui-cat-box" class="card  bg-light p-5 animate__animated animate__zoomIn d-none">
-            <h5 class="font-weight-bold text-dark">Current categories for your List:</h5>
-            <li class="text-dark font-weight-bold ml-1" style="list-style: none;">Tutoring</li>
-            <ul>
-              <li class="text-danger">Math</li>
-              <ul>
-                <li class="text-danger">Grade 10</li>
-                <ul>
-                  <li class="text-danger">Jackson Heights</li>
-                </ul>
-              </ul>
-            </ul>
-          </ul>
+          <?php get_template_part('_custom-template-parts/insert-pg-main-cat-set-display-after-creation'); ?>
 
-          <!-- THIS IS JUST A MOCK UI UNIT END -->
+          <!-- END MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
           <section id="category-choice-box">
             <label class="font-weight-bold" for="exampleFormControlTextarea1">Choose Your Categories:</label>
@@ -147,8 +135,10 @@ get_header();
             </div>
             <!-- END TERZO CATEGORY INTERNAL ROW -->
 
-            <!-- OTHER INFO INPUTS START -->
           </section>
+
+          <!-- OTHER INFO INPUTS START -->
+
 
           <div class="form-group mt-5">
             <label class="font-weight-bold" for="lister-description">Description:</label>

@@ -59,17 +59,28 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
       .done((res) => {
 
         if (res.main_cat) {
-          console.log(res);
-          console.log('Ajax Main Cat Insert Success!');
-          // STORING CAT DATA IN LOCAL STORAGE
-          localStorage.setItem('catData', JSON.stringify(res));
-          this.makeUiAfterCatCreation();
-
+          $('#ajax-failed-message').append(this.ajaxSuccessMessage);
         } else {
-
           $('#ajax-failed-message').append(res);
-
         }
+
+        console.log(res);
+        console.log('Ajax Main Cat Insert Success!');
+
+        // console.log('main cat from Ajax Response: ', res.main_cat);
+        // console.log('primo cat from Ajax Response: ', res.primo_cat);
+        // console.log('secondo cat from Ajax Response: ', res.secondo_cat);
+        // console.log('terzo cat from Ajax Response: ', res.terzo_cat);
+
+        // STORING CAT DATA
+        localStorage.setItem('catData', JSON.stringify(res));
+        // COLLECTING CAT DATA
+        const catData = JSON.parse(localStorage.getItem('catData'));
+        // console.log('catData from LocalStorage: ', catData);
+        // console.log('main cat from LocalStorage: ', catData.main_cat);
+        // console.log('primo cat from LocalStorage: ', catData.primo_cat);
+        // console.log('secondo cat from LocalStorage: ', catData.secondo_cat);
+        // console.log('terzo cat from LocalStorage: ', catData.terzo_cat);
 
       })
       .fail(() => {
@@ -78,23 +89,6 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
       .always(() => {
         console.log('Ajax Main Cat Insert Complete');
       });
-  }
-
-  makeUiAfterCatCreation = () => {
-    // $('#ajax-failed-message').append(this.ajaxSuccessMessage);
-    $(this.ajaxSuccessMessage).insertBefore('#main-cat-display-ui-box');
-    // COLLECTING CAT DATA FROM LOCAL STORAGE
-    const catData = JSON.parse(localStorage.getItem('catData'));
-    // DISPLAY DATA IN THE MAIN CAT DISPLAY UI BOX
-    $('#main-cat-display').text(catData.main_cat);
-    $('#primo-cat-display').text(catData.primo_cat);
-    $('#secondo-cat-display').text(catData.secondo_cat);
-    $('#terzo-cat-display').text(catData.terzo_cat);
-    // console.log('catData from LocalStorage: ', catData);
-    // console.log('main cat from LocalStorage: ', catData.main_cat);
-    // console.log('primo cat from LocalStorage: ', catData.primo_cat);
-    // console.log('secondo cat from LocalStorage: ', catData.secondo_cat);
-    // console.log('terzo cat from LocalStorage: ', catData.terzo_cat);
   }
 
 }
