@@ -6,8 +6,17 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
   constructor() {
     super();
     this.init();
-    // COLLECTING SUBMIT BUTTON
+    // COLLECTING ELEMENTS
+    // This is the "Create Categories" button in the User Validation popup
     this.submitMainCatBtn = $('#main-cat-insert-submit-btn');
+    // This is the final categories display in the Main List Insert Form
+    this.createdCategoriesDisplayBox = $('#main-cat-display-ui-box');
+    // This is the User Validation popup box
+    this.mainCatUserValidationBox = $('#main-cat-user-validation-box');
+    // This is the main list insert form container
+    this.listInsertFormBox = $('#create-new-list-box');
+    // This is the category select dropdown on the main List Insert Page
+    this.listInsertCatChoiceBox = $('#category-choice-box');
     // COLLECTING AJAX INFO
     this.ajaxUrl = selflistData.ajax_url;
     this.ajaxFunction = 'selflist_main_cat_insert_ajax';
@@ -39,10 +48,10 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
     const secondoCat = $('#main-input-secondo-cat').val();
     const terzoCat = $('#main-input-terzo-cat').val();
 
-    console.log(mainCat);
-    console.log(primoCat);
-    console.log(secondoCat);
-    console.log(terzoCat);
+    // console.log(mainCat);
+    // console.log(primoCat);
+    // console.log(secondoCat);
+    // console.log(terzoCat);
 
 
     $.ajax({
@@ -66,14 +75,12 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
           this.makeUiAfterCatCreation();
 
         } else {
-
           $('#ajax-failed-message').append(res);
-
         }
-
       })
-      .fail(() => {
-        console.log('Ajax Failed!');
+      .fail((err) => {
+        console.log('Ajax Failed With...:');
+        console.log(err);
       })
       .always(() => {
         console.log('Ajax Main Cat Insert Complete');
@@ -81,6 +88,7 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
   }
 
   makeUiAfterCatCreation = () => {
+
     // $('#ajax-failed-message').append(this.ajaxSuccessMessage);
     $(this.ajaxSuccessMessage).insertBefore('#main-cat-display-ui-box');
     // COLLECTING CAT DATA FROM LOCAL STORAGE
@@ -90,11 +98,13 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
     $('#primo-cat-display').text(catData.primo_cat);
     $('#secondo-cat-display').text(catData.secondo_cat);
     $('#terzo-cat-display').text(catData.terzo_cat);
-    // console.log('catData from LocalStorage: ', catData);
-    // console.log('main cat from LocalStorage: ', catData.main_cat);
-    // console.log('primo cat from LocalStorage: ', catData.primo_cat);
-    // console.log('secondo cat from LocalStorage: ', catData.secondo_cat);
-    // console.log('terzo cat from LocalStorage: ', catData.terzo_cat);
+    // REMOVE VALIDATION BOX
+    this.mainCatUserValidationBox.addClass('d-none');
+    // DISPLAY THE DISPLAY BOX
+    this.listInsertFormBox.removeClass('d-none');
+    this.createdCategoriesDisplayBox.removeClass('d-none');
+    this.listInsertCatChoiceBox.addClass('d-none');
+
   }
 
 }

@@ -23,10 +23,10 @@ add_action('wp_ajax_selflist_main_cat_insert_ajax', 'selflist_main_cat_insert_aj
   // FOLLOWING FUNCTIONS WILL INSERT MAIN CAT TO TERZO CAT WITH PARENT
   // CHILD RELATIONSHIP
 
-$category_name = $main_cat;
-$sub_cat_1 = $primo_cat;
-$sub_cat_2 = $secondo_cat;
-$sub_cat_3 = $terzo_cat;
+$category_name = sanitize_text_field($main_cat);
+$sub_cat_1 = sanitize_text_field($primo_cat);
+$sub_cat_2 = sanitize_text_field($secondo_cat);
+$sub_cat_3 = sanitize_text_field($terzo_cat);
 
 /**
  * CHECKING IF CATEGORY EXISTS
@@ -36,7 +36,7 @@ if (term_exists( $category_name, 'category' )) {
   
   <div class='alert alert-danger rounded-0' role='alert'>
     The Main Category <strong>$category_name</strong> already exists ... 
-    Please try again ...
+    The Main Category must be unique ...
   </div>
   
   ";

@@ -5,9 +5,7 @@
 ?>
 
 
-<section id="main-cat-insert-box" class="card p-5 animate__animated animate__zoomIn">
-  <!-- PUT THE FOLLOWING LINE BACK ON AFTER DEV -->
-  <!-- <section id="main-cat-insert-box" class="card p-5 d-none animate__animated animate__zoomIn"> -->
+<section id="main-cat-insert-box" class="card p-5 animate__animated animate__zoomIn d-none">
   <style>
   .error {
     color: red;
@@ -22,6 +20,7 @@
   }
   </style>
 
+  <!-- MAIN CAT INSERT FORM -->
   <div class="form-box">
 
     <form action="" name="main-cat-insert-form" id="main-cat-insert-form" class="form">
@@ -57,15 +56,17 @@
         </small>
       </div>
 
-      <button id="main-cat-insert-validation-btn" type="submit" class="btn btn-primary btn-block">Submit</button>
+      <button id="main-cat-user-validation-btn" type="submit" class="btn btn-primary btn-block">Submit</button>
+      <button id="main-cat-validation-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
+
     </form>
 
   </div>
 
 </section>
 
-<section id="main-cat-user-validation-box" class="card p-5 animate__animated animate__zoomIn">
-
+<!-- MAIN CAT USER VALIDATION BOX -->
+<section id="main-cat-user-validation-box" class="card p-5 animate__animated animate__zoomIn d-none">
 
   <ul class="list-group">
     <li class="list-group-item active bg-light text-primary">Please Verify Categories Before Creating:<br>
@@ -78,11 +79,10 @@
   </ul>
 
   <button id="main-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Create Categories</button>
-  <button id="main-cat-insert-submit-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
+  <button id="main-cat-insert-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
 
   <div class="my-3">
     <span id="ajax-failed-message"></span>
   </div>
-
 
 </section>
