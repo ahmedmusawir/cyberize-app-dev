@@ -6,6 +6,7 @@
 
 
 <section id="primo-cat-insert-box" class="card p-5 d-none animate__animated animate__zoomIn">
+  <!-- <section id="primo-cat-insert-box" class="card p-5 animate__animated animate__zoomIn"> -->
 
   <div class="form-box">
 
@@ -33,7 +34,8 @@
         <small id="textHelp" class="form-text text-muted">This is the Terzo Category</small>
       </div>
 
-      <button id="primo-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Submit</button>
+      <button id="primo-cat-user-validation-btn" type="submit" class="btn btn-primary btn-block">Submit</button>
+      <button id="primo-cat-validation-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
     </form>
 
   </div>

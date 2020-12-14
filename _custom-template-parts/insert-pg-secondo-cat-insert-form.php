@@ -32,7 +32,8 @@
         <small id="textHelp" class="form-text text-muted">This is the Terzo Category</small>
       </div>
 
-      <button id="secondo-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Submit</button>
+      <button id="secondo-cat-user-validation-btn" type="submit" class="btn btn-primary btn-block">Submit</button>
+      <button id="secondo-cat-validation-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
     </form>
 
   </div>

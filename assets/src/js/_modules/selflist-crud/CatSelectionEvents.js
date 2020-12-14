@@ -1,8 +1,14 @@
 import $ from 'jquery';
 import { selectize } from 'selectize';
-import CatInsertDataParent from './CatInsertDataParent';
+import CatSelectDataParent from './CatSelectDataParent';
 
-class CatSelectionEvents extends CatInsertDataParent {
+/**
+ This is a child class of CatSelectDataParent class. This handles the Category selection 
+ events according to parent/child relationship. This heavily uses the selectize library
+ so the library was imported up top as well as the CatSelectDataParent class
+ */
+
+class CatSelectionEvents extends CatSelectDataParent {
   constructor() {
     super();
     this.setEvents();

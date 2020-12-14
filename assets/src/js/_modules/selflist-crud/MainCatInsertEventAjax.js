@@ -1,10 +1,8 @@
 import $ from 'jquery';
-import CatInsertDataParent from './CatInsertDataParent';
 
-// LOOK INTO SelflistCatInsertUI.js FILE ... THIS IS NOTHING
-class MainCatInsertEventAjax extends CatInsertDataParent {
+class MainCatInsertEventAjax {
   constructor() {
-    super();
+    // super();
     this.init();
     // COLLECTING ELEMENTS
     // This is the "Create Categories" button in the User Validation popup
@@ -47,12 +45,6 @@ class MainCatInsertEventAjax extends CatInsertDataParent {
     const primoCat = $('#main-input-primo-cat').val();
     const secondoCat = $('#main-input-secondo-cat').val();
     const terzoCat = $('#main-input-terzo-cat').val();
-
-    // console.log(mainCat);
-    // console.log(primoCat);
-    // console.log(secondoCat);
-    // console.log(terzoCat);
-
 
     $.ajax({
       url: this.ajaxUrl,

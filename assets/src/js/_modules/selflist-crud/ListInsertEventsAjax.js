@@ -1,8 +1,14 @@
 import $ from 'jquery';
 import { selectize } from 'selectize';
-import CatInsertDataParent from './CatInsertDataParent';
+import CatSelectDataParent from './CatSelectDataParent';
 
-class ListInsertEvents extends CatInsertDataParent {
+/**
+ This is also a child clas of CatSelectDataParent and uses the selectize library. This one
+ Inserts the the List Insert Form data into the WP DB via the REST API. This inserts selectize
+ data, normal form data and ACF data into the WP DB
+ */
+
+class ListInsertEventsAjax extends CatSelectDataParent {
   constructor() {
     super();
     this.init();
@@ -13,7 +19,7 @@ class ListInsertEvents extends CatInsertDataParent {
   }
 
   init = () => {
-    // console.log('ListInsertEvents - Insert Post');
+    // console.log('ListInsertEventsAjax - Insert Post');
   };
 
   setEvents = () => {
@@ -96,4 +102,4 @@ class ListInsertEvents extends CatInsertDataParent {
 
 }
 
-export default ListInsertEvents;
+export default ListInsertEventsAjax;
