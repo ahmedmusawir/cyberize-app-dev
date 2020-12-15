@@ -11,11 +11,20 @@ import CatSelectionEvents from './_modules/selflist-crud/CatSelectionEvents';
 import ListInsertEventsAjax from './_modules/selflist-crud/ListInsertEventsAjax';
 import MainCatInsertEventAjax from './_modules/selflist-crud/MainCatInsertEventAjax';
 import MainCatFormValdation from './_modules/selflist-crud/MainCatFormVaidation';
-import CatUiParent from './_modules/selflist-crud/cat-curd/CatUiParent';
+// CATEGORY INSERT UI RELATED
+import CatInsertUiParent from './_modules/selflist-crud/cat-curd/CatInsertUiParent';
 import MainCatInsertUi from './_modules/selflist-crud/cat-curd/MainCatInsertUi';
 import PrimoCatInsertUi from './_modules/selflist-crud/cat-curd/PrimoCatInsertUi';
 import SecondoCatInsertUi from './_modules/selflist-crud/cat-curd/SecondoCatInsertUi';
 import TerzoCatInsertUi from './_modules/selflist-crud/cat-curd/TerzoCatInsertUi';
+// CATEGORY FORM VALIDATION RELATED
+import CatFormValidationParent from './_modules/selflist-crud/cat-curd/CatFormValidationParent';
+import MainCatFormValidation from './_modules/selflist-crud/cat-curd/MainCatFormValidation';
+// import PrimoCatFormValidation from './_modules/selflist-crud/cat-curd/PrimoCatFormValidation';
+// import SecondoCatFormValidation from './_modules/selflist-crud/cat-curd/SecondoCatFormValidation';
+// import TerzoCatFormValidation from './_modules/selflist-crud/cat-curd/TerzoCatFormValidation';
+
+
 
 class App {
   constructor() {
@@ -38,18 +47,25 @@ class App {
     // CAT INSERT PAGE AJAX
     new MainCatInsertEventAjax();
     // CAT INSERT PAGE FORM VALIDATION
-    new MainCatFormValdation();
-    // CAT INSERT UI/UX
-    // new SelflistMainCatInsertUI();
+    // new MainCatFormValdation();
 
     /**
     * CATEGORY RELATED CLASSES
     */
-    new CatUiParent();
+    // Category UI/UX
+    new CatInsertUiParent();
     new MainCatInsertUi();
     new PrimoCatInsertUi();
     new SecondoCatInsertUi();
     new TerzoCatInsertUi();
+
+    // Category Form Validation
+    new CatFormValidationParent();
+    new MainCatFormValidation();
+    // new PrimoCatFormValidation();
+    // new SecondoCatFormValidation();
+    // new TerzoCatFormValidation();
+
   }
 
   runTestCode = () => {

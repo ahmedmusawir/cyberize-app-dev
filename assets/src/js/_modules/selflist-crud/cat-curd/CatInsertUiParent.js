@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import CatSelectDataParent from '../../selflist-crud/CatSelectDataParent';
+import CatSelectDataParent from '../CatSelectDataParent';
 
-class CatUiParent extends CatSelectDataParent {
+class CatInsertUiParent extends CatSelectDataParent {
   constructor() {
     super();
 
@@ -130,4 +130,4 @@ class CatUiParent extends CatSelectDataParent {
 
 }
 
-export default CatUiParent;
+export default CatInsertUiParent;

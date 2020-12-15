@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import CatUiParent from './catUIParent';
+import CatInsertUiParent from './CatInsertUiParent';
 
-class PrimoCatInsertUi extends CatUiParent {
+class PrimoCatInsertUi extends CatInsertUiParent {
   constructor() {
     super();
     // COLLECTING ELEMENTS FROM PAGE
