@@ -5,7 +5,7 @@ class PrimoCatInsertUi extends CatUiParent {
   constructor() {
     super();
     // COLLECTING ELEMENTS FROM PAGE
-    // This is the new Main Category Insert button. Top input right button "New Catetory"
+    // This is the new Primo Category Insert button. Top input right button "New Catetory"
     this.primoCatNewBtn = $('#primo-cat-new-btn');
     // This is the primo category insert form container
     this.primoCatInsertFormBox = $('#primo-cat-insert-box');
@@ -17,7 +17,6 @@ class PrimoCatInsertUi extends CatUiParent {
   }
 
   setEvents = () => {
-    // this.primoCatNewBtn.on('click', this.primoCatNewHandler);
     this.primoCatNewBtn.on('click', this.catNewHandler);
     this.primoCatValidationCancelBtn.on('click', this.catValidationCancelHandler);
   };

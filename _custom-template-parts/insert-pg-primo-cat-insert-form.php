@@ -14,8 +14,8 @@
       <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert New Primo and
         Subcategories</label>
 
-      <div class="form-group">
-        <h4 class="text-danger">Tutoring</h4>
+      <div class="form-group card bg-light p-3">
+        <h4 id="primo-main-cat" class="text-danger">Tutoring</h4>
         <small id="textHelp" class="form-text text-muted">This is the Main Category</small>
       </div>
       <div class="form-group">

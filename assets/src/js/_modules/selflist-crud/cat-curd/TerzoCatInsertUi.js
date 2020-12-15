@@ -5,7 +5,7 @@ class TerzoCatInsertUi extends CatUiParent {
   constructor() {
     super();
     // COLLECTING ELEMENTS FROM PAGE
-    // This is the new Main Category Insert button. Top input right button "New Catetory"
+    // This is the new Terzo Category Insert button. Top input right button "New Catetory"
     this.terzoCatNewBtn = $('#terzo-cat-new-btn');
     // This is the terzo category insert form container
     this.terzoCatInsertFormBox = $('#terzo-cat-insert-box');
@@ -17,7 +17,6 @@ class TerzoCatInsertUi extends CatUiParent {
   }
 
   setEvents = () => {
-    // this.terzoCatNewBtn.on('click', this.terzoCatNewHandler);
     this.terzoCatNewBtn.on('click', this.catNewHandler);
     this.terzoCatValidationCancelBtn.on('click', this.catValidationCancelHandler);
   };

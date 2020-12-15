@@ -11,6 +11,9 @@ import regeneratorRuntime from "regenerator-runtime";
 
  1. CatSelectionEvents.js - Handles Category selections
  2. ListInsertEventsAjax.js - Inserts the List data by Ajax
+ 3. CatUiParent.js - This is a Parent class for all the Category UI classes. Needs this 
+                   - class for selectize items so that the Cat New Insert buttons can
+                   - launch if the Main Cat and others are filled in 
  */
 
 class CatSelectDataParent {

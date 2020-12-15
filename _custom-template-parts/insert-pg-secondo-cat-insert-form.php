@@ -13,14 +13,15 @@
       <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert New Secondo and
         a Subcategory</label>
 
-      <div class="form-group">
-        <h4 class="text-danger">Tutoring</h4>
+      <div class="form-group card p-3 bg-light">
+        <h4 id="secondo-main-cat" class="text-danger">Tutoring</h4>
         <small id="textHelp" class="form-text text-muted">This is the Main Category</small>
+        <div class="form-group mt-4">
+          <h4 id="secondo-primo-cat" class="text-danger"> -- Math</h4>
+          <small id="textHelp" class="form-text text-muted">This is the Primo Category</small>
+        </div>
       </div>
-      <div class="form-group">
-        <h4 class="text-danger"> -- Math</h4>
-        <small id="textHelp" class="form-text text-muted">This is the Primo Category</small>
-      </div>
+
       <div class="form-group">
         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
           placeholder="New Secondo Category">

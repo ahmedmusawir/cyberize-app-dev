@@ -13,18 +13,19 @@
       <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert New Terzo
         Subcategory</label>
 
-      <div class="form-group">
-        <h4 class="text-danger">Tutoring</h4>
+      <div class="form-group card p-3 bg-light">
+        <h4 id="terzo-main-cat" class="text-danger">Tutoring</h4>
         <small id="textHelp" class="form-text text-muted">This is the Main Category</small>
+        <div class="form-group mt-3">
+          <h4 id="terzo-primo-cat" class="text-danger"> -- Math</h4>
+          <small id="textHelp" class="form-text text-muted">This is the Primo Category</small>
+        </div>
+        <div class="form-group mt-3">
+          <h4 id="terzo-secondo-cat" class="text-danger"> -- -- Grade 10</h4>
+          <small id="textHelp" class="form-text text-muted">This is the Secondo Category</small>
+        </div>
       </div>
-      <div class="form-group">
-        <h4 class="text-danger"> -- Math</h4>
-        <small id="textHelp" class="form-text text-muted">This is the Primo Category</small>
-      </div>
-      <div class="form-group">
-        <h4 class="text-danger"> -- -- Grade 10</h4>
-        <small id="textHelp" class="form-text text-muted">This is the Secondo Category</small>
-      </div>
+
       <div class="form-group">
         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
           placeholder="New Terzo Category">
