@@ -19,8 +19,8 @@ class TerzoCatFromValidation extends CatFormValdationParent {
   }
 
   setEvents = () => {
-    this.terzoCatUserValidationBtn.on('click', this.mainCatValidationHandler);
-    this.terzoCatUserValidationCancelBtn.on('click', this.mainCatUserValidationCancelHandler);
+    this.terzoCatUserValidationBtn.on('click', this.catValidationHandler);
+    this.terzoCatUserValidationCancelBtn.on('click', this.catUserValidationCancelHandler);
   }
 }
 

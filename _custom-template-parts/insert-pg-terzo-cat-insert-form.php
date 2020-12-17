@@ -6,10 +6,26 @@
 
 
 <section id="terzo-cat-insert-box" class="card p-5 d-none animate__animated animate__zoomIn">
+<style>
+  .error {
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+
+  input {
+    color: red;
+    font-size: .8rem;
+    font-weight: bold;
+  }
+  </style>
+
+  <!-- TERZO CAT INSERT FORM -->
 
   <div class="form-box">
 
-    <form>
+  <form action="" name="terzo-cat-insert-form" id="terzo-cat-insert-form" class="form">
+
       <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert New Terzo
         Subcategory</label>
 
@@ -27,15 +43,43 @@
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
-          placeholder="New Terzo Category">
-        <small id="textHelp" class="form-text text-muted">This is the Terzo Category</small>
+        <input type="text" class="form-control" id="terzo-input-terzo-cat" name="terzo-input-terzo-cat"
+          aria-describedby="textHelp" placeholder="New Terzo Category" required>
+        <small id="textHelp" class="form-text text-muted">
+          Terzo Category (20 Char Limit. Letters & Space only)
+        </small>
       </div>
 
       <button id="terzo-cat-user-validation-btn" type="submit" class="btn btn-primary btn-block">Submit</button>
       <button id="terzo-cat-validation-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
+
     </form>
 
+  </div>
+
+</section>
+
+<!-- PRIMO CAT USER VALIDATION BOX -->
+<section id="terzo-cat-user-validation-box" class="card p-5 animate__animated animate__zoomIn d-none">
+
+  <ul class="list-group">
+    <li class="list-group-item active bg-light text-primary">Please Verify Categories Before Creating:<br>
+      <small>(You cannot edit categories once they are created)</small>
+    </li>
+    <li class="list-group-item">Main Category: <span class="pl-3 font-weight-bold" id="main-display-terzo"></span></li>
+    <li class="list-group-item">Primo Category: <span class="pl-3 font-weight-bold" id="primo-display-terzo"></span>
+    </li>
+    <li class="list-group-item">Secondo Category: <span class="pl-3 font-weight-bold" id="secondo-display-terzo"></span>
+    </li>
+    <li class="list-group-item">Terzo Category: <span class="pl-3 font-weight-bold" id="terzo-display-terzo"></span>
+    </li>
+  </ul>
+
+  <button id="terzo-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Create Categories</button>
+  <button id="terzo-cat-insert-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
+
+  <div class="my-3">
+    <span id="ajax-failed-message"></span>
   </div>
 
 </section>

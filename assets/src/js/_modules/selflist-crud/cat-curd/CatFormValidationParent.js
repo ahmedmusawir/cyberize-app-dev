@@ -190,6 +190,47 @@ class CatFormValdationParent {
     $('#ajax-failed-message').html('');
   }
 
+  // TERZO FORM VALIDATION
+  validateTerzoCatForm = () => {
+    // console.log('Validating Primo Cat Form...');
+    $('#terzo-cat-insert-form').validate({
+      rules: {
+        'terzo-input-terzo-cat': { lettersonly: true, maxlength: 20, minlength: 3 }
+      },
+      submitHandler: (form, event) => {
+        event.preventDefault();
+        // OPEN THE USER VALIDATION SCREEN
+        this.getTerzoUserValidationScreen();
+      }
+    });
+  }
+
+  // TERZO USER VALIDATION
+  getTerzoUserValidationScreen = () => {
+    // Hiding the insert form
+    this.terzoCatInsertFormBox.addClass('d-none');
+    // Maing the terzo cat user validation popup visible
+    this.terzoCatUserValidationBox.removeClass('d-none');
+
+    // COLLECTING CAT INPUT DATA
+    const mainCatValue = $('#terzo-main-cat').text();
+    console.log(mainCatValue);
+    const primoCatInputValue = $('#terzo-primo-cat').text();
+    console.log(primoCatInputValue);
+    const secondoCatInputValue = $('#terzo-secondo-cat').text();
+    console.log(secondoCatInputValue);
+    const terzoCatInputValue = $('#terzo-input-terzo-cat').val();
+    console.log(terzoCatInputValue);
+
+    // INSERTING INTO USER VALIDATION PAGE
+    $('#main-display-terzo').text(mainCatValue);
+    $('#primo-display-terzo').text(primoCatInputValue);
+    $('#secondo-display-terzo').text(secondoCatInputValue);
+    $('#terzo-display-terzo').text(terzoCatInputValue);
+    // CLEANING UP AJAX ERROR MESSAGES
+    $('#ajax-failed-message').html('');
+  }
+
 }
 
 export default CatFormValdationParent;
