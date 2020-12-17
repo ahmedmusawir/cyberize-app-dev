@@ -19,8 +19,8 @@ class PrimoCatFromValidation extends CatFormValdationParent {
   }
 
   setEvents = () => {
-    this.mainCatUserValidationBtn.on('click', this.mainCatValicationHandler);
-    this.mainCatUserValidationCancelBtn.on('click', this.mainCatUserValidationCancelHandler);
+    this.primoCatUserValidationBtn.on('click', this.catValidationHandler);
+    this.primoCatUserValidationCancelBtn.on('click', this.catUserValidationCancelHandler);
   }
 }
 

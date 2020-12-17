@@ -10,7 +10,7 @@ import CatSelectDataParent from './_modules/selflist-crud/CatSelectDataParent';
 import CatSelectionEvents from './_modules/selflist-crud/CatSelectionEvents';
 import ListInsertEventsAjax from './_modules/selflist-crud/ListInsertEventsAjax';
 import MainCatInsertEventAjax from './_modules/selflist-crud/MainCatInsertEventAjax';
-import MainCatFormValdation from './_modules/selflist-crud/MainCatFormVaidation';
+import MainCatFormValdation from './_modules/_old/MainCatFormVaidation';
 // CATEGORY INSERT UI RELATED
 import CatInsertUiParent from './_modules/selflist-crud/cat-curd/CatInsertUiParent';
 import MainCatInsertUi from './_modules/selflist-crud/cat-curd/MainCatInsertUi';
@@ -20,9 +20,9 @@ import TerzoCatInsertUi from './_modules/selflist-crud/cat-curd/TerzoCatInsertUi
 // CATEGORY FORM VALIDATION RELATED
 import CatFormValidationParent from './_modules/selflist-crud/cat-curd/CatFormValidationParent';
 import MainCatFormValidation from './_modules/selflist-crud/cat-curd/MainCatFormValidation';
-// import PrimoCatFormValidation from './_modules/selflist-crud/cat-curd/PrimoCatFormValidation';
-// import SecondoCatFormValidation from './_modules/selflist-crud/cat-curd/SecondoCatFormValidation';
-// import TerzoCatFormValidation from './_modules/selflist-crud/cat-curd/TerzoCatFormValidation';
+import PrimoCatFormValidation from './_modules/selflist-crud/cat-curd/PrimoCatFormValidation';
+import SecondoCatFormValidation from './_modules/selflist-crud/cat-curd/SecondoCatFormValidation';
+import TerzoCatFormValidation from './_modules/selflist-crud/cat-curd/TerzoCatFormValidation';
 
 
 
@@ -46,8 +46,6 @@ class App {
     new ListInsertEventsAjax();
     // CAT INSERT PAGE AJAX
     new MainCatInsertEventAjax();
-    // CAT INSERT PAGE FORM VALIDATION
-    // new MainCatFormValdation();
 
     /**
     * CATEGORY RELATED CLASSES
@@ -62,9 +60,9 @@ class App {
     // Category Form Validation
     new CatFormValidationParent();
     new MainCatFormValidation();
-    // new PrimoCatFormValidation();
-    // new SecondoCatFormValidation();
-    // new TerzoCatFormValidation();
+    new PrimoCatFormValidation();
+    new SecondoCatFormValidation();
+    new TerzoCatFormValidation();
 
   }
 

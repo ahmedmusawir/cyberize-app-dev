@@ -19,8 +19,8 @@ class MainCatFromValidation extends CatFormValdationParent {
   }
 
   setEvents = () => {
-    this.mainCatUserValidationBtn.on('click', this.mainCatValicationHandler);
-    this.mainCatUserValidationCancelBtn.on('click', this.mainCatUserValidationCancelHandler);
+    this.mainCatUserValidationBtn.on('click', this.catValidationHandler);
+    this.mainCatUserValidationCancelBtn.on('click', this.catUserValidationCancelHandler);
   }
 }
 

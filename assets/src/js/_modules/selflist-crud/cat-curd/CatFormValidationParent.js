@@ -14,7 +14,8 @@ class CatFormValdationParent {
     console.log('MAIN CAT Form Val Test Loaded ...');
   };
 
-  mainCatUserValidationCancelHandler = () => {
+  catUserValidationCancelHandler = () => {
+    console.log('main cancel');
 
     if (this.mainCatInsertFormBox) {
       // Displaying the insert form
@@ -22,17 +23,46 @@ class CatFormValdationParent {
       // Maing the main cat user validation popup invisible
       this.mainCatUserValidationBox.addClass('d-none');
     }
-
-  }
-
-  mainCatValicationHandler = (e) => {
-
-    if (this.mainCatInsertFormBox) {
-      this.validateMainCatForm();
+    if (this.primoCatInsertFormBox) {
+      // Displaying the insert form
+      this.primoCatInsertFormBox.removeClass('d-none');
+      // Maing the primo cat user validation popup invisible
+      this.primoCatUserValidationBox.addClass('d-none');
+    }
+    if (this.secondoCatInsertFormBox) {
+      // Displaying the insert form
+      this.secondoCatInsertFormBox.removeClass('d-none');
+      // Maing the secondo cat user validation popup invisible
+      this.secondoCatUserValidationBox.addClass('d-none');
+    }
+    if (this.terzoCatInsertFormBox) {
+      // Displaying the insert form
+      this.terzoCatInsertFormBox.removeClass('d-none');
+      // Maing the terzo cat user validation popup invisible
+      this.terzoCatUserValidationBox.addClass('d-none');
     }
 
   }
 
+  catValidationHandler = (e) => {
+    // console.log('main validation handler');
+
+    if (this.mainCatInsertFormBox) {
+      this.validateMainCatForm();
+    }
+    if (this.primoCatInsertFormBox) {
+      this.validatePrimoCatForm();
+    }
+    if (this.secondoCatInsertFormBox) {
+      this.validateSecondoCatForm();
+    }
+    if (this.terzoCatInsertFormBox) {
+      this.validateTerzoCatForm();
+    }
+
+  }
+
+  // MAIN FORM VALIDATION
   validateMainCatForm = () => {
 
     $('#main-cat-insert-form').validate({
@@ -45,14 +75,13 @@ class CatFormValdationParent {
       submitHandler: (form, event) => {
         event.preventDefault();
         // OPEN THE USER VALIDATION SCREEN
-        this.getUserValidationScreen();
+        this.getMainUserValidationScreen();
       }
     });
-
   }
 
-
-  getUserValidationScreen = () => {
+  // MAIN USER VALIDATION
+  getMainUserValidationScreen = () => {
     // Hiding the insert form
     this.mainCatInsertFormBox.addClass('d-none');
     // Maing the main cat user validation popup visible
@@ -69,6 +98,94 @@ class CatFormValdationParent {
     $('#primo-input').text(primoCatInputValue);
     $('#secondo-input').text(secondoCatInputValue);
     $('#terzo-input').text(terzoCatInputValue);
+    // CLEANING UP AJAX ERROR MESSAGES
+    $('#ajax-failed-message').html('');
+  }
+
+  // PRIMO FORM VALIDATION
+  validatePrimoCatForm = () => {
+    // console.log('Validating Primo Cat Form...');
+    $('#primo-cat-insert-form').validate({
+      rules: {
+        // 'primo-input-main-cat': { lettersonly: true, maxlength: 25, minlength: 3 },
+        'primo-input-primo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
+        'primo-input-secondo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
+        'primo-input-terzo-cat': { lettersonly: true, maxlength: 20, minlength: 3 }
+      },
+      submitHandler: (form, event) => {
+        event.preventDefault();
+        // OPEN THE USER VALIDATION SCREEN
+        this.getPrimoUserValidationScreen();
+      }
+    });
+  }
+
+  // PRIMO USER VALIDATION
+  getPrimoUserValidationScreen = () => {
+    // Hiding the insert form
+    this.primoCatInsertFormBox.addClass('d-none');
+    // Maing the primo cat user validation popup visible
+    this.primoCatUserValidationBox.removeClass('d-none');
+
+    // COLLECTING CAT INPUT DATA
+    const mainCatValue = $('#primo-main-cat').text();
+    console.log(mainCatValue);
+    const primoCatInputValue = $('#primo-input-primo-cat').val();
+    console.log(primoCatInputValue);
+    const secondoCatInputValue = $('#primo-input-secondo-cat').val();
+    console.log(secondoCatInputValue);
+    const terzoCatInputValue = $('#primo-input-terzo-cat').val();
+    console.log(terzoCatInputValue);
+
+    // INSERTING INTO USER VALIDATION PAGE
+    $('#main-display-primo').text(mainCatValue);
+    $('#primo-display-primo').text(primoCatInputValue);
+    $('#secondo-display-primo').text(secondoCatInputValue);
+    $('#terzo-display-primo').text(terzoCatInputValue);
+    // CLEANING UP AJAX ERROR MESSAGES
+    $('#ajax-failed-message').html('');
+  }
+
+// SECONDO FORM VALIDATION
+  validateSecondoCatForm = () => {
+    // console.log('Validating Primo Cat Form...');
+    $('#secondo-cat-insert-form').validate({
+      rules: {
+        // 'secondo-input-main-cat': { lettersonly: true, maxlength: 25, minlength: 3 },
+        // 'secondo-input-primo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
+        'secondo-input-secondo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
+        'secondo-input-terzo-cat': { lettersonly: true, maxlength: 20, minlength: 3 }
+      },
+      submitHandler: (form, event) => {
+        event.preventDefault();
+        // OPEN THE USER VALIDATION SCREEN
+        this.getSecondoUserValidationScreen();
+      }
+    });
+  }
+
+  // SECONDO USER VALIDATION
+  getSecondoUserValidationScreen = () => {
+    // Hiding the insert form
+    this.secondoCatInsertFormBox.addClass('d-none');
+    // Maing the secondo cat user validation popup visible
+    this.secondoCatUserValidationBox.removeClass('d-none');
+
+    // COLLECTING CAT INPUT DATA
+    const mainCatValue = $('#secondo-main-cat').text();
+    console.log(mainCatValue);
+    const primoCatInputValue = $('#secondo-primo-cat').text();
+    console.log(primoCatInputValue);
+    const secondoCatInputValue = $('#secondo-input-secondo-cat').val();
+    console.log(secondoCatInputValue);
+    const terzoCatInputValue = $('#secondo-input-terzo-cat').val();
+    console.log(terzoCatInputValue);
+
+    // INSERTING INTO USER VALIDATION PAGE
+    $('#main-display-secondo').text(mainCatValue);
+    $('#primo-display-secondo').text(primoCatInputValue);
+    $('#secondo-display-secondo').text(secondoCatInputValue);
+    $('#terzo-display-secondo').text(terzoCatInputValue);
     // CLEANING UP AJAX ERROR MESSAGES
     $('#ajax-failed-message').html('');
   }

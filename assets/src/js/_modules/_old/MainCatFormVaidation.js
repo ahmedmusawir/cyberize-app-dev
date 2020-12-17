@@ -39,7 +39,7 @@ class MainCatFormValdation {
   }
 
   mainCatValicationHandler = (e) => {
-    // console.log("Form Val Test clicked");
+    console.log("Main Form Val Test clicked");
     // const $this = this;
 
     $('#main-cat-insert-form').validate({
