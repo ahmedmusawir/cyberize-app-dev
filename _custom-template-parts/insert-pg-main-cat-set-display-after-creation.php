@@ -4,7 +4,7 @@
  */
 ?>
 
-<ul id="main-cat-display-ui-box" class="card  bg-light p-5 animate__animated animate__zoomIn d-none">
+<ul id="cat-display-ui-box" class="card  bg-light p-5 animate__animated animate__zoomIn d-none">
   <h5 class="font-weight-bold text-dark">Current categories for your List:</h5>
   <li id="main-cat-display" class="text-dark font-weight-bold ml-1" style="list-style: none;">Tutoring</li>
   <ul>
