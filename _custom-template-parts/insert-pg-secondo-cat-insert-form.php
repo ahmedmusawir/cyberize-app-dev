@@ -67,10 +67,12 @@
     <li class="list-group-item active bg-light text-primary">Please Verify Categories Before Creating:<br>
       <small>(You cannot edit categories once they are created)</small>
     </li>
-    <li class="list-group-item">Main Category: <span class="pl-3 font-weight-bold" id="main-display-secondo"></span></li>
+    <li class="list-group-item">Main Category: <span class="pl-3 font-weight-bold" id="main-display-secondo"></span>
+    </li>
     <li class="list-group-item">Primo Category: <span class="pl-3 font-weight-bold" id="primo-display-secondo"></span>
     </li>
-    <li class="list-group-item">Secondo Category: <span class="pl-3 font-weight-bold" id="secondo-display-secondo"></span>
+    <li class="list-group-item">Secondo Category: <span class="pl-3 font-weight-bold"
+        id="secondo-display-secondo"></span>
     </li>
     <li class="list-group-item">Terzo Category: <span class="pl-3 font-weight-bold" id="terzo-display-secondo"></span>
     </li>
@@ -80,7 +82,7 @@
   <button id="secondo-cat-insert-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
 
   <div class="my-3">
-    <span id="ajax-failed-message"></span>
+    <span id="ajax-failed-message-3"></span>
   </div>
 
 </section>

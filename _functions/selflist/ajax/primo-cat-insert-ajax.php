@@ -125,7 +125,7 @@ $sub_cat_3_id = $sub_cat_3_info['term_id'];
 
 // NEW CAT SET ARRAY
 $cat_set_array = array(
-                'main_cat' => $category_name, 
+                'main_cat' => $main_cat_name, 
                 'main_cat_id' => $main_cat_id,
                 'primo_cat' => $sub_cat_1,
                 'primo_cat_id' => $sub_cat_1_id,

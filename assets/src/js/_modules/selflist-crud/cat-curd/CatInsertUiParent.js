@@ -6,7 +6,7 @@ class CatInsertUiParent extends CatSelectDataParent {
     super();
 
     // this.init();
-    // This is the main list insert form container. 
+    // This is the main list insert form container.
     // Common for all Category insert UI/UX
     this.listInsertFormBox = $('#create-new-list-box');
   }
@@ -39,16 +39,18 @@ class CatInsertUiParent extends CatSelectDataParent {
     }
     // DISPLAYING TERZO CAT INSERT FORM, MUST: MAIN, PRIMO & SECONDO
     if (this.terzoCatInsertFormBox) {
-      this.displayTerzoCatInsertFormBox(currentMainId, currentPrimoId, currentSecondoId);
+      this.displayTerzoCatInsertFormBox(
+        currentMainId,
+        currentPrimoId,
+        currentSecondoId
+      );
     }
-  }
+  };
 
   displayPrimoCatInserForm = (currentMainId) => {
-
     if (!currentMainId) {
       alert('Please Choose a Main Category');
       this.listInsertFormBox.removeClass('d-none');
-
     } else {
       // DISPLAY PRIMO INSERT FORM
       this.primoCatInsertFormBox.removeClass('d-none');
@@ -56,20 +58,18 @@ class CatInsertUiParent extends CatSelectDataParent {
       // COLLECTING SELECTED TEXT
       const currentMainItem = this.selectizeMain.getItem(currentMainId);
       const currentMainText = currentMainItem[0].innerText;
-      console.log(currentMainId);
-      console.log(currentMainText);
+      // console.log(currentMainId);
+      // console.log(currentMainText);
 
       // ADDING VALUE TO MAIN CATEGORY TEXT IN THE PRIMO INSERT FORM
       $('#primo-main-cat').text(currentMainText);
     }
-  }
+  };
 
   displaySecondoCatInsertFormBox = (currentMainId, currentPrimoId) => {
-
     if (!currentMainId || !currentPrimoId) {
       alert('Please Choose a Main Category and a Primo Category!');
       this.listInsertFormBox.removeClass('d-none');
-
     } else {
       // DISPLAY SECONDO INSERT FORM
       this.secondoCatInsertFormBox.removeClass('d-none');
@@ -82,16 +82,18 @@ class CatInsertUiParent extends CatSelectDataParent {
 
       // ADDING VALUE TO MAIN CATEGORY TEXT IN THE PRIMO INSERT FORM
       $('#secondo-main-cat').text(currentMainText);
-      $('#secondo-primo-cat').text(`-- ${currentPrimoText}`);
+      $('#secondo-primo-cat').text(currentPrimoText);
     }
-  }
+  };
 
-  displayTerzoCatInsertFormBox = (currentMainId, currentPrimoId, currentSecondoId) => {
-
+  displayTerzoCatInsertFormBox = (
+    currentMainId,
+    currentPrimoId,
+    currentSecondoId
+  ) => {
     if (!currentMainId || !currentPrimoId || !currentSecondoId) {
       alert('Please Choose a Main, a Primo & a Secondo Category!');
       this.listInsertFormBox.removeClass('d-none');
-
     } else {
       // DISPLAY TERZO INSERT FORM
       this.terzoCatInsertFormBox.removeClass('d-none');
@@ -101,15 +103,17 @@ class CatInsertUiParent extends CatSelectDataParent {
       const currentMainText = currentMainItem[0].innerText;
       const currentPrimoItem = this.selectizePrimo.getItem(currentPrimoId);
       const currentPrimoText = currentPrimoItem[0].innerText;
-      const currentSecondoItem = this.selectizeSecondo.getItem(currentSecondoId);
+      const currentSecondoItem = this.selectizeSecondo.getItem(
+        currentSecondoId
+      );
       const currentSecondoText = currentSecondoItem[0].innerText;
 
       // ADDING VALUE TO MAIN CATEGORY TEXT IN THE PRIMO INSERT FORM
       $('#terzo-main-cat').text(currentMainText);
-      $('#terzo-primo-cat').text(`-- ${currentPrimoText}`);
-      $('#terzo-secondo-cat').text(`-- -- ${currentSecondoText}`);
+      $('#terzo-primo-cat').text(currentPrimoText);
+      $('#terzo-secondo-cat').text(currentSecondoText);
     }
-  }
+  };
 
   catValidationCancelHandler = () => {
     this.listInsertFormBox.removeClass('d-none');
@@ -126,8 +130,7 @@ class CatInsertUiParent extends CatSelectDataParent {
     if (this.terzoCatInsertFormBox) {
       this.terzoCatInsertFormBox.addClass('d-none');
     }
-  }
-
+  };
 }
 
 export default CatInsertUiParent;
