@@ -3,7 +3,7 @@ import $ from 'jquery';
 class CatInsertEventAjaxParent {
   constructor() {
     // super();
-    this.init();
+    // this.init();
     // COLLECTING ELEMENTS
     // This is the main list insert form container
     this.listInsertFormBox = $('#create-new-list-box');
@@ -17,7 +17,7 @@ class CatInsertEventAjaxParent {
     // AJAX SUCCESS MESSAGE
     this.ajaxSuccessMessage = `
     <div class='alert alert-success rounded-0' role='alert'>
-      The Main Category Set has been created successfully! 
+      The Category Set has been created successfully! 
     </div>
     `;
   }
@@ -88,14 +88,22 @@ class CatInsertEventAjaxParent {
     })
       .done((res) => {
         console.log(res);
-        if (res.main_cat) {
+        console.log('res.main_cat : ', res.main_cat);
+        console.log('res.primo_cat : ', res.primo_cat);
+        console.log('res.secondo_cat : ', res.secondo_cat);
+        console.log('res.terzo_cat : ', res.terzo_cat);
+
+        if (res.main_cat || res.primo_cat || res.secondo_cat || res.terzo_cat) {
           console.log(res);
           console.log('Ajax Main Cat Insert Success!');
           // STORING CAT DATA IN LOCAL STORAGE
           localStorage.setItem('catData', JSON.stringify(res));
           this.makeUiAfterCatCreation();
         } else {
-          $('#ajax-failed-message').append(res);
+          $('#ajax-failed-message-1').append(res);
+          $('#ajax-failed-message-2').append(res);
+          $('#ajax-failed-message-3').append(res);
+          $('#ajax-failed-message-4').append(res);
         }
       })
       .fail((err) => {
@@ -118,7 +126,22 @@ class CatInsertEventAjaxParent {
     $('#secondo-cat-display').text(catData.secondo_cat);
     $('#terzo-cat-display').text(catData.terzo_cat);
     // REMOVE VALIDATION BOX
-    this.mainCatUserValidationBox.addClass('d-none');
+    // Main Category Validation Box Check
+    if (this.mainCatUserValidationBox) {
+      this.mainCatUserValidationBox.addClass('d-none');
+    }
+    // Primo Category Validation Box Check
+    if (this.primoCatUserValidationBox) {
+      this.primoCatUserValidationBox.addClass('d-none');
+    }
+    // Secondo Category Validation Box check
+    if (this.secondoCatUserValidationBox) {
+      this.secondoCatUserValidationBox.addClass('d-none');
+    }
+    // Terzo Cetory Validation Box check
+    if (this.terzoCatUserValidationBox) {
+      this.terzoCatUserValidationBox.addClass('d-none');
+    }
     // DISPLAY THE DISPLAY BOX
     this.listInsertFormBox.removeClass('d-none');
     this.createdCategoriesDisplayBox.removeClass('d-none');

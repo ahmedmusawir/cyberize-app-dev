@@ -20,7 +20,7 @@ add_action('wp_ajax_secondo_cat_insert_ajax', 'secondo_cat_insert_ajax');
   <h4>Terzo Cat: $terzo_cat</h4><br>
   "; 
 
-  wp_die();
+  // wp_die();
 
   // FOLLOWING FUNCTIONS WILL INSERT MAIN CAT TO TERZO CAT WITH PARENT
   // CHILD RELATIONSHIP

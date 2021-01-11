@@ -13,50 +13,43 @@ add_action('wp_ajax_primo_cat_insert_ajax', 'primo_cat_insert_ajax');
   $secondo_cat = $_POST['secondoCat'];
   $terzo_cat = $_POST['terzoCat'];
 
-  echo "
-  <h4>Main Cat: $main_cat</h4><br>
-  <h4>Primo Cat: $primo_cat</h4><br>
-  <h4>Secondo Cat: $secondo_cat</h4><br>
-  <h4>Terzo Cat: $terzo_cat</h4><br>
-  "; 
+  // echo "
+  // <h4>Main Cat: $main_cat</h4><br>
+  // <h4>Primo Cat: $primo_cat</h4><br>
+  // <h4>Secondo Cat: $secondo_cat</h4><br>
+  // <h4>Terzo Cat: $terzo_cat</h4><br>
+  // "; 
 
-  wp_die();
+  // wp_die();
 
   // FOLLOWING FUNCTIONS WILL INSERT MAIN CAT TO TERZO CAT WITH PARENT
   // CHILD RELATIONSHIP
 
-$category_name = sanitize_text_field($main_cat);
+$main_cat_name = sanitize_text_field($main_cat);
 $sub_cat_1 = sanitize_text_field($primo_cat);
 $sub_cat_2 = sanitize_text_field($secondo_cat);
 $sub_cat_3 = sanitize_text_field($terzo_cat);
 
 /**
- * CHECKING IF CATEGORY EXISTS
+ * COLLECT MAIN CATEGORY ID
  */
-if (term_exists( $category_name, 'category' )) {
+
+$main_cat_id = get_cat_ID($main_cat_name);
+// echo 'main category id: ' . $main_cat_id;
+// wp_die();
+
+/**
+ * CHECKING IF CATEGORY EXISTS & IF THE MAIN CAT IS THE PARENT
+ */
+if (term_exists( $sub_cat_1, 'category', $main_cat_id )) {
   echo "
-  
   <div class='alert alert-danger rounded-0' role='alert'>
-    The Main Category <strong>$category_name</strong> already exists ... 
-    The Main Category must be unique ...
+    The Primo Category <strong>$sub_cat_1</strong> already exists ... 
+    The Primo Category must be unique ...
   </div>
-  
   ";
   die();
 }
-
-/**
- * INSERT MAIN CATEGORY
- */
-$main_cat_info = wp_insert_term(
-  // the name of the category
-  $category_name, 
-  
-  // the taxonomy, which in this case if category (don't change)
-  'category'
-);
-// COLLECTING MAIN CATEGORY 1 ID
-$main_cat_id = $main_cat_info['term_id'];
 
 /**
  * INSERT SUB CATEGORY 1 - PRIMO

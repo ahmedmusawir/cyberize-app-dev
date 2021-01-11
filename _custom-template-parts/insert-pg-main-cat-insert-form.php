@@ -82,7 +82,7 @@
   <button id="main-cat-insert-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
 
   <div class="my-3">
-    <span id="ajax-failed-message"></span>
+    <span id="ajax-failed-message-1"></span>
   </div>
 
 </section>

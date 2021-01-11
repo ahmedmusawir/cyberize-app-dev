@@ -5,9 +5,13 @@ class CatFormValdationParent {
   constructor() {
     // this.init();
     // ADDING LETTERS & SPACES ONLY METHOD TO JQ VALIDATION
-    $.validator.addMethod("lettersonly", function (value, element) {
-      return this.optional(element) || /^[a-z ]+$/i.test(value);
-    }, "Letters and spaces only please");
+    $.validator.addMethod(
+      'lettersonly',
+      function (value, element) {
+        return this.optional(element) || /^[a-z ]+$/i.test(value);
+      },
+      'Letters and spaces only please'
+    );
   }
 
   init = () => {
@@ -41,8 +45,7 @@ class CatFormValdationParent {
       // Maing the terzo cat user validation popup invisible
       this.terzoCatUserValidationBox.addClass('d-none');
     }
-
-  }
+  };
 
   catValidationHandler = (e) => {
     // console.log('main validation handler');
@@ -59,26 +62,40 @@ class CatFormValdationParent {
     if (this.terzoCatInsertFormBox) {
       this.validateTerzoCatForm();
     }
-
-  }
+  };
 
   // MAIN FORM VALIDATION
   validateMainCatForm = () => {
-
     $('#main-cat-insert-form').validate({
       rules: {
-        'main-input-main-cat': { lettersonly: true, maxlength: 25, minlength: 3 },
-        'main-input-primo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
-        'main-input-secondo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
-        'main-input-terzo-cat': { lettersonly: true, maxlength: 20, minlength: 3 }
+        'main-input-main-cat': {
+          lettersonly: true,
+          maxlength: 25,
+          minlength: 3,
+        },
+        'main-input-primo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
+        'main-input-secondo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
+        'main-input-terzo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
       },
       submitHandler: (form, event) => {
         event.preventDefault();
         // OPEN THE USER VALIDATION SCREEN
         this.getMainUserValidationScreen();
-      }
+      },
     });
-  }
+  };
 
   // MAIN USER VALIDATION
   getMainUserValidationScreen = () => {
@@ -99,8 +116,8 @@ class CatFormValdationParent {
     $('#secondo-input').text(secondoCatInputValue);
     $('#terzo-input').text(terzoCatInputValue);
     // CLEANING UP AJAX ERROR MESSAGES
-    $('#ajax-failed-message').html('');
-  }
+    $('#ajax-failed-message-1').html('');
+  };
 
   // PRIMO FORM VALIDATION
   validatePrimoCatForm = () => {
@@ -108,17 +125,29 @@ class CatFormValdationParent {
     $('#primo-cat-insert-form').validate({
       rules: {
         // 'primo-input-main-cat': { lettersonly: true, maxlength: 25, minlength: 3 },
-        'primo-input-primo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
-        'primo-input-secondo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
-        'primo-input-terzo-cat': { lettersonly: true, maxlength: 20, minlength: 3 }
+        'primo-input-primo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
+        'primo-input-secondo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
+        'primo-input-terzo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
       },
       submitHandler: (form, event) => {
         event.preventDefault();
         // OPEN THE USER VALIDATION SCREEN
         this.getPrimoUserValidationScreen();
-      }
+      },
     });
-  }
+  };
 
   // PRIMO USER VALIDATION
   getPrimoUserValidationScreen = () => {
@@ -143,26 +172,34 @@ class CatFormValdationParent {
     $('#secondo-display-primo').text(secondoCatInputValue);
     $('#terzo-display-primo').text(terzoCatInputValue);
     // CLEANING UP AJAX ERROR MESSAGES
-    $('#ajax-failed-message').html('');
-  }
+    $('#ajax-failed-message-2').html('');
+  };
 
-// SECONDO FORM VALIDATION
+  // SECONDO FORM VALIDATION
   validateSecondoCatForm = () => {
     // console.log('Validating Primo Cat Form...');
     $('#secondo-cat-insert-form').validate({
       rules: {
         // 'secondo-input-main-cat': { lettersonly: true, maxlength: 25, minlength: 3 },
         // 'secondo-input-primo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
-        'secondo-input-secondo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
-        'secondo-input-terzo-cat': { lettersonly: true, maxlength: 20, minlength: 3 }
+        'secondo-input-secondo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
+        'secondo-input-terzo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
       },
       submitHandler: (form, event) => {
         event.preventDefault();
         // OPEN THE USER VALIDATION SCREEN
         this.getSecondoUserValidationScreen();
-      }
+      },
     });
-  }
+  };
 
   // SECONDO USER VALIDATION
   getSecondoUserValidationScreen = () => {
@@ -173,13 +210,13 @@ class CatFormValdationParent {
 
     // COLLECTING CAT INPUT DATA
     const mainCatValue = $('#secondo-main-cat').text();
-    console.log(mainCatValue);
+    // console.log(mainCatValue);
     const primoCatInputValue = $('#secondo-primo-cat').text();
-    console.log(primoCatInputValue);
+    // console.log(primoCatInputValue);
     const secondoCatInputValue = $('#secondo-input-secondo-cat').val();
-    console.log(secondoCatInputValue);
+    // console.log(secondoCatInputValue);
     const terzoCatInputValue = $('#secondo-input-terzo-cat').val();
-    console.log(terzoCatInputValue);
+    // console.log(terzoCatInputValue);
 
     // INSERTING INTO USER VALIDATION PAGE
     $('#main-display-secondo').text(mainCatValue);
@@ -187,23 +224,27 @@ class CatFormValdationParent {
     $('#secondo-display-secondo').text(secondoCatInputValue);
     $('#terzo-display-secondo').text(terzoCatInputValue);
     // CLEANING UP AJAX ERROR MESSAGES
-    $('#ajax-failed-message').html('');
-  }
+    $('#ajax-failed-message-3').html('');
+  };
 
   // TERZO FORM VALIDATION
   validateTerzoCatForm = () => {
     // console.log('Validating Primo Cat Form...');
     $('#terzo-cat-insert-form').validate({
       rules: {
-        'terzo-input-terzo-cat': { lettersonly: true, maxlength: 20, minlength: 3 }
+        'terzo-input-terzo-cat': {
+          lettersonly: true,
+          maxlength: 20,
+          minlength: 3,
+        },
       },
       submitHandler: (form, event) => {
         event.preventDefault();
         // OPEN THE USER VALIDATION SCREEN
         this.getTerzoUserValidationScreen();
-      }
+      },
     });
-  }
+  };
 
   // TERZO USER VALIDATION
   getTerzoUserValidationScreen = () => {
@@ -228,9 +269,8 @@ class CatFormValdationParent {
     $('#secondo-display-terzo').text(secondoCatInputValue);
     $('#terzo-display-terzo').text(terzoCatInputValue);
     // CLEANING UP AJAX ERROR MESSAGES
-    $('#ajax-failed-message').html('');
-  }
-
+    $('#ajax-failed-message-4').html('');
+  };
 }
 
 export default CatFormValdationParent;

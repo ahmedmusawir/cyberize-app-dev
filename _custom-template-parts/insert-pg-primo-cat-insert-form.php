@@ -4,7 +4,6 @@
  */
 ?>
 
-
 <section id="primo-cat-insert-box" class="card p-5 d-none animate__animated animate__zoomIn">
   <style>
   .error {
@@ -84,7 +83,7 @@
   <button id="primo-cat-insert-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
 
   <div class="my-3">
-    <span id="ajax-failed-message"></span>
+    <span id="ajax-failed-message-2"></span>
   </div>
 
 </section>
