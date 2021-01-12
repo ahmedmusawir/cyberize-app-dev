@@ -6,7 +6,7 @@
 
 
 <section id="terzo-cat-insert-box" class="card p-5 d-none animate__animated animate__zoomIn">
-<style>
+  <style>
   .error {
     color: red;
     font-size: .8rem;
@@ -24,7 +24,7 @@
 
   <div class="form-box">
 
-  <form action="" name="terzo-cat-insert-form" id="terzo-cat-insert-form" class="form">
+    <form action="" name="terzo-cat-insert-form" id="terzo-cat-insert-form" class="form">
 
       <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert New Terzo
         Subcategory</label>
@@ -79,7 +79,7 @@
   <button id="terzo-cat-insert-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
 
   <div class="my-3">
-    <span id="ajax-failed-message"></span>
+    <span id="ajax-failed-message-4"></span>
   </div>
 
 </section>
