@@ -15,8 +15,29 @@
 get_header();
 
 ?>
+<style>
+.error {
+  color: red;
+  font-size: .8rem;
+  font-weight: bold;
+}
 
-<main id="primary" class="site-main container">
+input {
+  color: red;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+input::placeholder {
+  font-size: .8rem !important;
+}
+
+textarea::placeholder {
+  font-size: .8rem !important;
+}
+</style>
+
+<main id="primary" class="site-main container-fluid">
   <img class="w-25 mx-auto d-block mt-5" src="/wp-content/uploads/2020/07/SelfListLogo.png" alt="">
   <hr>
 
@@ -29,9 +50,8 @@ get_header();
   <article class="main-content">
 
     <div class="row">
-
       <!-- LIST INSERT BLOCK -->
-      <section class="col-sm-6">
+      <section class="col-12 col-sm-12 col-md-6">
 
         <article id="create-new-list-box" class="card p-3  animate__animated animate__zoomIn">
 
@@ -41,138 +61,17 @@ get_header();
 
           <!-- END MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
-          <section id="category-choice-box">
-            <label class="font-weight-bold" for="exampleFormControlTextarea1">Choose Your Categories:</label>
+          <!-- CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
 
-            <div class="row">
-              <!-- MAIN CATEGORY DROPDOWN -->
+          <?php get_template_part('_custom-template-parts/list-insert-pg-cat-select-box'); ?>
 
-              <div class="col-sm-8">
-                <article class="main-cat-box">
-                  <select id="select-main-cats" class="select-main-cats" placeholder="Pick A Main Category...">
-                    <option value="">Select a Main Caterory...</option>
-                    <!-- <option value="AL">Tutoring</option>
-                    <option value="AK">Alaska</option>
-                    <option value="IN">Indiana</option> -->
-                  </select>
-                </article>
-              </div>
-              <div class="col-sm-4">
-                <a href="#" id="main-cat-new-btn" class="btn btn-dark btn-sm btn-block">
-                  New Category
-                </a>
-              </div>
+          <!-- END CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
 
-            </div>
-            <!-- END MAIN CATEGORY INTERNAL ROW -->
+          <!-- THE MAIN FORM INPUTS START -->
 
-            <!-- PRIMO CATEGORY DROPDOWN -->
-            <div class="row">
+          <?php get_template_part('_custom-template-parts/list-insert-pg-main-inputs'); ?>
 
-              <div class="col-sm-8">
-                <article class="main-cat-box">
-                  <select id="select-primo-cats" placeholder="Pick A Primo">
-                    <option value="">Select a Primo...</option>
-                    <!-- <option value="AL">Math</option>
-                    <option value="AK">Alaska</option>
-                    <option value="IN">Indiana</option> -->
-                  </select>
-                </article>
-              </div>
-              <div class="col-sm-4">
-                <a id="primo-cat-new-btn" href="#" class="btn btn-danger btn-sm btn-block">
-                  New Primo
-                </a>
-              </div>
-
-            </div>
-            <!-- END PRIMO CATEGORY INTERNAL ROW -->
-
-            <!-- SECONDO CATEGORY DROPDOWN -->
-            <div class="row">
-
-              <div class="col-sm-8">
-                <article class="main-cat-box">
-                  <select id="select-secondo-cats" placeholder="Pick A Secondo">
-                    <option value="">Select a Secondo...</option>
-                    <!-- <option value="AL">Grade 10</option>
-                    <option value="AK">Alaska</option>
-                    <option value="IN">Indiana</option> -->
-                  </select>
-                </article>
-              </div>
-              <div class="col-sm-4">
-                <a id="secondo-cat-new-btn" href="#" class="btn btn-danger btn-sm btn-block">
-                  New Secondo
-                </a>
-              </div>
-
-            </div>
-            <!-- END SECONDO CATEGORY INTERNAL ROW -->
-
-            <!-- TERZO CATEGORY DROPDOWN -->
-            <div class="row">
-
-              <div class="col-sm-8">
-                <article class="main-cat-box">
-                  <select id="select-terzo-cats" placeholder="Pick A Terzo">
-                    <option value="">Select a Terzo</option>
-                    <!-- <option value="AL">Jackson Heights</option>
-                    <option value="AK">Alaska</option>
-                    <option value="IN">Indiana</option> -->
-                  </select>
-                </article>
-              </div>
-              <div class="col-sm-4">
-                <a id="terzo-cat-new-btn" href="#" class="btn btn-danger btn-sm btn-block">
-                  New Terzo
-                </a>
-              </div>
-
-            </div>
-            <!-- END TERZO CATEGORY INTERNAL ROW -->
-
-          </section>
-
-          <!-- OTHER INFO INPUTS START -->
-
-
-          <div class="form-group mt-5">
-            <label class="font-weight-bold" for="lister-description">Description:</label>
-            <textarea class="form-control" id="lister-description" rows="3"
-              placeholder="Add details of your list ..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label class="font-weight-bold" for="lister-name">Contact Info:</label>
-            <input type="text" class="form-control" id="lister-name" aria-describedby="textHelp"
-              placeholder="Your Name">
-            <small id="textHelp" class="form-text text-muted">Example: Donald Trump</small>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="lister-address" aria-describedby="textHelp"
-              placeholder="Your Address">
-            <small id="textHelp" class="form-text text-muted">Example: Trump Tower, 721 Fifth Avenue New York City, NY
-              10022 United States </small>
-          </div>
-
-          <div class="form-group">
-            <label class="font-weight-bold" for="exampleFormControlTextarea1">Social Media:</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
-              placeholder="Your Facebook Info ...">
-            <small id="textHelp" class="form-text text-muted">Example: https://facebook.com/mypage</small>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
-              placeholder="Your Instagram Info">
-            <small id="textHelp" class="form-text text-muted">Example: https://instagram.com/mypage</small>
-          </div>
-
-          <button id="list-insert-button" type="button" class="btn btn-primary">
-            Submit Your List
-          </button>
-
-          <!-- END OTHER INFO INPUTS  -->
+          <!-- END THE MAIN FORM INPUTS  -->
 
         </article> <!-- END OF id="create-new-list-box" -->
 
@@ -205,7 +104,7 @@ get_header();
 
 
       <!-- CATEGORY SEARCH COLUMN [RIGHT COLUMN STARTS]-->
-      <section class="col-sm-6">
+      <section class="col-12 col-sm-12 col-md-6">
         <section id="selflist-search-input-box" class="selflist-search-input-box mb-3 ">
 
           <input type="text" id="cat-search-input" class="selflist-search-input">

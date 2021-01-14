@@ -3,7 +3,9 @@
  * INSERT MULTI LEVEL ALL CATEGORIES WITH AJAX
  */
 
-add_action('wp_ajax_nopriv_main_cat_insert_ajax', 'main_cat_insert_ajax');
+// FOR NON LOGGED IN USERS 
+// add_action('wp_ajax_nopriv_main_cat_insert_ajax', 'main_cat_insert_ajax');
+// FOR LOGGED IN USERS
 add_action('wp_ajax_main_cat_insert_ajax', 'main_cat_insert_ajax');
 
  function main_cat_insert_ajax() {

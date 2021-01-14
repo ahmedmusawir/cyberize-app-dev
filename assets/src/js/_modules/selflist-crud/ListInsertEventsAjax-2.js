@@ -58,7 +58,6 @@ class ListInsertEventsAjax extends CatSelectDataParent {
       currentTerzoId = catDataJson.terzo_cat_id;
       console.log('Current Terzo ID: ', currentTerzoId);
     }
-
     // CHECKING FOR CAT DISPLAY BOX
     if (this.catDisplayUiBox.hasClass('d-none')) {
       console.log('get cats from selectize');

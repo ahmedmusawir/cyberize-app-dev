@@ -3,7 +3,9 @@
  * INSERT PRIMO, SECONDO & TERZO CATEGORY WITH AJAX
  */
 
-add_action('wp_ajax_nopriv_primo_cat_insert_ajax', 'primo_cat_insert_ajax');
+// FOR NON LOGGED IN USERS 
+// add_action('wp_ajax_nopriv_primo_cat_insert_ajax', 'primo_cat_insert_ajax');
+// FOR LOGGED IN USERS
 add_action('wp_ajax_primo_cat_insert_ajax', 'primo_cat_insert_ajax');
 
 function primo_cat_insert_ajax() {

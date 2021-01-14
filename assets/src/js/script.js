@@ -79,7 +79,7 @@ class App {
   runTestCode = () => {
     // new InsertPost();
     // new TestGetJson();
-    new FormValdationTest();
+    // new FormValdationTest();
   };
 }
 

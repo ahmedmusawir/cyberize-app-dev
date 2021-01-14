@@ -6,7 +6,7 @@
 
 
 <section id="main-cat-insert-box" class="card p-5 animate__animated animate__zoomIn d-none">
-  <style>
+  <!-- <style>
   .error {
     color: red;
     font-size: .8rem;
@@ -18,7 +18,7 @@
     font-size: .8rem;
     font-weight: bold;
   }
-  </style>
+  </style> -->
 
   <!-- MAIN CAT INSERT FORM -->
   <div class="form-box">

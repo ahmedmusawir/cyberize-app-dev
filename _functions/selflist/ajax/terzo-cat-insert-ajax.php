@@ -3,7 +3,9 @@
  * INSERT ONLY TERZO CATEGORY WITH AJAX
  */
 
-add_action('wp_ajax_nopriv_terzo_cat_insert_ajax', 'terzo_cat_insert_ajax');
+// FOR NON LOGGED IN USERS 
+// add_action('wp_ajax_nopriv_terzo_cat_insert_ajax', 'terzo_cat_insert_ajax');
+// FOR LOGGED IN USERS
 add_action('wp_ajax_terzo_cat_insert_ajax', 'terzo_cat_insert_ajax');
 
  function terzo_cat_insert_ajax() {

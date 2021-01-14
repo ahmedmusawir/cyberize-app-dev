@@ -12,10 +12,8 @@ class ListInsertEventsAjax extends CatSelectDataParent {
   constructor() {
     super();
     this.init();
-    // COLLECTING ELEMENTS
+    // COLLECTING BUTTON
     this.button = $('#list-insert-button');
-    this.catDisplayUiBox = $('#cat-display-ui-box');
-    this.catSelectBox = $('#category-choice-box');
     // SETTING EVENTS
     this.setEvents();
   }
@@ -31,53 +29,22 @@ class ListInsertEventsAjax extends CatSelectDataParent {
 
   clickInsertListHandler = () => {
     // console.log('List Submit Clicked');
-    // DECLARING CAT VARIABLES
-    let currentMainId;
-    let currentPrimoId;
-    let currentSecondoId;
-    let currentTerzoId;
+    // COLLECTING FORM DATA
+    // COLLECTING MAIN CAT SELECTED ID
+    const currentMainId = this.selectizeMain.getValue();
+    console.log('Current Main Cat ID: ', currentMainId);
 
-    // CHECKING FOR CAT SELECT DROPDOWN BOX
-    if (this.catSelectBox.hasClass('d-none')) {
-      console.log('get cats from local storage');
-      const catDataJson = JSON.parse(localStorage.getItem('catData'));
-      console.log(catDataJson);
-      // COLLECTING MAIN CAT SELECTED ID
-      currentMainId = catDataJson.main_cat_id;
-      console.log('Current Main Cat ID: ', currentMainId);
+    // COLLECTED PRIMO CAT SELECTED ID
+    const currentPrimoId = this.selectizePrimo.getValue();
+    console.log('Current Primo ID: ', currentPrimoId);
 
-      // COLLECTED PRIMO CAT SELECTED ID
-      currentPrimoId = catDataJson.primo_cat_id;
-      console.log('Current Primo ID: ', currentPrimoId);
+    // COLLECTING SECONDO CAT SELECTED ID
+    const currentSecondoId = this.selectizeSecondo.getValue();
+    console.log('Current Secondo Cat ID: ', currentSecondoId);
 
-      // COLLECTING SECONDO CAT SELECTED ID
-      currentSecondoId = catDataJson.secondo_cat_id;
-      console.log('Current Secondo Cat ID: ', currentSecondoId);
-
-      // COLLECTED TERZO CAT SELECTED ID
-      currentTerzoId = catDataJson.terzo_cat_id;
-      console.log('Current Terzo ID: ', currentTerzoId);
-    }
-
-    // CHECKING FOR CAT DISPLAY BOX
-    if (this.catDisplayUiBox.hasClass('d-none')) {
-      console.log('get cats from selectize');
-      // COLLECTING MAIN CAT SELECTED ID
-      currentMainId = this.selectizeMain.getValue();
-      console.log('Current Main Cat ID: ', currentMainId);
-
-      // COLLECTED PRIMO CAT SELECTED ID
-      currentPrimoId = this.selectizePrimo.getValue();
-      console.log('Current Primo ID: ', currentPrimoId);
-
-      // COLLECTING SECONDO CAT SELECTED ID
-      currentSecondoId = this.selectizeSecondo.getValue();
-      console.log('Current Secondo Cat ID: ', currentSecondoId);
-
-      // COLLECTED TERZO CAT SELECTED ID
-      currentTerzoId = this.selectizeTerzo.getValue();
-      console.log('Current Terzo ID: ', currentTerzoId);
-    }
+    // COLLECTED TERZO CAT SELECTED ID
+    const currentTerzoId = this.selectizeTerzo.getValue();
+    console.log('Current Terzo ID: ', currentTerzoId);
 
     // COLLECTING FORM DATA
     const name = $('#lister-name').val();
@@ -113,10 +80,6 @@ class ListInsertEventsAjax extends CatSelectDataParent {
       .done((response) => {
         console.info(response);
         console.log('Awesome! ... Ajax Success');
-        // REMOVING CAT DATA FROM THE LOCAL STORAGE FOR CLEANUP
-        localStorage.removeItem('catData');
-        // REFRESHING THE SCREEN
-        location.reload();
       })
       .fail((response) => {
         console.error('Sorry ... Ajax failed');

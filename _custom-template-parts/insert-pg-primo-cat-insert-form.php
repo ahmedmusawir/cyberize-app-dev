@@ -5,7 +5,7 @@
 ?>
 
 <section id="primo-cat-insert-box" class="card p-5 d-none animate__animated animate__zoomIn">
-  <style>
+  <!-- <style>
   .error {
     color: red;
     font-size: .8rem;
@@ -17,7 +17,7 @@
     font-size: .8rem;
     font-weight: bold;
   }
-  </style>
+  </style> -->
 
   <!-- PRIMO CAT INSERT FORM -->
 

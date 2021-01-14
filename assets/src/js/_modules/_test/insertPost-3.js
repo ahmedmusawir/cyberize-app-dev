@@ -4,10 +4,9 @@ class InsertPost {
   constructor() {
     this.init();
     // COLLECTING BUTTON
-    // this.button = $('#insert-test-post');
-    this.button = $('#list-insert-button');
+    this.button = $('#insert-test-post');
     // SETTING EVENTS
-    // this.setEvents();
+    this.setEvents();
   }
 
   init = () => {
@@ -18,11 +17,13 @@ class InsertPost {
     this.button.on('click', this.clickInsertHandler);
   };
 
-  clickInsertHandler = () => {
+  clickInsertHandler() {
     let name = $('#new-note-name').val();
     let address = $('#new-note-address').val();
+
     console.log(`NAME: ${name}`);
     console.log(`ADDRESS: ${address}`);
+
     let newPostData = {
       title: $('.new-note-title').val(),
       content: $('.new-note-body').val(),
@@ -30,6 +31,7 @@ class InsertPost {
       'fields[your_address]': address, // ACF Item
       status: 'publish',
     };
+
     $.ajax({
       beforeSend: (xhr) => {
         xhr.setRequestHeader('X-WP-Nonce', selflistData.nonce);
@@ -49,7 +51,7 @@ class InsertPost {
       .always(() => {
         console.info('Ajax finished as always...');
       });
-  };
+  }
 }
 
 export default InsertPost;
