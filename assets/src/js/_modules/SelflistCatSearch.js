@@ -7,7 +7,7 @@ class SelflistCatSearch {
     // console.info(this.search);
     // SETTING EVENTS
     this.setEvents();
-    this.init();
+    // this.init();
   }
 
   init = () => {

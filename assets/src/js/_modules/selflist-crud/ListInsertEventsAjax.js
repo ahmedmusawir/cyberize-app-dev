@@ -1,19 +1,18 @@
 import $ from 'jquery';
 import { selectize } from 'selectize';
-import CatSelectDataParent from './CatSelectDataParent';
+import ListInsertUiEvents from './ListInsertUiEvents';
 
 /**
- This is also a child clas of CatSelectDataParent and uses the selectize library. This one
- Inserts the the List Insert Form data into the WP DB via the REST API. This inserts selectize
- data, normal form data and ACF data into the WP DB
+ This is a child class of ListInsertUiEvents and uses the selectize library. This one
+ Inserts the the List Insert Form data into the WP DB via the REST API. This inserts selectize data, normal form data and ACF data into the WP DB
  */
 
-class ListInsertEventsAjax extends CatSelectDataParent {
+class ListInsertEventsAjax extends ListInsertUiEvents {
   constructor() {
     super();
     this.init();
     // COLLECTING ELEMENTS
-    this.button = $('#list-insert-button');
+    this.listInsertButton = $('#list-insert-submit-btn');
     this.catDisplayUiBox = $('#cat-display-ui-box');
     this.catSelectBox = $('#category-choice-box');
     // SETTING EVENTS
@@ -25,81 +24,74 @@ class ListInsertEventsAjax extends CatSelectDataParent {
   };
 
   setEvents = () => {
-    this.button.on('click', this.clickInsertListHandler);
-    // this.button.on('click', this.clickInsertHandler);
+    this.listInsertButton.on('click', this.clickInsertListHandler);
   };
 
   clickInsertListHandler = () => {
-    // console.log('List Submit Clicked');
-    // DECLARING CAT VARIABLES
-    let currentMainId;
-    let currentPrimoId;
-    let currentSecondoId;
-    let currentTerzoId;
-
-    // CHECKING FOR CAT SELECT DROPDOWN BOX
-    if (this.catSelectBox.hasClass('d-none')) {
-      console.log('get cats from local storage');
-      const catDataJson = JSON.parse(localStorage.getItem('catData'));
-      console.log(catDataJson);
-      // COLLECTING MAIN CAT SELECTED ID
-      currentMainId = catDataJson.main_cat_id;
-      console.log('Current Main Cat ID: ', currentMainId);
-
-      // COLLECTED PRIMO CAT SELECTED ID
-      currentPrimoId = catDataJson.primo_cat_id;
-      console.log('Current Primo ID: ', currentPrimoId);
-
-      // COLLECTING SECONDO CAT SELECTED ID
-      currentSecondoId = catDataJson.secondo_cat_id;
-      console.log('Current Secondo Cat ID: ', currentSecondoId);
-
-      // COLLECTED TERZO CAT SELECTED ID
-      currentTerzoId = catDataJson.terzo_cat_id;
-      console.log('Current Terzo ID: ', currentTerzoId);
-    }
-
-    // CHECKING FOR CAT DISPLAY BOX
-    if (this.catDisplayUiBox.hasClass('d-none')) {
-      console.log('get cats from selectize');
-      // COLLECTING MAIN CAT SELECTED ID
-      currentMainId = this.selectizeMain.getValue();
-      console.log('Current Main Cat ID: ', currentMainId);
-
-      // COLLECTED PRIMO CAT SELECTED ID
-      currentPrimoId = this.selectizePrimo.getValue();
-      console.log('Current Primo ID: ', currentPrimoId);
-
-      // COLLECTING SECONDO CAT SELECTED ID
-      currentSecondoId = this.selectizeSecondo.getValue();
-      console.log('Current Secondo Cat ID: ', currentSecondoId);
-
-      // COLLECTED TERZO CAT SELECTED ID
-      currentTerzoId = this.selectizeTerzo.getValue();
-      console.log('Current Terzo ID: ', currentTerzoId);
-    }
+    console.log('List Submit Clicked');
 
     // COLLECTING FORM DATA
-    const name = $('#lister-name').val();
+    // Categories List
+    const categoryIds = `${this.currentMainId}, ${this.currentPrimoId}, ${this.currentSecondoId}, ${this.currentTerzoId}`;
+    // Contact Info Vars
+    const name = this.contactName;
     const listTitle = `This List Posted by: ${name}`;
-    const address = $('#lister-address').val();
-    const description = $('#lister-description').val();
-    const categoryIds = `${currentMainId}, ${currentPrimoId}, ${currentSecondoId}, ${currentTerzoId}`;
+    const description = this.listDescription;
+    const phone = this.contactPhone;
+    const email = this.contactEmail;
+    const website = this.contactWebsite;
+    const city = this.contactCity;
+    const state = this.contactState;
+    const zip = this.contactZip;
 
-    console.log(`NAME: ${name}`);
-    console.log(`ADDRESS: ${address}`);
-    console.log(`DESCRIPTION: ${description}`);
+    // Social Media URLs
+    const facebook = this.socialFacebook;
+    const yelp = this.socialYelp;
+    const instagram = this.socialInstagram;
+    const linkedin = this.socialLinkedin;
+    const googlePlus = this.socialGooglePlus;
+    const twitter = this.socialTwitter;
+
+    // UNIT TESTNG Debugging Output
     console.log(`CATEGORY: ${categoryIds}`);
+    console.log(`DESCRIPTION: ${description}`);
+    console.log(`NAME: ${name}`);
+    console.log(`PHONE: ${phone}`);
+    console.log(`EMAIL: ${email}`);
+    console.log(`WEBSITE: ${website}`);
+    console.log(`CITY: ${city}`);
+    console.log(`STATE: ${state}`);
+    console.log(`ZIP: ${zip}`);
+    console.log(`FACEBOOK: ${facebook}`);
+    console.log(`YELP: ${yelp}`);
+    console.log(`INSTAGRAM: ${instagram}`);
+    console.log(`LINKEDIN: ${linkedin}`);
+    console.log(`GOOGLEPLUS: ${googlePlus}`);
+    console.log(`TWITTER: ${twitter}`);
 
     // PREPARING FORM DATA FOR REST API
     let newPostData = {
+      categories: categoryIds,
       title: listTitle,
       content: description,
-      categories: categoryIds,
       'fields[your_name]': name, // ACF Item
-      'fields[your_address]': address, // ACF Item
+      'fields[your_phone]': phone, // ACF Item
+      'fields[your_email]': email, // ACF Item
+      'fields[your_site]': website, // ACF Item
+      'fields[your_city]': city, // ACF Item
+      'fields[your_state]': state, // ACF Item
+      'fields[your_zip]': zip, // ACF Item
+      'fields[your_facebook]': facebook, // ACF Item
+      'fields[your_yelp]': yelp, // ACF Item
+      'fields[your_instagram]': instagram, // ACF Item
+      'fields[your_linkedin]': linkedin, // ACF Item
+      'fields[your_google_plus]': googlePlus, // ACF Item
+      'fields[your_twitter]': twitter, // ACF Item
       status: 'publish',
     };
+
+    // UNIT TESTING debugging info
+    console.log('newPostData: ', newPostData);
 
     // AJAX POST INSERT
     $.ajax({
@@ -126,14 +118,14 @@ class ListInsertEventsAjax extends CatSelectDataParent {
         console.info('Ajax finished as always...');
       });
 
-    // RESET FORM
-    this.selectizeMain.clear();
-    this.selectizePrimo.clear();
-    this.selectizeSecondo.clear();
-    this.selectizeTerzo.clear();
-    $('#lister-name').val('');
-    $('#lister-address').val('');
-    $('#lister-description').val();
+    // RESET FORM (NOT NECESSARY CUZ NOW THERE IS A PAGE REFRESH)
+    // this.selectizeMain.clear();
+    // this.selectizePrimo.clear();
+    // this.selectizeSecondo.clear();
+    // this.selectizeTerzo.clear();
+    // $('#lister-name').val('');
+    // $('#lister-address').val('');
+    // $('#lister-description').val();
   };
 }
 

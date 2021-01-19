@@ -2,15 +2,13 @@ import $ from 'jquery';
 
 class SelflistMainCatInsertUI {
   constructor() {
-    // COLLECTING ELEMENTS FROM PAGE
-    // This is the new Main Category Insert button. Top input right button "New Catetory"
-    this.mainCatNewBtn = $('#main-cat-new-btn');
-    // This is the main list insert form container
-    this.listInsertFormBox = $('#create-new-list-box');
-    // This is the main category insert form container
-    this.mainCatInsertFormBox = $('#main-cat-insert-box');
-    // This is the Cancel button on the Main Cat Insert Form (at the bottom)
-    this.mainCatValidationCancelBtn = $('#main-cat-validation-cancel-btn');
+    // COLLECTING SEARCH INPUT
+    this.newListContainer = $('#create-new-list-box');
+    this.mainCategoryInsertContainer = $('#main-cat-insert-box');
+    this.categoryChoiceContainer = $('#category-choice-box');
+    this.testUICatContainer = $('#test-ui-cat-box');
+    this.mainCatInsertBtn = $('#main-cat-new-btn');
+    this.mainCatInsertSubmitBtn = $('#main-cat-insert-submit-btn');
 
     // SETTING EVENTS
     this.setEvents();
@@ -18,25 +16,30 @@ class SelflistMainCatInsertUI {
   }
 
   init = () => {
-    // console.log('Selflist Main cat INSERT UI...');
+    // console.log('Selflist cat INSERT ...');
   };
 
   setEvents = () => {
-    this.mainCatNewBtn.on('click', this.mainCatNewHandler);
-    this.mainCatValidationCancelBtn.on('click', this.mainCatValidationCancelHandler);
+    this.mainCatInsertBtn.on('click', this.mainCatInsertHandler.bind(this));
+    this.mainCatInsertSubmitBtn.on(
+      'click',
+      this.testUICatSubmitHandler.bind(this)
+    );
   };
 
-  mainCatNewHandler = () => {
-    // console.log('new main cat btn clicked');
-    this.listInsertFormBox.addClass('d-none');
-    this.mainCatInsertFormBox.removeClass('d-none');
+  mainCatInsertHandler() {
+    // console.log('clicked');
+    this.newListContainer.addClass('d-none');
+    this.mainCategoryInsertContainer.removeClass('d-none');
   }
 
-  mainCatValidationCancelHandler = () => {
-    this.listInsertFormBox.removeClass('d-none');
-    this.mainCatInsertFormBox.addClass('d-none');
+  testUICatSubmitHandler() {
+    console.log('clicked');
+    this.mainCategoryInsertContainer.addClass('d-none');
+    this.newListContainer.removeClass('d-none');
+    this.categoryChoiceContainer.addClass('d-none');
+    this.testUICatContainer.removeClass('d-none');
   }
-
 }
 
 export default SelflistMainCatInsertUI;

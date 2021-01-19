@@ -10,12 +10,12 @@ function post_acf_to_rest() {
       return $memName;
     }
   ));
-  register_rest_field('post', 'member_address', array(
-    'get_callback' => function() {
-      $memAddress = get_field('your_address');
-      return $memAddress;
-    }
-  ));
+  // register_rest_field('post', 'member_address', array(
+  //   'get_callback' => function() {
+  //     $memAddress = get_field('your_address');
+  //     return $memAddress;
+  //   }
+  // ));
 }
 
 add_action('rest_api_init', 'post_acf_to_rest');

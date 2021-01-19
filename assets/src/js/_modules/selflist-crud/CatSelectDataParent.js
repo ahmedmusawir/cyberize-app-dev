@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { selectize } from 'selectize';
 // FOLLOWING NEEDED EVERY TIME ASYNC AWAIT IS USED
-import regeneratorRuntime from "regenerator-runtime";
+import regeneratorRuntime from 'regenerator-runtime';
 
 /**
  This is a Parent class that fetches data from categories.json file from the WP /uploads dir
@@ -29,41 +29,36 @@ class CatSelectDataParent {
     // INITIALIZE UP SELECTIZE
     if ($('#select-main-cats').length) {
       this.selectMainCats = $('#select-main-cats').selectize({
-        sortField: 'text'
+        sortField: 'text',
       });
 
       // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
       this.selectizeMain = this.selectMainCats[0].selectize;
-
     }
     if ($('#select-primo-cats').length) {
       this.selectPrimoCats = $('#select-primo-cats').selectize({
-        sortField: 'text'
+        sortField: 'text',
       });
 
       // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
       this.selectizePrimo = this.selectPrimoCats[0].selectize;
-
     }
     if ($('#select-secondo-cats').length) {
       this.selectSecondoCats = $('#select-secondo-cats').selectize({
-        sortField: 'text'
+        sortField: 'text',
       });
 
       // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
       this.selectizeSecondo = this.selectSecondoCats[0].selectize;
-
     }
     if ($('#select-terzo-cats').length) {
       this.selectTerzoCats = $('#select-terzo-cats').selectize({
-        sortField: 'text'
+        sortField: 'text',
       });
 
       // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
       this.selectizeTerzo = this.selectTerzoCats[0].selectize;
-
     }
-
   }
 
   init = () => {
@@ -76,7 +71,6 @@ class CatSelectDataParent {
       let data = await response.json();
       // console.log(data);
       return data;
-
     } catch (e) {
       console.log(e);
     }
@@ -85,16 +79,19 @@ class CatSelectDataParent {
   loadMainCatData = (thePromise) => {
     thePromise.then((d) => {
       let data = d.mainCat;
-      data.map(catData => {
+      data.map((catData) => {
         // ADDING ITEMS DYNAMICALLY
-        const selectOptions = { value: catData.mainCatId, text: catData.mainCatName };
+        const selectOptions = {
+          value: catData.mainCatId,
+          text: catData.mainCatName,
+        };
         if (this.selectizeMain) {
           this.selectizeMain.addOption(selectOptions);
           // this.selectizeMain.addItem(selectOptions);
         }
-      })
+      });
     });
-  }
+  };
 }
 
 export default CatSelectDataParent;

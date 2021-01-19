@@ -6,19 +6,6 @@
 
 
 <section id="main-cat-insert-box" class="card p-5 animate__animated animate__zoomIn d-none">
-  <!-- <style>
-  .error {
-    color: red;
-    font-size: .8rem;
-    font-weight: bold;
-  }
-
-  input {
-    color: red;
-    font-size: .8rem;
-    font-weight: bold;
-  }
-  </style> -->
 
   <!-- MAIN CAT INSERT FORM -->
   <div class="form-box">

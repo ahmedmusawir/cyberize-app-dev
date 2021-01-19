@@ -19,7 +19,7 @@ class CatFormValdationParent {
   };
 
   catUserValidationCancelHandler = () => {
-    console.log('main cancel');
+    // console.log('main cancel');
 
     if (this.mainCatInsertFormBox) {
       // Displaying the insert form

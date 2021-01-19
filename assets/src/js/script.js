@@ -6,11 +6,12 @@ import FormValdationTest from './_modules/_test/formVaidationTest';
 import SelflistSearch from './_modules/SelflistSearch';
 import SelflistCatSearch from './_modules/SelflistCatSearch';
 import SelflistPostSearch from './_modules/SelflistPostSearch';
+// LIST INSERT RELATED
 import CatSelectDataParent from './_modules/selflist-crud/CatSelectDataParent';
 import CatSelectionEvents from './_modules/selflist-crud/CatSelectionEvents';
 import ListInsertEventsAjax from './_modules/selflist-crud/ListInsertEventsAjax';
-// import MainCatInsertEventAjax from './_modules/selflist-crud/MainCatInsertEventAjax';
-// import MainCatFormValdation from './_modules/_old/MainCatFormVaidation';C
+import ListInsertUiEvents from './_modules/selflist-crud/ListInsertUiEvents';
+import ListInsertValidationEvents from './_modules/selflist-crud/ListInsertValidationEvents';
 // CATEGORY INSERT UI RELATED
 import CatInsertUiParent from './_modules/selflist-crud/cat-curd/CatInsertUiParent';
 import MainCatInsertUi from './_modules/selflist-crud/cat-curd/MainCatInsertUi';
@@ -43,13 +44,15 @@ class App {
     // Selflist Post Item Search Filter - non REST
     new SelflistPostSearch();
 
-    // SELFLIST LIST INSERT PAGE CAT DROPDOWNS
+    // SELFLIST LIST INSERT PAGE CAT SELECT DROPDOWNS
     new CatSelectDataParent();
     new CatSelectionEvents();
-    // LIST INSERT PAGE MAIN POST INSERT EVENTS
+    // LIST INSERT PAGE UI EVENTS (a child of CatSelectionEvents)
+    new ListInsertUiEvents();
+    // LIST INSERT PAGE MAIN POST INSERT EVENTS (a child of ListInsertUiEvents)
     new ListInsertEventsAjax();
-    // CAT INSERT PAGE AJAX
-    // new MainCatInsertEventAjax();
+    // LIST INSERT VALIDATION EVENTS
+    new ListInsertValidationEvents();
 
     /**
      * CATEGORY RELATED CLASSES

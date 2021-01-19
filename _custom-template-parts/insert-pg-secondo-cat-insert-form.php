@@ -64,9 +64,11 @@
 <section id="secondo-cat-user-validation-box" class="card p-5 animate__animated animate__zoomIn d-none">
 
   <ul class="list-group">
-    <li class="list-group-item active bg-light text-primary">Please Verify Categories Before Creating:<br>
-      <small>(You cannot edit categories once they are created)</small>
+    <!-- THE HEADER ANNOUNCEMENT -->
+    <li class="list-group-item active bg-light text-primary">Please Verify Your List Entries Before Creating:<br>
+      <small>(You cannot edit entries once they are created)</small>
     </li>
+    <!-- THE CATEGORY LIST -->
     <li class="list-group-item">Main Category: <span class="pl-3 font-weight-bold" id="main-display-secondo"></span>
     </li>
     <li class="list-group-item">Primo Category: <span class="pl-3 font-weight-bold" id="primo-display-secondo"></span>

@@ -18,10 +18,11 @@ class PrimoCatInsertUi extends CatInsertUiParent {
 
   setEvents = () => {
     this.primoCatNewBtn.on('click', this.catNewHandler);
-    this.primoCatValidationCancelBtn.on('click', this.catValidationCancelHandler);
+    this.primoCatValidationCancelBtn.on(
+      'click',
+      this.catValidationCancelHandler
+    );
   };
-
 }
-
 
 export default PrimoCatInsertUi;
