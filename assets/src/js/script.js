@@ -9,9 +9,9 @@ import SelflistPostSearch from './_modules/SelflistPostSearch';
 // LIST INSERT RELATED
 import CatSelectDataParent from './_modules/selflist-crud/CatSelectDataParent';
 import CatSelectionEvents from './_modules/selflist-crud/CatSelectionEvents';
-import ListInsertEventsAjax from './_modules/selflist-crud/ListInsertEventsAjax';
-import ListInsertUiEvents from './_modules/selflist-crud/ListInsertUiEvents';
+import ListInsertUiDataParent from './_modules/selflist-crud/ListInsertUiDataParent';
 import ListInsertValidationEvents from './_modules/selflist-crud/ListInsertValidationEvents';
+import ListInsertEventsAjax from './_modules/selflist-crud/ListInsertEventsAjax';
 // CATEGORY INSERT UI RELATED
 import CatInsertUiParent from './_modules/selflist-crud/cat-curd/CatInsertUiParent';
 import MainCatInsertUi from './_modules/selflist-crud/cat-curd/MainCatInsertUi';
@@ -47,12 +47,13 @@ class App {
     // SELFLIST LIST INSERT PAGE CAT SELECT DROPDOWNS
     new CatSelectDataParent();
     new CatSelectionEvents();
-    // LIST INSERT PAGE UI EVENTS (a child of CatSelectionEvents)
-    new ListInsertUiEvents();
+
     // LIST INSERT PAGE MAIN POST INSERT EVENTS (a child of ListInsertUiEvents)
     new ListInsertEventsAjax();
-    // LIST INSERT VALIDATION EVENTS
+    // LIST INSERT VALIDATION EVENTS (a child of CatSelectionEvents)
     new ListInsertValidationEvents();
+    // LIST INSERT UI DATA EVENTS (a child of CatSelectionEvents)
+    new ListInsertUiDataParent();
 
     /**
      * CATEGORY RELATED CLASSES

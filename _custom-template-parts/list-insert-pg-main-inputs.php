@@ -133,8 +133,8 @@
 
   <!-- THE SUBMIT BUTTON -->
   <!-- <button id="list-insert-button" type="button" class="btn btn-primary"> -->
-  <button id="list-user-validation-button" type="submit" class="btn btn-primary">
-    Submit
+  <button id="list-user-validation-button" type="submit" class="btn btn-primary btn-block">
+    Submit List Details
   </button>
 
 </form>

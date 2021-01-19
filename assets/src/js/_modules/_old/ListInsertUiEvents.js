@@ -16,10 +16,6 @@ class ListInsertUiEvents extends CatSelectDataParent {
     this.catSelectBox = $('#category-choice-box');
     // Category Display UI box that shows up at the top once a new category is created
     this.catDisplayUiBox = $('#cat-display-ui-box');
-    // The Form Submit button is now list-user-validation-button
-    this.userValidationButton = $('#list-user-validation-button');
-    // The Cancel button
-    this.userValidationCancellButton = $('#list-insert-cancel-btn');
     // Declaring Catagory VARIABLES
     this.currentMainId;
     this.currentMainCatName;
@@ -45,38 +41,11 @@ class ListInsertUiEvents extends CatSelectDataParent {
     this.socialGooglePlus;
     this.socialTwitter;
     // Setting up events
-    this.setEvents();
+    // this.setEvents();
   }
 
   init = () => {
     console.log('OOP List INSERT UI...');
-  };
-
-  setEvents = () => {
-    this.userValidationButton.on('click', this.validateMainInsertForm);
-    this.userValidationCancellButton.on('click', this.goBackToFormBox);
-  };
-
-  // MAIN FORM VALIDATION
-  validateMainInsertForm = () => {
-    // event.preventDefault();
-
-    console.log('validation function clicked ...');
-
-    $('#list-insert-main-form').validate({
-      rules: {
-        'lister-name': {
-          required: true,
-          maxlength: 20,
-          minlength: 3,
-        },
-      },
-      submitHandler: (form, event) => {
-        event.preventDefault();
-        // OPEN THE USER VALIDATION SCREEN
-        this.displayValidationBox();
-      },
-    });
   };
 
   displayValidationBox = () => {
@@ -204,14 +173,14 @@ class ListInsertUiEvents extends CatSelectDataParent {
     this.socialTwitter = $('#lister-twitter').val();
   };
 
-  goBackToFormBox = () => {
-    // SCROLL TO TOP
-    window.scrollTo(0, 0);
-    // REMOVING LIST FORM BOX
-    this.listInsertFormBox.removeClass('d-none');
-    // DISPLAYING USER VALIDATION BOX
-    this.userValidationBox.addClass('d-none');
-  };
+  // goBackToFormBox = () => {
+  //   // SCROLL TO TOP
+  //   window.scrollTo(0, 0);
+  //   // REMOVING LIST FORM BOX
+  //   this.listInsertFormBox.removeClass('d-none');
+  //   // DISPLAYING USER VALIDATION BOX
+  //   this.userValidationBox.addClass('d-none');
+  // };
 }
 
 export default ListInsertUiEvents;

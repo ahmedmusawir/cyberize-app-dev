@@ -1,11 +1,17 @@
 import $ from 'jquery';
-import ListInsertUiEvents from './ListInsertUiEvents';
+import ListInsertUiDataParent from './ListInsertUiDataParent';
 require('jquery-validation');
 
-class ListInsertValidationEvents extends ListInsertUiEvents {
+class ListInsertValidationEvents extends ListInsertUiDataParent {
   constructor() {
     super();
     this.init();
+    // The Form Submit button is now list-user-validation-button
+    this.userValidationButton = $('#list-user-validation-button');
+    // The Cancel button
+    this.userValidationCancellButton = $('#list-insert-cancel-btn');
+    // Setting up events
+    this.setEvents();
     // ADDING LETTERS & SPACES ONLY METHOD TO JQ VALIDATION
     $.validator.addMethod(
       'lettersonly',
@@ -17,20 +23,27 @@ class ListInsertValidationEvents extends ListInsertUiEvents {
   }
 
   init = () => {
-    console.log('LIST Form Val Test Loaded ...');
+    console.log('LIST Form Validation New Loaded ...');
+  };
+
+  setEvents = () => {
+    this.userValidationButton.on('click', this.validateMainInsertForm);
+    this.userValidationCancellButton.on('click', this.goBackToFormBox);
   };
 
   // MAIN FORM VALIDATION
   validateMainInsertForm = () => {
-    console.log('validation function clicked ...');
+    console.log('validation function clicked new file ...');
 
-    $('#main-cat-insert-form').validate({
+    $('#list-insert-main-form').validate({
       rules: {
         'lister-description': {
+          required: true,
           maxlength: 140,
           minlength: 3,
         },
         'lister-name': {
+          required: true,
           maxlength: 20,
           minlength: 3,
         },
@@ -41,6 +54,15 @@ class ListInsertValidationEvents extends ListInsertUiEvents {
         this.displayValidationBox();
       },
     });
+  };
+
+  goBackToFormBox = () => {
+    // SCROLL TO TOP
+    window.scrollTo(0, 0);
+    // REMOVING LIST FORM BOX
+    this.listInsertFormBox.removeClass('d-none');
+    // DISPLAYING USER VALIDATION BOX
+    this.userValidationBox.addClass('d-none');
   };
 }
 

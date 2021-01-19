@@ -1,13 +1,13 @@
 import $ from 'jquery';
 import { selectize } from 'selectize';
-import ListInsertUiEvents from './ListInsertUiEvents';
+import ListInsertUiDataParent from './ListInsertUiDataParent';
 
 /**
  This is a child class of ListInsertUiEvents and uses the selectize library. This one
  Inserts the the List Insert Form data into the WP DB via the REST API. This inserts selectize data, normal form data and ACF data into the WP DB
  */
 
-class ListInsertEventsAjax extends ListInsertUiEvents {
+class ListInsertEventsAjax extends ListInsertUiDataParent {
   constructor() {
     super();
     this.init();
