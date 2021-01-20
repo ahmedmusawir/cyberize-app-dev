@@ -35,6 +35,17 @@ input::placeholder {
 textarea::placeholder {
   font-size: .8rem !important;
 }
+
+#lister-facebook-error,
+#lister-twitter-error,
+#lister-instagram-error,
+#lister-yelp-error,
+#lister-linkedin-error,
+#lister-google-plus-error {
+  position: absolute;
+  top: 125%;
+  left: 60%;
+}
 </style>
 
 <main id="primary" class="site-main container-fluid">

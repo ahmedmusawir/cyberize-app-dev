@@ -1,5 +1,10 @@
 import $ from 'jquery';
-require('jquery-validation');
+// Using commonjs
+// require('jquery-validation');
+// require('jquery-validation/dist/additional-methods.js');
+// Using ESM
+import 'jquery-validation';
+// import 'jquery-validation/dist/additional-methods.js';
 
 class CatFormValdationParent {
   constructor() {

@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import CatSelectDataParent from './CatSelectDataParent';
-require('jquery-validation');
+// require('jquery-validation');
 
 class ListInsertUiDataParent extends CatSelectDataParent {
   constructor() {
