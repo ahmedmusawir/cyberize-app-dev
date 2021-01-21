@@ -10,7 +10,7 @@ import ListInsertUiDataParent from './ListInsertUiDataParent';
 class ListInsertEventsAjax extends ListInsertUiDataParent {
   constructor() {
     super();
-    this.init();
+    // this.init();
     // COLLECTING ELEMENTS
     this.listInsertButton = $('#list-insert-submit-btn');
     this.catDisplayUiBox = $('#cat-display-ui-box');
@@ -20,7 +20,7 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
   }
 
   init = () => {
-    // console.log('ListInsertEventsAjax - Insert Post');
+    console.log('ListInsertEventsAjax - Insert Post');
   };
 
   setEvents = () => {
@@ -28,9 +28,12 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
   };
 
   clickInsertListHandler = () => {
-    console.log('List Submit Clicked');
+    // console.log('List Submit Clicked');
 
     // COLLECTING FORM DATA
+    this.getCategoryData();
+    this.getListFormData();
+
     // Categories List
     const categoryIds = `${this.currentMainId}, ${this.currentPrimoId}, ${this.currentSecondoId}, ${this.currentTerzoId}`;
     // Contact Info Vars
@@ -108,7 +111,7 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
         // REMOVING CAT DATA FROM THE LOCAL STORAGE FOR CLEANUP
         localStorage.removeItem('catData');
         // REFRESHING THE SCREEN
-        location.reload();
+        // location.reload();
       })
       .fail((response) => {
         console.error('Sorry ... Ajax failed');
@@ -119,13 +122,13 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
       });
 
     // RESET FORM (NOT NECESSARY CUZ NOW THERE IS A PAGE REFRESH)
-    // this.selectizeMain.clear();
-    // this.selectizePrimo.clear();
-    // this.selectizeSecondo.clear();
-    // this.selectizeTerzo.clear();
-    // $('#lister-name').val('');
-    // $('#lister-address').val('');
-    // $('#lister-description').val();
+    this.selectizeMain.clear();
+    this.selectizePrimo.clear();
+    this.selectizeSecondo.clear();
+    this.selectizeTerzo.clear();
+    $('#lister-name').val('');
+    $('#lister-address').val('');
+    $('#lister-description').val();
   };
 }
 

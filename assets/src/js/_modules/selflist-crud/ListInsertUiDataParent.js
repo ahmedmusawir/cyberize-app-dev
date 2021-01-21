@@ -40,8 +40,6 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     this.socialLinkedin;
     this.socialGooglePlus;
     this.socialTwitter;
-    // Setting up events
-    // this.setEvents();
   }
 
   init = () => {
@@ -73,12 +71,19 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     $('#list-user-validation-google-plus').text(this.socialGooglePlus);
     $('#list-user-validation-twitter').text(this.socialTwitter);
 
-    // SCROLL TO TOP
-    window.scrollTo(0, 0);
-    // REMOVING LIST FORM BOX
-    this.listInsertFormBox.addClass('d-none');
-    // DISPLAYING USER VALIDATION BOX
-    this.userValidationBox.removeClass('d-none');
+    if (this.currentMainId) {
+      // SCROLL TO TOP
+      window.scrollTo(0, 0);
+      // REMOVING LIST FORM BOX
+      this.listInsertFormBox.addClass('d-none');
+      // DISPLAYING USER VALIDATION BOX
+      this.userValidationBox.removeClass('d-none');
+    } else {
+      alert('Please choose a Main Category ...');
+      // SCROLL TO TOP
+      window.scrollTo(0, 0);
+      this.selectizeMain.focus();
+    }
   };
 
   getCategoryData = () => {
@@ -112,9 +117,8 @@ class ListInsertUiDataParent extends CatSelectDataParent {
         const selectedMainItem = this.selectizeMain.getItem(this.currentMainId);
         this.currentMainCatName = selectedMainItem[0].innerText;
       }
-
-      console.log('Current Main Cat Name: ', this.currentMainCatName);
-      console.log('Current Main Cat ID: ', this.currentMainId);
+      // console.log('Current Main Cat Name: ', this.currentMainCatName);
+      // console.log('Current Main Cat ID: ', this.currentMainId);
 
       // COLLECTED PRIMO CAT SELECTED ID
       this.currentPrimoId = this.selectizePrimo.getValue();
@@ -125,8 +129,8 @@ class ListInsertUiDataParent extends CatSelectDataParent {
         this.currentPrimoCatName = selectedPrimoItem[0].innerText;
       }
 
-      console.log('Current Primo Cat Name: ', this.currentPrimoCatName);
-      console.log('Current Primo ID: ', this.currentPrimoId);
+      // console.log('Current Primo Cat Name: ', this.currentPrimoCatName);
+      // console.log('Current Primo ID: ', this.currentPrimoId);
 
       // COLLECTING SECONDO CAT SELECTED ID
       this.currentSecondoId = this.selectizeSecondo.getValue();
@@ -137,8 +141,8 @@ class ListInsertUiDataParent extends CatSelectDataParent {
         this.currentSecondoCatName = selectedSecondoItem[0].innerText;
       }
 
-      console.log('Current Secondo Cat Name: ', this.currentSecondoCatName);
-      console.log('Current Secondo Cat ID: ', this.currentSecondoId);
+      // console.log('Current Secondo Cat Name: ', this.currentSecondoCatName);
+      // console.log('Current Secondo Cat ID: ', this.currentSecondoId);
 
       // COLLECTED TERZO CAT SELECTED ID
       this.currentTerzoId = this.selectizeTerzo.getValue();
@@ -149,8 +153,8 @@ class ListInsertUiDataParent extends CatSelectDataParent {
         this.currentTerzoCatName = selectedTerzoItem[0].innerText;
       }
 
-      console.log('Current Terzo Cat Name: ', this.currentTerzoCatName);
-      console.log('Current Terzo ID: ', this.currentTerzoId);
+      // console.log('Current Terzo Cat Name: ', this.currentTerzoCatName);
+      // console.log('Current Terzo ID: ', this.currentTerzoId);
     }
   };
 

@@ -44,7 +44,7 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
           /^(http|https)\:\/\/(www.|)facebook.com\/.*/i.test(value)
         );
       },
-      'Facebook URL only please'
+      'Your Facebook Page URL please...'
     );
     // ADDING YELP URL ONLY METHOD TO JQ VALIDATION
     $.validator.addMethod(
@@ -55,7 +55,7 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
           /^(http|https)\:\/\/(www.|)yelp.com\/.*/i.test(value)
         );
       },
-      'Yelp URL only please'
+      'Your Yelp Page URL please...'
     );
     // ADDING TWITTER URL ONLY METHOD TO JQ VALIDATION
     $.validator.addMethod(
@@ -66,7 +66,7 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
           /^(http|https)\:\/\/(www.|)twitter.com\/.*/i.test(value)
         );
       },
-      'Twitter URL only please'
+      'Your Twitter Page URL please...'
     );
     // ADDING INSTAGRAM URL ONLY METHOD TO JQ VALIDATION
     $.validator.addMethod(
@@ -77,7 +77,7 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
           /^(http|https)\:\/\/(www.|)instagram.com\/.*/i.test(value)
         );
       },
-      'Instagram URL only please'
+      'Your Instagram Page URL please...'
     );
     // ADDING LINKEDIN URL ONLY METHOD TO JQ VALIDATION
     $.validator.addMethod(
@@ -88,7 +88,7 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
           /^(http|https)\:\/\/(www.|)linkedin.com\/.*/i.test(value)
         );
       },
-      'Linkedin URL only please'
+      'Your Linkedin Page URL please...'
     );
     // ADDING GOOGLE PLUS URL ONLY METHOD TO JQ VALIDATION
     $.validator.addMethod(
@@ -99,7 +99,7 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
           /^(http|https)\:\/\/(www.|)googleplus.com\/.*/i.test(value)
         );
       },
-      'Google Plus URL only please'
+      'Your Google Plus Page URL please...'
     );
     // ADDING PROPER EMAIL VAIDATION
     $.validator.addMethod(
