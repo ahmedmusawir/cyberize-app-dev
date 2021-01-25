@@ -2,7 +2,7 @@
 
   function get_selflist_sub_cats($cat_id) {
        /**
-       * 2ND LEVEL BEGINS
+       * 2ND LEVEL BEGINS - PRIMO
        */
       $args = array( 
         'parent' => $cat_id, // Gives 1st child only. child_of give all the children
@@ -22,7 +22,7 @@
         ';
       }
       /**
-       * 2ND LEVEL CATEGORY LOOP
+       * 2ND LEVEL CATEGORY LOOP - PRIMO
        */
       foreach($sub2_cats as $sub_cat) {
         
@@ -33,7 +33,7 @@
           echo '</li>';
 
         /**
-         * 3ND LEVEL BEGINS
+         * 3ND LEVEL BEGINS - SECONDO
          */
         $args = array( 
           'parent' => $sub_cat->term_id, // Gives 1st child only. child_of give all the children
@@ -41,7 +41,7 @@
         );
         $sub3_cats = get_categories($args);
         /**
-         * 3RD LEVEL CATEGORY LOOP
+         * 3RD LEVEL CATEGORY LOOP - SECONDO
          */
         foreach($sub3_cats as $sub2_cat) {
         echo '<ul class="secondo">';
@@ -54,7 +54,7 @@
 
 
             /**
-             * 4TH LEVEL BEGINS
+             * 4TH LEVEL BEGINS - TERZO
              */
             $args = array( 
               'parent' => $sub2_cat->term_id, // Gives 1st child only. child_of give all the children

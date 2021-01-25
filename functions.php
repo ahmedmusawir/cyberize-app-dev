@@ -97,7 +97,11 @@ require get_theme_file_path('/_functions/selflist/selflist-user-logins.php');
 
 // SELFLIST SUB CATEGORIES LISTING FUNCTION
 require get_theme_file_path('/_functions/selflist/selflist-get-category-list.php');
+
+//Getting Main Categories with Sub Cats to JSON - selflist-get-subcats-json.php IS A DEPENDENCY
 require get_theme_file_path('/_functions/selflist/selflist-get-category-json.php');
+//Getting Sub Categories
+require get_theme_file_path('/_functions/selflist/selflist-get-subcats-json.php');
 
 // SELFLIST SUB CATEGORIES LISTING FUNCTION
 require get_theme_file_path('/_functions/selflist/selflist-post-acf-to-rest.php');

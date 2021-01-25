@@ -14,14 +14,20 @@ class TerzoCatFromValidation extends CatFormValdationParent {
     // This is the terzo category insert form container
     this.terzoCatInsertFormBox = $('#terzo-cat-insert-box');
 
+    // ENABLING FORM VALIDATION
+    this.validateTerzoCatForm();
+
     // SETTING EVENTS
     this.setEvents();
   }
 
   setEvents = () => {
-    this.terzoCatUserValidationBtn.on('click', this.catValidationHandler);
-    this.terzoCatUserValidationCancelBtn.on('click', this.catUserValidationCancelHandler);
-  }
+    // this.terzoCatUserValidationBtn.on('click', this.catValidationHandler);
+    this.terzoCatUserValidationCancelBtn.on(
+      'click',
+      this.catUserValidationCancelHandler
+    );
+  };
 }
 
 export default TerzoCatFromValidation;

@@ -13,7 +13,9 @@
       );
       $main_cats = get_categories($args);
 
-      $results = array();
+      $results = array(
+        'mainCat' => array()
+      );
       
       /**
        * 1ST LEVEL CATEGORY LOOP
@@ -22,7 +24,7 @@
 
         $new_results = get_selflist_sub_cats_to_json($main_cat->term_id);
 
-        array_push($results, array(
+        array_push($results['mainCat'], array(
           'mainCatName' => $main_cat->name,
           'mainCatSlug' => $main_cat->slug,
           'mainCatId' => $main_cat->term_id,

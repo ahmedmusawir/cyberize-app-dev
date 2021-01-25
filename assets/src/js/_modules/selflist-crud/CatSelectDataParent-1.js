@@ -21,11 +21,11 @@ class CatSelectDataParent {
     this.init();
     // SITE ROOT URL FROM WP LOCALIZE SCRIPT
     this.siteRoot = selflistData.root_url;
+    // console.log(selflistData.root_url);
     // COLLECTION DATA
-    this.theJsonData;
     this.url = this.siteRoot + '/wp-content/uploads/categories.json';
-    this.getData();
-
+    this.thePromise = this.getData(this.url);
+    this.loadMainCatData(this.thePromise);
     // INITIALIZE UP SELECTIZE
     if ($('#select-main-cats').length) {
       this.selectMainCats = $('#select-main-cats').selectize({
@@ -65,28 +65,31 @@ class CatSelectDataParent {
     // console.log('Cat Data Parent ...');
   };
 
-  getData = async () => {
+  async getData(url) {
     try {
-      let response = await fetch(this.url);
+      let response = await fetch(url);
       let data = await response.json();
-      this.theJsonData = data;
-      // LOADING DATA TO MAIN SELECTIZED DROPDOWN
-      this.loadMainCatData();
+      // console.log(data);
+      return data;
     } catch (e) {
       console.log(e);
     }
-  };
+  }
 
-  loadMainCatData = () => {
-    this.theJsonData.map((catData) => {
-      // ADDING ITEMS DYNAMICALLY
-      const selectOptions = {
-        value: catData.mainCatId,
-        text: catData.mainCatName,
-      };
-      if (this.selectizeMain) {
-        this.selectizeMain.addOption(selectOptions);
-      }
+  loadMainCatData = (thePromise) => {
+    thePromise.then((d) => {
+      let data = d.mainCat;
+      data.map((catData) => {
+        // ADDING ITEMS DYNAMICALLY
+        const selectOptions = {
+          value: catData.mainCatId,
+          text: catData.mainCatName,
+        };
+        if (this.selectizeMain) {
+          this.selectizeMain.addOption(selectOptions);
+          // this.selectizeMain.addItem(selectOptions);
+        }
+      });
     });
   };
 }

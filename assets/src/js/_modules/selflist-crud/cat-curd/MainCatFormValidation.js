@@ -14,14 +14,20 @@ class MainCatFromValidation extends CatFormValdationParent {
     // This is the main category insert form container
     this.mainCatInsertFormBox = $('#main-cat-insert-box');
 
+    // ENABLE FORM VALIDATION
+    this.validateMainCatForm();
+
     // SETTING EVENTS
     this.setEvents();
   }
 
   setEvents = () => {
-    this.mainCatUserValidationBtn.on('click', this.catValidationHandler);
-    this.mainCatUserValidationCancelBtn.on('click', this.catUserValidationCancelHandler);
-  }
+    // this.mainCatUserValidationBtn.on('click', this.catValidationHandler);
+    this.mainCatUserValidationCancelBtn.on(
+      'click',
+      this.catUserValidationCancelHandler
+    );
+  };
 }
 
 export default MainCatFromValidation;

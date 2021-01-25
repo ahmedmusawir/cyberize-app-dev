@@ -94,18 +94,24 @@ class ListInsertUiDataParent extends CatSelectDataParent {
       console.log(catDataJson);
       // COLLECTING MAIN CAT SELECTED ID
       this.currentMainId = catDataJson.main_cat_id;
+      this.currentMainCatName = catDataJson.main_cat;
+
       console.log('Current Main Cat ID: ', this.currentMainId);
 
       // COLLECTED PRIMO CAT SELECTED ID
       this.currentPrimoId = catDataJson.primo_cat_id;
+      this.currentPrimoCatName = catDataJson.primo_cat;
+
       console.log('Current Primo ID: ', this.currentPrimoId);
 
       // COLLECTING SECONDO CAT SELECTED ID
       this.currentSecondoId = catDataJson.secondo_cat_id;
+      this.currentSecondoCatName = catDataJson.secondo_cat;
       console.log('Current Secondo Cat ID: ', this.currentSecondoId);
 
       // COLLECTED TERZO CAT SELECTED ID
       this.currentTerzoId = catDataJson.terzo_cat_id;
+      this.currentTerzoCatName = catDataJson.terzo_cat;
       console.log('Current Terzo ID: ', this.currentTerzoId);
     }
 

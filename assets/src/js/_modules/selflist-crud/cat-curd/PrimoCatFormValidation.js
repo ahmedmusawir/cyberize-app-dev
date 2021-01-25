@@ -14,14 +14,20 @@ class PrimoCatFromValidation extends CatFormValdationParent {
     // This is the primo category insert form container
     this.primoCatInsertFormBox = $('#primo-cat-insert-box');
 
+    // ENABLE FORM VALIDATION
+    this.validatePrimoCatForm();
+
     // SETTING EVENTS
     this.setEvents();
   }
 
   setEvents = () => {
-    this.primoCatUserValidationBtn.on('click', this.catValidationHandler);
-    this.primoCatUserValidationCancelBtn.on('click', this.catUserValidationCancelHandler);
-  }
+    // this.primoCatUserValidationBtn.on('click', this.catValidationHandler);
+    this.primoCatUserValidationCancelBtn.on(
+      'click',
+      this.catUserValidationCancelHandler
+    );
+  };
 }
 
 export default PrimoCatFromValidation;

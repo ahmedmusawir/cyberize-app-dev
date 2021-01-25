@@ -45,7 +45,7 @@
       </div>
       <div class="form-group">
         <input type="text" class="form-control" id="secondo-input-terzo-cat" name="secondo-input-terzo-cat"
-          aria-describedby="textHelp" placeholder="New Terzo Category" required>
+          aria-describedby="textHelp" placeholder="New Terzo Category">
         <small id="textHelp" class="form-text text-muted">
           Terzo Category (20 Char Limit. Letters & Space only)
         </small>

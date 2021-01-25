@@ -16,17 +16,12 @@ class PrimoCatInsertEvent extends CatInsertEventAjaxParent {
     this.setEvents();
   }
 
-  // init = () => {
-  //   console.log('Primo Cat Insert Events ...');
-  // };
+  init = () => {
+    console.log('Primo Cat Insert Events ...');
+  };
 
   setEvents = () => {
     this.submitPrimoCatBtn.on('click', this.catSubmitHandler);
-    // this.submitPrimoCatBtn.on('click', this.init);
-  };
-
-  primoClick = () => {
-    console.log('Primo Cat Submit clicked');
   };
 }
 

@@ -4,7 +4,7 @@ import $ from 'jquery';
 // require('jquery-validation/dist/additional-methods.js');
 // Using ESM
 import 'jquery-validation';
-// import 'jquery-validation/dist/additional-methods.js';
+import 'jquery-validation/dist/additional-methods.js';
 
 class CatFormValdationParent {
   constructor() {
@@ -52,26 +52,32 @@ class CatFormValdationParent {
     }
   };
 
-  catValidationHandler = (e) => {
-    // console.log('main validation handler');
-
-    if (this.mainCatInsertFormBox) {
-      this.validateMainCatForm();
-    }
-    if (this.primoCatInsertFormBox) {
-      this.validatePrimoCatForm();
-    }
-    if (this.secondoCatInsertFormBox) {
-      this.validateSecondoCatForm();
-    }
-    if (this.terzoCatInsertFormBox) {
-      this.validateTerzoCatForm();
-    }
-  };
+  // catValidationHandler = (e) => {
+  // console.log('main validation handler');
+  // if (this.mainCatInsertFormBox) {
+  //   this.validateMainCatForm();
+  // }
+  // if (this.primoCatInsertFormBox) {
+  //   this.validatePrimoCatForm();
+  // }
+  // if (this.secondoCatInsertFormBox) {
+  //   this.validateSecondoCatForm();
+  // }
+  // if (this.terzoCatInsertFormBox) {
+  //   this.validateTerzoCatForm();
+  // }
+  // };
 
   // MAIN FORM VALIDATION
   validateMainCatForm = () => {
     $('#main-cat-insert-form').validate({
+      onkeyup: function (element, event) {
+        if (event.keyCode === 9 && this.elementValue(element) === '') {
+          return;
+        } else {
+          this.element(element);
+        }
+      },
       rules: {
         'main-input-main-cat': {
           lettersonly: true,
@@ -128,6 +134,13 @@ class CatFormValdationParent {
   validatePrimoCatForm = () => {
     // console.log('Validating Primo Cat Form...');
     $('#primo-cat-insert-form').validate({
+      onkeyup: function (element, event) {
+        if (event.keyCode === 9 && this.elementValue(element) === '') {
+          return;
+        } else {
+          this.element(element);
+        }
+      },
       rules: {
         // 'primo-input-main-cat': { lettersonly: true, maxlength: 25, minlength: 3 },
         'primo-input-primo-cat': {
@@ -184,9 +197,14 @@ class CatFormValdationParent {
   validateSecondoCatForm = () => {
     // console.log('Validating Primo Cat Form...');
     $('#secondo-cat-insert-form').validate({
+      onkeyup: function (element, event) {
+        if (event.keyCode === 9 && this.elementValue(element) === '') {
+          return;
+        } else {
+          this.element(element);
+        }
+      },
       rules: {
-        // 'secondo-input-main-cat': { lettersonly: true, maxlength: 25, minlength: 3 },
-        // 'secondo-input-primo-cat': { lettersonly: true, maxlength: 20, minlength: 3 },
         'secondo-input-secondo-cat': {
           lettersonly: true,
           maxlength: 20,
@@ -236,6 +254,13 @@ class CatFormValdationParent {
   validateTerzoCatForm = () => {
     // console.log('Validating Primo Cat Form...');
     $('#terzo-cat-insert-form').validate({
+      onkeyup: function (element, event) {
+        if (event.keyCode === 9 && this.elementValue(element) === '') {
+          return;
+        } else {
+          this.element(element);
+        }
+      },
       rules: {
         'terzo-input-terzo-cat': {
           lettersonly: true,

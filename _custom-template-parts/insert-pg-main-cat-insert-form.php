@@ -23,21 +23,21 @@
       </div>
       <div class="form-group">
         <input type="text" class="form-control" id="main-input-primo-cat" name="main-input-primo-cat"
-          aria-describedby="textHelp" placeholder="New Primo Category" required>
+          aria-describedby="textHelp" placeholder="New Primo Category">
         <small id="textHelp" class="form-text text-muted">
           Primo Category (20 Char Limit. Letters & Space only)
         </small>
       </div>
       <div class="form-group">
         <input type="text" class="form-control" id="main-input-secondo-cat" name="main-input-secondo-cat"
-          aria-describedby="textHelp" placeholder="New Secondo Category" required>
+          aria-describedby="textHelp" placeholder="New Secondo Category">
         <small id="textHelp" class="form-text text-muted">
           Secondo Category (20 Char Limit. Letters & Space only)
         </small>
       </div>
       <div class="form-group">
         <input type="text" class="form-control" id="main-input-terzo-cat" name="main-input-terzo-cat"
-          aria-describedby="textHelp" placeholder="New Terzo Category" required>
+          aria-describedby="textHelp" placeholder="New Terzo Category">
         <small id="textHelp" class="form-text text-muted">
           Terzo Category (20 Char Limit. Letters & Space only)
         </small>

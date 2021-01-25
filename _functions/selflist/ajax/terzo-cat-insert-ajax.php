@@ -34,11 +34,17 @@ $main_cat_id = get_cat_ID($main_cat_name);
  */
 if (term_exists( $sub_cat_1, 'category', $main_cat_id )) {
 
-  $sub_cat_1_id = get_cat_ID($sub_cat_1);
+  // $sub_cat_1_id = get_cat_ID($sub_cat_1);
+    // COLLECTING PRIMO ID AS THE PARENT OF NEW SECONDO
+    $sub_cat_1_array = term_exists( $sub_cat_1, 'category', $main_cat_id );
+    $sub_cat_1_id = $sub_cat_1_array['term_id'];
 
   if (term_exists( $sub_cat_2, 'category', $sub_cat_1_id )) {
 
-    $sub_cat_2_id = get_cat_ID($sub_cat_2);
+    // $sub_cat_2_id = get_cat_ID($sub_cat_2);
+    // COLLECTING SECONDO ID AS THE PARENT OF NEW TERZO
+    $sub_cat_2_array = term_exists( $sub_cat_2, 'category', $sub_cat_1_id );
+    $sub_cat_2_id = $sub_cat_2_array['term_id'];
 
     if (term_exists( $sub_cat_3, 'category', $sub_cat_2_id )) {
       

@@ -59,6 +59,45 @@ get_header();
       </form>
     </div>
   </section>
+  <section id="php-testing">
+    <?php 
+      /**
+     * COLLECT MAIN CATEGORY ID
+     */
+    $main_cat_name = 'app a dev';
+    $sub_cat_1 = 'aaa';
+
+    $main_cat_id = get_cat_ID($main_cat_name);
+    // echo 'main category id: ' . $main_cat_id;
+
+    /**
+     * CHECKING IF CATEGORY EXISTS & IF THE MAIN CAT IS THE PARENT
+     */
+    if (term_exists( $sub_cat_1, 'category', $main_cat_id )) {
+
+      $sub_cat_1_id = get_cat_ID($sub_cat_1);
+      echo "$sub_cat_1 has the id: " . $sub_cat_1_id;
+
+      $sub_cat_1_id_test = term_exists( $sub_cat_1, 'category', $main_cat_id );
+      echo "<br> $sub_cat_1 has the id: " . $sub_cat_1_id_test['term_id'];
+      // print_r($sub_cat_1_id_test);
+
+      if (term_exists( $sub_cat_2, 'category', $sub_cat_1_id )) {
+
+        echo "
+      
+        <div class='alert alert-danger rounded-0' role='alert'>
+          The Secondo Category <strong>$sub_cat_2</strong> already exists ... 
+          The Secondo Category must be unique ...
+        </div>
+        
+        ";
+        wp_die();
+      }
+
+    }
+  ?>
+  </section>
 
 </main><!-- #main -->
 

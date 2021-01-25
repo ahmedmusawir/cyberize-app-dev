@@ -18,10 +18,11 @@ class TerzoCatInsertUi extends CatInsertUiParent {
 
   setEvents = () => {
     this.terzoCatNewBtn.on('click', this.catNewHandler);
-    this.terzoCatValidationCancelBtn.on('click', this.catValidationCancelHandler);
+    this.terzoCatValidationCancelBtn.on(
+      'click',
+      this.catValidationCancelHandler
+    );
   };
-
 }
-
 
 export default TerzoCatInsertUi;
