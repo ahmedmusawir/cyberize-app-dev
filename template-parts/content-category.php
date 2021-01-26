@@ -72,6 +72,86 @@
   </div><!-- .entry-content -->
 
   <footer class="entry-footer">
-    <?php //cyberize_app_dev_entry_footer(); ?>
+    <section class="flex-icon-five">
+
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Your Facebook Page" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.40.19-PM.png"
+            alt="Facebook Link">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Your Twitter Page" src="/wp-content/uploads/icon-social-twitter-outline-128.png"
+            alt="Twitter Link">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Your Yelp Page" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.40.32-PM.png"
+            alt="Yelp Link">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Your Instagram Page" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.40.44-PM.png"
+            alt="Instagram Link">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Your Linkedin Page" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.42.26-PM.png"
+            alt="Linkedin Link">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Your Google Plus Page" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.42.12-PM.png"
+            alt="Google Plus Link">
+        </a>
+      </div>
+
+    </section>
+
+    <section class="flex-icon-five">
+
+      <div class="flex-icon-item">
+        <a href="tel:404-321-1234">
+          <img title="Phone: 404-321-1234" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.42.48-PM.png"
+            alt="Phone Number">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="mailto:webmaster@example.com">
+          <img title="your@email.com" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.41.54-PM.png"
+            alt="Email Address">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="http://website.com" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.41.15-PM.png"
+            alt="Website Link">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Hit Me Up" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.44.13-PM.png" alt="HMU Link">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Your Chat Page" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.41.00-PM.png"
+            alt="Chat Link">
+        </a>
+      </div>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Flag This List" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png"
+            alt="Flag Link">
+        </a>
+      </div>
+
+    </section>
+
   </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

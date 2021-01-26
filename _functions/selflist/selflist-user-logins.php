@@ -11,7 +11,7 @@ function remove_admin_bar() {
 add_action('after_setup_theme', 'remove_admin_bar');
 
 /**
- * LOGIN REDIRECT FOR ATHLETE AND COACH USERS BY ROLE
+ * LOGIN REDIRECT SUBSCRIBERS & LISTING MANAGERS
 */
 
 function my_login_redirect( $redirect_to, $request, $user ) {
