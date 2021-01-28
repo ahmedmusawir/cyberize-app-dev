@@ -3,7 +3,7 @@
  * Global Styles for Archive Index Page
  *
  */
-
+// THIS IMPACTS category.php and template-list-preview.php
 .category {
   // padding-top: 8rem;
   .site-main {
@@ -78,7 +78,8 @@
     .entry-content {
       border-bottom: 1px solid $cg-primary;
       p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        font-weight: 500;
       }
     }
 

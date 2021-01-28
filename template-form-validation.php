@@ -67,16 +67,30 @@ get_header();
     $user_id = get_current_user_id();
     $udata = get_userdata( $user_id );
     $registered = $udata->user_registered;
-    printf( '%s member since %s<br>', $udata->display_name, date( "d m y", strtotime( $registered ) ) );
+    printf( '%s member since %s<br>', $udata->display_name, date( "d m yy", strtotime( $registered ) ) );
     
     /**
      * COLLECT USER REGISTRATION DATE
      */
     $user_id = get_current_user_id();
     $udata = get_userdata( $user_id );
+    $registered = $udata->user_registered;
     printf( '%s<br>', date( "d", strtotime( $registered ) ) );
     printf( '%s<br>', date( "m", strtotime( $registered ) ) );
     printf( '%s<br>', date( "y", strtotime( $registered ) ) );
+
+    /**
+     * GET AUTHOR ID BY POST ID
+     */
+    $post_id = 365;
+    $author_id = get_post_field( 'post_author', $post_id );
+    echo 'Author ID: ' . $author_id . '<br>';
+    $udata = get_userdata( $author_id );
+    $registered = $udata->user_registered;
+    printf( '%s<br>', date( "d", strtotime( $registered ) ) );
+    printf( '%s<br>', date( "m", strtotime( $registered ) ) );
+    printf( '%s<br>', date( "y", strtotime( $registered ) ) );
+
 
 
     ?>

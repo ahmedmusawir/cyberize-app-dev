@@ -1,6 +1,7 @@
 // TEST CODE HERE
 import InsertPost from './_modules/_test/insertPost';
 import TestGetJson from './_modules/_test/testGetJson';
+import TestJsToPhp from './_modules/_test/TestJsToPhp';
 import FormValdationTest from './_modules/_test/formVaidationTest';
 // PRODUCTION CODE HERE
 import SelflistSearch from './_modules/SelflistSearch';
@@ -12,6 +13,7 @@ import CatSelectionEvents from './_modules/selflist-crud/CatSelectionEvents';
 import ListInsertUiDataParent from './_modules/selflist-crud/ListInsertUiDataParent';
 import ListInsertValidationEvents from './_modules/selflist-crud/ListInsertValidationEvents';
 import ListInsertEventsAjax from './_modules/selflist-crud/ListInsertEventsAjax';
+import ListPreviewEvents from './_modules/selflist-crud/ListPreviewEvents';
 // CATEGORY INSERT UI RELATED
 import CatInsertUiParent from './_modules/selflist-crud/cat-curd/CatInsertUiParent';
 import MainCatInsertUi from './_modules/selflist-crud/cat-curd/MainCatInsertUi';
@@ -48,12 +50,17 @@ class App {
     new CatSelectDataParent();
     new CatSelectionEvents();
 
+    /**
+     * LIST INSERT RELATED CLASSES
+     */
     // LIST INSERT PAGE MAIN POST INSERT EVENTS (a child of ListInsertUiEvents)
     new ListInsertEventsAjax();
     // LIST INSERT VALIDATION EVENTS (a child of CatSelectionEvents)
     new ListInsertValidationEvents();
     // LIST INSERT UI DATA EVENTS (a child of CatSelectionEvents)
     new ListInsertUiDataParent();
+    // LIST PREVIEW EVENTS
+    new ListPreviewEvents();
 
     /**
      * CATEGORY RELATED CLASSES
@@ -84,6 +91,7 @@ class App {
     // new InsertPost();
     // new TestGetJson();
     new FormValdationTest();
+    // new TestJsToPhp();
   };
 }
 

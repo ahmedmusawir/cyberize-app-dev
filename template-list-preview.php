@@ -12,14 +12,28 @@
  * @package cyberize-app-dev
  */
 
-get_header('listings');
+get_header();
 ?>
+<header id="header-list-preview" class="site-header container py-2 text-center">
 
-<main id="primary" class="site-main container">
+  <figure class="logo-container">
 
-  <hr>
+    <!-- <a href="/list-index" class="list-links display-4 d-block">LISTINGS</a> -->
 
-</main><!-- #main -->
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+      <img class="mx-auto d-block w-25 mt-4" src="/wp-content/uploads/2020/07/SelfListLogo.png" alt="">
+    </a>
+
+  </figure>
+
+</header><!-- #masthead -->
+<hr>
+
+<section id="list-preview-ajax-data" class=""></section>
+<div class="navigation-box container">
+  <a href="/list-insert/" class="btn btn-outline-danger float-left">Cancel</a>
+  <a href="#" class="btn btn-outline-danger float-right">Publish</a>
+</div>
 
 <?php
 get_footer();

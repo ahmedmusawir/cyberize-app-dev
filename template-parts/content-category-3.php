@@ -19,18 +19,6 @@
          */
         
         echo '<section class="post-item-cat-list">';
-        /**
-         * DISPLAY USER REGISTRATION DATE
-         */
-        $user_id = get_post_field( 'post_author', $post_id ); // Getting Author ID by Post ID
-        $udata = get_userdata( $user_id );
-        $registered = $udata->user_registered;
-        echo '<span class="bg-danger text-light font-weight-bold float-right py-2 px-4" style="font-size: .8rem;">';
-        printf( '%s<br>', date( "d", strtotime( $registered ) ) );
-        printf( '%s<br>', date( "m", strtotime( $registered ) ) );
-        printf( '%s<br>', date( "y", strtotime( $registered ) ) );
-        echo '</span>';
-        // DISPLAY LIST ID
         echo '<p class="font-weight-bold" style="margin-bottom: -.5rem; font-size: .8rem">LIST #' . get_the_ID() . "</p>";
 
         $taxonomy = 'category';
