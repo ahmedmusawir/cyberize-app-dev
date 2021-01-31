@@ -182,15 +182,6 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     this.socialGooglePlus = $('#lister-google-plus').val();
     this.socialTwitter = $('#lister-twitter').val();
   };
-
-  // goBackToFormBox = () => {
-  //   // SCROLL TO TOP
-  //   window.scrollTo(0, 0);
-  //   // REMOVING LIST FORM BOX
-  //   this.listInsertFormBox.removeClass('d-none');
-  //   // DISPLAYING USER VALIDATION BOX
-  //   this.userValidationBox.addClass('d-none');
-  // };
 }
 
 export default ListInsertUiDataParent;

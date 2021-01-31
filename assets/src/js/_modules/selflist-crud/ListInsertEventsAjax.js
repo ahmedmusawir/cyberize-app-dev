@@ -90,7 +90,7 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
       'fields[your_linkedin]': linkedin, // ACF Item
       'fields[your_google_plus]': googlePlus, // ACF Item
       'fields[your_twitter]': twitter, // ACF Item
-      status: 'pending',
+      status: 'publish',
     };
 
     // UNIT TESTING debugging info
@@ -113,7 +113,7 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
         // ADDING INSERTED DATA INTO LOCALSTORAGE FOR PREVIEW PAGE
         localStorage.setItem('newListData', JSON.stringify(response));
         // REDIRECT TO PREVIEW PAGE
-        window.location.href = '/list-preview/';
+        // window.location.href = '/list-preview/';
       })
       .fail((response) => {
         console.error('Sorry ... Ajax failed');

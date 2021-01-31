@@ -52,22 +52,6 @@ class CatFormValdationParent {
     }
   };
 
-  // catValidationHandler = (e) => {
-  // console.log('main validation handler');
-  // if (this.mainCatInsertFormBox) {
-  //   this.validateMainCatForm();
-  // }
-  // if (this.primoCatInsertFormBox) {
-  //   this.validatePrimoCatForm();
-  // }
-  // if (this.secondoCatInsertFormBox) {
-  //   this.validateSecondoCatForm();
-  // }
-  // if (this.terzoCatInsertFormBox) {
-  //   this.validateTerzoCatForm();
-  // }
-  // };
-
   // MAIN FORM VALIDATION
   validateMainCatForm = () => {
     $('#main-cat-insert-form').validate({
