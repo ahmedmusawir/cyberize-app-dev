@@ -3,6 +3,7 @@ import InsertPost from './_modules/_test/insertPost';
 import TestGetJson from './_modules/_test/testGetJson';
 import TestJsToPhp from './_modules/_test/TestJsToPhp';
 import DatePickerTest from './_modules/_test/DatePickerTest';
+import DateTimePickerTest from './_modules/_test/DateTimePickerTest';
 import FormValdationTest from './_modules/_test/formVaidationTest';
 // PRODUCTION CODE HERE
 import SelflistSearch from './_modules/SelflistSearch';
@@ -94,6 +95,7 @@ class App {
     new FormValdationTest();
     new DatePickerTest();
     // new TestJsToPhp();
+    new DateTimePickerTest();
   };
 }
 
