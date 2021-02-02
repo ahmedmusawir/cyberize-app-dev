@@ -50,6 +50,15 @@ get_header();
           class="list-publish-days text-warning">_______</span> Days & Your Payment Amount (1 day x .25C): $<span
           class="list-payment-amount text-warning">_______</span></h5>
     </section>
+    <section class="btn-holder mt-5">
+      <a href="#" class="btn btn-outline-danger float-left">Go Back</a>
+      <a href="#" id="paypal-form-link" class="btn btn-outline-danger float-right">Go to PayPal</a>
+      <!-- <a href="/payment-form-page/?POST_ID=[post_id]&PAYMENT_TYPE=SINGLE&NUMBER_OF_LISTS=[number_of_days]" type="button"
+        class="btn btn-outline-danger float-right">Go to PayPal</a> -->
+    </section>
+
+
+
 
   </header><!-- #masthead -->
 

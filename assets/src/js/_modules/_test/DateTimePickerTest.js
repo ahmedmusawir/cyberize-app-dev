@@ -13,6 +13,7 @@ class DateTimePickerTest {
     this.outputToDate = $('.list-end-date');
     this.listPublishDays = $('.list-publish-days');
     this.listPaymentAmount = $('.list-payment-amount');
+    this.paypalFormLink = $('#paypal-form-link');
 
     // SETTING DATEPICKER
     $.datetimepicker.setLocale('en');
@@ -104,10 +105,8 @@ class DateTimePickerTest {
     // CALCULATING START & END DIFF
     const startDate = new Date(this.selectedStart);
     const endDate = new Date(this.selectedEnd);
-
     // console.log('Start Date: ', startDate);
     // console.log('End Date: ', endDate);
-
     const timeDifference = endDate.getTime() - startDate.getTime();
     // console.log('Time Diff: ', timeDifference);
 
@@ -123,16 +122,30 @@ class DateTimePickerTest {
     const paymentAmount = dayDifference * 0.25;
 
     // DISPLAY PUBLISH SETTINGS & PAYMENT AMOUNT
-    if (!this.selectedStart || dayDifference > 0) {
-      alert('Your Start Date Must be EARLIER than Your End Date');
+    if (!this.selectedStart) {
       this.listPublishDays.html('_________');
       this.listPaymentAmount.html('_________');
     } else {
       this.outputFromDate.html(this.selectedStart);
     }
     if (this.selectedStart && this.selectedEnd) {
-      this.listPublishDays.html(dayDifference);
-      this.listPaymentAmount.html(paymentAmount);
+      if (timeDifference < 0) {
+        alert('Your Start Date Must be EARLIER than Your End Date');
+        this.listPublishDays.html('_________');
+        this.listPaymentAmount.html('_________');
+      } else {
+        this.listPublishDays.html(dayDifference);
+        this.listPaymentAmount.html(paymentAmount);
+        // COLLECTING THE POST ID
+        const listObject = JSON.parse(localStorage.getItem('newListData'));
+        // console.log('List Obj: ', listObject);
+        console.log('Current List ID', listObject.id);
+        const currentPostId = listObject.id;
+        const paypalLinkString = `/payment-form-page/?POST_ID=${currentPostId}&PAYMENT_TYPE=SINGLE&NUMBER_OF_DAYS=${dayDifference}`;
+        console.log(paypalLinkString);
+        // ADD THE HREF TO THE PAYPAL FORM LINK
+        this.paypalFormLink.attr('href', paypalLinkString);
+      }
     }
   };
 }
