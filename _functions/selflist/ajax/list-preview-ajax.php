@@ -3,7 +3,7 @@
  * INSERT MULTI LEVEL CATEGORIES WITH AJAX
  */
 
-add_action('wp_ajax_nopriv_list_preview_ajax', 'list_preview_ajax');
+// add_action('wp_ajax_nopriv_list_preview_ajax', 'list_preview_ajax');
 add_action('wp_ajax_list_preview_ajax', 'list_preview_ajax');
 
 function list_preview_ajax() {

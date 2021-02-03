@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages
- * Template Name: Date Time Picker Test
+ * 
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -61,11 +61,18 @@ get_header();
   <hr class="bg-danger">
 
   <section class="datepicker-range-box text-center">
-    <h3 class="text-uppercase mt-5"><small class="font-weight-bold">List Payment Summary</small></h3>
-    <h6 class="text-uppercase font-weight-bold">Listing #<span class="current-post-id"></span></h6>
-    <p class="text-uppercase font-weight-bold"><small>List today for $0.25 per day</small></p>
+    <h3 class="text-uppercase my-5"><small class="font-weight-bold">List Payment Summary</small></h3>
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-6">
+        <h6 class="text-uppercase"><small class="font-weight-bold">Please Pick a Start Date:</small></h6>
+        <div class="outputFromDateTime"></div>
+        <input type="text" id="list-from-date-time-input">
+        <section class="message-display-box p-2">
+          <h6><small class="font-weight-bold text-uppercase">List Starts on: </small> <span
+              class="list-start-date text-danger">_______</span></h6>
+        </section>
+      </div>
+      <div class="col-sm-6">
         <h6 class="text-uppercase"><small class="font-weight-bold">Please Pick a End Date:</small></h6>
         <div class="outputToDateTime"></div>
         <input type="text" id="list-to-date-time-input">

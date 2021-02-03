@@ -16,6 +16,8 @@ import ListInsertUiDataParent from './_modules/selflist-crud/ListInsertUiDataPar
 import ListInsertValidationEvents from './_modules/selflist-crud/ListInsertValidationEvents';
 import ListInsertEventsAjax from './_modules/selflist-crud/ListInsertEventsAjax';
 import ListPreviewEvents from './_modules/selflist-crud/ListPreviewEvents';
+// LIST PAYMENT RELATED
+import PaymentSummaryDateTimePicker from './_modules/selfList-payments/PaymentSummaryDateTimePicker';
 // CATEGORY INSERT UI RELATED
 import CatInsertUiParent from './_modules/selflist-crud/cat-curd/CatInsertUiParent';
 import MainCatInsertUi from './_modules/selflist-crud/cat-curd/MainCatInsertUi';
@@ -65,6 +67,12 @@ class App {
     new ListPreviewEvents();
 
     /**
+     * LIST PAYMENT RELATED CLASSES
+     */
+    // LIST PAYMENT SUMMARY PAGE
+    new PaymentSummaryDateTimePicker();
+
+    /**
      * CATEGORY RELATED CLASSES
      */
     // Category UI/UX
@@ -92,10 +100,10 @@ class App {
   runTestCode = () => {
     // new InsertPost();
     // new TestGetJson();
-    new FormValdationTest();
-    new DatePickerTest();
+    // new FormValdationTest();
+    // new DatePickerTest();
     // new TestJsToPhp();
-    new DateTimePickerTest();
+    // new DateTimePickerTest();
   };
 }
 

@@ -13,7 +13,7 @@ class ListPreviewEvents {
     console.log('List Preview Ajax ...');
     const listObject = JSON.parse(localStorage.getItem('newListData'));
     // console.log('List Obj: ', listObject);
-    // console.log('The New List ID', listObject.id);
+    console.log('The New List ID', listObject.id);
 
     $.ajax({
       url: this.ajaxUrl,

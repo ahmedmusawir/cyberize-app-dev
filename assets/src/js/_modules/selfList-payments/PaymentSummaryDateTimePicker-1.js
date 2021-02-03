@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import datetimepicker from 'jquery-datetimepicker';
 
-class DateTimePickerTest {
+class PaymentSummaryDateTimePicker {
   constructor() {
     this.init();
     // COLLECTING ELEMENTS
@@ -154,4 +154,4 @@ class DateTimePickerTest {
     }
   };
 }
-export default DateTimePickerTest;
+export default PaymentSummaryDateTimePicker;
