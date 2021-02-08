@@ -40,7 +40,7 @@ class PaymentSummaryDateTimePicker {
   }
 
   init = () => {
-    // DISPLAYING CURRENT POST ID FROM LOCAL STORAGE
+    console.log('Date Time Picker Test ...');
     this.paymentSummaryPostIdBox.html(this.currentPostId);
   };
 

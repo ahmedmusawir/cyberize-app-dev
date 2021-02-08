@@ -33,7 +33,7 @@ class DateTimePickerTest {
   }
 
   init = () => {
-    console.log('Date Time Picker Test ...');
+    // console.log('Date Time Picker Test ...');
   };
 
   setMainDateTimeEvents = () => {

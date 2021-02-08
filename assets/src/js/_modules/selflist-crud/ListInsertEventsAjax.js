@@ -90,7 +90,7 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
       'fields[your_linkedin]': linkedin, // ACF Item
       'fields[your_google_plus]': googlePlus, // ACF Item
       'fields[your_twitter]': twitter, // ACF Item
-      status: 'publish',
+      status: 'pending',
     };
 
     // UNIT TESTING debugging info

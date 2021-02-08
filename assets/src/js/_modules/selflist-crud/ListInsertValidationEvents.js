@@ -122,7 +122,7 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
   }
 
   init = () => {
-    console.log('LIST Form Validation New Loaded ...');
+    // console.log('LIST Form Validation New Loaded ...');
   };
 
   setEvents = () => {
@@ -131,8 +131,6 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
 
   // MAIN FORM VALIDATION
   validateMainInsertForm = () => {
-    console.log('validation function clicked new file ...');
-
     this.theListForm.validate({
       onkeyup: function (element, event) {
         if (event.keyCode === 9 && this.elementValue(element) === '') {

@@ -10,26 +10,28 @@ class ListPreviewEvents {
   }
 
   init = () => {
-    console.log('List Preview Ajax ...');
+    // console.log('List Preview Ajax ...');
     const listObject = JSON.parse(localStorage.getItem('newListData'));
     // console.log('List Obj: ', listObject);
     console.log('The New List ID', listObject.id);
 
-    $.ajax({
-      url: this.ajaxUrl,
-      type: 'POST',
-      data: {
-        post_id: listObject.id,
-        action: this.ajaxFunction,
-      },
-    })
-      .done((res) => {
-        // console.log(res);
-        this.previewDisplayBox.html(res);
+    if (this.previewDisplayBox.length) {
+      $.ajax({
+        url: this.ajaxUrl,
+        type: 'POST',
+        data: {
+          post_id: listObject.id,
+          action: this.ajaxFunction,
+        },
       })
-      .fail((res) => {
-        console.error(res);
-      });
+        .done((res) => {
+          // console.log(res);
+          this.previewDisplayBox.html(res);
+        })
+        .fail((res) => {
+          console.error(res);
+        });
+    }
   };
 }
 
