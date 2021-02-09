@@ -2,15 +2,19 @@ import $ from 'jquery';
 
 class ListPreviewEvents {
   constructor() {
+    this.init();
     // COLLECTING AJAX INFO
     this.ajaxUrl = selflistData.ajax_url;
     this.ajaxFunction = 'list_preview_ajax';
     this.previewDisplayBox = $('#list-preview-ajax-data');
-    this.init();
+    this.showListPreview();
   }
 
   init = () => {
     // console.log('List Preview Ajax ...');
+  };
+
+  showListPreview = () => {
     const listObject = JSON.parse(localStorage.getItem('newListData'));
     // console.log('List Obj: ', listObject);
     console.log('The New List ID', listObject.id);

@@ -113,7 +113,7 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
         // ADDING INSERTED DATA INTO LOCALSTORAGE FOR PREVIEW PAGE
         localStorage.setItem('newListData', JSON.stringify(response));
         // REDIRECT TO PREVIEW PAGE
-        // window.location.href = '/list-preview/';
+        window.location.href = '/list-preview/';
       })
       .fail((response) => {
         console.error('Sorry ... Ajax failed');

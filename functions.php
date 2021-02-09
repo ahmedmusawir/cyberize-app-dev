@@ -116,6 +116,8 @@ require get_theme_file_path('/_functions/selflist/ajax/primo-cat-insert-ajax.php
 require get_theme_file_path('/_functions/selflist/ajax/secondo-cat-insert-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/terzo-cat-insert-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/list-preview-ajax.php');
+require get_theme_file_path('/_functions/selflist/ajax/list-payment-and-publish-ajax.php');
+
 
 // FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN
 // Enable the option show in rest

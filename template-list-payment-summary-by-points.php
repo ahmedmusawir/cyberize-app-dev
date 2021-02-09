@@ -133,14 +133,14 @@ $user_points = get_field('selflist_points', 'user_' . $current_user_id);
   <!-- <div class="modal-dialog" role="document"> -->
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Payment Confirmation</h5>
+      <div class="modal-header justify-content-center bg-dark">
+        <h5 class="modal-title text-success" id="exampleModalLabel">Payment Confirmation</h5>
         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button> -->
       </div>
       <div class="modal-body">
-        <p class="text-uppercase"><small class="font-weight-bold">Your Payment Points:
+        <p class="text-uppercase mt-4"><small class="font-weight-bold">Your Payment Points:
             &nbsp;</small><span id="confirm-payment-points" class="text-danger font-weight-bold">_______</span> <small
             class="font-weight-bold"></small>
         </p>
@@ -150,10 +150,13 @@ $user_points = get_field('selflist_points', 'user_' . $current_user_id);
         </p>
         <p>* Your List Will Be Published for <strong><span id="confirm-publish-days">_________</span></strong> Days</p>
       </div>
-      <div class="modal-footer">
-        <button id="payment-by-point-close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">Pick A New
-          Date</button>
-        <button type="button" class="btn btn-primary">Confirm Payment & Publish List</button>
+      <div class="modal-footer justify-content-center">
+        <button id="payment-by-point-close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">
+          Pick A New Date
+        </button>
+        <button id="payment-by-point-submit-btn" type="button" class="btn btn-primary">
+          Confirm Payment & Publish List
+        </button>
       </div>
     </div>
   </div>
@@ -167,14 +170,14 @@ $user_points = get_field('selflist_points', 'user_' . $current_user_id);
   <!-- <div class="modal-dialog" role="document"> -->
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header text-center">
-        <h5 class="modal-title text-center" id="exampleModalLabel">Payment Confirmation</h5>
+      <div class="modal-header justify-content-center bg-dark">
+        <h5 class="modal-title" id="exampleModalLabel">Payment Unsuccessful!</h5>
         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button> -->
       </div>
       <div class="modal-body">
-        <p class="text-uppercase"><small class="font-weight-bold">Your Payment Points:
+        <p class="text-uppercase mt-4"><small class="font-weight-bold">Your Payment Points:
             &nbsp;</small><span id="failed-payment-points" class="text-danger font-weight-bold">_______</span>
           <small class="font-weight-bold"></small>
         </p>
@@ -182,11 +185,11 @@ $user_points = get_field('selflist_points', 'user_' . $current_user_id);
             &nbsp;</small><span id="failed-current-points" class="text-danger font-weight-bold">_______</span>
           <small class="font-weight-bold"></small>
         </p>
-        <p class="p-4">
-          * You don't have enough available points for this ... Please, add more points to your account!
+        <p class="p-4 text-danger font-weight-bold">
+          * You don't have enough available points for this. Please, add more points to your account!
         </p>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer justify-content-center">
         <button id="payment-fail-by-point-close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">
           Pick A New Date
         </button>

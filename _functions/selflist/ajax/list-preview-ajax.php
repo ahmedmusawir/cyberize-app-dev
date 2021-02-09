@@ -28,8 +28,8 @@ function list_preview_ajax() {
 
   $args = [
     'post_type' => 'post',
-    'post_status' => 'pending',
     'p' => $post_id,
+    // 'post_status' => 'pending',
   ];
 
   $the_list = new WP_Query($args);
@@ -68,6 +68,7 @@ function list_preview_ajax() {
           $taxonomy = 'category';
   
           // Get the term IDs assigned to post.
+          // $post_terms = wp_get_object_terms( 595, $taxonomy, array( 'fields' => 'ids' ) );
           $post_terms = wp_get_object_terms( $post_id, $taxonomy, array( 'fields' => 'ids' ) );
           
           // Separator between links.
@@ -222,9 +223,14 @@ function list_preview_ajax() {
         // echo 'Google: ' . get_field('your_google_plus') . '<br><br>';
         // echo 'Twitter: ' . get_field('your_twitter') . '<br><br>';
 
-        // echo '<pre>';
+        echo '<pre>';
         // print_r(get_the_category());
-        // echo '</pre>';
+        print_r($post_terms);
+        echo $term_ids;
+        echo $terms;
+        echo '<br>This is happening cuz the post is not published yet ...<br>';
+        echo 'To create a preview, I have to show the Cats manually ...';
+        echo '</pre>';
 
       endwhile;
 

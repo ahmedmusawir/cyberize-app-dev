@@ -38,11 +38,13 @@ class PaymentSummaryUiEvents {
     const availPoints = parseInt($.trim(this.paymentSummaryAvailPoints.html()));
     console.log(paymentPoints);
     console.log(availPoints);
+    // CHECKING FOR END DATE
+    if (!paymentPoints) {
+      alert(`Please pick an End Date from the Calendar ...`);
+      return;
+    }
     // CHECKING FOR AVAIL POINTS VS PUBLISH DAYS
     if (availPoints < paymentPoints) {
-      // alert(`You don't have enough available points for this ...
-      // Please, add more points to your account!`);
-      // return;
       this.dayTimePickerLabels.addClass('d-none');
       this.thePaymentFailModal.modal({
         backdrop: 'static',
