@@ -17,9 +17,9 @@ class ListPreviewEvents {
   showListPreview = () => {
     const listObject = JSON.parse(localStorage.getItem('newListData'));
     // console.log('List Obj: ', listObject);
-    console.log('The New List ID', listObject.id);
+    // console.log('The New List ID', listObject.id);
 
-    if (this.previewDisplayBox.length) {
+    if (this.previewDisplayBox.length && listObject.id) {
       $.ajax({
         url: this.ajaxUrl,
         type: 'POST',
@@ -29,12 +29,13 @@ class ListPreviewEvents {
         },
       })
         .done((res) => {
-          // console.log(res);
           this.previewDisplayBox.html(res);
         })
         .fail((res) => {
           console.error(res);
         });
+    } else {
+      console.info('Did not find the new List ID: ListPreviewEvents.js');
     }
   };
 }

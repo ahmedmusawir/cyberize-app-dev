@@ -20,6 +20,8 @@ import ListPreviewEvents from './_modules/selflist-crud/ListPreviewEvents';
 import PaymentSummaryDateTimePicker from './_modules/selfList-payments/PaymentSummaryDateTimePicker';
 import PaymentSummaryUiEvents from './_modules/selfList-payments/PaymentSummaryUiEvents';
 import PaymentSubmitAjaxEvents from './_modules/selfList-payments/PaymentSubmitAjaxEvent';
+// LIST PUBLISH RELATED
+import PublishListSummaryDisplay from './_modules/selfList-payments/PublishListSummaryDisplay';
 // CATEGORY INSERT UI RELATED
 import CatInsertUiParent from './_modules/selflist-crud/cat-curd/CatInsertUiParent';
 import MainCatInsertUi from './_modules/selflist-crud/cat-curd/MainCatInsertUi';
@@ -69,12 +71,14 @@ class App {
     new ListPreviewEvents();
 
     /**
-     * LIST PAYMENT RELATED CLASSES
+     * LIST PAYMENT & PUBLISH RELATED CLASSES
      */
     // LIST PAYMENT SUMMARY PAGE
     new PaymentSummaryDateTimePicker();
     new PaymentSummaryUiEvents();
     new PaymentSubmitAjaxEvents();
+    // LIST PUBLISH SUMMARY PAGE
+    new PublishListSummaryDisplay();
 
     /**
      * CATEGORY RELATED CLASSES

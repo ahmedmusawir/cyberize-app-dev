@@ -76,10 +76,10 @@ class PaymentSummaryDateTimePicker {
     // Following is resetting the time to 0 so that it matches with the selected time from the calandar
     const startDate = newToday.setHours(0, 0, 0, 0);
     const endDate = new Date(this.selectedEnd);
-    console.log('Start Date: ', startDate);
-    console.log('End Date: ', endDate);
+    // console.log('Start Date: ', startDate);
+    // console.log('End Date: ', endDate);
     const timeDifference = endDate.getTime() - startDate;
-    console.log('Time Diff: ', timeDifference);
+    // console.log('Time Diff: ', timeDifference);
     // TIME CONSTANTS
     const milliSecondsInOneSecond = 1000;
     const secondsInOneHour = 3600;
@@ -106,7 +106,7 @@ class PaymentSummaryDateTimePicker {
 
     // MAKING THE PAYPAL FORM URL STRING
     const paypalLinkString = `/payment-form-page/?POST_ID=${this.currentPostId}&PAYMENT_TYPE=SINGLE&NUMBER_OF_DAYS=${dayDifference}`;
-    console.log(paypalLinkString);
+    // console.log(paypalLinkString);
     // ADD THE HREF TO THE PAYPAL FORM LINK
     this.paypalFormLink.attr('href', paypalLinkString);
   };

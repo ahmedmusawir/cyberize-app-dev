@@ -50,7 +50,7 @@
             <?php global $current_user; wp_get_current_user(); ?>
             <?php if ( is_user_logged_in() ) { 
             // echo 'Username: ' . $current_user->user_login . "\n"; 
-            echo '<span class="text-light float-right">User: ' . $current_user->display_name . "</span>"; } 
+            echo '<span class="float-right">User: ' . $current_user->display_name . "</span>"; } 
             else { 
               //wp_loginout(); 
             } 

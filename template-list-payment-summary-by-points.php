@@ -11,6 +11,17 @@
  *
  * @package cyberize-app-dev
  */
+// LOGIN REDIRECT START
+
+// if ( $current_user->ID == )
+// if ( !is_user_logged_in() ) {
+//   echo '<h1>You are Not Logged in</h1>';
+//   wp_redirect( wp_login_url() );
+//   exit;
+// } else {
+//   echo '<h1>You are Logged in</h1>';
+// }
+// LOGIN REDIRECT END
 
 get_header();
 ?>
