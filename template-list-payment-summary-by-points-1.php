@@ -63,6 +63,21 @@ $user_points = get_field('selflist_points', 'user_' . $current_user_id);
   crossorigin="anonymous" />
 <main id="primary" class="site-main container">
 
+  <header id="header-list-preview" class="site-header container py-2 text-center">
+
+    <figure class="logo-container">
+
+      <!-- <a href="/list-index" class="list-links display-4 d-block">LISTINGS</a> -->
+
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+        <img class="mx-auto d-block w-25 mt-4" src="/wp-content/uploads/2020/07/SelfListLogo.png" alt="">
+      </a>
+
+    </figure>
+
+  </header><!-- #masthead -->
+  <hr class="bg-danger">
+
   <section class="datepicker-range-box text-center">
     <h3 class="text-uppercase mt-5"><small class="font-weight-bold">List Publish & Payment Settings</small></h3>
     <h6 class="text-uppercase">

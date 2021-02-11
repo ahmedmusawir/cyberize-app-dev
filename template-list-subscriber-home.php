@@ -20,7 +20,7 @@ $current_user = wp_get_current_user();
 
 <main id="primary" class="site-main container">
 
-  <h1 class="display-1">Welcome <?php echo $current_user->display_name; ?></h1>
+  <h1 class="">Welcome <?php echo $current_user->display_name; ?></h1>
   <h4>Your User ID: <?php echo $current_user->id; ?></h4>
   <article class="btn btn-light">
     <p class="d-inline">

@@ -90,7 +90,7 @@ require get_theme_file_path('/_functions/selflist/selflist-search-route.php');
 require get_theme_file_path('/_functions/selflist/selflist-listing-cpt.php');
 
 // SELFLIST CUSTOM USER ROLES & PERMISSIONS
-require get_theme_file_path('/_functions/selflist/selflist-user-roles.php');
+// require get_theme_file_path('/_functions/selflist/selflist-user-roles.php');
 
 // SELFLIST CUSTOM USER LOGIN LOGOUT RELATED FUNCTIONS (ADMIN BAR, LOGIN/LOGOUT BTN, REDIRECTION ETC.)
 require get_theme_file_path('/_functions/selflist/selflist-user-logins.php');

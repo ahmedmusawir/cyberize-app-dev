@@ -53,34 +53,35 @@ if ( ! function_exists( 'cyberize_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'cyberize' ),
 		) );
 
-		// Portfolio Category Menu
-		// register_nav_menus( array(
-		// 	'portfolio' => esc_html__( 'Portfolio', 'cyberize' ),
-		// ) );
+		// CUSTOMER PROFILE MENU
+		register_nav_menus( array(
+			'customer-profile-menu' => esc_html__( 'Customer Profile Menu', 'cyberize' ),
+		) );
 
 		// Post Category Menu
-		register_nav_menus( array(
-			'post-cat' => esc_html__( 'Post Category', 'cyberize' ),
-		) );
+		// register_nav_menus( array(
+		// 	'post-cat' => esc_html__( 'Post Category', 'cyberize' ),
+		// ) );
 
 		// University Category Menu
-		register_nav_menus( array(
-			'univ-cat' => esc_html__( 'University Category', 'cyberize' ),
-		) );
+		// register_nav_menus( array(
+		// 	'univ-cat' => esc_html__( 'University Category', 'cyberize' ),
+		// ) );
 
 		// Global Dropdown Left Menu
-		register_nav_menus( array(
-			'global-dropdown-left-menu' => esc_html__( 'Global Dropdown Left Menu', 'cyberize' ),
-		) );
+		// register_nav_menus( array(
+		// 	'global-dropdown-left-menu' => esc_html__( 'Global Dropdown Left Menu', 'cyberize' ),
+		// ) );
 
 		// Global Dropdown Right Menu 1
-		register_nav_menus( array(
-			'global-dropdown-right-menu-1' => esc_html__( 'Global Dropdown Right Menu 1', 'cyberize' ),
-		) );
+		// register_nav_menus( array(
+		// 	'global-dropdown-right-menu-1' => esc_html__( 'Global Dropdown Right Menu 1', 'cyberize' ),
+		// ) );
+
 		// Global Dropdown Right Menu 2
-		register_nav_menus( array(
-			'global-dropdown-right-menu-2' => esc_html__( 'Global Dropdown Right Menu 2', 'cyberize' ),
-		) );
+		// register_nav_menus( array(
+		// 	'global-dropdown-right-menu-2' => esc_html__( 'Global Dropdown Right Menu 2', 'cyberize' ),
+		// ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments

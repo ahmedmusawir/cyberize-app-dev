@@ -223,13 +223,14 @@ function list_preview_ajax() {
         // echo 'Google: ' . get_field('your_google_plus') . '<br><br>';
         // echo 'Twitter: ' . get_field('your_twitter') . '<br><br>';
 
+        // BUG FOUND ... RENABLE
         echo '<pre>';
         // print_r(get_the_category());
-        print_r($post_terms);
-        echo $term_ids;
-        echo $terms;
-        echo '<br>This is happening cuz the post is not published yet ...<br>';
-        echo 'To create a preview, I have to show the Cats manually ...';
+        // print_r($post_terms);
+        // echo $term_ids;
+        // echo $terms;
+        // echo '<br>This is happening cuz the post is not published yet ...<br>';
+        // echo 'To create a preview, I have to show the Cats manually ...';
         echo '</pre>';
 
       endwhile;

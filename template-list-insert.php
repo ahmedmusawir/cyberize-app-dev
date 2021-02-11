@@ -49,8 +49,6 @@ textarea::placeholder {
 </style>
 
 <main id="primary" class="site-main container-fluid">
-  <img class="w-25 mx-auto d-block mt-5" src="/wp-content/uploads/2020/07/SelfListLogo.png" alt="">
-  <hr>
 
   <header>
     <link rel="stylesheet"

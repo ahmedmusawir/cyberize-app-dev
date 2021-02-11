@@ -33,7 +33,7 @@
       <div class="main-navigation">
         <div class="main-navbar container-fluid">
           <a class="navbar-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-            <!-- <img src="/wp-content/uploads/2020/08/moose-oragebg.png" class="w-25" style="padding-top: .8rem;" alt=""> -->
+            <img src="/wp-content/uploads/2020/08/moose-oragebg.png" class="w-25" style="padding-top: .8rem;" alt="">
           </a>
           <?php
 					wp_nav_menu( array(
@@ -42,8 +42,8 @@
 						'container'			 => 'div',
 						'container_class' => 'main-nav',  	
 						// 'menu_class'     => 'mx-auto', //CENTER ALIGN
-						'menu_class'     => 'ml-auto', //RIGHT ALIGN
-						// 'menu_class'     => 'mr-auto', //LEFT ALIGN
+						// 'menu_class'     => 'ml-auto', //RIGHT ALIGN
+						'menu_class'     => 'mr-auto', //LEFT ALIGN
 					) );
         ?>
           <section>
@@ -63,19 +63,3 @@
       <!-- Moose_Framework_2 NAVIGATION ENDS HERE -->
 
     </header><!-- #masthead -->
-
-    <!-- SELFLIST LOGO HEADER -->
-    <header id="header-list-preview" class="site-header container mt-5 mb-2 text-center">
-
-      <figure class="logo-container">
-
-        <!-- <a href="/list-index" class="list-links display-4 d-block">LISTINGS</a> -->
-
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-          <img class="mx-auto d-block w-25 mt-4" src="/wp-content/uploads/2020/07/SelfListLogo.png" alt="">
-        </a>
-
-      </figure>
-
-    </header><!-- #masthead -->
-    <hr class="bg-danger mb-5">
