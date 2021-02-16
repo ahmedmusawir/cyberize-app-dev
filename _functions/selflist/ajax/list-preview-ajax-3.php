@@ -65,47 +65,41 @@ function list_preview_ajax() {
            * CATEGORY LIST WITH PARENT CHILD RELATIONSHIP
            * 
            */
-          // Setting the Args to get Parent ID in and Array
-          $args = ['parent' => 0];
-          // Getting an Array with Parent Category ID
-          $post_cat_parent_array = wp_get_post_categories($post_id, $args);
-          // Setting the Category Parent ID
-          $post_cat_parent_id = $post_cat_parent_array[0];
-          // Getting the children Category IDs Array with no List/Post attached
-          $post_terms = get_categories(
-                          [ 'child_of' => $post_cat_parent_id,
-                            'hide_empty' => '0' 
-                          ]
-                        );
-
-          ?>
-
-        <section class="post-item-cat-list">
-          <p class="text-uppercase text-danger font-weight-bold list-inline-item"
-            style="margin-bottom: -0.5rem; font-size: 0.8rem;">
-            <?php echo get_cat_name($post_cat_parent_id) ?>
-          </p>&nbsp;
-          <i class="fas fa-arrow-right"></i>&nbsp;
-          <?php
-          // The Category Loop
-          foreach ( $post_terms as $post_term ) : ?>
-
-          <p class="text-uppercase text-danger font-weight-bold list-inline-item"
-            style="margin-bottom: -0.5rem; font-size: 0.8rem;">
-            <?php echo $post_term->name; ?>
-          </p>&nbsp;
-          <i class="fas fa-arrow-right"></i>&nbsp;
-
-          <?php endforeach; ?>
-
-        </section>
-        <!-- End post-item-cat-list -->
-
-        <?php
-        // ====================================== END CATEGORY LIST WITH PARENT CHILD ===================================
-
-        if ( 'post' === get_post_type() ) :
-        ?>
+          $taxonomy = 'category';
+  
+          // Get the term IDs assigned to post.
+          // $post_terms = wp_get_object_terms( 595, $taxonomy, array( 'fields' => 'ids' ) );
+          $post_terms = wp_get_object_terms( $post_id, $taxonomy, array( 'fields' => 'ids' ) );
+          
+          // Separator between links.
+          // $separator = '> ';
+          $separator = '&nbsp;<i class="fas fa-arrow-right"></i>&nbsp;';
+          
+          if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {
+          
+              $term_ids = implode( ',' , $post_terms );
+          
+              $terms = wp_list_categories( array(
+                  'title_li' => '',
+                  'style'    => 'none',
+                  'echo'     => false,
+                  'taxonomy' => $taxonomy,
+                  'include'  => $term_ids
+              ) );
+          
+              $terms = trim( str_replace( '<br />',  $separator, $terms ));
+              // $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+          
+              // Display post categories.
+              echo  $terms;
+          }
+  
+          echo '</section>'; //END .post-item-cat-list
+      
+              // =========================================END MOOSE TEST========================================
+      
+          if ( 'post' === get_post_type() ) :
+            ?>
         <div class="entry-meta">
           <?php
             cyberize_app_dev_posted_on();
@@ -213,7 +207,31 @@ function list_preview_ajax() {
   </main>
 </section>
 <?php
+        // -------------------------- DEBUGGING INFO -----------------------------------------
+        // echo '<br>';
+        // echo 'Name: ' . get_field('your_name') . '<br>';
+        // echo 'Phone: ' . get_field('your_phone') . '<br><br>';
+        // echo 'Email: ' . get_field('your_email') . '<br><br>';
+        // echo 'Website: ' . get_field('your_site') . '<br><br>';
+        // echo 'City: ' . get_field('your_city') . '<br><br>';
+        // echo 'Zip: ' . get_field('your_zip') . '<br><br>';
+        // echo 'State: ' . get_field('your_state') . '<br><br>';
+        // echo 'Facebook: ' . get_field('your_facebook') . '<br><br>';
+        // echo 'Yelp: ' . get_field('your_yelp') . '<br><br>';
+        // echo 'Instagram: ' . get_field('your_instagram') . '<br><br>';
+        // echo 'Linkedin: ' . get_field('your_linkedin') . '<br><br>';
+        // echo 'Google: ' . get_field('your_google_plus') . '<br><br>';
+        // echo 'Twitter: ' . get_field('your_twitter') . '<br><br>';
 
+        // BUG FOUND ... RENABLE
+        echo '<pre>';
+        // print_r(get_the_category());
+        // print_r($post_terms);
+        echo $term_ids . '<br>';
+        echo $terms;
+        echo '<br>This is happening cuz the post is not published yet ...<br>';
+        echo 'To create a preview, I have to show the Cats manually ...';
+        echo '</pre>';
 
       endwhile;
 

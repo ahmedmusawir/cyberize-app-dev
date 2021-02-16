@@ -189,7 +189,8 @@ $user_points = get_field('selflist_points', 'user_' . $current_user_id);
         <button id="payment-fail-by-point-close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">
           Pick A New Date
         </button>
-        <button type="button" class="btn btn-primary">Add More Points</button>
+
+        <a href="/list-customer-add-points/" class="btn btn-primary">Add More Points</a>
       </div>
     </div>
   </div>

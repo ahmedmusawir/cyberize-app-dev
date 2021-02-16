@@ -23,7 +23,7 @@ function my_login_redirect( $redirect_to, $request, $user ) {
             $redirect_to = "/test-chat";
         } elseif (in_array('subscriber', $user->roles)) {
           //all other members
-          $redirect_to = "/sub-home";
+          $redirect_to = "/list-customer-home";
         } else {
             //all other members
             $redirect_to = "/wp-admin";

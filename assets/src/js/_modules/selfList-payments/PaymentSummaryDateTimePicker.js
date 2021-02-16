@@ -89,7 +89,7 @@ class PaymentSummaryDateTimePicker {
       timeDifference /
         (milliSecondsInOneSecond * secondsInOneHour * hoursInOneDay) +
       1;
-    console.log('Day Diff: ', dayDifference);
+    // console.log('Day Diff: ', dayDifference);
     const paymentAmount = dayDifference * 0.25;
 
     // DISPLAY PUBLISH SETTINGS & PAYMENT AMOUNT

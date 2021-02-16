@@ -47,7 +47,6 @@ $user_published_list_count = count_user_posts($current_user->id, 'post', true); 
     <!-- LEFT PROFILE MENU COLUMN ENDS -->
     <!-- RIGHT PROFILE CONTENT COLUMN -->
     <div class="col-sm-12 col-md-8">
-      <a href="/list-chat/" class="btn btn-danger float-right">Chat Room</a>
       <h3 class="text-uppercase"><small class="font-weight-bold">Customer Profile</small></h3>
       <h2 class="h2">Welcome, <?php echo $current_user->display_name; ?></h2>
 
@@ -99,7 +98,18 @@ $user_published_list_count = count_user_posts($current_user->id, 'post', true); 
           </span>
         </strong>
       </h6>
+      <!-- CHAT NOTIFICATION DID NOT WORK -->
+      <article class="btn btn-light float-right">
+        <p class="d-inline">
+          Your Chat Messages
+          <?php echo do_shortcode('[yobro_chat_notification]'); ?>
+        </p>
+        <?php 
+          echo do_shortcode("[yobro_chat_new_message user_id=$current_user->id]");
+        ?>
+      </article>
 
+      <?php  echo do_shortcode('[yobro_chat_new_message user_id=10]');?>
     </div>
     <!-- RIGHT PROFILE CONTENT COLUMN ENDS -->
 

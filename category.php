@@ -8,7 +8,7 @@
  */
 
 get_header();
-
+// GETTING CURRENT CATEGORY OBJECT
 $current_category = $wp_query->get_queried_object();
 $current_cat_id = $current_category->term_id;
 $current_post_count = $current_category->count;

@@ -49,7 +49,7 @@ class PaymentSubmitAjaxEvents {
       })
       .always(() => {
         // console.log('Ajax Dynamic Loaction Filter Complete');
-        window.location.href = '/list-publish-success/';
+        window.location.href = '/list-publish-summary/';
       });
   };
 }

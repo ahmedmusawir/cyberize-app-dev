@@ -109,9 +109,9 @@ class App {
     // new InsertPost();
     // new TestGetJson();
     // new FormValdationTest();
-    // new DatePickerTest();
+    new DatePickerTest();
     // new TestJsToPhp();
-    // new DateTimePickerTest();
+    new DateTimePickerTest();
   };
 }
 

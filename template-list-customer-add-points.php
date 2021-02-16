@@ -18,12 +18,12 @@ get_header();
 /**
  * CUSOMER/USER PROFILE
  */
-$current_user = wp_get_current_user();
-$user_points = get_field('selflist_points', 'user_' . $current_user->id);
-$user_registered = $current_user->user_registered;
-$user_email = $current_user->user_email;
-$user_total_list_count = count_user_posts($current_user->id, 'post', false); // false for all posts
-$user_published_list_count = count_user_posts($current_user->id, 'post', false); // true for public only 
+// $current_user = wp_get_current_user();
+// $user_points = get_field('selflist_points', 'user_' . $current_user->id);
+// $user_registered = $current_user->user_registered;
+// $user_email = $current_user->user_email;
+// $user_total_list_count = count_user_posts($current_user->id, 'post', false); // false for all posts
+// $user_published_list_count = count_user_posts($current_user->id, 'post', false); // true for public only 
 // echo '<pre>';
 // print_r($current_user);
 // echo '</pre>';
@@ -48,9 +48,9 @@ $user_published_list_count = count_user_posts($current_user->id, 'post', false);
     <!-- RIGHT PROFILE CONTENT COLUMN -->
     <div class="col-sm-12 col-md-8">
       <h3 class="text-uppercase"><small class="font-weight-bold">Customer Points Portal</small></h3>
-      <h2 class="h2"><?php echo $current_user->display_name; ?>'s New Points</h2>
-
-
+      <h4 class="h4">Add Points by Purchasing following Products:</h4>
+      <hr>
+      <?php echo do_shortcode('[products]'); ?>
 
     </div>
     <!-- RIGHT PROFILE CONTENT COLUMN ENDS -->
