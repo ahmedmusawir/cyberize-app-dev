@@ -108,7 +108,7 @@ require get_theme_file_path('/_functions/selflist/selflist-post-acf-to-rest.php'
 // SELFLIST SET CUSTOM POST TITLE WITH ID
 // require get_theme_file_path('/_functions/selflist/selflist-post-title.php');
 
-// SELFTLIST CREATE CATEGORIES TEST
+// SELFTLIST CREATE CATEGORIES 
 // require get_theme_file_path('/_functions/selflist/ajax/test-ajax.php');
 // require get_theme_file_path('/_functions/selflist/selflist-create-categories.php');
 require get_theme_file_path('/_functions/selflist/ajax/main-cat-insert-ajax.php');
@@ -117,6 +117,8 @@ require get_theme_file_path('/_functions/selflist/ajax/secondo-cat-insert-ajax.p
 require get_theme_file_path('/_functions/selflist/ajax/terzo-cat-insert-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/list-preview-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/list-payment-and-publish-ajax.php');
+// SELFLIST CUSTOM TAXONOMY
+require get_theme_file_path('/_functions/selflist/taxonomy/selflist-create-taxonomy.php');
 
 
 // FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN

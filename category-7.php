@@ -18,14 +18,17 @@ $current_post_count = $current_category->count;
 ?>
 <main id="primary" class="site-main container">
 
-  <button>Filter by State & City</button>
   <!-- STATE & CITY CATEGORY PROTOTYPING STARTS -->
   <?php 
   // Getting all States (Parent Taxonomies)
   $all_states = get_terms(['taxonomy' => 'states', 'parent' => 0 ]);
 
-  echo '<div class="mb-3 p-3 border">';
+  echo '<div class="mb-3 p-5 border">';
   foreach ($all_states as $state) {
+    // get_cities($state->slug);
+    // echo "<pre>";
+    // print_r($state);
+    // echo "</pre>";
     echo '<li class="list-inline-item">';
     echo '<button class="btn btn-danger">' . $state->name .' ('. $state->count .') '. '</button>';
     echo '</li>';
@@ -34,6 +37,9 @@ $current_post_count = $current_category->count;
   echo '<div class="mb-3 border">';
   foreach ($all_states as $state) {
     get_cities($state->slug);
+    // echo "<pre>";
+    // print_r($state);
+    // echo "</pre>";
   }
   echo '</div>';
 

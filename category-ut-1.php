@@ -18,23 +18,16 @@ $current_post_count = $current_category->count;
 ?>
 <main id="primary" class="site-main container">
 
-  <button>Filter by State & City</button>
   <!-- STATE & CITY CATEGORY PROTOTYPING STARTS -->
   <?php 
   // Getting all States (Parent Taxonomies)
   $all_states = get_terms(['taxonomy' => 'states', 'parent' => 0 ]);
+  echo '<div class="row mb-4">';
 
-  echo '<div class="mb-3 p-3 border">';
-  foreach ($all_states as $state) {
-    echo '<li class="list-inline-item">';
-    echo '<button class="btn btn-danger">' . $state->name .' ('. $state->count .') '. '</button>';
-    echo '</li>';
-  }
-  echo '</div>';
-  echo '<div class="mb-3 border">';
   foreach ($all_states as $state) {
     get_cities($state->slug);
   }
+
   echo '</div>';
 
   function get_cities($state) {
@@ -44,26 +37,29 @@ $current_post_count = $current_category->count;
     // Getting the children Category IDs Array with no List/Post attached
     $cities_of_ga = get_term_children($state_cat_georgia->term_id, 'states');
     
-    echo '<article id="'. $state .'">';
-    echo '<section class="border p-2">';
+    echo '<article class="col-3">';
+    echo '<section class="card p-2">';
     
       echo '<div class="card-header mb-3">';
-      echo '<h6>' . $state_cat_georgia->name . ' (' . $state_cat_georgia->count . ')</h6>';
-      // echo '<a href="'. $state_cat_georgia_link .'">' . $state_cat_georgia->name . ' (' . $state_cat_georgia->count . ')</a>';
+      echo '<a href="'. $state_cat_georgia_link .'">' . $state_cat_georgia->name . ' (' . $state_cat_georgia->count . ')</a>';
       echo '</div>';
 
       foreach ( $cities_of_ga as $city_id ) {
         $city_obj = get_term($city_id);
-        // $city_cat_link = get_category_link($city_obj);
+        $city_cat_link = get_category_link($city_obj);
 
-        echo '<button class="btn btn-outline-primary list-inline-item">';
-        echo "<small>$city_obj->name [$city_obj->count]</small>";
-        echo '</button>';
+        echo "<pre>";
+        echo '<a href="' .$city_cat_link . '">';
+        echo "<small>$city_obj->name</small> [$city_obj->count]";
+        echo '</a>';
+        echo "</pre>";
       }
 
     echo '</section>';
     echo '</article>';
   }
+
+
   
   ?>
   <!-- STATE & CITY CATEGORY PROTOTYPING ENDS -->
@@ -99,7 +95,9 @@ $current_post_count = $current_category->count;
       echo '<article class="animate__animated animate__zoomIn">';
       // CITY & STATE TAXONMY DISPLAY BY LIST START
       $tax = get_the_terms( get_the_ID(), 'states');
-      
+      echo "<pre>";
+      // print_r($tax);
+      echo "</pre>";
       echo '
       <p class="text-dark text-uppercase" style="font-size: .8rem; margin-bottom: 0;">
         <small class="font-weight-bold">City: 

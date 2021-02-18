@@ -78,4 +78,4 @@
       </figure>
 
     </header><!-- #masthead -->
-    <hr class="bg-danger mb-5">
+    <hr class="bg-danger">
