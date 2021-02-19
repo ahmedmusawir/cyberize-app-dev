@@ -16,11 +16,11 @@ class UnivLoadMore {
     this.button.on('click', this.clickHandler);
   };
 
-  clickHandler() {
+  clickHandler = () => {
     // console.log('clicked up from Sample Module ...');
     const page = $(this).data('page');
     console.log(page);
-  }
+  };
 }
 
 export default UnivLoadMore;

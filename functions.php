@@ -119,7 +119,8 @@ require get_theme_file_path('/_functions/selflist/ajax/list-preview-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/list-payment-and-publish-ajax.php');
 // SELFLIST CUSTOM TAXONOMY
 require get_theme_file_path('/_functions/selflist/taxonomy/selflist-create-taxonomy.php');
-
+// DISPLAY STATES & CITIES IN CATEGORY.PHP PAGE TOP MENU
+require get_theme_file_path('/_functions/selflist/city_state/get_city_state.php');
 
 // FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN
 // Enable the option show in rest

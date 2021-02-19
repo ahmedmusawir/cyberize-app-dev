@@ -3,7 +3,7 @@
  * INSERT MULTI LEVEL CATEGORIES WITH AJAX
  */
 
-// add_action('wp_ajax_nopriv_list_preview_ajax', 'list_preview_ajax');
+add_action('wp_ajax_nopriv_list_preview_ajax', 'list_preview_ajax');
 add_action('wp_ajax_list_preview_ajax', 'list_preview_ajax');
 
 function list_preview_ajax() {
@@ -59,7 +59,6 @@ function list_preview_ajax() {
           // DISPLAY LIST ID
           echo '<p class="font-weight-bold" style="margin-bottom: -.25rem; font-size: .8rem">LIST #' . $post_id . "</p>";
 
-              
           /**
            * 
            * CATEGORY LIST WITH PARENT CHILD RELATIONSHIP
@@ -77,7 +76,6 @@ function list_preview_ajax() {
                             'hide_empty' => '0' 
                           ]
                         );
-
           ?>
 
         <section class="post-item-cat-list">

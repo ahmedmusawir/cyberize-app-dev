@@ -40,6 +40,7 @@ import MainCatInsertEvent from './_modules/selflist-crud/cat-curd/MainCatInsertE
 import PrimoCatInsertEvent from './_modules/selflist-crud/cat-curd/PrimoCatInsertEvent';
 import SecondoCatInsertEvent from './_modules/selflist-crud/cat-curd/SecondoCatInsertEvent';
 import TerzoCatInsertEvent from './_modules/selflist-crud/cat-curd/TerzoCatInsertEvent';
+import CiteStateUiEvents from './_modules/selflist-city-state/CityStateUiEvents';
 
 class App {
   constructor() {
@@ -103,6 +104,9 @@ class App {
     new PrimoCatInsertEvent();
     new SecondoCatInsertEvent();
     new TerzoCatInsertEvent();
+
+    // City State Filter Ui/Ux
+    new CiteStateUiEvents();
   }
 
   runTestCode = () => {
