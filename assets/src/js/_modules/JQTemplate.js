@@ -3,7 +3,7 @@ import $ from 'jquery';
 class UnivLoadMore {
   constructor() {
     this.init();
-    // COLLECTING BUTTON
+    // COLLECTING ELEMENTS
     this.button = $('#univ-load-more-btn');
     this.setEvents();
   }

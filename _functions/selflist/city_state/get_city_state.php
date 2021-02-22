@@ -22,8 +22,10 @@ function get_cities($state) {
     foreach ( $cities_of_ga as $city_id ) {
       $city_obj = get_term($city_id);
       // $city_cat_link = get_category_link($city_obj);
+      // MAKING CITY BTN IDs
+      $city_btn_id = "$state-$city_obj->slug-btn";
 
-      echo '<button class="btn btn-outline-primary btn-sm list-inline-item">';
+      echo '<button id="'. $city_btn_id .'" class="btn btn-outline-primary btn-sm list-inline-item city-button">';
       echo "<small>$city_obj->name [$city_obj->count]</small>";
       echo '</button>';
     }
