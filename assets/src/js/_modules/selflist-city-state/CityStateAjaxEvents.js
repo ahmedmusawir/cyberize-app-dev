@@ -20,12 +20,16 @@ class CityStateAjaxEvents {
     this.cityButton.on('click', this.clickCityHandler);
   };
 
-  clickCityHandler = () => {
-    console.log('City Btn Clicked From Tax Menu ...');
+  clickCityHandler = (e) => {
+    // console.log('City Btn Clicked From Tax Menu ...');
+    // console.info(e.target);
+    const clickedCityBtn = $(e.target);
+
     // SETTING VARIABLES
-    const currentCatId = 39;
-    const stateSlug = 'florida';
-    const citySlug = 'miami';
+    const currentCatId = clickedCityBtn.data('catid');
+    const stateSlug = clickedCityBtn.data('state');
+    const citySlug = clickedCityBtn.data('city');
+
     // AJAX FUNCTION FOR CITY STATE FILTERING
     $.ajax({
       url: this.ajaxUrl,
@@ -38,7 +42,7 @@ class CityStateAjaxEvents {
       },
     })
       .done((res) => {
-        console.log(res);
+        // console.log(res);
         this.listIndexContainer.html(res);
       })
       .fail(() => {

@@ -23,7 +23,7 @@ $current_post_count = $current_category->count;
   <?php 
     // Getting all States (Parent Taxonomies)
     $all_states = get_terms(['taxonomy' => 'states', 'parent' => 0 ]);
-    get_state_and_cities($all_states);
+    get_state_and_cities($all_states, $current_cat_id);
   ?>
   <!-- STATE & CITY CATEGORY PROTOTYPING ENDS -->
 

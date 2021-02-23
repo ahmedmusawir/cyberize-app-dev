@@ -28,7 +28,7 @@ function get_cities( $state, $current_cat_id ) {
       echo '<button id="'. $city_btn_id .'" class="btn btn-outline-primary btn-sm list-inline-item city-button">';
       echo 
       '<small data-state="'. $state .'" data-city="'. $city_obj->slug .'" data-catid="'. $current_cat_id .'">' 
-      . $city_obj->name .
+      . $city_obj->name . '<span class="badge badge-dark ml-2">' . $city_obj->count .'</span>' .
       '</small>';
       echo '</button>';
     }
@@ -42,10 +42,10 @@ function get_state_and_cities( $all_states, $current_cat_id ) {
   echo '<div id="state-filter-menu" class="mb-3 p-1 border border-primary animate__animated animate__bounceInLeft d-none">';
   foreach ($all_states as $state) {
     echo '<li class="list-inline-item">';
-    echo 
-    '<button id="'. $state->slug .'-btn" data-state="'. $state->slug .'" class="btn btn-danger btn-sm state-btn">' 
-    . $state->name .
-    '</button>';
+    echo '<button id="'. $state->slug .'-btn" data-state="'. $state->slug .'" class="btn btn-danger btn-sm state-btn">' 
+    . $state->name .'<span class="badge badge-dark ml-2">'
+    . $state->count .'</span>'
+    . '</button>';
     echo '</li>';
   }
   
