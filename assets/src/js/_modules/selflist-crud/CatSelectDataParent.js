@@ -59,6 +59,26 @@ class CatSelectDataParent {
       // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
       this.selectizeTerzo = this.selectTerzoCats[0].selectize;
     }
+
+    // ADDING STATE & CITY & SETTING UP THE CONTROL ELEMENT
+    // Setting up States
+    if ($('#select-all-states').length) {
+      this.selectAllStates = $('#select-all-states').selectize({
+        sortField: 'text',
+      });
+
+      // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
+      this.selectAllStateCtrl = this.selectAllStates[0].selectize;
+    }
+    // Setting up Cities
+    if ($('#select-all-cities').length) {
+      this.selectAllCities = $('#select-all-cities').selectize({
+        sortField: 'text',
+      });
+
+      // ADDING ITEMS DYNAMICALLY & SETTING UP THE CONTROL ELEMENT
+      this.selectAllCityCtrl = this.selectAllCities[0].selectize;
+    }
   }
 
   init = () => {

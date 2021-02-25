@@ -28,6 +28,12 @@ input {
   font-weight: bold;
 }
 
+textarea {
+  color: red;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
 input::placeholder {
   font-size: .8rem !important;
 }
@@ -75,6 +81,12 @@ textarea::placeholder {
           <?php get_template_part('_custom-template-parts/list-insert-pg-cat-select-box'); ?>
 
           <!-- END CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
+
+          <!-- STATE & CITY SELECTIZE CHOICE BOX -->
+
+          <?php get_template_part('_custom-template-parts/list-insert-city-state-select-box'); ?>
+
+          <!-- END STATE & CITY SELECTIZE CHOICE BOX -->
 
           <!-- THE MAIN FORM INPUTS START -->
 

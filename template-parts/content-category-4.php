@@ -22,7 +22,11 @@
         /**
          * DISPLAY USER REGISTRATION DATE
          */
+        // $user_id = get_post_field( 'post_author', $post_id ); // Getting Author ID by Post ID (optional)
+        // $user_id = get_post_field( 'post_author', get_the_id() ); // Getting Author ID by Post ID (optional)
         $user_id = get_post_field( 'post_author' ); // Getting Author ID by Post ID (optional)
+        // echo '<br>Post ID: ' . $post_id;
+        // echo '<br>User ID: ' . $user_id;
         $udata = get_userdata( $user_id );
         $registered = $udata->user_registered;
         echo '<span class="bg-danger text-light font-weight-bold float-right py-2 px-4" style="font-size: .8rem;">';
@@ -39,6 +43,7 @@
         $post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
          
         // Separator between links.
+        // $separator = '> ';
         $separator = '&nbsp;<i class="fas fa-arrow-right"></i>&nbsp;';
          
         if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {

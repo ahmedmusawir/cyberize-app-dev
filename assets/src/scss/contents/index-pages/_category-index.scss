@@ -3,7 +3,7 @@
  * Global Styles for Archive Index Page
  *
  */
-// THIS IMPACTS category.php and template-list-preview.php
+// THIS IMPACTS category.php, archive.php and template-list-preview.php
 .category,
 .archive {
   // padding-top: 8rem;
@@ -95,11 +95,17 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        @media (max-width: 991px) {
+          margin-top: 0.5rem;
+        }
 
         .flex-icon-item {
           margin-right: 1rem;
           width: 50px;
           img {
+            width: 35px;
+          }
+          @media (max-width: 1200px) {
             width: 35px;
           }
           @media (max-width: 425px) {

@@ -40,7 +40,7 @@ $current_post_count = $current_category->count;
       <?php if ( have_posts() ) : ?>
 
       <header class="page-header">
-        <!-- <span class="badge badge-dark float-right"><?php echo $current_post_count ?></span> -->
+        <!-- <span class="badge badge-dark float-right"><?php //echo $current_post_count ?></span> -->
 
         <?php
 			the_archive_title( '<h3 class="page-title">', '<span class="badge badge-pill badge-dark ml-2">' . $current_post_count . '</span>

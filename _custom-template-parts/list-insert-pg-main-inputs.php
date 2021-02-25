@@ -35,37 +35,25 @@
     <small id="textHelp" class="form-text text-muted">Ex: https://you-website.com</small>
   </div>
   <!-- ADDRESS -->
-  <div class="form-group row">
+  <!-- <div class="form-group row">
     <div class="col-12">
       <input type="text" class="form-control" id="lister-city" name="lister-city" aria-describedby="textHelp"
         placeholder="City">
       <small id="textHelp" class="form-text text-muted">Ex: Atlanta</small>
     </div>
     <div class="col-12 col-sm-6">
-      <!-- <div class="col-auto"> -->
       <input type="text" class="form-control" id="lister-zip" name="lister-zip" aria-describedby="textHelp"
         placeholder="Zip">
       <small id="textHelp" class="form-text text-muted">Ex: 30324</small>
     </div>
 
     <div class="col-12 col-sm-6">
-      <!-- <div class="col-auto"> -->
       <input type="text" class="form-control" id="lister-state" name="lister-state" aria-describedby="textHelp"
         placeholder="State">
       <small id="textHelp" class="form-text text-muted">Ex: GA</small>
     </div>
-
-  </div>
-  <!-- EXAMPLE: BOOTSTRAP 4 FANCY INPUT -->
-  <!-- <div class="form-group">
-  <label class="sr-only" for="inlineFormInputGroup">Username</label>
-  <div class="input-group mb-2">
-    <div class="input-group-prepend">
-      <div class="input-group-text">@</div>
-    </div>
-    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
-  </div>
   </div> -->
+
   <!-- SOCIAL MEDIA  -->
   <!-- Facebook -->
   <div class="form-group">
