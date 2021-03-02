@@ -6,7 +6,7 @@
 function get_cities( $state, $current_cat_id ) {
   // Getting State
   $state_cat_georgia = get_term_by('slug', $state, 'states');
-  $state_cat_georgia_link = get_category_link($state_cat_georgia);
+  // $state_cat_georgia_link = get_category_link($state_cat_georgia);
   // Getting the children Category IDs Array with no List/Post attached
   $cities_of_ga = get_term_children($state_cat_georgia->term_id, 'states');
   

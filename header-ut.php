@@ -65,9 +65,9 @@
     </header><!-- #masthead -->
 
     <!-- SELFLIST LOGO HEADER -->
-    <header id="header-test" class="site-header container py-5 text-center">
+    <header id="header-test" class="site-header pt-3 container text-center">
 
-      <h1>Insert Taxonomy Test</h1>
+      <h1>WP TAXONOMY DATA TO JSON & REST API</h1>
 
     </header><!-- #masthead -->
     <hr class="bg-danger">

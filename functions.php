@@ -122,6 +122,7 @@ require get_theme_file_path('/_functions/selflist/taxonomy/selflist-create-taxon
 // DISPLAY STATES & CITIES IN CATEGORY.PHP PAGE TOP MENU
 require get_theme_file_path('/_functions/selflist/city_state/get_city_state.php');
 require get_theme_file_path('/_functions/selflist/ajax/city-state-filter-ajax.php');
+require get_theme_file_path('/_functions/selflist/rest/city-state-to-rest.php');
 
 
 // FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN

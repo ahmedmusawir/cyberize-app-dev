@@ -73,9 +73,6 @@
        <article class="main-cat-box">
          <select id="select-all-cities" placeholder="Pick A City">
            <option value="">Select a City...</option>
-           <option value="AL">Atlanta</option>
-           <option value="AK">Dekalb</option>
-           <option value="IN">Cobb</option>
          </select>
        </article>
      </div>

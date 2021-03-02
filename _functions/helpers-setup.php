@@ -63,14 +63,14 @@ function print_taxonomy_ranks( $terms = '' ) {
 // }
 
 //REMOVING FONTAWESOME STYLES BY APE GALLERY
-function custom_dequeue() {
-    wp_dequeue_style('wpApeGalleryFontCss-css');
-    wp_deregister_style('wpApeGalleryFontCss-css');
+// function custom_dequeue() {
+//     wp_dequeue_style('wpApeGalleryFontCss-css');
+//     wp_deregister_style('wpApeGalleryFontCss-css');
 
-}
+// }
 
-add_action( 'wp_enqueue_scripts', 'custom_dequeue', 9999 );
-add_action( 'wp_head', 'custom_dequeue', 9999 );
+// add_action( 'wp_enqueue_scripts', 'custom_dequeue', 9999 );
+// add_action( 'wp_head', 'custom_dequeue', 9999 );
 
 
 

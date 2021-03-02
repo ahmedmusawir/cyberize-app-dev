@@ -43,6 +43,7 @@ import TerzoCatInsertEvent from './_modules/selflist-crud/cat-curd/TerzoCatInser
 // CITY STATE FILTER RELATED
 import CiteStateUiEvents from './_modules/selflist-city-state/CityStateUiEvents';
 import CityStateAjaxEvents from './_modules/selflist-city-state/CityStateAjaxEvents';
+import CityLoadRestApiEvents from './_modules/selflist-city-state/CityLoadRestApiEvents';
 
 class App {
   constructor() {
@@ -107,10 +108,10 @@ class App {
     new SecondoCatInsertEvent();
     new TerzoCatInsertEvent();
 
-    // City State Filter Ui/Ux
+    // City State Related
     new CiteStateUiEvents();
-    // City State Filter Ajax
     new CityStateAjaxEvents();
+    new CityLoadRestApiEvents();
   }
 
   runTestCode = () => {
