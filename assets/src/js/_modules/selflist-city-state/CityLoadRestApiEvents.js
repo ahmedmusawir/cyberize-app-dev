@@ -50,18 +50,18 @@ class CityLoadRestApiEvents extends CatSelectDataParent {
     this.selectAllCityCtrl.clearOptions(); // Removes all options from selectize
 
     // COLLECTING STATE SLUG ON SELECT
-    const currentStateSlug = this.selectAllStateCtrl.getValue();
-    // console.log(currentStateSlug);
+    const currentStateId = this.selectAllStateCtrl.getValue();
+    // console.log(currentStateId);
 
     // GETTING THE INNER TEXT OF THE CURRENT SELECTED OPTION
-    // const selectedState = this.selectAllStateCtrl.getItem(currentStateSlug);
+    // const selectedState = this.selectAllStateCtrl.getItem(currentStateId);
     // console.log(selectedState[0].innerText);
 
     // FILTERING CITY DATA BY CURRENT STATE SLUG
-    if (currentStateSlug) {
+    if (currentStateId) {
       // console.log(this.cityData);
       const selected = this.cityData.filter(
-        (state) => state.state_slug == currentStateSlug
+        (state) => state.state_id == currentStateId
       );
       // console.info(selected);
       // console.info(selected[0].cities);

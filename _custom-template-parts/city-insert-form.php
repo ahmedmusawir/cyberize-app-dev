@@ -13,8 +13,9 @@
 
     <form action="" name="city-insert-form" id="city-insert-form" class="form">
 
-      <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert New Terzo
-        Subcategory</label>
+      <label class="font-weight-bold" for="exampleFormControlTextarea1">
+        Insert Your City Name
+      </label>
 
       <div class="form-group card p-3 bg-light">
         <h4 id="state-selected" class="text-danger">Georgia</h4>

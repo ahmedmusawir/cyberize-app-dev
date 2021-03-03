@@ -10,6 +10,7 @@ class CiteStateInsertUiEvents extends CatSelectDataParent {
     this.cityCancelBtn = $('#city-name-cancel-btn');
     this.cityStateChoiceBox = $('#state-city-choice-box');
     this.cityInsertFormBox = $('#city-insert-form-box');
+    this.selectedStateInForm = $('#state-selected');
     // SETTING EVENTS
     this.setEvents();
   }
@@ -25,13 +26,17 @@ class CiteStateInsertUiEvents extends CatSelectDataParent {
 
   openCityFormHandler = () => {
     // COLLECTING STATE SLUG ON SELECT
-    const currentStateSlug = this.selectAllStateCtrl.getValue();
-    if (!currentStateSlug) {
+    const currentStateId = this.selectAllStateCtrl.getValue();
+    // GETTING THE INNER TEXT OF THE CURRENT SELECTED OPTION
+    const selectedState = this.selectAllStateCtrl.getItem(currentStateId);
+    console.log(selectedState[0].innerText);
+    if (!currentStateId) {
       alert('Please Choose A State...');
     } else {
       // MAKING THE CITY FORM VISIBLE
       this.cityStateChoiceBox.addClass('d-none');
       this.cityInsertFormBox.removeClass('d-none');
+      this.selectedStateInForm.html(selectedState);
     }
   };
 
