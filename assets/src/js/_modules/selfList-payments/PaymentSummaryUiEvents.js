@@ -23,7 +23,7 @@ class PaymentSummaryUiEvents {
   }
 
   init = () => {
-    console.log('Payment Summary UI Events ...');
+    // console.log('Payment Summary UI Events ...');
   };
 
   setEvents = () => {

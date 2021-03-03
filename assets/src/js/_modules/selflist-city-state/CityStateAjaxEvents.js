@@ -13,7 +13,7 @@ class CityStateAjaxEvents {
   }
 
   init = () => {
-    console.log('City State Ajax Events ...');
+    // console.log('City State Ajax Events ...');
   };
 
   setEvents = () => {

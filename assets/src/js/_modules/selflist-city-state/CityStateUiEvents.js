@@ -12,7 +12,7 @@ class CiteStateUiEvents {
   }
 
   init = () => {
-    console.log('City & State Ui/Ux ...');
+    // console.log('City & State Ui/Ux ...');
   };
 
   setEvents = () => {

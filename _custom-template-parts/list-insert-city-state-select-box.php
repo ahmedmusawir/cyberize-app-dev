@@ -1,6 +1,6 @@
  <!-- * LIST INSERT PAGE - CATEGORY SELECTIZE INPUT FORM -->
 
- <section id="category-choice-box" class="mt-5">
+ <section id="state-city-choice-box" class="mt-5 animate__animated animate__zoomIn">
    <label class="font-weight-bold" for="exampleFormControlTextarea1">Choose Your State & City:</label>
 
    <div class="row">
@@ -77,7 +77,7 @@
        </article>
      </div>
      <div class="col-sm-4">
-       <a id="primo-cat-new-btn" href="#" class="btn btn-secondary btn-sm btn-block">
+       <a id="city-new-btn" href="#" class="btn btn-secondary btn-sm btn-block">
          Add New City
        </a>
      </div>

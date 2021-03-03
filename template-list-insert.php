@@ -85,6 +85,7 @@ textarea::placeholder {
           <!-- STATE & CITY SELECTIZE CHOICE BOX -->
 
           <?php get_template_part('_custom-template-parts/list-insert-city-state-select-box'); ?>
+          <?php get_template_part('_custom-template-parts/city-insert-form'); ?>
 
           <!-- END STATE & CITY SELECTIZE CHOICE BOX -->
 

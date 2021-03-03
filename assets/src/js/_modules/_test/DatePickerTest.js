@@ -25,7 +25,7 @@ class DatePickerTest {
   }
 
   init = () => {
-    console.log('Date Picker Test ...');
+    // console.log('Date Picker Test ...');
   };
 
   setDatepicker = () => {

@@ -117,7 +117,7 @@ class ListInsertValidationEvents extends ListInsertUiDataParent {
       },
       'Please enter a valid Email.'
     );
-    // TESTING VALIDATE
+    // RUNNING VALIDATE
     this.validateMainInsertForm();
   }
 

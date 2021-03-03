@@ -44,6 +44,8 @@ import TerzoCatInsertEvent from './_modules/selflist-crud/cat-curd/TerzoCatInser
 import CiteStateUiEvents from './_modules/selflist-city-state/CityStateUiEvents';
 import CityStateAjaxEvents from './_modules/selflist-city-state/CityStateAjaxEvents';
 import CityLoadRestApiEvents from './_modules/selflist-city-state/CityLoadRestApiEvents';
+import CiteStateInsertUiEvents from './_modules/selflist-city-state/CityStateInsertUiEvents';
+import CityFormValidationEvents from './_modules/selflist-city-state/CityFormValidationEvents';
 
 class App {
   constructor() {
@@ -112,6 +114,8 @@ class App {
     new CiteStateUiEvents();
     new CityStateAjaxEvents();
     new CityLoadRestApiEvents();
+    new CiteStateInsertUiEvents();
+    new CityFormValidationEvents();
   }
 
   runTestCode = () => {

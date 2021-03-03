@@ -16,7 +16,7 @@ class PaymentSubmitAjaxEvents {
   }
 
   init = () => {
-    console.log('Payment Submit Ajax Event ...');
+    // console.log('Payment Submit Ajax Event ...');
   };
 
   setEvents = () => {

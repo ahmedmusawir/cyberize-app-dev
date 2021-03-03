@@ -21,6 +21,11 @@ get_header('ut');
   $args = [ 'parent' => 0, 'hide_empty' => 0 ];
   $state_list = get_terms( 'states', $args ); 
 
+  // echo 'List of States :';
+  // echo "<pre>";
+  //   print_r($state_list);
+  // echo "</pre>";
+
   // ADDING EMPTY ARRAY 
   $states_and_cities = [];
   $cities = [];
@@ -50,26 +55,34 @@ get_header('ut');
       'cities' => $cities,
     ] );
 
+    // echo 'List of Cities :';
+    // echo "<pre>";
+    // print_r($cities);
+    // echo "</pre>";
     // Resetting the Cities Array
     $cities = [];
   }
 
   // echo 'List of States & Cities :';
-  // echo "<pre>";
+  echo "<pre>";
   // print_r($states_and_cities);
-  // echo "</pre>";
+  echo "</pre>";
 
-  $json_data = json_encode( $states_and_cities, JSON_PRETTY_PRINT );
+  $json_data = json_encode($states_and_cities, JSON_PRETTY_PRINT);
+  echo "<pre>";
+  // echo $json_data;
+  echo "</pre>";
 
+  // WRITING TO A JSON FILE
   $json_dir = wp_upload_dir()['basedir'];
+  // echo "<pre>";
+  // print_r(wp_upload_dir());
+  // echo "</pre>";
+  // echo $json_dir; 
   $json_file = '/states_and_cities.json';
   $file_location = $json_dir . $json_file;
-
-  $output = file_put_contents( $file_location, $json_data );
-  echo "<pre>";
-  echo $output;
-  echo "</pre>";
-  
+  print_r($file_location);
+  echo file_put_contents($file_location, $json_data);
 
   ?>
 

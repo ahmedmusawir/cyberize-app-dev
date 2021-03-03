@@ -13,7 +13,7 @@ class CityLoadRestApiEvents extends CatSelectDataParent {
   }
 
   init = () => {
-    console.log('City Load Events...');
+    // console.log('City Load Events...');
   };
 
   loadCityDataAjax = () => {
@@ -23,7 +23,7 @@ class CityLoadRestApiEvents extends CatSelectDataParent {
       type: 'GET',
     })
       .done((response) => {
-        console.info(response);
+        // console.info(response);
         this.cityData = response;
         console.log('Awesome! ... Ajax Success');
         // ADDING INSERTED DATA INTO LOCALSTORAGE FOR PREVIEW PAGE
@@ -71,8 +71,8 @@ class CityLoadRestApiEvents extends CatSelectDataParent {
       currentCityList.map((city) => {
         // ADDING ITEMS DYNAMICALLY
         const selectOptions = {
-          value: city.city_name,
-          text: city.city_slug,
+          value: city.city_id,
+          text: city.city_name,
         };
         this.selectAllCityCtrl.addOption(selectOptions);
         this.selectAllCityCtrl.refreshItems();

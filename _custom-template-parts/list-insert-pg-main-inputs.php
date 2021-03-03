@@ -1,8 +1,11 @@
 <!-- MAIN FORM INPUTS - NAME, ADDRESS, SOCIAL LINKS ETC. -->
 <form action="" name="list-insert-main-form" id="list-insert-main-form" class="form">
   <!-- DESCRIPTION - 140 CHAR LIMIT -->
+
   <div class="form-group mt-5">
     <!-- <label class="font-weight-bold" for="lister-description">Description:</label> -->
+    <label class="font-weight-bold" for="exampleFormControlTextarea1">Insert List Details:</label>
+
     <textarea class="form-control" id="lister-description" name="lister-description" rows="3"
       placeholder="Add details of your list ...(Limit: 140 Characters)"></textarea>
   </div>

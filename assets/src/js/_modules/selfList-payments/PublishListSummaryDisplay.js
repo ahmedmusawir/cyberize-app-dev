@@ -17,7 +17,7 @@ class PublishListSummaryDisplay {
   }
 
   init = () => {
-    console.log('Display Publish Summary ...');
+    // console.log('Display Publish Summary ...');
   };
 
   displaySummary = () => {
