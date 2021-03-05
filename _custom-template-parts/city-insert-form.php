@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * LIST INSERT PAGE: MAIN CATEGORY INSERT FORM
  */
@@ -29,37 +29,13 @@
           City Name (25 Char Limit. Letters & Space only)
         </small>
       </div>
+      <span id="ajax-failed-message-city"></span>
 
       <button id="city-name-insert-btn" type="submit" class="btn btn-primary btn-block">Submit</button>
       <button id="city-name-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
 
     </form>
 
-  </div>
-
-</section>
-
-<!-- PRIMO CAT USER VALIDATION BOX -->
-<section id="terzo-cat-user-validation-box" class="card p-5 animate__animated animate__zoomIn d-none">
-
-  <ul class="list-group">
-    <li class="list-group-item active bg-light text-primary">Please Verify Categories Before Creating:<br>
-      <small>(You cannot edit categories once they are created)</small>
-    </li>
-    <li class="list-group-item">Main Category: <span class="pl-3 font-weight-bold" id="main-display-terzo"></span></li>
-    <li class="list-group-item">Primo Category: <span class="pl-3 font-weight-bold" id="primo-display-terzo"></span>
-    </li>
-    <li class="list-group-item">Secondo Category: <span class="pl-3 font-weight-bold" id="secondo-display-terzo"></span>
-    </li>
-    <li class="list-group-item">Terzo Category: <span class="pl-3 font-weight-bold" id="terzo-display-terzo"></span>
-    </li>
-  </ul>
-
-  <button id="terzo-cat-insert-submit-btn" type="button" class="btn btn-primary btn-block">Create Categories</button>
-  <button id="terzo-cat-insert-cancel-btn" type="button" class="btn btn-secondary btn-block">Cancel</button>
-
-  <div class="my-3">
-    <span id="ajax-failed-message-4"></span>
   </div>
 
 </section>

@@ -88,10 +88,10 @@ class CatInsertEventAjaxParent {
     })
       .done((res) => {
         // console.log(res);
-        console.log('res.main_cat : ', res.main_cat);
-        console.log('res.primo_cat : ', res.primo_cat);
-        console.log('res.secondo_cat : ', res.secondo_cat);
-        console.log('res.terzo_cat : ', res.terzo_cat);
+        // console.log('res.main_cat : ', res.main_cat);
+        // console.log('res.primo_cat : ', res.primo_cat);
+        // console.log('res.secondo_cat : ', res.secondo_cat);
+        // console.log('res.terzo_cat : ', res.terzo_cat);
 
         if (res.main_cat || res.primo_cat || res.secondo_cat || res.terzo_cat) {
           console.log(res);

@@ -47,9 +47,14 @@ class CityFormValidationEvents extends CityInsertAjaxEvents {
       submitHandler: (form, event) => {
         event.preventDefault();
         // INSERT CITY WITH AJAX
+        // this.insertCityByAjax();
         this.insertCityAjaxHandler();
       },
     });
+  };
+
+  insertCityByAjax = () => {
+    alert('Ajax Insert Goes here ...');
   };
 }
 

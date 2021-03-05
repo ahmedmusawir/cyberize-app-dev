@@ -18,30 +18,33 @@ get_header('ut');
 <main id="primary" class="site-main container">
 
   <?php 
-  $args = [ 'parent' => 0, 'hide_empty' => 0 ];
-  $state_list = get_terms( 'states', $args ); 
 
-  // ADDING EMPTY ARRAY 
-  $states_and_cities = [];
-  $cities = [];
-
-  // STATE LOOP
-  foreach ( $state_list as $state ) {
-
-    // Collect Cities
-    $city_ids = get_term_children( $state->term_id, 'states' );
-
-    foreach ( $city_ids as $city_id ) {
-      $city_obj = get_term($city_id);
-
-      array_push($cities, [
-        'city_name' => $city_obj->name,
-        'city_slug' => $city_obj->slug,
-        'city_id' => $city_obj->term_id,
-      ]);
-      
-    }
+  function get_city_state_to_rest_test() {
     
+    $args = [ 'parent' => 0, 'hide_empty' => 0 ];
+    $state_list = get_terms( 'states', $args ); 
+
+    // ADDING EMPTY ARRAY 
+    $states_and_cities = [];
+    $cities = [];
+
+    // STATE LOOP
+    foreach ( $state_list as $state ) {
+
+      // Collect Cities
+      $city_ids = get_term_children( $state->term_id, 'states' );
+
+      foreach ( $city_ids as $city_id ) {
+        $city_obj = get_term($city_id);
+
+        array_push($cities, [
+          'city_name' => $city_obj->name,
+          'city_slug' => $city_obj->slug,
+          'city_id' => $city_obj->term_id,
+        ]);
+        
+      }
+      
 
     array_push( $states_and_cities, [
       'state_name' => $state->name,
@@ -50,26 +53,26 @@ get_header('ut');
       'cities' => $cities,
     ] );
 
-    // Resetting the Cities Array
-    $cities = [];
+      // Resetting the Cities Array
+      $cities = [];
+    }
+
+    return $states_and_cities;
+
   }
 
-  // echo 'List of States & Cities :';
-  // echo "<pre>";
-  // print_r($states_and_cities);
-  // echo "</pre>";
+  // get_city_state_to_rest();
 
-  $json_data = json_encode( $states_and_cities, JSON_PRETTY_PRINT );
+  // SMALL TESTING - CAN BE REMOVED
+  $city_id = 527;
+  $state_id = 482;
+  $city_obj = get_term($city_id);
+  $state_obj = get_term($state_id);
 
-  $json_dir = wp_upload_dir()['basedir'];
-  $json_file = '/states_and_cities.json';
-  $file_location = $json_dir . $json_file;
-
-  $output = file_put_contents( $file_location, $json_data );
-  echo "<pre>";
-  echo $output;
-  echo "</pre>";
-  
+  echo '<pre>';
+  print_r($state_obj);
+  print_r($city_obj);
+  echo '</pre>';
 
   ?>
 

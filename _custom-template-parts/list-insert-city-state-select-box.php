@@ -86,3 +86,16 @@
    <!-- END THE CITY DROPDOWN -->
 
  </section>
+
+ <!-- AFTER CITY INSERT UI -->
+
+
+ <ul id="city-display-ui-box" class="card  bg-light p-3 animate__animated animate__zoomIn d-none">
+
+   <span id="city-insert-success"></span>
+   <h5 class="text-dark"><small class="text-danger">Your Selected State & City:</small></h5>
+   <li id="state-display-box" class="text-dark font-weight-bold ml-1" style="list-style: none;">GEORGIA</li>
+   <li id="city-display-box" class="text-dark font-weight-bold ml-1" style="list-style: none;">Atlanta</li>
+
+ </ul>
+ <!-- END THE STATE DROPDOWN ROW -->

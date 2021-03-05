@@ -25,7 +25,7 @@ class CityLoadRestApiEvents extends CatSelectDataParent {
       .done((response) => {
         // console.info(response);
         this.cityData = response;
-        console.log('Awesome! ... Ajax Success');
+        // console.log('Awesome! ... Ajax Success');
         // ADDING INSERTED DATA INTO LOCALSTORAGE FOR PREVIEW PAGE
         // localStorage.setItem('newListData', JSON.stringify(response));
       })
@@ -34,7 +34,7 @@ class CityLoadRestApiEvents extends CatSelectDataParent {
         console.error(response);
       })
       .always(() => {
-        console.info('Ajax finished as always...');
+        // console.info('Ajax finished as always...');
       });
   };
 

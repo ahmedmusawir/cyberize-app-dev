@@ -46,6 +46,7 @@ import CityStateAjaxEvents from './_modules/selflist-city-state/CityStateAjaxEve
 import CityLoadRestApiEvents from './_modules/selflist-city-state/CityLoadRestApiEvents';
 import CiteStateInsertUiEvents from './_modules/selflist-city-state/CityStateInsertUiEvents';
 import CityFormValidationEvents from './_modules/selflist-city-state/CityFormValidationEvents';
+import CityInsertAjaxEvents from './_modules/selflist-city-state/CityInsertAjaxEvents';
 
 class App {
   constructor() {
@@ -116,6 +117,7 @@ class App {
     new CityLoadRestApiEvents();
     new CiteStateInsertUiEvents();
     new CityFormValidationEvents();
+    new CityInsertAjaxEvents();
   }
 
   runTestCode = () => {

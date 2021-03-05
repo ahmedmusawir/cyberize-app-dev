@@ -16,7 +16,7 @@ class CiteStateInsertUiEvents extends CatSelectDataParent {
   }
 
   init = () => {
-    console.log('City & State INSERT Ui/Ux ...');
+    // console.log('City & State INSERT Ui/Ux ...');
   };
 
   setEvents = () => {
@@ -27,22 +27,30 @@ class CiteStateInsertUiEvents extends CatSelectDataParent {
   openCityFormHandler = () => {
     // COLLECTING STATE SLUG ON SELECT
     const currentStateId = this.selectAllStateCtrl.getValue();
+    console.log(currentStateId);
     // GETTING THE INNER TEXT OF THE CURRENT SELECTED OPTION
-    const selectedState = this.selectAllStateCtrl.getItem(currentStateId);
-    console.log(selectedState[0].innerText);
+
     if (!currentStateId) {
       alert('Please Choose A State...');
     } else {
+      const selectedState = this.selectAllStateCtrl.getItem(currentStateId);
+      const selectedStateText = selectedState[0].innerText;
       // MAKING THE CITY FORM VISIBLE
       this.cityStateChoiceBox.addClass('d-none');
       this.cityInsertFormBox.removeClass('d-none');
-      this.selectedStateInForm.html(selectedState);
+      // this.selectedStateInForm.html(selectedStateText);
+      this.selectedStateInForm.html(
+        `<span id="state-id-value" data-state-id=${currentStateId}>
+          ${selectedStateText}
+        </span>`
+      );
     }
   };
 
   closeCityFormHandler = () => {
     this.cityInsertFormBox.addClass('d-none');
     this.cityStateChoiceBox.removeClass('d-none');
+    $('#ajax-failed-message-city').html('');
   };
 }
 

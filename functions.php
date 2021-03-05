@@ -121,8 +121,9 @@ require get_theme_file_path('/_functions/selflist/ajax/list-payment-and-publish-
 require get_theme_file_path('/_functions/selflist/taxonomy/selflist-create-taxonomy.php');
 // DISPLAY STATES & CITIES IN CATEGORY.PHP PAGE TOP MENU
 require get_theme_file_path('/_functions/selflist/city_state/get_city_state.php');
-require get_theme_file_path('/_functions/selflist/ajax/city-state-filter-ajax.php');
 require get_theme_file_path('/_functions/selflist/rest/city-state-to-rest.php');
+require get_theme_file_path('/_functions/selflist/ajax/city-state-filter-ajax.php');
+require get_theme_file_path('/_functions/selflist/ajax/city-insert-ajax.php');
 
 
 // FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN

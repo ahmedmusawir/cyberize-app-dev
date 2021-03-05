@@ -1,12 +1,16 @@
 import $ from 'jquery';
 import 'jquery-validation';
 import 'jquery-validation/dist/additional-methods.js';
-import CityInsertAjaxEvents from './CityInsertAjaxEvents';
+// import CityInsertAjaxEvents from './CityInsertAjaxEvents';
 
-class CityFormValidationEvents extends CityInsertAjaxEvents {
+// class CityFormValidationEvents extends CityInsertAjaxEvents {
+class CityFormValidationEvents {
   constructor() {
-    super();
+    // super();
     this.init();
+    // this.insertCityAjaxHandler();
+    console.log(this.testVar);
+
     // COLLECTING CITY FORM ELEMENT
     this.cityInsertForm = $('#city-insert-form');
     // ADDING LETTERS & SPACES ONLY METHOD TO JQ VALIDATION
@@ -19,8 +23,6 @@ class CityFormValidationEvents extends CityInsertAjaxEvents {
     );
     // RUNNING VALIDATE
     this.validateCityForm();
-    // TEST VAR
-    this.testVar = 'A var from the child';
   }
 
   init = () => {
@@ -47,9 +49,14 @@ class CityFormValidationEvents extends CityInsertAjaxEvents {
       submitHandler: (form, event) => {
         event.preventDefault();
         // INSERT CITY WITH AJAX
+        // this.insertCityByAjax();
         this.insertCityAjaxHandler();
       },
     });
+  };
+
+  insertCityByAjax = () => {
+    alert('Ajax Insert Goes here ...');
   };
 }
 
