@@ -18,7 +18,13 @@ class PaymentSummaryDateTimePicker {
     // COLLECTING THE POST ID
     const listObject = JSON.parse(localStorage.getItem('newListData'));
     // console.log('Current List ID', listObject.id);
-    this.currentPostId = listObject.id;
+    if (listObject) {
+      this.currentPostId = listObject.id;
+    } else {
+      console.info(
+        'List Object not found in LocalStorage : [PaymentSummaryDateTimePicker]'
+      );
+    }
 
     // SETTING DATEPICKER
     $.datetimepicker.setLocale('en');
@@ -103,12 +109,6 @@ class PaymentSummaryDateTimePicker {
     this.listPublishDays.html(dayDifference);
     this.listPaymentPoints.html(dayDifference);
     this.listPaymentAmount.html(paymentAmount);
-
-    // MAKING THE PAYPAL FORM URL STRING
-    const paypalLinkString = `/payment-form-page/?POST_ID=${this.currentPostId}&PAYMENT_TYPE=SINGLE&NUMBER_OF_DAYS=${dayDifference}`;
-    // console.log(paypalLinkString);
-    // ADD THE HREF TO THE PAYPAL FORM LINK
-    this.paypalFormLink.attr('href', paypalLinkString);
   };
 }
 export default PaymentSummaryDateTimePicker;

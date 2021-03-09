@@ -14,7 +14,6 @@ require get_template_directory() . '/_functions/widget-setup.php';
  */
 require get_template_directory() . '/_functions/scripts-setup.php';
 
-
 /**
  * Implement the Custom Header feature.
  */
@@ -38,8 +37,8 @@ require get_template_directory() . '/inc/customizer.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+if (defined('JETPACK__VERSION')) {
+    require get_template_directory() . '/inc/jetpack.php';
 }
 
 /*======================================
@@ -80,7 +79,7 @@ require get_template_directory() . '/_functions/helpers-setup.php';
 // require get_template_directory() . '/_functions/wp-logon-screen.php';
 
 /**
- * SELFLIST CUSTOM FUNCTIONS		
+ * SELFLIST CUSTOM FUNCTIONS
  */
 
 // CUSTOM REST ROUTE FOR LISTING 1ST PROTOTYPE
@@ -108,7 +107,7 @@ require get_theme_file_path('/_functions/selflist/selflist-post-acf-to-rest.php'
 // SELFLIST SET CUSTOM POST TITLE WITH ID
 // require get_theme_file_path('/_functions/selflist/selflist-post-title.php');
 
-// SELFTLIST CREATE CATEGORIES 
+// SELFTLIST CREATE CATEGORIES
 // require get_theme_file_path('/_functions/selflist/ajax/test-ajax.php');
 // require get_theme_file_path('/_functions/selflist/selflist-create-categories.php');
 require get_theme_file_path('/_functions/selflist/ajax/main-cat-insert-ajax.php');
@@ -124,7 +123,8 @@ require get_theme_file_path('/_functions/selflist/city_state/get_city_state.php'
 require get_theme_file_path('/_functions/selflist/rest/city-state-to-rest.php');
 require get_theme_file_path('/_functions/selflist/ajax/city-state-filter-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/city-insert-ajax.php');
-
+// MAIN LIST INSERT: HAD TO BE RE-WRITTEN DUE TO TAX_INPUT NOT WORKING. USING PHP NOW INSTEAD OF REST
+require get_theme_file_path('/_functions/selflist/ajax/list-insert-ajax.php');
 
 // FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN
 // Enable the option show in rest

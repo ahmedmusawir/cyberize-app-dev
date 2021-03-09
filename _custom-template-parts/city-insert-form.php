@@ -7,7 +7,7 @@
 
 <section id="city-insert-form-box" class="card p-5 d-none animate__animated animate__zoomIn">
 
-  <!-- TERZO CAT INSERT FORM -->
+  <!-- CITY INSERT FORM -->
 
   <div class="form-box">
 

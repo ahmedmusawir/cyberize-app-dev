@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-<?php 
+<?php
 /**
  * CUSOMER/USER PROFILE
  */
@@ -23,7 +23,7 @@ $user_points = get_field('selflist_points', 'user_' . $current_user->id);
 $user_registered = $current_user->user_registered;
 $user_email = $current_user->user_email;
 $user_total_list_count = count_user_posts($current_user->id, 'post'); // false for all posts
-$user_published_list_count = count_user_posts($current_user->id, 'post', true); // true for public only 
+$user_published_list_count = count_user_posts($current_user->id, 'post', true); // true for public only
 // echo '<pre>';
 // print_r($current_user);
 // echo '</pre>';
@@ -36,13 +36,13 @@ $user_published_list_count = count_user_posts($current_user->id, 'post', true); 
     <!-- LEFT PROFILE MENU COLUMN -->
     <div class="col-sm-12 col-md-4">
       <?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'customer-profile-menu',
-					'menu_id'        => 'profile-menu',
-				)
-			);
-			?>
+wp_nav_menu(
+    array(
+        'theme_location' => 'customer-profile-menu',
+        'menu_id' => 'profile-menu',
+    )
+);
+?>
     </div>
     <!-- LEFT PROFILE MENU COLUMN ENDS -->
     <!-- RIGHT PROFILE CONTENT COLUMN -->
@@ -84,7 +84,7 @@ $user_published_list_count = count_user_posts($current_user->id, 'post', true); 
         </strong>
       </h6> -->
       <h6 class="h6 text-uppercase font-weight-bold">
-        Your Published List Count:
+        Your Active List Count:
         <strong class="text-danger">
           <span id="payment-summary-avail-points">
             <?php echo $user_published_list_count; ?>
@@ -95,7 +95,7 @@ $user_published_list_count = count_user_posts($current_user->id, 'post', true); 
         Membership:
         <strong class="text-danger">
           <span id="payment-summary-avail-points">
-            <?php printf( 'Member since %s<br>', date( "d M yy", strtotime( $user_registered ) ) ); ?>
+            <?php printf('Member since %s<br>', date("d M yy", strtotime($user_registered)));?>
           </span>
         </strong>
       </h6>

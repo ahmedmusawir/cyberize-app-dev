@@ -11,9 +11,6 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
   constructor() {
     super();
     // this.init();
-    // COLLECTING AJAX INFO
-    this.ajaxUrl = selflistData.ajax_url;
-    this.ajaxFunction = 'list_insert_ajax';
     // COLLECTING ELEMENTS
     this.listInsertButton = $('#list-insert-submit-btn');
     this.catDisplayUiBox = $('#cat-display-ui-box');
@@ -39,22 +36,17 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
     this.getListFormData();
 
     // Categories List
-    const mainCatId = this.currentMainId;
-    const primoCatId = this.currentPrimoId;
-    const secondoCatId = this.currentSecondoId;
-    const terzoCatId = this.currentTerzoId;
-
+    const categoryIds = `${this.currentMainId}, ${this.currentPrimoId}, ${this.currentSecondoId}, ${this.currentTerzoId}`;
     // Contact Info Vars
     const name = this.contactName;
     const listTitle = `This List Posted by: ${name}`;
     const description = this.listDescription;
     const phone = this.contactPhone;
     const email = this.contactEmail;
-    const site = this.contactWebsite;
+    const website = this.contactWebsite;
 
     // State & City Taxonomy IDs
-    const stateId = this.cityId;
-    const cityId = this.stateId;
+    const custom_tax = `['states' => [${this.cityId}, ${this.stateId}]]`;
 
     // Social Media URLs
     const facebook = this.socialFacebook;
@@ -65,11 +57,13 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
     const twitter = this.socialTwitter;
 
     // UNIT TESTNG Debugging Output
+    console.log(`CATEGORY: ${categoryIds}`);
+    console.log(`CITY & STATE IDS: `);
     console.log(`DESCRIPTION: ${description}`);
     console.log(`NAME: ${name}`);
     console.log(`PHONE: ${phone}`);
     console.log(`EMAIL: ${email}`);
-    console.log(`WEBSITE: ${site}`);
+    console.log(`WEBSITE: ${website}`);
     console.log(`FACEBOOK: ${facebook}`);
     console.log(`YELP: ${yelp}`);
     console.log(`INSTAGRAM: ${instagram}`);
@@ -79,55 +73,51 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
 
     // PREPARING FORM DATA FOR REST API
     let newPostData = {
+      categories: categoryIds,
+      tax_input: custom_tax,
       title: listTitle,
       content: description,
+      'fields[your_name]': name, // ACF Item
+      'fields[your_phone]': phone, // ACF Item
+      'fields[your_email]': email, // ACF Item
+      'fields[your_site]': website, // ACF Item
+      'fields[your_facebook]': facebook, // ACF Item
+      'fields[your_yelp]': yelp, // ACF Item
+      'fields[your_instagram]': instagram, // ACF Item
+      'fields[your_linkedin]': linkedin, // ACF Item
+      'fields[your_google_plus]': googlePlus, // ACF Item
+      'fields[your_twitter]': twitter, // ACF Item
       status: 'pending',
-      mainCatId,
-      primoCatId,
-      secondoCatId,
-      terzoCatId,
-      stateId,
-      cityId,
-      name, // ACF Item
-      phone, // ACF Item
-      email, // ACF Item
-      site, // ACF Item
-      facebook, // ACF Item
-      yelp, // ACF Item
-      instagram, // ACF Item
-      linkedin, // ACF Item
-      googlePlus, // ACF Item
-      twitter, // ACF Item
     };
 
     // UNIT TESTING debugging info
-    // console.log('newPostData: ', newPostData);
+    console.log('newPostData: ', newPostData);
 
-    // AJAX FUNCTION
+    // AJAX POST INSERT
     $.ajax({
-      url: this.ajaxUrl,
-      type: 'post',
-      data: {
-        action: this.ajaxFunction,
-        newPostData,
+      beforeSend: (xhr) => {
+        xhr.setRequestHeader('X-WP-Nonce', selflistData.nonce);
       },
+      url: selflistData.root_url + '/wp-json/wp/v2/posts',
+      type: 'POST',
+      data: newPostData,
     })
-      .done((res) => {
-        console.info(res);
+      .done((response) => {
+        console.info(response);
         console.log('Awesome! ... Ajax Success');
         // REMOVING CAT DATA FROM THE LOCAL STORAGE FOR CLEANUP
         localStorage.removeItem('catData');
         // ADDING INSERTED DATA INTO LOCALSTORAGE FOR PREVIEW PAGE
-        localStorage.setItem('newListData', JSON.stringify(res));
+        localStorage.setItem('newListData', JSON.stringify(response));
+        // REDIRECT TO PREVIEW PAGE
+        window.location.href = '/list-preview/';
       })
-      .fail((res) => {
+      .fail((response) => {
         console.error('Sorry ... Ajax failed');
-        console.error(res);
+        console.error(response);
       })
       .always(() => {
-        // REDIRECT TO PREVIEW PAGE
-        // window.location.href = '/list-preview/';
-        // console.log('Ajax Dynamic Loaction Filter Complete');
+        console.info('Ajax finished as always...');
       });
 
     // RESET FORM (NOT NECESSARY CUZ NOW THERE IS A PAGE REFRESH)

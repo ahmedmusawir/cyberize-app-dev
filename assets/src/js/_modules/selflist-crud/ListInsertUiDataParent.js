@@ -16,6 +16,10 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     this.catSelectBox = $('#category-choice-box');
     // Category Display UI box that shows up at the top once a new category is created
     this.catDisplayUiBox = $('#cat-display-ui-box');
+    // State City Taxonomy Selectized dropdowns
+    this.stateCitySelectBox = $('#state-city-choice-box');
+    // State City Display Box - after city insert
+    this.stateCityDisplayUiBox = $('#city-display-ui-box');
     // Declaring Catagory VARIABLES
     this.currentMainId;
     this.currentMainCatName;
@@ -25,15 +29,15 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     this.currentSecondoCatName;
     this.currentTerzoId;
     this.currentTerzoCatName;
+    // Declaring State & City Taxonomy VARIABLES
+    this.cityId;
+    this.stateId;
     // Declaring rest of the List Form VARIABLES
     this.listDescription;
     this.contactName;
     this.contactPhone;
     this.contactEmail;
     this.contactWebsite;
-    this.contactCity;
-    this.contactState;
-    this.contactZip;
     this.socialFacebook;
     this.socialYelp;
     this.socialInstagram;
@@ -49,6 +53,8 @@ class ListInsertUiDataParent extends CatSelectDataParent {
   displayValidationBox = () => {
     // GET CATEGORY DATA
     this.getCategoryData();
+    // GET STATE & CITY DATA
+    this.getStateCity();
     // GET REST OF THE LIST FORM DATA
     this.getListFormData();
     // ADD CAT DATA TO THE VALIDATION SCREEN
@@ -71,13 +77,30 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     $('#list-user-validation-google-plus').text(this.socialGooglePlus);
     $('#list-user-validation-twitter').text(this.socialTwitter);
 
+    // CHECKING FOR MISSING MAIN CATEGORY
     if (this.currentMainId) {
-      // SCROLL TO TOP
-      window.scrollTo(0, 0);
-      // REMOVING LIST FORM BOX
-      this.listInsertFormBox.addClass('d-none');
-      // DISPLAYING USER VALIDATION BOX
-      this.userValidationBox.removeClass('d-none');
+      // CHECKING FOR MISSING STATE
+      if (this.stateId) {
+        // CHECKING FOR MISSING CITY
+        if (this.cityId) {
+          // SCROLL TO TOP
+          window.scrollTo(0, 0);
+          // REMOVING LIST FORM BOX
+          this.listInsertFormBox.addClass('d-none');
+          // DISPLAYING USER VALIDATION BOX
+          this.userValidationBox.removeClass('d-none');
+        } else {
+          alert('Please choose a City ...');
+          // SCROLL TO TOP
+          window.scrollTo(0, 0);
+          this.selectAllCityCtrl.focus();
+        }
+      } else {
+        alert('Please choose a State ...');
+        // SCROLL TO TOP
+        window.scrollTo(0, 0);
+        this.selectAllStateCtrl.focus();
+      }
     } else {
       alert('Please choose a Main Category ...');
       // SCROLL TO TOP
@@ -164,6 +187,20 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     }
   };
 
+  getStateCity = () => {
+    // IF STATE & CITY CHOSEN FROM THE DROPDOWN
+    if (this.stateCityDisplayUiBox.hasClass('d-none')) {
+      this.stateId = this.selectAllStateCtrl.getValue();
+      this.cityId = this.selectAllCityCtrl.getValue();
+    }
+    // IF NEW CITY IS CREATED
+    if (this.stateCitySelectBox.hasClass('d-none')) {
+      const stateCityData = JSON.parse(sessionStorage.getItem('stateCityData'));
+      this.stateId = stateCityData.state_id;
+      this.cityId = stateCityData.new_city_id;
+    }
+  };
+
   getListFormData = () => {
     // Collect values for rest of the List Form VARIABLES
     // (non category related)
@@ -172,9 +209,6 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     this.contactPhone = $('#lister-phone').val();
     this.contactEmail = $('#lister-email').val();
     this.contactWebsite = $('#lister-website').val();
-    this.contactCity = $('#lister-city').val();
-    this.contactState = $('#lister-state').val();
-    this.contactZip = $('#lister-zip').val();
     this.socialFacebook = $('#lister-facebook').val();
     this.socialYelp = $('#lister-yelp').val();
     this.socialInstagram = $('#lister-instagram').val();

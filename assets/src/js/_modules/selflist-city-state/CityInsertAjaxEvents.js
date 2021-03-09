@@ -56,10 +56,10 @@ class CityInsertAjaxEvents {
     // $(this.ajaxSuccessMessage).html('#city-insert-success');
     $('#city-insert-success').html(this.ajaxSuccessMessage);
     // COLLECTING CAT DATA FROM LOCAL STORAGE
-    const sateCityData = JSON.parse(sessionStorage.getItem('stateCityData'));
+    const stateCityData = JSON.parse(sessionStorage.getItem('stateCityData'));
     // DISPLAY DATA IN THE MAIN CAT DISPLAY UI BOX
-    $('#state-display-box').text(sateCityData.state_name);
-    $('#city-display-box').text(sateCityData.new_city_name);
+    $('#state-display-box').text(stateCityData.state_name);
+    $('#city-display-box').text(stateCityData.new_city_name);
 
     // DISPLAY THE DISPLAY BOX
     $('#city-insert-form-box').addClass('d-none');

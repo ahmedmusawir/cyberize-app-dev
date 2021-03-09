@@ -35,7 +35,9 @@ class ListPreviewEvents {
           console.error(res);
         });
     } else {
-      console.info('Did not find the new List ID: ListPreviewEvents.js');
+      console.info(
+        'List Object Not Fount in LocalStorage : [ListPreviewEvents]'
+      );
     }
   };
 }
