@@ -49,17 +49,12 @@ function list_insert_ajax()
 
     // print_r($args);
     // print_r($tax_ids);
-
     // wp_die();
 
     // INSERTING LIST
     $post_id = wp_insert_post($args);
 
     // SETTING STATE & CITY TAXONOMY
-    // $state_city_return = wp_set_object_terms($post_id, array($state_id, $city_id), 'states');
-    // $state_city_return = wp_set_object_terms($post_id, intval($state_id), 'states');
-    // $state_city_return = wp_set_object_terms($post_id, intval($city_id), 'states');
-    // $state_city_return = wp_set_object_terms($post_id, intval($city_id), 'states');
     $state_city_return = wp_set_object_terms($post_id, $tax_ids, 'states');
 
     if (!is_wp_error($post_id)) {
@@ -67,7 +62,6 @@ function list_insert_ajax()
     } else {
         wp_send_json_error($post_id->get_error_message());
     }
-    // echo $post_id;
 
     // FOLLOWING IS A MUST FOR AJAX
     wp_die();

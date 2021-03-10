@@ -72,26 +72,26 @@ textarea::placeholder {
 
           <!-- MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
-          <?php get_template_part('_custom-template-parts/insert-pg-main-cat-set-display-after-creation'); ?>
+          <?php get_template_part('_custom-template-parts/insert-pg-main-cat-set-display-after-creation');?>
 
           <!-- END MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
           <!-- CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
 
-          <?php get_template_part('_custom-template-parts/list-insert-pg-cat-select-box'); ?>
+          <?php get_template_part('_custom-template-parts/list-insert-pg-cat-select-box');?>
 
           <!-- END CATEGORY SELECTIZE CHOICE BOX - MAIN, PRIMO, SECONDO & TERZO -->
 
           <!-- STATE & CITY SELECTIZE CHOICE BOX -->
 
-          <?php get_template_part('_custom-template-parts/list-insert-city-state-select-box'); ?>
-          <?php get_template_part('_custom-template-parts/city-insert-form'); ?>
+          <?php get_template_part('_custom-template-parts/list-insert-city-state-select-box');?>
+          <?php get_template_part('_custom-template-parts/city-insert-form');?>
 
           <!-- END STATE & CITY SELECTIZE CHOICE BOX -->
 
           <!-- THE MAIN FORM INPUTS START -->
 
-          <?php get_template_part('_custom-template-parts/list-insert-pg-main-inputs'); ?>
+          <?php get_template_part('_custom-template-parts/list-insert-pg-main-inputs');?>
 
           <!-- END THE MAIN FORM INPUTS  -->
 
@@ -99,93 +99,32 @@ textarea::placeholder {
 
         <!-- START OF MAIN CAT INSERT FORM -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-main-cat-insert-form'); ?>
+        <?php get_template_part('_custom-template-parts/insert-pg-main-cat-insert-form');?>
 
         <!-- END OF MAIN CAT INSERT FORM -->
 
         <!-- START OF PRIMO CAT INSERT FORM -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-primo-cat-insert-form'); ?>
+        <?php get_template_part('_custom-template-parts/insert-pg-primo-cat-insert-form');?>
 
         <!-- END OF PRIMO CAT INSERT FORM -->
 
         <!-- START OF SECONDO CAT INSERT FORM -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-secondo-cat-insert-form'); ?>
+        <?php get_template_part('_custom-template-parts/insert-pg-secondo-cat-insert-form');?>
 
         <!-- END OF SECONDO CAT INSERT FORM -->
 
         <!-- START OF TERZO CAT INSERT FORM -->
 
-        <?php get_template_part('_custom-template-parts/insert-pg-terzo-cat-insert-form'); ?>
+        <?php get_template_part('_custom-template-parts/insert-pg-terzo-cat-insert-form');?>
 
         <!-- END OF TERZO CAT INSERT FORM -->
 
         <!-- LIST INSERT USER VALIDATION BOX -->
-        <section id="list-insert-user-validation-box" class="card p-5 animate__animated animate__zoomIn d-none">
 
-          <ul class="list-group">
-            <!-- THE HEADER ANNOUNCEMENT -->
-            <li class="list-group-item active bg-light text-primary">Please Verify Categories Before Creating:<br>
-              <small>(You cannot edit categories once they are created)</small>
-            </li>
-            <!-- THE CATEGORY LIST -->
-            <li class="list-group-item">Main Category: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-main-cat"></span></li>
-            <li class="list-group-item">Primo Category: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-primo-cat"></span>
-            </li>
-            <li class="list-group-item">Secondo Category: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-secondo-cat"></span>
-            </li>
-            <li class="list-group-item">Terzo Category: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-terzo-cat"></span>
-            </li>
-            <!-- THE REST OF THE FORM INPUT VALUES -->
-            <li class="list-group-item">Description: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-description"></span></li>
-            <li class="list-group-item">Name: <span class="pl-3 font-weight-bold" id="list-user-validation-name"></span>
-            </li>
-            <li class="list-group-item">Phone: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-phone"></span>
-            </li>
-            <li class="list-group-item">City: <span class="pl-3 font-weight-bold" id="list-user-validation-city"></span>
-            </li>
-            <li class="list-group-item">Zip: <span class="pl-3 font-weight-bold" id="list-user-validation-zip"></span>
-            </li>
-            <li class="list-group-item">State: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-state"></span>
-            </li>
-            <!-- SOCIAL MEDIA LINKS -->
-            <li class="list-group-item">Facebook: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-facebook"></span>
-            </li>
-            <li class="list-group-item">Yelp: <span class="pl-3 font-weight-bold" id="list-user-validation-yelp"></span>
-            </li>
-            <li class="list-group-item">Instagram: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-instagram"></span>
-            </li>
-            <li class="list-group-item">Linkedin: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-linkedin"></span>
-            </li>
-            <li class="list-group-item">Google Plus: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-google-plus"></span>
-            </li>
-            <li class="list-group-item">Twitter: <span class="pl-3 font-weight-bold"
-                id="list-user-validation-twitter"></span>
-            </li>
-          </ul>
+        <?php get_template_part('_custom-template-parts/insert-pg-user-validation-box');?>
 
-          <button id="list-insert-submit-btn" type="button" class="btn btn-primary btn-block">Create
-            Your List</button>
-          <button id="list-insert-cancel-btn" type="button" class="btn btn-secondary btn-block">Go Back</button>
-
-          <!-- LEFT OVER FROM CAT USER VALIDATION PAGE - DEL LATER 
-          <div class="my-3">
-            <span id="ajax-failed-message-1"></span>
-          </div> -->
-
-        </section>
         <!-- END OF LIST INSERT USER VALIDATION BOX -->
 
 
@@ -204,22 +143,22 @@ textarea::placeholder {
 
         <div id="category-search-result" class="moose-cols">
 
-          <?php 
+          <?php
 
 $args = array(
-  'parent' => 0,
-  'exclude' => 1
+    'parent' => 0,
+    'exclude' => 1,
 );
-$categories = get_categories( $args );
+$categories = get_categories($args);
 
 /**
- * PRIMARY CATEGORY LOOP - WITH PARENT 0 
- * 
- */ 
+ * PRIMARY CATEGORY LOOP - WITH PARENT 0
+ *
+ */
 
-foreach($categories as $category) : ?>
+foreach ($categories as $category): ?>
 
-          <a href="<?php echo get_category_link( $category->term_id ); ?>">
+          <a href="<?php echo get_category_link($category->term_id); ?>">
 
             <div class="card-moose border-danger mb-3 animate__animated animate__zoomIn">
               <!-- <div class="card border-danger mb-3 animate__animated"> -->
@@ -236,7 +175,7 @@ foreach($categories as $category) : ?>
                   <div class="">
                     <ul class="primo">
 
-                      <?php get_selflist_sub_cats($category->term_id); ?>
+                      <?php get_selflist_sub_cats($category->term_id);?>
 
                     </ul>
                   </div>
@@ -249,7 +188,7 @@ foreach($categories as $category) : ?>
 
           </a>
 
-          <?php endforeach; ?>
+          <?php endforeach;?>
 
         </div> <!-- END card-columns -->
       </section>

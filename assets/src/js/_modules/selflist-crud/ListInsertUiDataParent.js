@@ -38,6 +38,8 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     this.contactPhone;
     this.contactEmail;
     this.contactWebsite;
+    this.contactState;
+    this.contactCity;
     this.socialFacebook;
     this.socialYelp;
     this.socialInstagram;
@@ -66,8 +68,8 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     $('#list-user-validation-description').text(this.listDescription);
     $('#list-user-validation-name').text(this.contactName);
     $('#list-user-validation-phone').text(this.contactPhone);
+    $('#list-user-validation-website').text(this.contactWebsite);
     $('#list-user-validation-city').text(this.contactCity);
-    $('#list-user-validation-zip').text(this.contactZip);
     $('#list-user-validation-state').text(this.contactState);
     // ADD SOCIAL DATA TO THE VALIDATION SCREEN
     $('#list-user-validation-facebook').text(this.socialFacebook);
@@ -191,13 +193,26 @@ class ListInsertUiDataParent extends CatSelectDataParent {
     // IF STATE & CITY CHOSEN FROM THE DROPDOWN
     if (this.stateCityDisplayUiBox.hasClass('d-none')) {
       this.stateId = this.selectAllStateCtrl.getValue();
+      // GETTING STATE NAME (TEXT FROM SELECTIZE)
+      if (this.stateId) {
+        const currentStateItem = this.selectAllStateCtrl.getItem(this.stateId);
+        this.contactState = currentStateItem[0].innerText;
+      }
+
       this.cityId = this.selectAllCityCtrl.getValue();
+      // GETTING CITY NAME (TEXT FROM SELECTIZE)
+      if (this.cityId) {
+        const currentCityItem = this.selectAllCityCtrl.getItem(this.cityId);
+        this.contactCity = currentCityItem[0].innerText;
+      }
     }
     // IF NEW CITY IS CREATED
     if (this.stateCitySelectBox.hasClass('d-none')) {
       const stateCityData = JSON.parse(sessionStorage.getItem('stateCityData'));
       this.stateId = stateCityData.state_id;
+      this.contactState = stateCityData.state_name;
       this.cityId = stateCityData.new_city_id;
+      this.contactCity = stateCityData.new_city_name;
     }
   };
 
