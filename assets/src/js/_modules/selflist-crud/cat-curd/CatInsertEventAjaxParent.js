@@ -39,37 +39,42 @@ class CatInsertEventAjaxParent {
     if (this.mainCatUserValidationBox) {
       this.ajaxFunction = 'main_cat_insert_ajax';
 
-      mainCat = $('#main-input-main-cat').val().toLowerCase();
-      primoCat = $('#main-input-primo-cat').val().toLowerCase();
-      secondoCat = $('#main-input-secondo-cat').val().toLowerCase();
-      terzoCat = $('#main-input-terzo-cat').val().toLowerCase();
+      mainCat = $('#main-input-main-cat').val();
+      primoCat = $('#main-input-primo-cat').val();
+      secondoCat = $('#main-input-secondo-cat').val();
+      terzoCat = $('#main-input-terzo-cat').val();
+      // LOWER CASING THE CAT VALUES
+      // mainCat = $('#main-input-main-cat').val().toLowerCase();
+      // primoCat = $('#main-input-primo-cat').val().toLowerCase();
+      // secondoCat = $('#main-input-secondo-cat').val().toLowerCase();
+      // terzoCat = $('#main-input-terzo-cat').val().toLowerCase();
     }
     // PRIMO CAT DATA SET
     if (this.primoCatUserValidationBox) {
       this.ajaxFunction = 'primo_cat_insert_ajax';
 
-      mainCat = $('#primo-main-cat').text().toLowerCase();
-      primoCat = $('#primo-input-primo-cat').val().toLowerCase();
-      secondoCat = $('#primo-input-secondo-cat').val().toLowerCase();
-      terzoCat = $('#primo-input-terzo-cat').val().toLowerCase();
+      mainCat = $('#primo-main-cat').text();
+      primoCat = $('#primo-input-primo-cat').val();
+      secondoCat = $('#primo-input-secondo-cat').val();
+      terzoCat = $('#primo-input-terzo-cat').val();
     }
     // SECONDO CAT DATA SET
     if (this.secondoCatUserValidationBox) {
       this.ajaxFunction = 'secondo_cat_insert_ajax';
 
-      mainCat = $('#secondo-main-cat').text().toLowerCase();
-      primoCat = $('#secondo-primo-cat').text().toLowerCase();
-      secondoCat = $('#secondo-input-secondo-cat').val().toLowerCase();
-      terzoCat = $('#secondo-input-terzo-cat').val().toLowerCase();
+      mainCat = $('#secondo-main-cat').text();
+      primoCat = $('#secondo-primo-cat').text();
+      secondoCat = $('#secondo-input-secondo-cat').val();
+      terzoCat = $('#secondo-input-terzo-cat').val();
     }
     // TERZO CAT DATA SET
     if (this.terzoCatUserValidationBox) {
       this.ajaxFunction = 'terzo_cat_insert_ajax';
 
-      mainCat = $('#terzo-main-cat').text().toLowerCase();
-      primoCat = $('#terzo-primo-cat').text().toLowerCase();
-      secondoCat = $('#terzo-secondo-cat').text().toLowerCase();
-      terzoCat = $('#terzo-input-terzo-cat').val().toLowerCase();
+      mainCat = $('#terzo-main-cat').text();
+      primoCat = $('#terzo-primo-cat').text();
+      secondoCat = $('#terzo-secondo-cat').text();
+      terzoCat = $('#terzo-input-terzo-cat').val();
     }
 
     // CATEGORY DATA ENTRY INTO DB VIA AJAX
@@ -121,10 +126,37 @@ class CatInsertEventAjaxParent {
     // COLLECTING CAT DATA FROM LOCAL STORAGE
     const catData = JSON.parse(localStorage.getItem('catData'));
     // DISPLAY DATA IN THE MAIN CAT DISPLAY UI BOX
-    $('#main-cat-display').text(catData.main_cat);
-    $('#primo-cat-display').text(catData.primo_cat);
-    $('#secondo-cat-display').text(catData.secondo_cat);
-    $('#terzo-cat-display').text(catData.terzo_cat);
+    // Display Main Cat after Cat Insert Success
+    if (catData.main_cat) {
+      $('#main-cat-display').text(catData.main_cat);
+    } else {
+      const mainCatMissingMessage = '[No Main Category Chosen]';
+      $('#main-cat-display').text(mainCatMissingMessage);
+    }
+    // Display Primo Cat after Cat Insert Success
+    if (catData.primo_cat) {
+      const primoMessage = `${catData.primo_cat} [Primo]`;
+      $('#primo-cat-display').text(primoMessage);
+    } else {
+      const primoCatMissingMessage = '[No Primo Category Chosen]';
+      $('#primo-cat-display').text(primoCatMissingMessage);
+    }
+    // Display Secondo Cat after Cat Insert Success
+    if (catData.secondo_cat) {
+      const secondoMessage = `${catData.secondo_cat} [Secondo]`;
+      $('#secondo-cat-display').text(secondoMessage);
+    } else {
+      const secondoCatMissingMessage = '[No Secondo Category Chosen]';
+      $('#secondo-cat-display').text(secondoCatMissingMessage);
+    }
+    // Display Terzo Cat after Cat Insert Success
+    if (catData.terzo_cat) {
+      const terzoMessage = `${catData.terzo_cat} [Terzo]`;
+      $('#terzo-cat-display').text(terzoMessage);
+    } else {
+      const terzoCatMissingMessage = '[No Terzo Category Chosen]';
+      $('#terzo-cat-display').text(terzoCatMissingMessage);
+    }
     // REMOVE VALIDATION BOX
     // Main Category Validation Box Check
     if (this.mainCatUserValidationBox) {

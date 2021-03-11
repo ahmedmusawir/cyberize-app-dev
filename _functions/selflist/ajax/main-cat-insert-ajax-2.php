@@ -36,7 +36,7 @@ function main_cat_insert_ajax()
     </div>
 
     ";
-        wp_die();
+        die();
     }
 
     /**
@@ -54,64 +54,53 @@ function main_cat_insert_ajax()
     /**
      * INSERT SUB CATEGORY 1 - PRIMO
      */
-    if ($sub_cat_1) {
 
-        $sub_cat_1_info = wp_insert_term(
-            // The Primo Category
-            $sub_cat_1,
-            // The Taxonomy Name
-            'category',
-            // Main Cat is the Parent here
-            array(
-                'parent' => $main_cat_id,
-            )
-        );
+    $sub_cat_1_info = wp_insert_term(
+        // The Primo Category
+        $sub_cat_1,
+        // The Taxonomy Name
+        'category',
+        // Main Cat is the Parent here
+        array(
+            'parent' => $main_cat_id,
+        )
+    );
 
-        // COLLECTING PRIMO CATEGORY ID
-        $sub_cat_1_id = $sub_cat_1_info['term_id'];
-
-    }
+    // COLLECTING PRIMO CATEGORY ID
+    $sub_cat_1_id = $sub_cat_1_info['term_id'];
 
     /**
      * INSERT SUB CATEGORY 2 - SECONDO
      */
-    if ($sub_cat_2) {
-
-        $sub_cat_2_info = wp_insert_term(
-            // The Secondo Category
-            $sub_cat_2,
-            // The Taxonomy Name
-            'category',
-            // Primo Cat is the Parent here
-            array(
-                'parent' => $sub_cat_1_id,
-            )
-        );
-        // COLLECTING SECONDO CATEGORY 2 ID
-        $sub_cat_2_id = $sub_cat_2_info['term_id'];
-
-    }
+    $sub_cat_2_info = wp_insert_term(
+        // The Secondo Category
+        $sub_cat_2,
+        // The Taxonomy Name
+        'category',
+        // Primo Cat is the Parent here
+        array(
+            'parent' => $sub_cat_1_id,
+        )
+    );
+    // COLLECTING SECONDO CATEGORY 2 ID
+    $sub_cat_2_id = $sub_cat_2_info['term_id'];
 
     /**
      * INSERT SUB CATEGORY 3 - TERZO
      */
-    if ($sub_cat_3) {
+    $sub_cat_3_info = wp_insert_term(
+        // The Terzo Category
+        $sub_cat_3,
+        // The Taxonomy Name
+        'category',
+        // Secondo Cat is the Parent here
+        array(
+            'parent' => $sub_cat_2_id,
+        )
+    );
 
-        $sub_cat_3_info = wp_insert_term(
-            // The Terzo Category
-            $sub_cat_3,
-            // The Taxonomy Name
-            'category',
-            // Secondo Cat is the Parent here
-            array(
-                'parent' => $sub_cat_2_id,
-            )
-        );
-
-        // COLLECTING TERZO CATEGORY 2 ID
-        $sub_cat_3_id = $sub_cat_3_info['term_id'];
-
-    }
+    // COLLECTING TERZO CATEGORY 2 ID
+    $sub_cat_3_id = $sub_cat_3_info['term_id'];
 
     // NEW CAT SET ARRAY
     $cat_set_array = array(

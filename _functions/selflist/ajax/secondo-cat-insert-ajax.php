@@ -27,9 +27,7 @@ function secondo_cat_insert_ajax()
 /**
  * COLLECT MAIN CATEGORY ID
  */
-
     $main_cat_id = get_cat_ID($main_cat_name);
-// echo 'main category id: ' . $main_cat_id;
 
 /**
  * CHECKING IF CATEGORY EXISTS & IF THE MAIN CAT IS THE PARENT
@@ -59,51 +57,41 @@ function secondo_cat_insert_ajax()
  * INSERT SUB CATEGORY 2 - SECONDO
  */
     $sub_cat_2_info = wp_insert_term(
-
-        // the name of the sub-category
+        // Secondo Category
         $sub_cat_2,
-
-        // the taxonomy 'category' (don't change)
+        // The Taxonomy Name
         'category',
-
+        // Args with slug, parent etc.
         array(
-            // what to use in the url for term archive
-            // 'slug' => $sub_cat_2_slug,
-
-            // link with main category. In the case, become a child of the "Category A" parent
+            // Primo is the Parent
             'parent' => $sub_cat_1_id,
-
         )
     );
 
-// COLLECTING SUB CATEGORY 2 ID
+// COLLECTING SECONDO CATEGORY ID
     $sub_cat_2_id = $sub_cat_2_info['term_id'];
 
 /**
  * INSERT SUB CATEGORY 3 - TERZO
  */
-    $sub_cat_3_info = wp_insert_term(
+    if ($sub_cat_3) {
 
-        // the name of the sub-category
-        $sub_cat_3,
+        $sub_cat_3_info = wp_insert_term(
+            // Terzo Category
+            $sub_cat_3,
+            // The Taxonomy Name
+            'category',
+            // Args with slug, parent etc.
+            array(
+                // Secondo is the Parent
+                'parent' => $sub_cat_2_id,
+            )
+        );
 
-        // the taxonomy 'category' (don't change)
-        'category',
+        // COLLECTING TERZO CATEGORY ID
+        $sub_cat_3_id = $sub_cat_3_info['term_id'];
 
-        array(
-            // what to use in the url for term archive
-            // 'slug' => $sub_cat_3_slug,
-
-            // link with main category. In the case, become a child of the "Category A" parent
-            'parent' => $sub_cat_2_id,
-
-        )
-    );
-    // echo "Good here";
-    // wp_die();
-
-// COLLECTING SUB CATEGORY 2 ID
-    $sub_cat_3_id = $sub_cat_3_info['term_id'];
+    }
 
 // NEW CAT SET ARRAY
     $cat_set_array = array(
@@ -117,11 +105,8 @@ function secondo_cat_insert_ajax()
         'terzo_cat_id' => $sub_cat_3_id,
     );
 
-    // echo "Good here";
-    // wp_die();
-
-    // FOLLOWING WAS TRIED BUT NOT NECESSARY SINCE wp_send_json IS PRESENT
-    // $cat_set_array_json = json_encode($cat_set_array);
+    // UPDATE THE CAT DATA JSON FILE
+    get_selflist_main_cats_to_json();
 
     // SENDING JSON OBJECT
     wp_send_json($cat_set_array);

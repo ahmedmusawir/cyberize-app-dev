@@ -27,6 +27,7 @@ function terzo_cat_insert_ajax()
 /**
  * COLLECT MAIN CATEGORY ID
  */
+
     $main_cat_id = get_cat_ID($main_cat_name);
 
 /**
@@ -34,12 +35,14 @@ function terzo_cat_insert_ajax()
  */
     if (term_exists($sub_cat_1, 'category', $main_cat_id)) {
 
+        // $sub_cat_1_id = get_cat_ID($sub_cat_1);
         // COLLECTING PRIMO ID AS THE PARENT OF NEW SECONDO
         $sub_cat_1_array = term_exists($sub_cat_1, 'category', $main_cat_id);
         $sub_cat_1_id = $sub_cat_1_array['term_id'];
 
         if (term_exists($sub_cat_2, 'category', $sub_cat_1_id)) {
 
+            // $sub_cat_2_id = get_cat_ID($sub_cat_2);
             // COLLECTING SECONDO ID AS THE PARENT OF NEW TERZO
             $sub_cat_2_array = term_exists($sub_cat_2, 'category', $sub_cat_1_id);
             $sub_cat_2_id = $sub_cat_2_array['term_id'];
@@ -48,12 +51,12 @@ function terzo_cat_insert_ajax()
 
                 echo "
 
-              <div class='alert alert-danger rounded-0' role='alert'>
-                The Terzo Category <strong>$sub_cat_3</strong> already exists ...
-                The Terzo Category must be unique ...
-              </div>
+      <div class='alert alert-danger rounded-0' role='alert'>
+        The Terzo Category <strong>$sub_cat_3</strong> already exists ...
+        The Terzo Category must be unique ...
+      </div>
 
-              ";
+      ";
                 wp_die();
             } // end $sub_cat_3
 
@@ -65,13 +68,18 @@ function terzo_cat_insert_ajax()
  * INSERT SUB CATEGORY 3 - TERZO
  */
     $sub_cat_3_info = wp_insert_term(
-        // Terzo Category
+
+        // the name of the sub-category
         $sub_cat_3,
-        // The Taxonomy Name
+
+        // the taxonomy 'category' (don't change)
         'category',
-        // Args with slug, parent etc.
+
         array(
-            // Secondo is the Parent
+            // what to use in the url for term archive
+            // 'slug' => $sub_cat_3_slug,
+
+            // link with main category. In the case, become a child of the "Category A" parent
             'parent' => $sub_cat_2_id,
 
         )
@@ -92,8 +100,8 @@ function terzo_cat_insert_ajax()
         'terzo_cat_id' => $sub_cat_3_id,
     );
 
-    // UPDATE THE CAT DATA JSON FILE
-    get_selflist_main_cats_to_json();
+    // FOLLOWING WAS TRIED BUT NOT NECESSARY SINCE wp_send_json IS PRESENT
+    // $cat_set_array_json = json_encode($cat_set_array);
 
     // SENDING JSON OBJECT
     wp_send_json($cat_set_array);

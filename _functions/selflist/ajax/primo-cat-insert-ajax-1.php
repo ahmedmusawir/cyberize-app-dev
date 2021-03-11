@@ -47,63 +47,72 @@ function primo_cat_insert_ajax()
      * INSERT SUB CATEGORY 1 - PRIMO
      */
     $sub_cat_1_info = wp_insert_term(
-        // The Primo Cat
+        // the name of the sub-category
         $sub_cat_1,
-        // The Taxonomy Name
+
+        // the taxonomy 'category' (don't change)
         'category',
-        // Args like slug, parent etc. go here
+
         array(
-            // The Main Cat is the Parent
+            // what to use in the url for term archive
+            // 'slug' => $sub_cat_1_slug,
+
+            // link with main category. In the case, become a child of the "Category A" parent
             'parent' => $main_cat_id,
+            // 'parent'=> term_exists( $category_name, 'category' )['term_id']
+
         )
     );
 
-    // COLLECTING PRIMO CATEGORY ID
+    // COLLECTING SUB CATEGORY 1 ID
     $sub_cat_1_id = $sub_cat_1_info['term_id'];
 
     /**
      * INSERT SUB CATEGORY 2 - SECONDO
      */
-    if ($sub_cat_2) {
+    $sub_cat_2_info = wp_insert_term(
 
-        $sub_cat_2_info = wp_insert_term(
-            // The Secondo Cat
-            $sub_cat_2,
-            // The Taxonomy Name
-            'category',
-            // Args like slug, parent etc. go here
-            array(
-                // The Primo Cat is the Parent
-                'parent' => $sub_cat_1_id,
+        // the name of the sub-category
+        $sub_cat_2,
 
-            )
-        );
-        // COLLECTING SECONDO CATEGORY ID
-        $sub_cat_2_id = $sub_cat_2_info['term_id'];
+        // the taxonomy 'category' (don't change)
+        'category',
 
-    }
+        array(
+            // what to use in the url for term archive
+            // 'slug' => $sub_cat_2_slug,
+
+            // link with main category. In the case, become a child of the "Category A" parent
+            'parent' => $sub_cat_1_id,
+
+        )
+    );
+    // COLLECTING SUB CATEGORY 2 ID
+    $sub_cat_2_id = $sub_cat_2_info['term_id'];
 
     /**
      * INSERT SUB CATEGORY 3 - TERZO
      */
-    if ($sub_cat_3) {
+    $sub_cat_3_info = wp_insert_term(
 
-        $sub_cat_3_info = wp_insert_term(
-            // The Terzo Cat
-            $sub_cat_3,
-            // The Taxonomy Name
-            'category',
-            // Args like slug, parent etc. go here
-            array(
-                // The Secondo Cat is the Parent
-                'parent' => $sub_cat_2_id,
-            )
-        );
+        // the name of the sub-category
+        $sub_cat_3,
 
-        // COLLECTING TERZO CATEGORY ID
-        $sub_cat_3_id = $sub_cat_3_info['term_id'];
+        // the taxonomy 'category' (don't change)
+        'category',
 
-    }
+        array(
+            // what to use in the url for term archive
+            // 'slug' => $sub_cat_3_slug,
+
+            // link with main category. In the case, become a child of the "Category A" parent
+            'parent' => $sub_cat_2_id,
+
+        )
+    );
+
+    // COLLECTING SUB CATEGORY 2 ID
+    $sub_cat_3_id = $sub_cat_3_info['term_id'];
 
     // NEW CAT SET ARRAY
     $cat_set_array = array(
@@ -117,8 +126,8 @@ function primo_cat_insert_ajax()
         'terzo_cat_id' => $sub_cat_3_id,
     );
 
-    // UPDATE THE CAT DATA JSON FILE
-    get_selflist_main_cats_to_json();
+    // FOLLOWING WAS TRIED BUT NOT NECESSARY SINCE wp_send_json IS PRESENT
+    // $cat_set_array_json = json_encode($cat_set_array);
 
     // SENDING JSON OBJECT
     wp_send_json($cat_set_array);
