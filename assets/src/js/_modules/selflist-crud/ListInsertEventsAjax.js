@@ -126,7 +126,7 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
       })
       .always(() => {
         // REDIRECT TO PREVIEW PAGE
-        // window.location.href = '/list-preview/';
+        window.location.href = '/list-preview/';
         // console.log('Ajax Dynamic Loaction Filter Complete');
       });
 

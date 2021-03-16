@@ -57,11 +57,14 @@ function get_city_state_to_rest_test()
         $cities = [];
     }
 
-    return $states_and_cities;
+    // return $states_and_cities;
+    echo "<pre>";
+    print_r($states_and_cities);
+    echo "</pre>";
 
 }
 
-// get_city_state_to_rest();
+get_city_state_to_rest_test();
 
 // $custom_tax = array(
 //     'states' => array(

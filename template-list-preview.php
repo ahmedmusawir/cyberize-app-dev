@@ -18,7 +18,7 @@ get_header();
 <section id="list-preview-ajax-data" class=""></section>
 <div class="navigation-box container">
   <a href="/list-insert/" class="btn btn-outline-danger float-left">Cancel</a>
-  <a href="#" class="btn btn-outline-danger float-right">Publish Settings</a>
+  <a href="/list-payment-summary-by-points/" class="btn btn-outline-danger float-right">Publish Settings</a>
 </div>
 
 <?php

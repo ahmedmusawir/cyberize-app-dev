@@ -19,7 +19,7 @@ class PaymentSummaryDateTimePicker {
     const listObject = JSON.parse(localStorage.getItem('newListData'));
     // console.log('Current List ID', listObject.id);
     if (listObject) {
-      this.currentPostId = listObject.id;
+      this.currentPostId = listObject.data.post_id;
     } else {
       console.info(
         'List Object not found in LocalStorage : [PaymentSummaryDateTimePicker]'

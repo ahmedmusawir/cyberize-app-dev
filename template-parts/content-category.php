@@ -8,79 +8,81 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-item animate__animated'); ?>>
+<article id="post-<?php the_ID();?>" <?php post_class('post-item animate__animated');?>>
   <header class="entry-header">
 
     <?php
-       /**
-         * 
-         * CATEGORY LIST WITH PARENT CHILD RELATIONSHIP
-         * 
-         */
-        
-        echo '<section class="post-item-cat-list">';
-        /**
-         * DISPLAY USER REGISTRATION DATE
-         */
-        $user_id = get_post_field( 'post_author' ); // Getting Author ID by Post ID (optional)
-        $udata = get_userdata( $user_id );
-        $registered = $udata->user_registered;
-        echo '<span class="bg-danger text-light font-weight-bold float-right py-2 px-4" style="font-size: .8rem;">';
-        printf( '%s<br>', date( "d", strtotime( $registered ) ) );
-        printf( '%s<br>', date( "m", strtotime( $registered ) ) );
-        printf( '%s<br>', date( "y", strtotime( $registered ) ) );
-        echo '</span>';
-        // DISPLAY LIST ID
-        echo '<p class="font-weight-bold" style="margin-bottom: -.5rem; font-size: .8rem">LIST #' . get_the_ID() . "</p>";
+/**
+ *
+ * CATEGORY LIST WITH PARENT CHILD RELATIONSHIP
+ *
+ */
 
-        $taxonomy = 'category';
- 
-        // Get the term IDs assigned to post.
-        $post_terms = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
-         
-        // Separator between links.
-        $separator = '&nbsp;<i class="fas fa-arrow-right"></i>&nbsp;';
-         
-        if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {
-         
-            $term_ids = implode( ',' , $post_terms );
-         
-            $terms = wp_list_categories( array(
-                'title_li' => '',
-                'style'    => 'none',
-                'echo'     => false,
-                'taxonomy' => $taxonomy,
-                'include'  => $term_ids
-            ) );
-         
-            $terms = trim( str_replace( '<br />',  $separator, $terms ));
-            // $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
-         
-            // Display post categories.
-            echo  $terms;
-        }
+echo '<section class="post-item-cat-list">';
+/**
+ * DISPLAY USER REGISTRATION DATE
+ */
+$user_id = get_post_field('post_author'); // Getting Author ID by Post ID (optional)
+$udata = get_userdata($user_id);
+$registered = $udata->user_registered;
+echo '<span class="bg-danger text-light font-weight-bold float-right py-2 px-4" style="font-size: .8rem;">';
+printf('%s<br>', date("d", strtotime($registered)));
+printf('%s<br>', date("m", strtotime($registered)));
+printf('%s<br>', date("y", strtotime($registered)));
+echo '</span>';
+// DISPLAY LIST ID
+echo '<p class="font-weight-bold" style="margin-bottom: -.5rem; font-size: .8rem">LIST #' . get_the_ID() . "</p>";
 
-        echo '</section>'; //END .post-item-cat-list
+// ========================================= DISPLAY CATEGORY LIST W/ LINKS ========================================
 
-         // =========================================END MOOSE TEST========================================
+$taxonomy = 'category';
 
-		if ( 'post' === get_post_type() ) :
-			?>
+// Get the term IDs assigned to post.
+$post_terms = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'ids'));
+
+// Separator between links.
+$separator = '&nbsp;<i class="fas fa-arrow-right"></i>&nbsp;';
+
+if (!empty($post_terms) && !is_wp_error($post_terms)) {
+
+    $term_ids = implode(',', $post_terms);
+
+    $terms = wp_list_categories(array(
+        'title_li' => '',
+        'style' => 'none',
+        'echo' => false,
+        'taxonomy' => $taxonomy,
+        'include' => $term_ids,
+    ));
+
+    $terms = trim(str_replace('<br />', $separator, $terms));
+    // $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
+
+    // Display post categories.
+    echo $terms;
+}
+
+echo '</section>'; //END .post-item-cat-list
+
+// ========================================= END CATEGORY LIST W/ LINKS ========================================
+
+if ('post' === get_post_type()):
+?>
     <div class="entry-meta">
       <?php
-				cyberize_app_dev_posted_on();
-				// cyberize_app_dev_posted_by();
-				?>
+cyberize_app_dev_posted_on();
+// cyberize_app_dev_posted_by();
+?>
     </div><!-- .entry-meta -->
-    <?php endif; ?>
+    <?php endif;?>
   </header><!-- .entry-header -->
 
-  <?php cyberize_app_dev_post_thumbnail(); ?>
+  <?php cyberize_app_dev_post_thumbnail();?>
 
   <div id="post-content" class="entry-content">
     <?php
-		the_excerpt();
-		?>
+the_excerpt();
+?>
   </div><!-- .entry-content -->
 
   <footer class="entry-footer">
@@ -156,4 +158,4 @@
     </section>
 
   </footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- #post-<?php the_ID();?> -->

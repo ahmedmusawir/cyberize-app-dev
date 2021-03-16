@@ -7,6 +7,8 @@ class ListPreviewEvents {
     this.ajaxUrl = selflistData.ajax_url;
     this.ajaxFunction = 'list_preview_ajax';
     this.previewDisplayBox = $('#list-preview-ajax-data');
+    // INVOKE LIST PREVIEW AJAX
+    this.newListId;
     this.showListPreview();
   }
 
@@ -16,15 +18,17 @@ class ListPreviewEvents {
 
   showListPreview = () => {
     const listObject = JSON.parse(localStorage.getItem('newListData'));
-    // console.log('List Obj: ', listObject);
-    // console.log('The New List ID', listObject.id);
+    // console.log('List ID: ', listObject.data.post_id);
+    if (listObject) {
+      this.newListId = listObject.data.post_id;
+    }
 
-    if (this.previewDisplayBox.length && listObject.id) {
+    if (this.previewDisplayBox.length && this.newListId) {
       $.ajax({
         url: this.ajaxUrl,
         type: 'POST',
         data: {
-          post_id: listObject.id,
+          post_id: this.newListId,
           action: this.ajaxFunction,
         },
       })
