@@ -76,7 +76,7 @@ require get_template_directory() . '/_functions/helpers-setup.php';
  *
  */
 
-// require get_template_directory() . '/_functions/wp-logon-screen.php';
+require get_template_directory() . '/_functions/wp-logon-screen.php';
 
 /**
  * SELFLIST CUSTOM FUNCTIONS
@@ -119,6 +119,9 @@ require get_theme_file_path('/_functions/selflist/ajax/list-payment-and-publish-
 // SELFLIST CUSTOM TAXONOMY & CATEGORIES
 require get_theme_file_path('/_functions/selflist/taxonomy/selflist-create-taxonomy.php');
 require get_theme_file_path('/_functions/selflist/taxonomy/selflist-cat-list-w-links.php');
+// SELFLIST WITH WOOCOM
+require get_theme_file_path('/_functions/selflist/woocom/style-checkout-w-bootstrap.php');
+require get_theme_file_path('/_functions/selflist/woocom/add-points-to-member.php');
 
 // require get_theme_file_path('/_functions/selflist/taxonomy/selflist-auto-update-cat-json.php');
 

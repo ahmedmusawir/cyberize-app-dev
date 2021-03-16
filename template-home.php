@@ -20,7 +20,7 @@ get_header('empty');
   <header id="header-home" class="site-header container py-5 text-center">
 
     <figure class="logo-container">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+      <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
 
         <img class="mx-auto d-block" src="/wp-content/uploads/2020/07/SelfListLogo.png" alt="">
 
@@ -29,7 +29,7 @@ get_header('empty');
 
     <section class="link-box d-flex justify-content-around mx-auto">
       <a href="/list-insert" class="list-links display-4 d-block">LIST</a>
-      <a href="/list-index" class="list-links display-4 d-block">LISTINGS</a>
+      <a href="/category-search-index" class="list-links display-4 d-block">LISTINGS</a>
     </section>
 
   </header><!-- #masthead -->

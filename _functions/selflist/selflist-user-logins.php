@@ -1,19 +1,21 @@
 <?php
 
-function kurse_role_caps()
-{
-    // gets the simple_role role object
-    $role = get_role('subscriber');
+/**
+ * LOCKING PAGES FROM NON-LOGGEDIN USERS
+ */
 
-    // add a new capability
-    $capabilities = array('manage_states', 'edit_states', 'delete_states', 'assign_states');
-    foreach ($capabilities as $cap) {
-        $role->add_cap($cap);
+function redirect_to_wp_login_page()
+{
+
+    if (is_page('list-insert') && !is_user_logged_in()) {
+
+        wp_redirect(wp_login_url(), 301);
+        // wp_redirect('http://www.example.dev/your-page/', 301);
+        exit;
     }
 }
 
-// add simple_role capabilities, priority must be after the initial role definition
-add_action('init', 'kurse_role_caps', 11);
+add_action('template_redirect', 'redirect_to_wp_login_page');
 
 /**
  * REMOVING ADMIN BAR FOR ALL BUT ADMINS
@@ -31,7 +33,7 @@ add_action('after_setup_theme', 'remove_admin_bar');
  * LOGIN REDIRECT SUBSCRIBERS & LISTING MANAGERS
  */
 
-function my_login_redirect($redirect_to, $request, $user)
+function selflist_login_redirect($redirect_to, $request, $user)
 {
     //validating user login and roles
     if (isset($user->roles) && is_array($user->roles)) {
@@ -52,18 +54,18 @@ function my_login_redirect($redirect_to, $request, $user)
     // die();
 }
 
-add_filter('login_redirect', 'my_login_redirect', 10, 3);
+add_filter('login_redirect', 'selflist_login_redirect', 10, 3);
 
 /**
  * LOG OUT REDIRECTION TO HOME
  */
 
-function ps_redirect_after_logout()
+function selflist_redirect_after_logout()
 {
     wp_redirect('/');
     exit();
 }
-add_action('wp_logout', 'ps_redirect_after_logout');
+add_action('wp_logout', 'selflist_redirect_after_logout');
 
 /**
  * LOG IN / LOG OUT BUTTON IN THE PRIMARY NAV

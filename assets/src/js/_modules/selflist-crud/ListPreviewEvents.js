@@ -18,7 +18,7 @@ class ListPreviewEvents {
 
   showListPreview = () => {
     const listObject = JSON.parse(localStorage.getItem('newListData'));
-    // console.log('List ID: ', listObject.data.post_id);
+    // console.log('List Obj: ', listObject);
     if (listObject) {
       this.newListId = listObject.data.post_id;
     }

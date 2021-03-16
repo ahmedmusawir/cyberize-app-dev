@@ -29,7 +29,9 @@ function show_all_categories_w_links_and_arrows($post_id, $taxonomy)
         // $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
 
         // Display post categories.
+        echo '<small class="font-weight-bold">';
         echo $terms;
+        echo '</small>';
     }
 
     echo '</section>'; //END .post-item-cat-list

@@ -36,8 +36,8 @@ class PaymentSummaryUiEvents {
     // COLLECTING POINTS DATA FROM PAYMENT SUMMARY PAGE
     const paymentPoints = parseInt($.trim(this.currentPaymentPoints.html()));
     const availPoints = parseInt($.trim(this.paymentSummaryAvailPoints.html()));
-    console.log(paymentPoints);
-    console.log(availPoints);
+    // console.log(paymentPoints);
+    // console.log(availPoints);
     // CHECKING FOR END DATE
     if (!paymentPoints) {
       alert(`Please pick an End Date from the Calendar ...`);
