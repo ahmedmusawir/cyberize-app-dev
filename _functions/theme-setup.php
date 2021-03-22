@@ -52,6 +52,10 @@ if ( ! function_exists( 'cyberize_setup' ) ) :
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'cyberize' ),
 		) );
+		// This theme uses wp_nav_menu() in location two loggedin
+		register_nav_menus( array(
+			'menu-2' => esc_html__( 'Loggedout', 'cyberize' ),
+		) );
 
 		// CUSTOMER PROFILE MENU
 		register_nav_menus( array(

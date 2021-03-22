@@ -13,6 +13,7 @@
  */
 
 get_header();
+
 ?>
 <?php 
 /**
@@ -82,7 +83,7 @@ $current_user = wp_get_current_user();
             echo '<h6><span class="font-weight-bold">Product Name: </span>' . $product->get_name() . '</h6>';
             echo '<h6><span class="font-weight-bold">Product Description: </span>' . $product->get_description() . '</h6>';
             echo '<h6><span class="font-weight-bold">Product Value: </span> <span class="text-danger">$' . $product->get_price() . '</span></h6>';
-            echo '<h6><span class="font-weight-bold">Purchase Date: </span>' . $product->get_date_created()->format('M d, Y') . '</h6>';
+            echo '<h6><span class="font-weight-bold">Purchase Date: </span>' . $order->get_date_created()->format('M d, Y') . '</h6>';
         
           }
         }

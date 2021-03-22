@@ -34,22 +34,25 @@
         <div class="main-navbar container-fluid">
 
           <?php
-          wp_nav_menu(array(
-              'theme_location' => 'menu-1', // Defined when registering the menu
-              'menu_id' => 'primary-menu',
-              'container' => 'div',
-              'container_class' => 'main-nav',
-              // 'menu_class'     => 'mx-auto', //CENTER ALIGN
-              'menu_class' => 'ml-auto', //RIGHT ALIGN
-              // 'menu_class'     => 'mr-auto', //LEFT ALIGN
-          ));
-          ?>
+wp_nav_menu(array(
+    'theme_location' => 'menu-1', // Defined when registering the menu
+    'menu_id' => 'primary-menu',
+    'container' => 'div',
+    'container_class' => 'main-nav',
+    // 'menu_class'     => 'mx-auto', //CENTER ALIGN
+    'menu_class' => 'ml-auto', //RIGHT ALIGN
+    // 'menu_class'     => 'mr-auto', //LEFT ALIGN
+));
+?>
           <section>
-            <?php // if (is_user_logged_in()) : ?>
-            <a class="float-left" href="<?php echo wp_logout_url(get_permalink()); ?>" style="margin-top: -33px;">
-              Logout
-            </a>
-            <?php // endif;?>
+            <?php global $current_user;
+wp_get_current_user();?>
+            <?php if (is_user_logged_in()) {
+    // echo 'Username: ' . $current_user->user_login . "\n";
+    echo '<span class="float-right">User ID: ' . $current_user->user_login . "</span>";} else {
+    //wp_loginout();
+}
+?>
           </section>
         </div>
       </div>

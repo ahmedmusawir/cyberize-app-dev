@@ -45,11 +45,17 @@
           ));
           ?>
           <section>
-            <?php // if (is_user_logged_in()) : ?>
-            <a class="float-left" href="<?php echo wp_logout_url(get_permalink()); ?>" style="margin-top: -33px;">
-              Logout
-            </a>
-            <?php // endif;?>
+            <?php global $current_user;
+            wp_get_current_user();?>
+            <?php if (is_user_logged_in()) {
+                // echo 'Username: ' . $current_user->user_login . "\n";
+                echo '<span class="float-right">User ID: ' . $current_user->user_login . "</span>";} else {
+                //wp_loginout();
+            }
+            ?>
+            <?php if (is_user_logged_in()) : ?>
+            <a href="<?php echo wp_logout_url(get_permalink()); ?>">Logout</a>
+            <?php endif;?>
           </section>
         </div>
       </div>

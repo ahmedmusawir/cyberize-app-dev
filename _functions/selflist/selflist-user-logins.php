@@ -2,6 +2,7 @@
 
 /**
  * LOCKING PAGES FROM NON-LOGGEDIN USERS
+ * The following did not work! Had to disabled it
  */
 
 function redirect_to_wp_login_page()
@@ -14,8 +15,8 @@ function redirect_to_wp_login_page()
         exit;
     }
 }
-
-add_action('template_redirect', 'redirect_to_wp_login_page');
+// DISABLED CUZ PAGE PROTECTION IS BEING HANDLED BY WOOCOM MEMBERSHIP
+// add_action('template_redirect', 'redirect_to_wp_login_page');
 
 /**
  * REMOVING ADMIN BAR FOR ALL BUT ADMINS
@@ -53,7 +54,9 @@ function selflist_login_redirect($redirect_to, $request, $user)
     // echo $redirect_to;
     // die();
 }
-
+// WAS DISABLED CUZ THIS IS BEING HANDLED BY WOOCOM MEMBERSHIP
+// But brough back to redirect all subscribers even without a membership
+// May not need when goes to production, but recommended.
 add_filter('login_redirect', 'selflist_login_redirect', 10, 3);
 
 /**
@@ -82,5 +85,5 @@ function wti_loginout_menu_link($items, $args)
     }
     return $items;
 }
-
-add_filter('wp_nav_menu_items', 'wti_loginout_menu_link', 10, 2);
+// DISABLING THIS SINCE THIS IS CONFLICTING WITH THE USER MENU PLUGIN
+// add_filter('wp_nav_menu_items', 'wti_loginout_menu_link', 10, 2);

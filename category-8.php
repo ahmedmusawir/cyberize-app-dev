@@ -6,11 +6,8 @@
  *
  * @package cyberize-app-dev
  */
-if (is_user_logged_in()) {
-  get_header();
-} else {
-  get_header('loggedout');
-}
+
+ get_header();
 
 // GETTING CURRENT CATEGORY OBJECT
 $current_category = $wp_query->get_queried_object();

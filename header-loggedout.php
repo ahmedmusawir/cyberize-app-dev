@@ -35,7 +35,7 @@
 
           <?php
           wp_nav_menu(array(
-              'theme_location' => 'menu-1', // Defined when registering the menu
+              'theme_location' => 'menu-2', // Defined when registering the menu
               'menu_id' => 'primary-menu',
               'container' => 'div',
               'container_class' => 'main-nav',
@@ -44,13 +44,6 @@
               // 'menu_class'     => 'mr-auto', //LEFT ALIGN
           ));
           ?>
-          <section>
-            <?php // if (is_user_logged_in()) : ?>
-            <a class="float-left" href="<?php echo wp_logout_url(get_permalink()); ?>" style="margin-top: -33px;">
-              Logout
-            </a>
-            <?php // endif;?>
-          </section>
         </div>
       </div>
 
