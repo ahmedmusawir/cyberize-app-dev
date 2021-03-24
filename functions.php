@@ -119,11 +119,15 @@ require get_theme_file_path('/_functions/selflist/ajax/list-payment-and-publish-
 // SELFLIST CUSTOM TAXONOMY & CATEGORIES
 require get_theme_file_path('/_functions/selflist/taxonomy/selflist-create-taxonomy.php');
 require get_theme_file_path('/_functions/selflist/taxonomy/selflist-cat-list-w-links.php');
+require get_theme_file_path('/_functions/selflist/taxonomy/selflist-cat-list-wo-links.php');
 // SELFLIST WITH WOOCOM
 require get_theme_file_path('/_functions/selflist/woocom/style-checkout-w-bootstrap.php');
 require get_theme_file_path('/_functions/selflist/woocom/add-points-to-member.php');
 require get_theme_file_path('/_functions/selflist/woocom/general-helpers.php');
+// SELFLIST WITH GRAVITY FORMS
+require get_theme_file_path('/_functions/selflist/gravity/add-signup-customer-points.php');
 
+// THIS UPDATES THE CATEGORY JSON FILE MANUALLY
 // require get_theme_file_path('/_functions/selflist/taxonomy/selflist-auto-update-cat-json.php');
 
 // DISPLAY STATES & CITIES IN CATEGORY.PHP PAGE TOP MENU

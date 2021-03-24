@@ -19,10 +19,16 @@ get_header('loggedout');
 
   <header id="header-test" class="site-header container py-5 text-center">
 
-    <h1 class="text-center text-danger">Custom Signup Coming Soon ...</h1>
 
-    <h3 class="text-center pt-5 h3">If you are already a member, please log in</h3>
-    <a class="text-center btn btn-danger btn-lg" href="<?php echo wp_login_url(); ?>">Log In</a>
+    <h3 class="text-center h3">If you are already a member, please log in</h3>
+    <a class="text-center btn btn-danger btn-sm btn-lg mb-4 px-5" href="<?php echo wp_login_url(); ?>">Log In</a>
+
+    <hr>
+
+    <h1 class="text-center text-danger">Please Signup Free</h1>
+
+    <?php echo do_shortcode('[gravityform id="4" title="false" description="false"]'); ?>
+
 
   </header><!-- #masthead -->
 

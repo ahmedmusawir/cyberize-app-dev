@@ -49,7 +49,7 @@ wp_nav_menu(
     <div class="col-sm-12 col-md-8">
       <a href="/list-chat/" class="btn btn-danger float-right">Chat Room</a>
       <h3 class="text-uppercase"><small class="font-weight-bold">Customer Profile</small></h3>
-      <h2 class="h2">Welcome, <?php echo $current_user->display_name; ?></h2>
+      <h2 class="h2">Welcome, <?php echo $current_user->user_firstname .' '. $current_user->user_lastname; ?></h2>
 
       <h6 class="h6 text-uppercase font-weight-bold">
         Your ID:

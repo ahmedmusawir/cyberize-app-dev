@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying all pages
- * Template Name: Form Validation Test
+ * Template Name: Test Form Validation
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
@@ -16,6 +16,22 @@ get_header();
 ?>
 
 <main id="primary" class="site-main container">
+  <?php
+  /**
+   *
+   * CATEGORY LIST WITH PARENT CHILD RELATIONSHIP
+   *
+   */
+  // Setting the Args to get Parent ID in and Array
+  $post_id = 819;
+  $taxonomy = 'category';
+  show_all_categories_without_links_and_arrows($post_id, $taxonomy);
+
+    // echo '<pre>';
+    // print_r($post_cat_parent_array);
+    // echo '</pre>';
+
+  ?>
 
   <header id="header-test" class="site-header container py-5 text-center">
 
@@ -97,6 +113,15 @@ get_header();
   </section>
 
 </main><!-- #main -->
+<script>
+jQuery(function($) {
+  $('#for-list-preview-window')
+    .find('a')
+    .removeAttr('href')
+    .css('color', 'red');
+  // $('#for-list-preview-window').find('a').css('color', 'green');
+});
+</script>
 
 <?php
 get_footer();

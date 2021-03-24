@@ -46,6 +46,7 @@ function list_preview_ajax()
         <?php
         echo '<section class="post-item-cat-list">';
             // SHOW STATE & CITY IN A PARENT CHILD ORDER
+            // Coming from _functions/helpers-setup.php
             print_taxonomy_ranks(get_the_terms(get_the_ID(), 'states'));
 
             /**
@@ -67,40 +68,13 @@ function list_preview_ajax()
              * CATEGORY LIST WITH PARENT CHILD RELATIONSHIP
              *
              */
-            // Setting the Args to get Parent ID in and Array
-            $args = ['parent' => 0];
-            // Getting an Array with Parent Category ID
-            $post_cat_parent_array = wp_get_post_categories($post_id, $args);
-            // Setting the Category Parent ID
-            $post_cat_parent_id = $post_cat_parent_array[0];
-            // Getting the children Category IDs Array with no List/Post attached
-            $post_terms = get_categories(
-                ['child_of' => $post_cat_parent_id,
-                    'hide_empty' => '0',
-                ]
-            );
+            $taxonomy = 'category';
+            // function coming from _functions/selflist/taxonomy/selflist-cat-list-wo-links
+            show_all_categories_without_links_and_arrows($post_id, $taxonomy);
+
             ?>
 
-        <section class="post-item-cat-list">
-          <p class="text-uppercase text-danger font-weight-bold list-inline-item"
-            style="margin-bottom: -0.5rem; font-size: 0.8rem;">
-            <?php echo get_cat_name($post_cat_parent_id) ?>
-          </p>&nbsp;
-          <i class="fas fa-arrow-right"></i>&nbsp;
-          <?php
-        // The Category Loop
-            foreach ($post_terms as $post_term): ?>
 
-          <p class="text-uppercase text-danger font-weight-bold list-inline-item"
-            style="margin-bottom: -0.5rem; font-size: 0.8rem;">
-            <?php echo $post_term->name; ?>
-          </p>&nbsp;
-          <i class="fas fa-arrow-right"></i>&nbsp;
-
-          <?php endforeach;?>
-
-        </section>
-        <!-- End post-item-cat-list -->
 
         <?php
     // ====================================== END CATEGORY LIST WITH PARENT CHILD ===================================
