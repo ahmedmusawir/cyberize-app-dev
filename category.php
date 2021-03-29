@@ -23,6 +23,7 @@ $current_post_count = $current_category->count;
 <main id="primary" class="site-main container">
 
   <button id="filter-by-state-city-btn" class="btn btn-outline-danger mb-2">Filter by State & City</button>
+  <button class="btn btn-outline-dark mb-2" onclick='window.location.reload(true);'>Reset</button>
   <!-- STATE & CITY CATEGORY PROTOTYPING STARTS -->
   <?php 
     // Getting all States (Parent Taxonomies)
@@ -72,9 +73,6 @@ $current_post_count = $current_category->count;
       
       // CITY & STATE TAXONMY DISPLAY BY LIST END
       
-      // SHOW STATE & CITY IN A PARENT CHILD ORDER
-      print_taxonomy_ranks( get_the_terms( get_the_ID(), 'states' ) );
-			
       /**
        * Include the Post-Type-specific template for the content.
 			 * If you want to override this in a child theme, then include a file
@@ -85,8 +83,6 @@ $current_post_count = $current_category->count;
       get_template_part( 'template-parts/content', 'category' );
 
       echo '<article>'; //END .post-item
-
-
 
 		endwhile;
 

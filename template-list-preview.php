@@ -29,7 +29,7 @@ get_header();
 jQuery(function($) {
   $(document).arrive('#for-list-preview-window', function() {
     var catList = $(this);
-    catList.find('a').removeAttr('href').css('color', 'red');
+    catList.find('a').removeAttr('href').css('color', 'black');
   });
 });
 </script>

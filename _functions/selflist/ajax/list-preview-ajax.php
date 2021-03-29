@@ -70,7 +70,7 @@ function list_preview_ajax()
              */
             $taxonomy = 'category';
             // function coming from _functions/selflist/taxonomy/selflist-cat-list-wo-links
-            show_all_categories_without_links_and_arrows($post_id, $taxonomy);
+            // show_all_categories_without_links_and_arrows($post_id, $taxonomy);
 
             ?>
 
@@ -103,42 +103,42 @@ the_content();
           <?php if (get_field('your_facebook')): ?>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Your Facebook Page" src="/wp-content/uploads/fb-icon.png" alt="Facebook Link">
+              <img src="/wp-content/uploads/fb-icon.png" alt="Facebook Link">
             </a>
           </div>
           <?php endif;?>
           <?php if (get_field('your_twitter')): ?>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Your Twitter Page" src="/wp-content/uploads/Twitter-Icon.png" alt="Twitter Link">
+              <img src="/wp-content/uploads/Twitter-Icon.png" alt="Twitter Link">
             </a>
           </div>
           <?php endif;?>
           <?php if (get_field('your_yelp')): ?>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Your Yelp Page" src="/wp-content/uploads/Yelp-icon.png" alt="Yelp Link">
+              <img src="/wp-content/uploads/Yelp-icon.png" alt="Yelp Link">
             </a>
           </div>
           <?php endif;?>
           <?php if (get_field('your_instagram')): ?>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Your Instagram Page" src="/wp-content/uploads/Instagram-icon.png" alt="Instagram Link">
+              <img src="/wp-content/uploads/Instagram-icon.png" alt="Instagram Link">
             </a>
           </div>
           <?php endif;?>
           <?php if (get_field('your_linkedin')): ?>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Your Linkedin Page" src="/wp-content/uploads/Linkedin-Icon.png" alt="Linkedin Link">
+              <img src="/wp-content/uploads/Linkedin-Icon.png" alt="Linkedin Link">
             </a>
           </div>
           <?php endif;?>
           <?php if (get_field('your_google_plus')): ?>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Your Google Plus Page" src="/wp-content/uploads/Google-icon.png" alt="Google Plus Link">
+              <img src="/wp-content/uploads/Google-icon.png" alt="Google Plus Link">
             </a>
           </div>
           <?php endif;?>
@@ -149,35 +149,34 @@ the_content();
 
           <div class="flex-icon-item">
             <a href="tel:404-321-1234">
-              <img title="Phone: 404-321-1234" src="/wp-content/uploads/Cell-icon.png" alt="Phone Number">
+              <img src="/wp-content/uploads/Cell-icon.png" alt="Phone Number">
             </a>
           </div>
           <div class="flex-icon-item">
             <a href="mailto:webmaster@example.com">
-              <img title="your@email.com" src="/wp-content/uploads/Email-icon.png" alt="Email Address">
+              <img src="/wp-content/uploads/Email-icon.png" alt="Email Address">
             </a>
           </div>
           <?php if (get_field('your_site')): ?>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="http://website.com" src="/wp-content/uploads/Website-icon.png" alt="Website Link">
+              <img src="/wp-content/uploads/Website-icon.png" alt="Website Link">
             </a>
           </div>
           <?php endif;?>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Hit Me Up" src="/wp-content/uploads/HMU-icon.png" alt="HMU Link">
+              <img src="/wp-content/uploads/HMU-icon.png" alt="HMU Link">
             </a>
           </div>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Your Chat Page" src="/wp-content/uploads/Instant-Messaging-icon.png" alt="Chat Link">
+              <img src="/wp-content/uploads/Instant-Messaging-icon.png" alt="Chat Link">
             </a>
           </div>
           <div class="flex-icon-item">
             <a href="#">
-              <img title="Flag This List" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png"
-                alt="Flag Link">
+              <img src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png" alt="Flag Link">
             </a>
           </div>
 

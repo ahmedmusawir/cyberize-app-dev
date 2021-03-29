@@ -12,6 +12,8 @@
   <header class="entry-header">
 
     <?php
+          // SHOW STATE & CITY IN A PARENT CHILD ORDER
+          print_taxonomy_ranks( get_the_terms( get_the_ID(), 'states' ) );
 /**
  *
  * CATEGORY LIST WITH PARENT CHILD RELATIONSHIP

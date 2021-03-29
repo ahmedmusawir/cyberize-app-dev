@@ -2,44 +2,57 @@
 /**
  * This is the one that shows the Categories (Parent/Child hierarchy) with arrows
  */
-function show_all_categories_without_links_and_arrows($post_id, $taxonomy)
-{
+function show_all_categories_without_links_and_arrows($post_id) {
+    $post_term_ids = wp_get_object_terms($post_id, $taxonomy, array('fields' => 'ids', 'hide_empty' => 0));
+    $term_ids = implode(',', $post_term_ids);
 
-    // $taxonomy = 'category';
 
-// Get the term IDs assigned to post.
-    $post_terms = wp_get_object_terms($post_id, $taxonomy, array(
-      'fields' => 'ids',
-      'hide_empty' => 0,
-    ));
-    // echo '<pre>';
-    // print_r($post_terms);
-    // echo '</pre>';
+    $post_terms = get_the_category($post_id);
+    echo '<pre>';
+    print_r($post_terms_ids);
+    echo '</pre>';
 
-// Separator between links.
-    $separator = '&nbsp;<i class="fas fa-arrow-right"></i>&nbsp;';
-
-    if (!empty($post_terms) && !is_wp_error($post_terms)) {
-
-        $term_ids = implode(',', $post_terms);
-
-        $terms = wp_list_categories(array(
-            'title_li' => '',
-            'style' => '',
-            'echo' => false,
-            'taxonomy' => $taxonomy,
-            'include' => $term_ids,
-        ));
-
-        $terms = trim(str_replace('<br />', $separator, $terms));
-        // $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
-
-        // Display post categories.
-        echo '<small id="for-list-preview-window" class="font-weight-bold">';
-        echo $terms;
-        echo '</small>';
+    foreach ($post_terms as $post_term) {
+        if ($post_term->parent == 0) {
+            $parent_cat_id = $post_term->term_id;
+            $parent_cat_name = $post_term->name;
+        } 
+        // echo $parent_cat_id;
     }
 
-    echo '</section>'; //END .post-item-cat-list
+    $args = array(
+        'title_li' => '',
+        'style' => '',
+        'echo' => false,
+        'hierarchical' => true,
+        'child_of' => $parent_cat_id,   //parent category
+        'include' => $term_ids,
+    );
+
+
+    $separator = '&nbsp;<i class="fas fa-arrow-right"></i>&nbsp;';
+
+
+    $terms = wp_list_categories($args); 
+    $terms = trim(str_replace('<br />', $separator, $terms));
+
+    echo '<small class="for-list-preview-window font-weight-bold text-dark">';
+    echo 'Categories Cannot be displayed until published.'; 
+    echo '</small>';
+
+    // if ($terms == 'No categories') {
+    //     echo '<small class="for-list-preview-window font-weight-bold text-dark">';
+    //     echo 'New category with 0 Listings. Cannot be displayed until published.'; 
+    //     echo '</small>';
+    // } else {
+    //     echo '<small class="font-weight-bold">';
+    //     echo $parent_cat_name . $separator;
+    //     echo '</small>';
+    //     echo '<small class="for-list-preview-window font-weight-bold text-dark">';
+    //     echo $terms; 
+    //     echo '</small>';
+    // }
+    // Display post categories.
+    
 
 }

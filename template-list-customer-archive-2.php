@@ -89,7 +89,7 @@ foreach ($current_user_published_posts as $list) {
 // wp_reset_postdata();
 // rewind_posts();
 
-      ?>
+?>
       <h5 class="font-weight-bold">NON-ACTIVE LISTS:</h5>
       <?php
 // UNPUBLISHED LIST COUNT
@@ -122,11 +122,11 @@ if ($list->have_posts()):
 
         // ========================================= DISPLAY CATEGORY LIST W/ LINKS ========================================
 
+        $taxonomy = 'category';
         $post_id = get_the_id();
 
-        // show_all_categories_without_links_and_arrows($post_id);
+        show_all_categories_w_links_and_arrows($post_id, $taxonomy);
         echo '<hr>';
-
 
         // ========================================= END CATEGORY LIST W/ LINKS ========================================
 
@@ -143,21 +143,6 @@ endif;
   <hr>
 
 </main><!-- #main -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/arrive/2.4.1/arrive.min.js"
-  integrity="sha512-wkU3qYWjenbM+t2cmvw2ADRRh4opbOYBjkhrPGHV7M6dcE/TR0oKpoDkWXfUs3HrulI2JFuTQyqPLRih1V54EQ=="
-  crossorigin="anonymous"></script>
-
-<script>
-jQuery(function($) {
-  //   $(document).arrive('.for-list-preview-window', function() {
-  //     var catList = $(this);
-  //     catList.find('a').removeAttr('href').css('color', 'red');
-  //   });
-
-  $('.for-list-preview-window').find('a').removeAttr('href').css('color', 'black');
-});
-</script>
 
 <?php
 get_footer();
