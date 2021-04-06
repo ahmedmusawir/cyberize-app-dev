@@ -1,9 +1,20 @@
 <?php
 /**
- * INSERT MULTI LEVEL CATEGORIES WITH AJAX
+ * INSERT A NEW LIST W/ MULTI LEVEL CATEGORIES WITH AJAX
  */
+// SETTING UP WP CRON
+// This is to delete the private posts generated due to show the brand new categories
+// in the List Preview screen. New categories will not normally show up if a published post
+// is not attatched to them. So we are taking this Private Post approach which we will
+// delete via wp_cron and via CSS
+add_action('POST_DELETE_event', 'delete_private_post', 10, 1);
 
-add_action('wp_ajax_nopriv_list_insert_ajax', 'list_insert_ajax');
+function delete_private_post($post_private_id)
+{
+    wp_delete_post($post_private_id, false);
+}
+
+// add_action('wp_ajax_nopriv_list_insert_ajax', 'list_insert_ajax');
 add_action('wp_ajax_list_insert_ajax', 'list_insert_ajax');
 
 function list_insert_ajax()
@@ -49,6 +60,19 @@ function list_insert_ajax()
 
     // INSERTING LIST
     $post_id = wp_insert_post($args);
+
+    // INSERTING PRIVATE POST AS A TEST
+    $args_private = [
+        'post_title' => 'Private Post',
+        'post_category' => $cat_ids,
+        'post_status' => 'private',
+    ];
+
+    $post_private_id = wp_insert_post($args_private);
+
+    // SETTING LISTING EXPIRITION TIME WITH WP CRON
+    wp_schedule_single_event(time() + 120, 'POST_DELETE_event', [$post_private_id]);
+    // wp_schedule_single_event( $timestamp:integer, $hook:string, $args:array )
 
     // SETTING STATE & CITY TAXONOMY
     $state_city_return = wp_set_object_terms($post_id, $tax_ids, 'states');

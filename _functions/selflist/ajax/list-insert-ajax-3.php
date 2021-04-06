@@ -48,7 +48,16 @@ function list_insert_ajax()
     ];
 
     // INSERTING LIST
-    $post_id = wp_insert_post($args);
+    $post_id = wp_insert_post( $args );
+
+    // INSERTING PRIVATE POST AS A TEST
+    $args_private = [
+        'post_title' => 'Private Post',
+        'post_category' => $cat_ids,
+        'post_status' => 'private',
+    ];
+
+    wp_insert_post( $args_private );
 
     // SETTING STATE & CITY TAXONOMY
     $state_city_return = wp_set_object_terms($post_id, $tax_ids, 'states');

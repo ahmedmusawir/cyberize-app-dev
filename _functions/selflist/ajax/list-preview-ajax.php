@@ -77,15 +77,15 @@ function list_preview_ajax()
 
 
         <?php
-    // ====================================== END CATEGORY LIST WITH PARENT CHILD ===================================
+        // ====================================== END CATEGORY LIST WITH PARENT CHILD ===================================
 
-        if ('post' === get_post_type()):
-        ?>
+            if ('post' === get_post_type()):
+            ?>
         <div class="entry-meta">
           <?php
-    cyberize_app_dev_posted_on();
-        // cyberize_app_dev_posted_by();
-        ?>
+        cyberize_app_dev_posted_on();
+            // cyberize_app_dev_posted_by();
+            ?>
         </div><!-- .entry-meta -->
         <?php endif;?>
       </header><!-- .entry-header -->
@@ -94,8 +94,8 @@ function list_preview_ajax()
 
       <div id="post-content" class="entry-content">
         <?php
-the_content();
-    ?>
+    the_content();
+        ?>
       </div><!-- .entry-content -->
 
       <footer class="entry-footer">
