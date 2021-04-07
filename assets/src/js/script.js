@@ -9,6 +9,7 @@ import FormValdationTest from './_modules/_test/formVaidationTest';
 import SelflistSearch from './_modules/SelflistSearch';
 import SelflistCatSearch from './_modules/SelflistCatSearch';
 import SelflistPostSearch from './_modules/SelflistPostSearch';
+import SelflistCatSearchJson from './_modules/SelflistCatSearchJson';
 // LIST INSERT RELATED
 import CatSelectDataParent from './_modules/selflist-crud/CatSelectDataParent';
 import CatSelectionEvents from './_modules/selflist-crud/CatSelectionEvents';
@@ -60,6 +61,8 @@ class App {
     new SelflistCatSearch();
     // Selflist Post Item Search Filter - non REST
     new SelflistPostSearch();
+    // Selflist List Category Search from JSON file
+    new SelflistCatSearchJson();
 
     // SELFLIST LIST INSERT PAGE CAT SELECT DROPDOWNS
     new CatSelectDataParent();

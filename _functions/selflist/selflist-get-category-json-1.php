@@ -27,8 +27,6 @@ function get_selflist_main_cats_to_json()
             'mainCatName' => $main_cat->name,
             'mainCatSlug' => $main_cat->slug,
             'mainCatId' => $main_cat->term_id,
-            'mainCount' => $main_cat->count,
-            'mainLink' => get_category_link($main_cat->term_id),
             $new_results,
         ));
     }

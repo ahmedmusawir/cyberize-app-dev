@@ -52,8 +52,8 @@ function get_selflist_sub_cats_to_json($cat_id)
                 'secondoSlug' => $sub2_cat->slug,
                 'secondoId' => $sub2_cat->term_id,
                 'parentId' => $sub2_cat->parent,
-                'primoLink' => get_category_link($sub2_cat->term_id),
-                'primoCount' => $sub2_cat->count,
+                'secondoLink' => get_category_link($sub2_cat->term_id),
+                'secondoCount' => $sub2_cat->count,
             ));
 
             /**
@@ -72,8 +72,8 @@ function get_selflist_sub_cats_to_json($cat_id)
                     'terzoSlug' => $sub3_cat->slug,
                     'terzoId' => $sub3_cat->term_id,
                     'parentId' => $sub3_cat->parent,
-                    'primoLink' => get_category_link($sub3_cat->term_id),
-                    'primoCount' => $sub3_cat->count,
+                    'terzoLink' => get_category_link($sub3_cat->term_id),
+                    'terzoCount' => $sub3_cat->count,
                 ));
 
             } //END sub4_cats
