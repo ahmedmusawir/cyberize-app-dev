@@ -34,7 +34,7 @@ if (is_user_logged_in()) {
   <div id="category-search-json-result" class="card-columns">
 
 
-  </div><!-- #main -->
+  </div> <!-- #main -->
 
   <?php
 get_footer();

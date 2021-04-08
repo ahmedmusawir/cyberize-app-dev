@@ -120,12 +120,14 @@ a {
 /** 
  * GLOBAL SPINNER LOADER
 */
-.spinner-loader {
+.loading-spinner {
   display: block;
-  margin: 5rem auto;
+  margin-top: 2rem;
+  margin-left: 0rem;
+  clear: both;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border: 0.25rem solid rgba(0, 0, 0, 0.2);
   border-top-color: red;
   -webkit-animation: spin 1s infinite linear;

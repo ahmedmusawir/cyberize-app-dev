@@ -72,43 +72,41 @@ class SelflistCatSearch {
       this.theJsonData.map((mainCat) => {
         const mainCatTitle = mainCat.mainCatName;
         const mainCatTitleJson = mainCatTitle.toLowerCase();
+        catetoryHtmlItem += `
+        <a href="${mainCat.mainLink}">
+          <div class="card card-moose border-danger mb-3 animate__animated animate__zoomIn">
+            <div class="card-header bg-danger">
+              <span class="text-light">${mainCat.mainCatName}</span>
+              <span class="badge badge-pill badge-light">
+                ${mainCat.mainCount}              
+              </span>
+            </div>
+        `;
 
         if (mainCatTitleJson.indexOf(inputText) != -1) {
-          catetoryHtmlItem += `
-          <a href="${mainCat.mainLink}">
-            <div class="card card-moose border-danger mb-3 animate__animated animate__zoomIn">
-              <div class="card-header bg-danger">
-                <span class="text-light font-weight-bold">${mainCat.mainCatName}</span>
-                <span class="badge badge-pill badge-light">
-                  ${mainCat.mainCount}              
-                </span>
-              </div>
-          `;
           console.log(`
           Main Cat: ${mainCat.mainCatName}
           ---------------------------------------
           `);
-
           // COLLECTING ALL PRIMO CATS
           const primoCats = mainCat[0].primo;
           // CLEARING THE ZERO LIST COUNT ONES
           const primoCatsWithList = primoCats.filter(
             (primo) => primo.primoCount != 0
           );
-          catetoryHtmlItem += `
-          <div class="card-body text-danger">
-            <ul class="primo">`;
 
           // LOOPING THRU ALL PRIMO CATS UNDER A MAIN CAT
           primoCatsWithList.map((primo) => {
             console.info(primo.primoName);
             catetoryHtmlItem += `
-              <li class="primo-item">
-                <a href="${primo.primoLink}" class="btn btn-outline-danger btn-sm">&nbsp;
-                  ${primo.primoName}
-                  <span class="badge badge-pill badge-dark">${primo.primoCount}</span>
-                </a>
-              </li>
+            <div class="card-body text-danger">
+              <ul class="primo">
+                <li class="primo-item">
+                  <a href="${primo.primoLink}" class="btn btn-outline-danger btn-sm">&nbsp;
+                    ${primo.primoName}
+                    <span class="badge badge-pill badge-dark">${primo.primoCount}</span>
+                  </a>
+                </li>
             `;
 
             // COLLECTING ALL THE SECONDO CATS
@@ -166,22 +164,20 @@ class SelflistCatSearch {
           catetoryHtmlItem += `
                   </ul> <!-- end of primo -->
                 </div> <!-- end of card-body -->
-                </div> <!-- end of card : both divs need to be kept-->
-              </div> <!-- end of card : this is wrong but this works-->
+              </div> <!-- end of card -->
             </a> <!-- end of Main Categoty Link -->
           `;
+          this.displaySearchResults(catetoryHtmlItem);
         }
       });
-      this.displaySearchResults(catetoryHtmlItem);
-      // console.log(catetoryHtmlItem);
     } else {
       this.spinnerVisible = false;
       this.searchResultBox.html('');
     }
   };
 
-  displaySearchResults = (catetoryHtmlItem) => {
-    this.searchResultBox.append(catetoryHtmlItem);
+  displaySearchResults = (mainCatTitle) => {
+    this.searchResultBox.append(`<h5>${mainCatTitle}</h5>`);
     this.spinnerVisible = false;
   };
 }
