@@ -16,6 +16,10 @@ function unlist_listing_now($post_id)
     );
 
     $post_update_status = wp_update_post($args);
+
+    // UPDATE THE CAT DATA JSON FILE [This updates the List Count number]
+    // This function is from: _functions/selflist/selflist-get-category-json.php
+    get_selflist_main_cats_to_json();
 }
 
 // add_action('wp_ajax_nopriv_list_payment_and_publish_ajax', 'list_payment_and_publish_ajax');
@@ -49,8 +53,9 @@ function list_payment_and_publish_ajax()
         // SETTING PAYMENT POINTS AS MINUTES
         $minutes = $publish_days;
 
-        // SETTING LISTING EXPIRITION TIME WITH WP CRON
-        wp_schedule_single_event(time() + $minutes * 60, 'UNLIST_event', [$post_id]);
+        // SETTING LISTING EXPIRITION TIME WITH WP CRON 
+        // [DISABLED TEMPORARILY]
+        // wp_schedule_single_event(time() + $minutes * 60, 'UNLIST_event', [$post_id]);
         // wp_schedule_single_event( $timestamp:integer, $hook:string, $args:array )
     }
 
@@ -65,6 +70,10 @@ function list_payment_and_publish_ajax()
         'points_update_success' => $points_updated,
         'post_update_status' => $post_update_status,
     );
+
+    // UPDATE THE CAT DATA JSON FILE [This updates the List Count number]
+    // This function is from: _functions/selflist/selflist-get-category-json.php
+    get_selflist_main_cats_to_json();
 
     // SENDING JSON OBJECT
     wp_send_json($list_payment_data_array);

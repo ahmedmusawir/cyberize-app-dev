@@ -36,7 +36,9 @@
   }
 
   // CATEGORY SEARCH RESULT BOX IN CATEGORY INSERT PAGE
-  #category-search-result {
+
+  #category-search-result,
+  #category-search-json-result {
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -71,11 +73,12 @@
 
       .primo-item {
         margin-top: 1rem;
-        background: linear-gradient(
-          45deg,
-          transparent,
-          lighten($cg-primary, 45%)
-        );
+        background: lighten($cg-primary, 48%);
+        // background: linear-gradient(
+        //   45deg,
+        //   transparent,
+        //   lighten($cg-primary, 45%)
+        // );
         // background: linear-gradient(45deg, transparent, #e7e7e7);
       }
     }

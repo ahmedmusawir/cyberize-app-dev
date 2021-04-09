@@ -93,6 +93,7 @@ function terzo_cat_insert_ajax()
     );
 
     // UPDATE THE CAT DATA JSON FILE
+    // This function is from: _functions/selflist/selflist-get-category-json.php
     get_selflist_main_cats_to_json();
 
     // SENDING JSON OBJECT

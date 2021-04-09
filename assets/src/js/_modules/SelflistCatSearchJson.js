@@ -51,14 +51,14 @@ class SelflistCatSearch {
       clearTimeout(this.typingTimer);
       // LOADING SPINNER
       if (!this.spinnerVisible) {
-        this.searchResultBox.html('<span class="loading-spinner"></span>');
+        this.searchResultBox.html('<div class="loading-spinner"></div>');
         this.spinnerVisible = true;
       }
       // SETTING TIME OUT FOR KEY PRESS
       this.typingTimer = setTimeout(() => {
         // CALLING SEARCH FUNCTION
         this.searchJsonData(inputText);
-      }, 2000);
+      }, 500);
     }
 
     this.previousValue = inputText;
@@ -181,7 +181,13 @@ class SelflistCatSearch {
   };
 
   displaySearchResults = (catetoryHtmlItem) => {
-    this.searchResultBox.append(catetoryHtmlItem);
+    if (catetoryHtmlItem) {
+      this.searchResultBox.append(catetoryHtmlItem);
+    } else {
+      this.searchResultBox.append(
+        '<h4 class="d-block">No Result Found ... </h4>'
+      );
+    }
     this.spinnerVisible = false;
   };
 }

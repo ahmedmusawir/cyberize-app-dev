@@ -17,13 +17,13 @@ class CatFormValdationParent {
       },
       'Letters and spaces only please'
     );
-    // ADDING LETTERS & NUMBERS ONLY + NO NUMBER TO START -- METHOD TO JQ VALIDATION
+    // ADDING LETTERS & SPACES ONLY METHOD TO JQ VALIDATION
     $.validator.addMethod(
-      'lettersnumbersonly',
+      'letters&numbers-only',
       function (value, element) {
         return this.optional(element) || /^[a-z\-d ][a-z0-9 ]+$/i.test(value);
       },
-      'Letters and numbers only please ... cannot begin with numbers.'
+      'Letters and spaces only please'
     );
   }
 
@@ -72,22 +72,22 @@ class CatFormValdationParent {
       },
       rules: {
         'main-input-main-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 25,
           minlength: 3,
         },
         'main-input-primo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
         'main-input-secondo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
         'main-input-terzo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
@@ -134,19 +134,19 @@ class CatFormValdationParent {
         }
       },
       rules: {
-        // 'primo-input-main-cat': { lettersnumbersonly: true, maxlength: 25, minlength: 3 },
+        // 'primo-input-main-cat': { lettersonly: true, maxlength: 25, minlength: 3 },
         'primo-input-primo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
         'primo-input-secondo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
         'primo-input-terzo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
@@ -198,12 +198,12 @@ class CatFormValdationParent {
       },
       rules: {
         'secondo-input-secondo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
         'secondo-input-terzo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
@@ -255,7 +255,7 @@ class CatFormValdationParent {
       },
       rules: {
         'terzo-input-terzo-cat': {
-          lettersnumbersonly: true,
+          lettersonly: true,
           maxlength: 20,
           minlength: 3,
         },
