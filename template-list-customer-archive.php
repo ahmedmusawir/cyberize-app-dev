@@ -82,14 +82,20 @@ foreach ($current_user_published_posts as $list) {
 
     show_all_categories_w_links_and_arrows($post_id, $taxonomy);
     echo '<hr>';
+    // DELIST BUTTON -->
+    echo '<button class="delist-button-in-user-archive btn btn-outline-danger btn-sm" data-list-id="'. $post_id .'">
+    Delist</button>';
+    echo '<hr>';
+
 // ========================================= END CATEGORY LIST W/ LINKS ========================================
 
 }
 // wp_reset_query();
-// wp_reset_postdata();
+wp_reset_postdata();
 // rewind_posts();
 
       ?>
+
       <h5 class="font-weight-bold">NON-ACTIVE LISTS:</h5>
       <?php
 // UNPUBLISHED LIST COUNT
@@ -126,7 +132,12 @@ if ($list->have_posts()):
 
         // show_all_categories_without_links_and_arrows($post_id);
         echo '<hr>';
-
+        // DELIST BUTTON -->
+        echo '<button class="relist-button-in-user-archive btn btn-outline-danger btn-sm" data-list-id="'. $post_id .'">
+        Relist</button>';
+        echo '<button class="delete-button-in-user-archive btn btn-danger btn-sm ml-3" data-list-id="'. $post_id .'">
+        Delete</button>';
+        echo '<hr>';
 
         // ========================================= END CATEGORY LIST W/ LINKS ========================================
 
@@ -144,20 +155,100 @@ endif;
 
 </main><!-- #main -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/arrive/2.4.1/arrive.min.js"
-  integrity="sha512-wkU3qYWjenbM+t2cmvw2ADRRh4opbOYBjkhrPGHV7M6dcE/TR0oKpoDkWXfUs3HrulI2JFuTQyqPLRih1V54EQ=="
-  crossorigin="anonymous"></script>
+<!-- THE DELSIT MODAL -->
 
-<script>
-jQuery(function($) {
-  //   $(document).arrive('.for-list-preview-window', function() {
-  //     var catList = $(this);
-  //     catList.find('a').removeAttr('href').css('color', 'red');
-  //   });
+<!-- Modal -->
+<div class="modal fade text-center" id="the-DELIST-modal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal-dialog" role="document"> -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center bg-dark">
+        <h5 class="modal-title text-danger" id="exampleModalLabel">Delist Confirmation</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="modal-body">
+        <h4>List ID: <span id="DELIST-list-id"></span></h4>
+        <h4>Your List Will Be Deactivated!</h4>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button id="DELIST-close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <button id="DELIST-action-btn" type="button" class="btn btn-primary">
+          Confirm Deactivation
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
-  $('.for-list-preview-window').find('a').removeAttr('href').css('color', 'black');
-});
-</script>
+<!-- END THE DELSIT MODAL -->
+<!-- THE RELSIT MODAL -->
+
+<!-- Modal -->
+<div class="modal fade text-center" id="the-RELIST-modal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal-dialog" role="document"> -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center bg-dark">
+        <h5 class="modal-title text-danger" id="exampleModalLabel">Relist Confirmation</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="modal-body">
+        <h4>List ID: <span id="RELIST-list-id"></span></h4>
+        <h4>Your List Will Be Activated!</h4>
+        <h5>You have to pay by Points ...</h5>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button id="RELIST-close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <button id="RELIST-action-btn" type="button" class="btn btn-primary">
+          Confirm Activation
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END THE RELSIT MODAL -->
+<!-- THE DELETE MODAL -->
+
+<!-- Modal -->
+<div class="modal fade text-center" id="the-DELETE-modal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal-dialog" role="document"> -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center bg-dark">
+        <h5 class="modal-title text-danger" id="exampleModalLabel">Delete Confirmation</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="modal-body">
+        <h4>List ID: <span id="DELETE-list-id"></span></h4>
+        <h5>Your List Will Be Deleted Permanently!</h5>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button id="DELETE-close-btn" type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <button id="DELETE-action-btn" type="button" class="btn btn-primary">
+          Confirm Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END THE DELETE MODAL -->
 
 <?php
 get_footer();

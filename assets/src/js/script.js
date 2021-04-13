@@ -48,6 +48,10 @@ import CityLoadRestApiEvents from './_modules/selflist-city-state/CityLoadRestAp
 import CiteStateInsertUiEvents from './_modules/selflist-city-state/CityStateInsertUiEvents';
 import CityFormValidationEvents from './_modules/selflist-city-state/CityFormValidationEvents';
 import CityInsertAjaxEvents from './_modules/selflist-city-state/CityInsertAjaxEvents';
+// DELIST, RELIST & DELETE ON USER PROFILE LIST ARCHIVE
+import ProfileDelist from './_modules/selflist-delist-relist/ProfileDelist';
+import ProfileRelist from './_modules/selflist-delist-relist/ProfileRelist';
+import ProfileListDelete from './_modules/selflist-delist-relist/ProfileListDelete';
 
 class App {
   constructor() {
@@ -121,6 +125,11 @@ class App {
     new CiteStateInsertUiEvents();
     new CityFormValidationEvents();
     new CityInsertAjaxEvents();
+
+    // Delist, Relist & Delete
+    new ProfileDelist();
+    new ProfileRelist();
+    new ProfileListDelete();
   }
 
   runTestCode = () => {

@@ -21,9 +21,6 @@ get_header();
   <hr>
 
   <header>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
-      integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.bootstrap3.min.css"
       integrity="sha256-ze/OEYGcFbPRmvCnrSeKbRTtjG4vGLHXgOqsyLFTRjg=" crossorigin="anonymous" />
@@ -32,29 +29,16 @@ get_header();
   <article class="main-content">
 
     <div class="row">
-
       <!-- LIST INSERT BLOCK -->
       <section class="col-sm-6">
 
         <article id="create-new-list-box" class="card p-3  animate__animated animate__zoomIn">
 
-          <!-- THIS IS JUST A MOCK UI UNIT START -->
+          <!-- MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
-          <ul id="test-ui-cat-box" class="card  bg-light p-5 animate__animated animate__zoomIn d-none">
-            <h5 class="font-weight-bold text-dark">Current categories for your List:</h5>
-            <li class="text-dark font-weight-bold ml-1" style="list-style: none;">Tutoring</li>
-            <ul>
-              <li class="text-danger">Math</li>
-              <ul>
-                <li class="text-danger">Grade 10</li>
-                <ul>
-                  <li class="text-danger">Jackson Heights</li>
-                </ul>
-              </ul>
-            </ul>
-          </ul>
+          <?php get_template_part('_custom-template-parts/insert-pg-main-cat-set-display-after-creation'); ?>
 
-          <!-- THIS IS JUST A MOCK UI UNIT END -->
+          <!-- END MAIN CATEGORY SET DISPLAY AFTER INSERTED INTO THE DB -->
 
           <section id="category-choice-box">
             <label class="font-weight-bold" for="exampleFormControlTextarea1">Choose Your Categories:</label>
@@ -68,18 +52,6 @@ get_header();
                     <option value="">Select a Main Caterory...</option>
                     <!-- <option value="AL">Tutoring</option>
                     <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
                     <option value="IN">Indiana</option> -->
                   </select>
                 </article>
@@ -102,18 +74,6 @@ get_header();
                     <option value="">Select a Primo...</option>
                     <!-- <option value="AL">Math</option>
                     <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
                     <option value="IN">Indiana</option> -->
                   </select>
                 </article>
@@ -136,18 +96,6 @@ get_header();
                     <option value="">Select a Secondo...</option>
                     <!-- <option value="AL">Grade 10</option>
                     <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
                     <option value="IN">Indiana</option> -->
                   </select>
                 </article>
@@ -170,18 +118,6 @@ get_header();
                     <option value="">Select a Terzo</option>
                     <!-- <option value="AL">Jackson Heights</option>
                     <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">District of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
                     <option value="IN">Indiana</option> -->
                   </select>
                 </article>
@@ -195,23 +131,25 @@ get_header();
             </div>
             <!-- END TERZO CATEGORY INTERNAL ROW -->
 
-            <!-- OTHER INFO INPUTS START -->
           </section>
 
+          <!-- OTHER INFO INPUTS START -->
+
+
           <div class="form-group mt-5">
-            <label class="font-weight-bold" for="exampleFormControlTextarea1">Description:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+            <label class="font-weight-bold" for="lister-description">Description:</label>
+            <textarea class="form-control" id="lister-description" rows="3"
               placeholder="Add details of your list ..."></textarea>
           </div>
 
           <div class="form-group">
-            <label class="font-weight-bold" for="exampleFormControlTextarea1">Contact Info:</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
+            <label class="font-weight-bold" for="lister-name">Contact Info:</label>
+            <input type="text" class="form-control" id="lister-name" aria-describedby="textHelp"
               placeholder="Your Name">
             <small id="textHelp" class="form-text text-muted">Example: Donald Trump</small>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp"
+            <input type="text" class="form-control" id="lister-address" aria-describedby="textHelp"
               placeholder="Your Address">
             <small id="textHelp" class="form-text text-muted">Example: Trump Tower, 721 Fifth Avenue New York City, NY
               10022 United States </small>
@@ -229,7 +167,9 @@ get_header();
             <small id="textHelp" class="form-text text-muted">Example: https://instagram.com/mypage</small>
           </div>
 
-          <button id="#" type="submit" class="btn btn-primary">Submit</button>
+          <button id="list-insert-button" type="button" class="btn btn-primary">
+            Submit Your List
+          </button>
 
           <!-- END OTHER INFO INPUTS  -->
 
@@ -329,11 +269,11 @@ foreach($categories as $category) : ?>
 
   <footer>
     <script>
-    $(document).ready(function() {
-      $('select').selectize({
-        sortField: 'text'
-      });
-    });
+    // $(document).ready(function() {
+    //   $('select').selectize({
+    //     sortField: 'text'
+    //   });
+    // });
     </script>
   </footer>
 

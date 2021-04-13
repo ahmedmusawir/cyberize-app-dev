@@ -32,7 +32,7 @@ class SelflistCatSearch {
       let data = await response.json();
       // CLEARING THE ZERO LIST COUNT ONES
       this.theJsonData = data.filter((main) => main.mainCount != 0);
-      console.info(this.theJsonData);
+      // console.info(this.theJsonData);
     } catch (e) {
       console.log(e);
     }

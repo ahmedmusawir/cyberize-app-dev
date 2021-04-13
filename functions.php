@@ -137,6 +137,12 @@ require get_theme_file_path('/_functions/selflist/ajax/city-state-filter-ajax.ph
 require get_theme_file_path('/_functions/selflist/ajax/city-insert-ajax.php');
 // MAIN LIST INSERT: HAD TO BE RE-WRITTEN DUE TO TAX_INPUT NOT WORKING. USING PHP NOW INSTEAD OF REST
 require get_theme_file_path('/_functions/selflist/ajax/list-insert-ajax.php');
+// DELSIT AJAX
+require get_theme_file_path('/_functions/selflist/ajax/delist-status-update-ajax.php');
+require get_theme_file_path('/_functions/selflist/ajax/relist-data-update-ajax.php');
+require get_theme_file_path('/_functions/selflist/ajax/delete-list-permanently-ajax.php');
+
+
 
 // FILTERS FOR ACF TO REST PLUGIN ... DON'T NEED THAT PLUGIN
 // Enable the option show in rest

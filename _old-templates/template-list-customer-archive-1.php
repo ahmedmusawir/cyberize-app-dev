@@ -13,7 +13,6 @@
  */
 
 get_header();
-
 ?>
 <?php
 /**
@@ -62,10 +61,7 @@ $arg_published = array(
 $current_user_published_posts = get_posts($arg_published);
 
 // LIST COUNT
-echo '<h6>[ <span><small class="font-weight-bold">TOTAL PUBLISHED LISTS:  ' .
-count($current_user_published_posts) .
-    '</small></span> ]
-</h6>';
+echo '<h6>[ <span><small class="font-weight-bold">TOTAL PUBLISHED LISTS:  ' . count($current_user_published_posts) . '</small></span> ]</h6>';
 echo '<hr>';
 // DISPLAY LIST
 foreach ($current_user_published_posts as $list) {
@@ -74,22 +70,13 @@ foreach ($current_user_published_posts as $list) {
     date('M d, Y', strtotime($list->post_date)) . '</h6>';
     echo '<h6><span class="font-weight-bold">List Content: </span>' . $list->post_content . '</h6>';
     // echo '<h6><span class="font-weight-bold">List Status: </span>' . $list->post_status . '</h6>';
-
-    // ========================================= DISPLAY CATEGORY LIST W/ LINKS ========================================
-
-    $taxonomy = 'category';
-    $post_id = $list->ID;
-
-    show_all_categories_w_links_and_arrows($post_id, $taxonomy);
     echo '<hr>';
-// ========================================= END CATEGORY LIST W/ LINKS ========================================
-
 }
 // wp_reset_query();
 // wp_reset_postdata();
 // rewind_posts();
 
-      ?>
+?>
       <h5 class="font-weight-bold">NON-ACTIVE LISTS:</h5>
       <?php
 // UNPUBLISHED LIST COUNT
@@ -119,16 +106,7 @@ if ($list->have_posts()):
         date('M d, Y', strtotime(get_the_date())) . '</h6>';
         echo '<h6><span class="font-weight-bold">List Content: </span>' . get_the_content() . '</h6>';
         // echo '<h6><span class="font-weight-bold">List Status: </span>' . $list->post_status . '</h6>';
-
-        // ========================================= DISPLAY CATEGORY LIST W/ LINKS ========================================
-
-        $post_id = get_the_id();
-
-        // show_all_categories_without_links_and_arrows($post_id);
         echo '<hr>';
-
-
-        // ========================================= END CATEGORY LIST W/ LINKS ========================================
 
     endwhile;
 
@@ -143,21 +121,6 @@ endif;
   <hr>
 
 </main><!-- #main -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/arrive/2.4.1/arrive.min.js"
-  integrity="sha512-wkU3qYWjenbM+t2cmvw2ADRRh4opbOYBjkhrPGHV7M6dcE/TR0oKpoDkWXfUs3HrulI2JFuTQyqPLRih1V54EQ=="
-  crossorigin="anonymous"></script>
-
-<script>
-jQuery(function($) {
-  //   $(document).arrive('.for-list-preview-window', function() {
-  //     var catList = $(this);
-  //     catList.find('a').removeAttr('href').css('color', 'red');
-  //   });
-
-  $('.for-list-preview-window').find('a').removeAttr('href').css('color', 'black');
-});
-</script>
 
 <?php
 get_footer();
