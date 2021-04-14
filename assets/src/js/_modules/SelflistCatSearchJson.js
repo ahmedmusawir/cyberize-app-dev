@@ -84,10 +84,10 @@ class SelflistCatSearch {
                 </span>
               </div>
           `;
-          console.log(`
-          Main Cat: ${mainCat.mainCatName}
-          ---------------------------------------
-          `);
+          // console.log(`
+          // Main Cat: ${mainCat.mainCatName}
+          // ---------------------------------------
+          // `);
 
           // COLLECTING ALL PRIMO CATS
           const primoCats = mainCat[0].primo;
@@ -101,7 +101,7 @@ class SelflistCatSearch {
 
           // LOOPING THRU ALL PRIMO CATS UNDER A MAIN CAT
           primoCatsWithList.map((primo) => {
-            console.info(primo.primoName);
+            // console.info(primo.primoName);
             catetoryHtmlItem += `
               <li class="primo-item">
                 <a href="${primo.primoLink}" class="btn btn-outline-danger btn-sm">&nbsp;
@@ -131,7 +131,7 @@ class SelflistCatSearch {
             );
             // LOOPING THRU ALL SECONDO TO GET THE TERZOS
             childSecondo.map((secondo) => {
-              console.info(secondo.secondoName);
+              // console.info(secondo.secondoName);
               catetoryHtmlItem += `
               <ul class="secondo">
                 <li>
@@ -149,7 +149,7 @@ class SelflistCatSearch {
               );
               // console.info(childTerzo);
               childTerzo.map((terzo) => {
-                console.info(terzo.terzoName);
+                // console.info(terzo.terzoName);
                 catetoryHtmlItem += `
                 <ul class="terzo">
                   <li>

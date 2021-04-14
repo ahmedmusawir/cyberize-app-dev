@@ -52,7 +52,7 @@ class ProfileRelist {
       type: 'post',
       data: {
         action: this.ajaxFunction,
-        delistId: this.relistId,
+        relistId: this.relistId,
       },
     })
       .done((res) => {

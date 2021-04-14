@@ -56,18 +56,25 @@ class ProfileListDelete {
       },
     })
       .done((res) => {
-        console.log(res);
+        console.log(res.ID);
 
-        // if (res.state_id && res.new_city_id) {
-        // STORING CAT DATA IN LOCAL STORAGE
-        // sessionStorage.setItem('stateCityData', JSON.stringify(res));
-        // this.makeUiAfterCityCreation();
-        // } else {
-        // $('#ajax-failed-message-city').append(res);
-        // }
+        // CHECKING FOR LIST ID FROM AJAX BACKEND
+        if (res.ID == this.deleteId) {
+          alert(`The List (ID: ${res.ID}) has been Deleted Successfully!`);
+        } else {
+          alert(`${res}`);
+        }
+        // REFRESHING THE PAGE
+        location.reload();
       })
-      .fail(() => {
+      .fail((xhr, status, error) => {
+        alert(`List Delete Failure: ${error}
+          Please contact support with this message:
+          'Ajax Failed! In ${this.ajaxFunction}' 
+        `);
         console.log('Ajax Failed! In ' + this.ajaxFunction);
+        // REFRESHING THE PAGE
+        location.reload();
       })
       .always(() => {
         // console.log('Ajax Dynamic Loaction Filter Complete');

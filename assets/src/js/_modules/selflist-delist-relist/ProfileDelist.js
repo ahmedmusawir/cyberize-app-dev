@@ -58,6 +58,16 @@ class ProfileDelist {
       .done((res) => {
         console.log(res);
 
+        // CHECKING FOR LIST ID FROM AJAX BACKEND
+        if (res == this.delistId) {
+          alert(`The List (ID: ${res}) has been Delisted Successfully!
+                Please look under NON-ACTIVE LISTS to find your List`);
+        } else {
+          alert(`${res}`);
+        }
+        // REFRESHING THE PAGE
+        location.reload();
+
         // if (res.state_id && res.new_city_id) {
         // STORING CAT DATA IN LOCAL STORAGE
         // sessionStorage.setItem('stateCityData', JSON.stringify(res));
@@ -66,8 +76,14 @@ class ProfileDelist {
         // $('#ajax-failed-message-city').append(res);
         // }
       })
-      .fail(() => {
+      .fail((xhr, status, error) => {
+        alert(`List Update Failure: ${error}
+          Please contact support with this message:
+          'Ajax Failed! In ${this.ajaxFunction}' 
+        `);
         console.log('Ajax Failed! In ' + this.ajaxFunction);
+        // REFRESHING THE PAGE
+        location.reload();
       })
       .always(() => {
         // console.log('Ajax Dynamic Loaction Filter Complete');

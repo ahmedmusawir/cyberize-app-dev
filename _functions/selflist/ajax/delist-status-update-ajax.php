@@ -10,20 +10,16 @@ add_action('wp_ajax_delist_status_update_ajax', 'delist_status_update_ajax');
 
   $delist_id = $_POST['delistId'];
 
-  echo "Moose DeList ID: $delist_id"; 
+  // echo "Moose DeList ID: $delist_id"; 
 
   $delist_args = array(
     'ID'           => $delist_id,
     'post_status'   => 'pending',
   );
 
-  wp_update_post( $delist_args, true );                        
-      if (is_wp_error($delist_id)) {
-        $errors = $delist_id->get_error_messages();
-        foreach ($errors as $error) {
-          echo $error;
-      }
-  }
+  $delist_status = wp_update_post( $delist_args, true );                        
+  
+  echo $delist_status;
 
   // FOLLOWING IS A MUST FOR AJAX
   wp_die();

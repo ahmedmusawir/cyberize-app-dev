@@ -10,13 +10,14 @@ add_action('wp_ajax_delete_list_permanently_ajax', 'delete_list_permanently_ajax
 
   $delist_id = $_POST['delistId'];
 
-  echo "DeList ID: $delist_id"; 
+  // echo "DeList ID: $delist_id"; 
 
-  // $the_post = get_post($delistId);
+  $list_del_status = wp_delete_post($delist_id, false); // false for Trash Bin
+  // $list_del_status = wp_delete_post($delist_id, false); // false for Trash Bin
 
-  // echo '<pre>';
-  // echo print_r($the_post);
-  // echo '</pre>';
+  wp_send_json($list_del_status); 
+  // return $list_del_status; 
+
 
   // FOLLOWING IS A MUST FOR AJAX
   wp_die();
