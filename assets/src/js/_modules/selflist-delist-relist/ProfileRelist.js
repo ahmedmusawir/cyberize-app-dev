@@ -23,7 +23,7 @@ class ProfileRelist {
   }
 
   init = () => {
-    console.log('Profile Relist Btn ...');
+    // console.log('Profile Relist Btn ...');
   };
 
   setEvents = () => {
@@ -56,18 +56,32 @@ class ProfileRelist {
       },
     })
       .done((res) => {
-        console.log(res);
-
-        // if (res.state_id && res.new_city_id) {
-        // STORING CAT DATA IN LOCAL STORAGE
-        // sessionStorage.setItem('stateCityData', JSON.stringify(res));
-        // this.makeUiAfterCityCreation();
-        // } else {
-        // $('#ajax-failed-message-city').append(res);
-        // }
+        // CHECKING FOR LIST ID FROM AJAX BACKEND
+        if (res.ID == this.relistId) {
+          // STORING CAT DATA IN LOCAL STORAGE
+          sessionStorage.setItem('relistData', JSON.stringify(res));
+          // MESSAGE BEFORE REDIRECTION
+          alert(
+            `The List (ID: ${res.ID}) is ready to Relist! Click Ok to be redirected to the Add List Page`
+          );
+          // REDIRECTING TO LIST INSERT PAGE
+          window.location.href = '/list-insert/';
+        } else {
+          alert(`List ID ${res} did not match! Relist failed...
+          Please contact support with the message above.
+          `);
+          // REFRESHING THE PAGE
+          location.reload();
+        }
       })
-      .fail(() => {
+      .fail((xhr, status, error) => {
+        alert(`Relist Failure: ${error}
+          Please contact support with this message:
+          'Ajax Failed! In ${this.ajaxFunction}' 
+        `);
         console.log('Ajax Failed! In ' + this.ajaxFunction);
+        // REFRESHING THE PAGE
+        location.reload();
       })
       .always(() => {
         // console.log('Ajax Dynamic Loaction Filter Complete');

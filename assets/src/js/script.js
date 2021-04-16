@@ -52,6 +52,9 @@ import CityInsertAjaxEvents from './_modules/selflist-city-state/CityInsertAjaxE
 import ProfileDelist from './_modules/selflist-delist-relist/ProfileDelist';
 import ProfileRelist from './_modules/selflist-delist-relist/ProfileRelist';
 import ProfileListDelete from './_modules/selflist-delist-relist/ProfileListDelete';
+import ListInsertRelist from './_modules/selflist-delist-relist/ListInsertRelist';
+// MEMBER PROFILE ADDITIONAL INFO
+import ProfileAdditionalDataUi from './_modules/selflist-profile-data/ProfileAdditionalDataUi';
 
 class App {
   constructor() {
@@ -130,6 +133,10 @@ class App {
     new ProfileDelist();
     new ProfileRelist();
     new ProfileListDelete();
+    new ListInsertRelist();
+
+    // Member Profile Additional Info
+    new ProfileAdditionalDataUi();
   }
 
   runTestCode = () => {

@@ -23,7 +23,7 @@ class ProfileListDelete {
   }
 
   init = () => {
-    console.log('Profile List Delete ...');
+    // console.log('Profile List Delete ...');
   };
 
   setEvents = () => {

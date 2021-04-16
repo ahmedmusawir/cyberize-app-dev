@@ -1,6 +1,6 @@
 <?php 
 /**
- * DELSIT - LIST STATUS UPDATE TO PENDING WITH AJAX
+ * RELSIT - LIST RECREATION WITH AJAX
  */
 
 add_action('wp_ajax_nopriv_relist_data_update_ajax', 'relist_data_update_ajax');
@@ -17,6 +17,8 @@ add_action('wp_ajax_relist_data_update_ajax', 'relist_data_update_ajax');
   // GET THE MAIN CAT
   foreach ($the_list_cats as $cat) {
     if ($cat->parent == 0 ) {
+      // GET THE SUB CATS
+      // Following comes from _functions/selflist/selflist-get-category-json.php
       $new_results = get_selflist_sub_cats_to_json($cat->term_id);
 
       $cat_results = [
@@ -28,6 +30,7 @@ add_action('wp_ajax_relist_data_update_ajax', 'relist_data_update_ajax');
   }
 
   $list_details = [
+    'ID' => $relist_id,
     'list_content' => $the_list->post_content,
     'list_cats' => $cat_results,
   ];

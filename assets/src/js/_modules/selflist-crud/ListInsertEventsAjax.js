@@ -119,6 +119,8 @@ class ListInsertEventsAjax extends ListInsertUiDataParent {
         localStorage.removeItem('catData');
         // ADDING INSERTED DATA INTO LOCALSTORAGE FOR PREVIEW PAGE
         localStorage.setItem('newListData', JSON.stringify(res));
+        // REMOVING RELIST DATA FROM SESSION STORAGE
+        sessionStorage.removeItem('relistData');
       })
       .fail((res) => {
         console.error('Sorry ... Ajax failed');
