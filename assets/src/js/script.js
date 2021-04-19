@@ -55,6 +55,8 @@ import ProfileListDelete from './_modules/selflist-delist-relist/ProfileListDele
 import ListInsertRelist from './_modules/selflist-delist-relist/ListInsertRelist';
 // MEMBER PROFILE ADDITIONAL INFO
 import ProfileAdditionalDataUi from './_modules/selflist-profile-data/ProfileAdditionalDataUi';
+import ProfileDataToDbAjax from './_modules/selflist-profile-data/ProfileDataToDbAjax';
+import ProfileAdditionalDataValidation from './_modules/selflist-profile-data/ProfileAdditionalDataValidation';
 
 class App {
   constructor() {
@@ -137,6 +139,8 @@ class App {
 
     // Member Profile Additional Info
     new ProfileAdditionalDataUi();
+    new ProfileDataToDbAjax();
+    new ProfileAdditionalDataValidation();
   }
 
   runTestCode = () => {

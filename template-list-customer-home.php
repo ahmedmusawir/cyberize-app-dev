@@ -22,9 +22,14 @@ $current_user = wp_get_current_user();
 $user_points = get_field('selflist_points', 'user_' . $current_user->id);
 $user_registered = $current_user->user_registered;
 $user_email = $current_user->user_email;
+$user_name = $current_user->display_name;
 $user_total_list_count = count_user_posts($current_user->id, 'post'); // false for all posts
 $user_published_list_count = count_user_posts($current_user->id, 'post', true); // true for public only
 ?>
+<!-- DO NOT DELETE - THESE ARE HIDDEN ITEMS ONLY TO BE USED WITH JAVASCRIPT -->
+<span id="current-member-name"><?php echo $user_name; ?></span>
+<span id="current-member-email"><?php echo $user_email; ?></span>
+<!-- DO NOT DELETE - END THESE ARE HIDDEN ITEMS ONLY TO BE USED WITH JAVASCRIPT -->
 <style>
 .error {
   color: red;
@@ -212,32 +217,19 @@ textarea::placeholder {
           <!-- <form action="" name="list-insert-main-form" id="list-insert-main-form" class="form"> -->
           <form action="" name="additional-info-form" id="additional-info-form" class="form">
 
-            <!-- NAME -->
-            <div class="form-group">
-              <input type="text" class="form-control" id="lister-name" name="lister-name" aria-describedby="textHelp"
-                placeholder="Your Name" value="<?php echo $current_user->display_name ?>" readonly>
-              <small id="textHelp" class="form-text text-muted">Ex: John Doe</small>
-            </div>
-            <!-- EMAIL -->
-            <div class="form-group">
-              <!-- <label class="font-weight-bold" for="lister-email">Email:</label> -->
-              <input type="email" class="form-control" id="lister-email" name="lister-email" aria-describedby="textHelp"
-                placeholder="Your Email Address" value="<?php echo $current_user->user_email ?>" readonly>
-              <small id="textHelp" class="form-text text-muted">Ex: your@email.com</small>
-            </div>
             <!-- PHONE -->
             <div class="form-group">
               <!-- <label class="font-weight-bold" for="lister-phone">Phone:</label> -->
               <input type="tel" class="form-control" id="lister-phone" name="lister-phone" aria-describedby="textHelp"
                 placeholder="Your Phone Number" value="<?php echo $user_phone; ?>" readonly>
-              <small id="textHelp" class="form-text text-muted">Ex: 6781231234</small>
+              <small id="textHelp" class="form-text text-muted">Phone Ex: 6781231234</small>
             </div>
             <!-- WEBSITE -->
             <div class="form-group">
               <!-- <label class="font-weight-bold" for="lister-website">Website:</label> -->
               <input type="text" class="form-control" id="lister-website" name="lister-website"
                 aria-describedby="textHelp" placeholder="Your Website" value="<?php echo $user_website; ?>" readonly>
-              <small id="textHelp" class="form-text text-muted">Ex: https://your-website.com</small>
+              <small id="textHelp" class="form-text text-muted">Website Ex: https://your-website.com</small>
             </div>
 
 

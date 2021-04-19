@@ -141,6 +141,9 @@ require get_theme_file_path('/_functions/selflist/ajax/list-insert-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/delist-status-update-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/relist-data-update-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/delete-list-permanently-ajax.php');
+// MEMBER PROFILE DATA INSERT AJAX
+require get_theme_file_path('/_functions/selflist/ajax/profile-data-insert-ajax.php');
+
 
 
 

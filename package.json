@@ -32,7 +32,7 @@
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0-beta.40",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-polyfill": "^6.26.0",
     "babelify": "^10.0.0",
@@ -85,6 +85,7 @@
   "dependencies": {
     "@popperjs/core": "^2.4.0",
     "arrive": "^2.4.1",
+    "idb-keyval": "^5.0.5",
     "popper": "^1.0.1",
     "popper.js": "^1.16.1",
     "react": "^16.9.0",

@@ -30,20 +30,20 @@ function list_insert_ajax()
     // PREPARING POST ARGS
     $args = [
         'post_title' => $post_args['title'],
-        'post_content' => $post_args['content'],
+        'post_content' => sanitize_text_field($post_args['content']),
         'post_status' => $post_args['status'],
         'post_category' => $cat_ids,
         'meta_input' => [
-            'your_name' => $post_args['name'],
-            'your_phone' => $post_args['phone'],
-            'your_email' => $post_args['email'],
-            'your_site' => $post_args['site'],
-            'your_facebook' => $post_args['facebook'],
-            'your_yelp' => $post_args['yelp'],
-            'your_instagram' => $post_args['instagram'],
-            'your_linkedin' => $post_args['linkedin'],
-            'your_google_plus' => $post_args['googlePlus'],
-            'your_twitter' => $post_args['twitter'],
+            'your_name' => sanitize_text_field($post_args['name']),
+            'your_phone' => sanitize_text_field($post_args['phone']),
+            'your_email' => sanitize_text_field($post_args['email']),
+            'your_site' => sanitize_text_field($post_args['site']),
+            'your_facebook' => sanitize_text_field($post_args['facebook']),
+            'your_yelp' => sanitize_text_field($post_args['yelp']),
+            'your_instagram' => sanitize_text_field($post_args['instagram']),
+            'your_linkedin' => sanitize_text_field($post_args['linkedin']),
+            'your_google_plus' => sanitize_text_field($post_args['googlePlus']),
+            'your_twitter' => sanitize_text_field($post_args['twitter']),
         ],
     ];
 

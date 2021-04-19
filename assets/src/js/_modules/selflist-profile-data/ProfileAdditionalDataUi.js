@@ -7,6 +7,7 @@ class ProfileAdditionalDataUi {
     this.infoEditBtn = $('#additional-info-edit-btn');
     this.infoCancelBtn = $('#additional-info-cancel-btn');
     this.infoForm = $('#additional-info-form');
+
     this.infoUpdateBtn = $('#profile-info-update-button');
     this.passResetForm = $('#password-reset-form');
     this.passEditBtn = $('#password-edit-btn');
