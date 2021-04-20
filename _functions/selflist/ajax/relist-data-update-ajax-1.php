@@ -10,23 +10,6 @@ add_action('wp_ajax_relist_data_update_ajax', 'relist_data_update_ajax');
 
   $relist_id = $_POST['relistId'];
 
-  // GETTING CITY & STATE
-  $city_state = get_the_terms($relist_id, 'states');
-  // echo '<pre>';
-  // print_r($city_state);
-  // echo '</pre>';
-
-  foreach($city_state as $item) {
-    if($item->parent == 0) {
-      $state = $item->name;
-      $state_id = $item->term_id;
-    }
-    else {
-      $city = $item->name;
-      $city_id = $item->term_id;
-    }
-  }
-  
   $the_list = get_post($relist_id);
   $the_list_cats = get_the_category($relist_id);
   $cat_results = [];
@@ -50,14 +33,19 @@ add_action('wp_ajax_relist_data_update_ajax', 'relist_data_update_ajax');
     'ID' => $relist_id,
     'list_content' => $the_list->post_content,
     'list_cats' => $cat_results,
-    'state' => $state,
-    'state_id' => $state_id,
-    'city' => $city,
-    'city_id' => $city_id,
   ];
 
+  // echo '<pre>';
+  // print_r($list_details);
+  // echo '</pre>';
+
+  // die();
 
   wp_send_json($list_details);
+
+
+
+
 
   // FOLLOWING IS A MUST FOR AJAX
   wp_die();

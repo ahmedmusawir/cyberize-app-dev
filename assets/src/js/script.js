@@ -17,6 +17,7 @@ import ListInsertUiDataParent from './_modules/selflist-crud/ListInsertUiDataPar
 import ListInsertValidationEvents from './_modules/selflist-crud/ListInsertValidationEvents';
 import ListInsertEventsAjax from './_modules/selflist-crud/ListInsertEventsAjax';
 import ListPreviewEvents from './_modules/selflist-crud/ListPreviewEvents';
+import ListFormAutoFiller from './_modules/selflist-crud/ListFormAutoFiller';
 // LIST PAYMENT RELATED
 import PaymentSummaryDateTimePicker from './_modules/selfList-payments/PaymentSummaryDateTimePicker';
 import PaymentSummaryUiEvents from './_modules/selfList-payments/PaymentSummaryUiEvents';
@@ -55,8 +56,9 @@ import ProfileListDelete from './_modules/selflist-delist-relist/ProfileListDele
 import ListInsertRelist from './_modules/selflist-delist-relist/ListInsertRelist';
 // MEMBER PROFILE ADDITIONAL INFO
 import ProfileAdditionalDataUi from './_modules/selflist-profile-data/ProfileAdditionalDataUi';
-import ProfileDataToDbAjax from './_modules/selflist-profile-data/ProfileDataToDbAjax';
+import ProfileDataUpdateAjax from './_modules/selflist-profile-data/ProfileDataUpdateAjax';
 import ProfileAdditionalDataValidation from './_modules/selflist-profile-data/ProfileAdditionalDataValidation';
+import ProfileDataToIndexDb from './_modules/selflist-profile-data/ProfileDataToIndexDb';
 
 class App {
   constructor() {
@@ -80,6 +82,8 @@ class App {
     /**
      * LIST INSERT RELATED CLASSES
      */
+    // LIST FORM AUTO FILLER W/ PROFILE DATA
+    new ListFormAutoFiller();
     // LIST INSERT PAGE MAIN POST INSERT EVENTS (a child of ListInsertUiEvents)
     new ListInsertEventsAjax();
     // LIST INSERT VALIDATION EVENTS (a child of CatSelectionEvents)
@@ -139,8 +143,9 @@ class App {
 
     // Member Profile Additional Info
     new ProfileAdditionalDataUi();
-    new ProfileDataToDbAjax();
+    new ProfileDataUpdateAjax();
     new ProfileAdditionalDataValidation();
+    new ProfileDataToIndexDb();
   }
 
   runTestCode = () => {

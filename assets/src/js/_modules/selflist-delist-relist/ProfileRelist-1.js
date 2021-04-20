@@ -56,7 +56,6 @@ class ProfileRelist {
       },
     })
       .done((res) => {
-        // console.info(res);
         // CHECKING FOR LIST ID FROM AJAX BACKEND
         if (res.ID == this.relistId) {
           // STORING CAT DATA IN LOCAL STORAGE
@@ -72,7 +71,7 @@ class ProfileRelist {
           Please contact support with the message above.
           `);
           // REFRESHING THE PAGE
-          // location.reload();
+          location.reload();
         }
       })
       .fail((xhr, status, error) => {
@@ -82,7 +81,7 @@ class ProfileRelist {
         `);
         console.log('Ajax Failed! In ' + this.ajaxFunction);
         // REFRESHING THE PAGE
-        // location.reload();
+        location.reload();
       })
       .always(() => {
         // console.log('Ajax Dynamic Loaction Filter Complete');

@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { get, set } from 'idb-keyval';
 
-class ProfileDataToDbAjax {
+class ProfileDataUpdateAjax {
   constructor() {
     // COLLECTING AJAX INFO
     this.ajaxUrl = selflistData.ajax_url;
@@ -72,16 +72,14 @@ class ProfileDataToDbAjax {
       .done((res) => {
         console.info(res);
         console.log('Awesome! ... Ajax Success');
-        // ADDING INSERTED DATA INTO LOCALSTORAGE FOR PREVIEW PAGE
-        // localStorage.setItem('ProfileData', JSON.stringify(res));
         // ADDING DATA INTO INDEXED DB
         set('info', res)
           .then(() => {
-            console.log('saved info into IndexedDB ... first time');
+            console.log('saved info into IndexedDB ... After update');
           })
           .catch(console.warn);
         // PAGE RELOAD TO REFLECT DATA UPDATE
-        // location.reload();
+        location.reload();
       })
       .fail((res) => {
         alert('Sorry update not successful ... Ajax failed');
@@ -95,4 +93,4 @@ class ProfileDataToDbAjax {
   };
 }
 
-export default ProfileDataToDbAjax;
+export default ProfileDataUpdateAjax;

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import ProfileDataToDbAjax from './ProfileDataToDbAjax';
+import ProfileDataUpdateAjax from './ProfileDataUpdateAjax';
 // Using commonjs
 // require('jquery-validation');
 // require('jquery-validation/dist/additional-methods.js');
@@ -7,7 +7,7 @@ import ProfileDataToDbAjax from './ProfileDataToDbAjax';
 import 'jquery-validation';
 import 'jquery-validation/dist/additional-methods.js';
 
-class ProfileAdditionalDataValidation extends ProfileDataToDbAjax {
+class ProfileAdditionalDataValidation extends ProfileDataUpdateAjax {
   constructor() {
     super();
     this.init();

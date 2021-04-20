@@ -1,14 +1,18 @@
 import $ from 'jquery';
-import ProfileDataToDbAjax from './ProfileDataToDbAjax';
+import { get, set } from 'idb-keyval';
+import ProfileDataToDbAjax from './ProfileDataUpdateAjax';
 
 class ProfileDataToIndexDb extends ProfileDataToDbAjax {
   constructor() {
     super();
+    // COLLECTING UNIQUE PAGE ELEMENT
+    // This is done so that the Data re-write doesn't happen with
+    // every other page load. This limits it to only the Profile Page
+    this.infoContainer = $('#additional-profile-data-box');
     this.init();
   }
 
   init = () => {
-    console.log('ProfileDataToDbAjax - Insert Social');
     // LOADING INITIAL DATA INTO INDX DB AS SOON AS THE PROFILE PAGE LOADS
     // This is mainly to keep the data handy in case there is no data update.
     // Data will be ready to be loaded into the List Insert Page automatically.
@@ -27,17 +31,49 @@ class ProfileDataToIndexDb extends ProfileDataToDbAjax {
     const googlePlus = this.socialGooglePlus.val();
     const twitter = this.socialTwitter.val();
 
+    const profileObj = {
+      name,
+      email,
+      phone,
+      site,
+      facebook,
+      googlePlus,
+      instagram,
+      linkedin,
+      twitter,
+      yelp,
+    };
+
+    // console.info(profileObj);
+
+    // UPLOADING INTO INDEX DB
+    // Adding profile data into IndexedDB only when the Profile page is loaded
+    if (this.infoContainer.length) {
+      set('info', profileObj)
+        .then(() => {
+          console.log(
+            'saved info into IndexedDB ... first time [ProfileDataToIndexDb.js]'
+          );
+        })
+        .catch((err) => {
+          console.error(
+            'Failed to insert Profile Data into indexedDb: [ProfileDataToIndexDb.js]',
+            err
+          );
+        });
+    }
+
     // UNIT TESTNG Debugging Output
-    console.log(`NAME: ${name}`);
-    console.log(`PHONE: ${phone}`);
-    console.log(`EMAIL: ${email}`);
-    console.log(`WEBSITE: ${site}`);
-    console.log(`FACEBOOK: ${facebook}`);
-    console.log(`YELP: ${yelp}`);
-    console.log(`INSTAGRAM: ${instagram}`);
-    console.log(`LINKEDIN: ${linkedin}`);
-    console.log(`GOOGLEPLUS: ${googlePlus}`);
-    console.log(`TWITTER: ${twitter}`);
+    // console.log(`NAME: ${name}`);
+    // console.log(`PHONE: ${phone}`);
+    // console.log(`EMAIL: ${email}`);
+    // console.log(`WEBSITE: ${site}`);
+    // console.log(`FACEBOOK: ${facebook}`);
+    // console.log(`YELP: ${yelp}`);
+    // console.log(`INSTAGRAM: ${instagram}`);
+    // console.log(`LINKEDIN: ${linkedin}`);
+    // console.log(`GOOGLEPLUS: ${googlePlus}`);
+    // console.log(`TWITTER: ${twitter}`);
   };
 }
 

@@ -7,6 +7,10 @@ class ListInsertRelist extends CatSelectDataParent {
     this.init();
     // COLLECTING ELEMENTS
     this.relistDetails;
+    this.relistState;
+    this.relistStateId;
+    this.relistCity;
+    this.relistCityId;
     this.relistMainCatId;
     this.relistMainCatText;
     this.relistPrimoCatId;
@@ -27,19 +31,37 @@ class ListInsertRelist extends CatSelectDataParent {
   getRelistData = () => {
     // READING FROM SESSION STORAGE
     const relistData = JSON.parse(sessionStorage.getItem('relistData'));
-    console.log(relistData);
+    // console.log(relistData);
     // LOAD UP RELIST DATA INTO VARS
     if (relistData) {
-      this.relistDetails = relistData.list_content;
-      this.relistMainCatId = relistData.list_cats.mainCatId;
-      this.relistMainCatText = relistData.list_cats.mainCatName;
-      this.relistPrimoCatId = relistData.list_cats[0].primo[0].primoId;
-      this.relistPrimoCatText = relistData.list_cats[0].primo[0].primoName;
-      this.relistSecondoCatId = relistData.list_cats[0].secondo[0].secondoId;
-      this.relistSecondoCatText =
-        relistData.list_cats[0].secondo[0].secondoName;
-      this.relistTerzoCatId = relistData.list_cats[0].terzo[0].terzoId;
-      this.relistTerzoCatText = relistData.list_cats[0].terzo[0].terzoName;
+      if (relistData.list_content) {
+        this.relistDetails = relistData.list_content;
+      }
+      if (relistData.state) {
+        this.relistState = relistData.state;
+        this.relistStateId = relistData.state_id;
+      }
+      if (relistData.city) {
+        this.relistCity = relistData.city;
+        this.relistCityId = relistData.city_id;
+      }
+      if (relistData.list_cats.mainCatId) {
+        this.relistMainCatId = relistData.list_cats.mainCatId;
+        this.relistMainCatText = relistData.list_cats.mainCatName;
+      }
+      if (relistData.list_cats[0].primo.length) {
+        this.relistPrimoCatId = relistData.list_cats[0].primo[0].primoId;
+        this.relistPrimoCatText = relistData.list_cats[0].primo[0].primoName;
+      }
+      if (relistData.list_cats[0].secondo.length) {
+        this.relistSecondoCatId = relistData.list_cats[0].secondo[0].secondoId;
+        this.relistSecondoCatText =
+          relistData.list_cats[0].secondo[0].secondoName;
+      }
+      if (relistData.list_cats[0].terzo.length) {
+        this.relistTerzoCatId = relistData.list_cats[0].terzo[0].terzoId;
+        this.relistTerzoCatText = relistData.list_cats[0].terzo[0].terzoName;
+      }
 
       // FILL THE INSERT FORM WITH RELIST DATA
       this.displayRelistDataToForm();
@@ -101,6 +123,25 @@ class ListInsertRelist extends CatSelectDataParent {
       this.selectizeTerzo.addOption(selectTerzoOptions);
       // SETTING THE VALUES TO TERZO SELECT
       this.selectizeTerzo.setValue(this.relistTerzoCatId, true);
+    }
+    // SELECTIZE STATE
+    if (this.selectAllStateCtrl) {
+      // SETTING THE VALUES TO TERZO SELECT
+      // This time adding options is not necessary cuz the state data is already
+      // present since it's hard coded data. But for the others where data is
+      // dynamic, adding option is a must
+      this.selectAllStateCtrl.setValue(this.relistStateId, true);
+    }
+    // SELECTIZE CITY
+    if (this.selectAllCityCtrl) {
+      // ADD OPTIONS FOR TERZO SELECT NEED TO RE-DECLARE CUZ ...
+      const selectCityOptions = {
+        value: this.relistCityId,
+        text: this.relistCity,
+      };
+      this.selectAllCityCtrl.addOption(selectCityOptions);
+      // SETTING THE VALUES TO TERZO SELECT
+      this.selectAllCityCtrl.setValue(this.relistCityId, true);
     }
   };
 }

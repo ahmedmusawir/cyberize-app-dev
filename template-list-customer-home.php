@@ -27,8 +27,8 @@ $user_total_list_count = count_user_posts($current_user->id, 'post'); // false f
 $user_published_list_count = count_user_posts($current_user->id, 'post', true); // true for public only
 ?>
 <!-- DO NOT DELETE - THESE ARE HIDDEN ITEMS ONLY TO BE USED WITH JAVASCRIPT -->
-<span id="current-member-name"><?php echo $user_name; ?></span>
-<span id="current-member-email"><?php echo $user_email; ?></span>
+<span class="d-none" id="current-member-name"><?php echo $user_name; ?></span>
+<span class="d-none" id="current-member-email"><?php echo $user_email; ?></span>
 <!-- DO NOT DELETE - END THESE ARE HIDDEN ITEMS ONLY TO BE USED WITH JAVASCRIPT -->
 <style>
 .error {
