@@ -126,6 +126,8 @@ require get_theme_file_path('/_functions/selflist/woocom/add-points-to-member.ph
 require get_theme_file_path('/_functions/selflist/woocom/general-helpers.php');
 // SELFLIST WITH GRAVITY FORMS
 require get_theme_file_path('/_functions/selflist/gravity/add-signup-customer-points.php');
+require get_theme_file_path('/_functions/selflist/gravity/hmu-multi-email-send.php');
+
 
 // THIS UPDATES THE CATEGORY JSON FILE MANUALLY
 // require get_theme_file_path('/_functions/selflist/taxonomy/selflist-auto-update-cat-json.php');

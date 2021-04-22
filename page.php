@@ -12,7 +12,8 @@
  * @package cyberize-app-dev
  */
 
-get_header();
+get_header('loggedout');
+
 ?>
 
 <main id="primary" class="site-main container">

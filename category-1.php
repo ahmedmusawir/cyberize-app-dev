@@ -45,19 +45,13 @@ $current_post_count = $current_category->count;
       <?php if ( have_posts() ) : ?>
 
       <header class="page-header">
-        <!-- HMU BUTTON -->
-        <a href="/list-hmu/?HMU_EMAIL_LIST=moose@cyberizegroup.com,ahmed.musawir@hotmail.com,ahmed.musawir@gmail.com"
-          class="btn btn-dark btn-sm float-right">START HMU </a>
-        <!-- END HMU BUTTON -->
+        <!-- <span class="badge badge-dark float-right"><?php //echo $current_post_count ?></span> -->
 
         <?php
 			the_archive_title( '<h3 class="page-title">', '<span class="badge badge-pill badge-dark ml-2">' . $current_post_count . '</span>
         </h3>' );
         // the_archive_description( '<div class="archive-description">', '</div>' );
         ?>
-
-
-
       </header><!-- .page-header -->
 
       <?php

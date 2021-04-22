@@ -12,13 +12,17 @@
  * @package cyberize-app-dev
  */
 
-get_header('list');
+if (is_user_logged_in()) {
+  get_header();
+} else {
+  get_header('loggedout');
+}
 ?>
 
 <main id="primary" class="site-main container">
-
-  <hr>
-
+  <h2 class="text-center font-weight-bold mt-5">SelfList HMU <small>(Hit Me Up)</small></h2>
+  <!-- THE HMU GRAVITY FORM -->
+  <?php echo do_shortcode('[gravityform id="6" title="false" description="false"]'); ?>
 </main><!-- #main -->
 
 <?php

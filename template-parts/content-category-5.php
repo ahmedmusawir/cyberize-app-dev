@@ -8,44 +8,6 @@
  */
 
 ?>
-<style>
-input[type=checkbox] {
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(2.3);
-  /* IE */
-  -moz-transform: scale(2.3);
-  /* FF */
-  -webkit-transform: scale(2.3);
-  /* Safari and Chrome */
-  -o-transform: scale(2.3);
-  /* Opera */
-  transform: scale(2.3);
-  padding: 10px;
-  margin-top: .75rem;
-}
-
-input[type="checkbox"]:checked:before {
-  font-family: "FontAwesome";
-  content: "\f14a";
-  /* color: red; */
-  /* margin-top: -1rem; */
-  background: transparent;
-  position: absolute;
-  border-radius: 2px;
-  width: 12px;
-  height: 12px;
-  left: 39%;
-  top: 6%;
-  transform: translate(-50%, -50%);
-}
-
-/* DID NOT WORK */
-/* 
-input[type=checkbox]:checked+label:after {
-  background-color: red !important;
-  color: red;
-} */
-</style>
 <article id="post-<?php the_ID();?>" <?php post_class('post-item animate__animated');?>>
   <header class="entry-header">
 
@@ -169,9 +131,7 @@ the_excerpt();
         </a>
       </div>
       <div class="flex-icon-item">
-        <!-- <span class=""><?php //echo get_field('your_email'); ?></span> -->
-        <!-- <a href="mailto:webmaster@example.com"> -->
-        <a href="mailto:<?php echo get_field('your_email'); ?>" target="_blank">
+        <a href="mailto:webmaster@example.com">
           <img title="your@email.com" src="/wp-content/uploads/Email-icon.png" alt="Email Address">
         </a>
       </div>
@@ -180,24 +140,21 @@ the_excerpt();
           <img title="http://website.com" src="/wp-content/uploads/Website-icon.png" alt="Website Link">
         </a>
       </div>
-
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Hit Me Up" src="/wp-content/uploads/HMU-icon.png" alt="HMU Link">
+        </a>
+      </div>
       <div class="flex-icon-item">
         <a href="#">
           <img title="Your Chat Page" src="/wp-content/uploads/Instant-Messaging-icon.png" alt="Chat Link">
         </a>
       </div>
       <div class="flex-icon-item">
-        <!-- <a href="#">
+        <a href="#">
           <img title="Flag This List" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png"
             alt="Flag Link">
-        </a> -->
-        <input type="image" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png" alt="Submit"
-          style="width: 40px;">
-      </div>
-      <div class="flex-icon-item" style="width: 4rem;">
-        <input type="checkbox" name="list-hmu-checkbox" class="list-hmu-checkbox"
-          data-hmu="<?php echo get_field('your_email'); ?>">
-        <small class="pl-2">HMU</small>
+        </a>
       </div>
 
     </section>
