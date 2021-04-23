@@ -46,8 +46,7 @@ $current_post_count = $current_category->count;
 
       <header class="page-header">
         <!-- HMU BUTTON -->
-        <a href="/list-hmu/?HMU_EMAIL_LIST=moose@cyberizegroup.com,ahmed.musawir@hotmail.com,ahmed.musawir@gmail.com"
-          class="btn btn-dark btn-sm float-right">START HMU </a>
+        <a id="start-hmu-btn" href="#" class="btn btn-dark btn-sm float-right disabled">START HMU </a>
         <!-- END HMU BUTTON -->
 
         <?php

@@ -169,7 +169,6 @@ the_excerpt();
         </a>
       </div>
       <div class="flex-icon-item">
-        <!-- <span class=""><?php //echo get_field('your_email'); ?></span> -->
         <!-- <a href="mailto:webmaster@example.com"> -->
         <a href="mailto:<?php echo get_field('your_email'); ?>" target="_blank">
           <img title="your@email.com" src="/wp-content/uploads/Email-icon.png" alt="Email Address">
@@ -195,7 +194,7 @@ the_excerpt();
           style="width: 40px;">
       </div>
       <div class="flex-icon-item" style="width: 4rem;">
-        <input type="checkbox" name="list-hmu-checkbox" class="list-hmu-checkbox"
+        <input type="checkbox" name="list-hmu-checkbox" class="list-hmu-checkbox" autocomplete="off"
           data-hmu="<?php echo get_field('your_email'); ?>">
         <small class="pl-2">HMU</small>
       </div>

@@ -6,8 +6,10 @@
 
 add_filter( 'gform_notification_6', function( $notification, $form, $entry ) {
 
-  $notification['to'] = $entry['4'];
-  // GFCommon::log_debug( __METHOD__ . '(): entry [gf_notification] => ' . print_r( $entry, true ) );
+  $notification['to'] = $entry['3'];
+  // $notification['to'] = get_post_meta( get_the_ID(), 'supplier_email' );
+  GFCommon::log_debug( __METHOD__ . '(): entry [gf_notification] => ' . print_r( $entry, true ) );
+  // GFCommon::log_debug( __METHOD__ . '(): notification => ' . print_r( $notification, true ) );
 
   return $notification;
 

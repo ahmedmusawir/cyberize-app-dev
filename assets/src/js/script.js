@@ -59,6 +59,8 @@ import ProfileAdditionalDataUi from './_modules/selflist-profile-data/ProfileAdd
 import ProfileDataUpdateAjax from './_modules/selflist-profile-data/ProfileDataUpdateAjax';
 import ProfileAdditionalDataValidation from './_modules/selflist-profile-data/ProfileAdditionalDataValidation';
 import ProfileDataToIndexDb from './_modules/selflist-profile-data/ProfileDataToIndexDb';
+// HMU RELATED
+import HmuLinkMaker from './_modules/selflist-hmu/HmuLinkMaker';
 
 class App {
   constructor() {
@@ -146,6 +148,9 @@ class App {
     new ProfileDataUpdateAjax();
     new ProfileAdditionalDataValidation();
     new ProfileDataToIndexDb();
+
+    // HMU Email Link Maker
+    new HmuLinkMaker();
   }
 
   runTestCode = () => {
