@@ -81,12 +81,17 @@ require get_template_directory() . '/_functions/wp-logon-screen.php';
 /**
  * SELFLIST CUSTOM FUNCTIONS
  */
+// TEST SECTION ... REMEMBER TO COMMENT OUT WHEN DONE
+
+// require get_theme_file_path('/_functions/selflist/ajax/test-ajax.php');
+// require get_theme_file_path('/_functions/selflist/selflist-create-categories.php');
+// require get_theme_file_path('/_functions/selflist/ajax/test-flag-ajax.php');
 
 // CUSTOM REST ROUTE FOR LISTING 1ST PROTOTYPE
-require get_theme_file_path('/_functions/selflist/selflist-search-route.php');
+// require get_theme_file_path('/_functions/selflist/selflist-search-route.php');
 
 // SELFLIST CUSTOM POST TYPE 1ST PROTOTYPE
-require get_theme_file_path('/_functions/selflist/selflist-listing-cpt.php');
+// require get_theme_file_path('/_functions/selflist/selflist-listing-cpt.php');
 
 // SELFLIST CUSTOM USER ROLES & PERMISSIONS
 // require get_theme_file_path('/_functions/selflist/selflist-user-roles.php');
@@ -108,8 +113,6 @@ require get_theme_file_path('/_functions/selflist/selflist-post-acf-to-rest.php'
 // require get_theme_file_path('/_functions/selflist/selflist-post-title.php');
 
 // SELFTLIST CREATE CATEGORIES
-// require get_theme_file_path('/_functions/selflist/ajax/test-ajax.php');
-// require get_theme_file_path('/_functions/selflist/selflist-create-categories.php');
 require get_theme_file_path('/_functions/selflist/ajax/main-cat-insert-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/primo-cat-insert-ajax.php');
 require get_theme_file_path('/_functions/selflist/ajax/secondo-cat-insert-ajax.php');
@@ -145,6 +148,10 @@ require get_theme_file_path('/_functions/selflist/ajax/relist-data-update-ajax.p
 require get_theme_file_path('/_functions/selflist/ajax/delete-list-permanently-ajax.php');
 // MEMBER PROFILE DATA INSERT AJAX
 require get_theme_file_path('/_functions/selflist/ajax/profile-data-insert-ajax.php');
+// FLAG RELATED 
+require get_theme_file_path('/_functions/selflist/cpt/flag-post-type.php');
+require get_theme_file_path('/_functions/selflist/ajax/list-flag-ajax.php');
+
 
 
 

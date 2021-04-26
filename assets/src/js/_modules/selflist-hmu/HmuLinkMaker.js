@@ -12,7 +12,7 @@ class HmuLinkMaker {
   }
 
   init = () => {
-    console.log('HMU');
+    // console.log('HMU');
   };
 
   setEvents = () => {

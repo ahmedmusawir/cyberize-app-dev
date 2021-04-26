@@ -117,9 +117,50 @@ $current_post_count = $current_category->count;
     </div>
   </div>
 
-
-
 </main><!-- #main -->
+
+
+<!-- FLAG FORM MODAL -->
+
+<!-- Modal -->
+<div class="modal fade text-center" id="the-flag-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <!-- <div class="modal-dialog" role="document"> -->
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header justify-content-center bg-danger">
+        <h5 class="modal-title text-light" id="exampleModalLabel">Flag This List</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <!-- <div class="modal-body">
+        <form action="" class="form">
+
+        </form>
+      </div> -->
+      <div class="modal-footer justify-content-center">
+
+        <form action="" class="form">
+          <label for="flag-textara">Insert your reason for flagging this list:</label>
+          <textarea class="form-control mb-3" name="flag-textarea" id="flag-textarea" cols="30" rows="10"
+            autocomplete="off">
+          </textarea>
+          <small class="float-right mb-3">140 Character Limit</small>
+          <button id="flag-ajax-submit-btn" type="button" class="btn btn-primary btn-block">
+            Flag It Now
+          </button>
+          <button id="flag-close-btn" type="button" class="btn btn-secondary btn-block" data-dismiss="modal">
+            Cancel
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- END FLAG FORM MODAL -->
 
 <?php
 get_footer();

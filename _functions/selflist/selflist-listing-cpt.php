@@ -71,6 +71,8 @@ if ( !function_exists( 'add_action' ) ) {
   	);
   
   	register_post_type( 'listing', $args );
+
+
 }
 
 add_action( 'init', 'Listing_cpt' );

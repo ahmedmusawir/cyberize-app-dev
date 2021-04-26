@@ -20,8 +20,8 @@ input[type=checkbox] {
   -o-transform: scale(2.3);
   /* Opera */
   transform: scale(2.3);
-  /* padding: 10px; */
-  margin-top: .5rem;
+  padding: 10px;
+  margin-top: .75rem;
 }
 
 input[type="checkbox"]:checked:before {
@@ -185,26 +185,21 @@ the_excerpt();
           <img title="Your Chat Page" src="/wp-content/uploads/Instant-Messaging-icon.png" alt="Chat Link">
         </a>
       </div>
-      <div class="flex-icon-item mr-3">
-        <div class="form-group">
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><i class="fab fa-font-awesome-flag text-danger"></i>
-              </div>
-              <button class="btn btn-danger btn-sm flag-form-btn" data-key="flag-<?php echo get_the_ID(); ?>"
-                data-post-id="<?php echo $post->ID; ?>">Flag</button>
-            </div>
-          </div>
-        </div>
+      <div class="flex-icon-item">
+        <!-- <a href="#">
+          <img title="Flag This List" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png"
+            alt="Flag Link">
+        </a> -->
+        <input type="image" src="/wp-content/uploads/Screen-Shot-2021-01-26-at-1.50.39-PM.png" alt="Submit"
+          style="width: 40px;">
       </div>
-      <div class="flex-icon-item ml-3">
-        <input type="checkbox" name="list-hmu-checkbox" class="list-hmu-checkbox ml-5" autocomplete="off"
+      <div class="flex-icon-item" style="width: 4rem;">
+        <input type="checkbox" name="list-hmu-checkbox" class="list-hmu-checkbox" autocomplete="off"
           data-hmu="<?php echo get_field('your_email'); ?>">
-        <small class="" style="margin-left: 2.5rem;">HMU</small>
+        <small class="pl-2">HMU</small>
       </div>
-
 
     </section>
 
   </footer><!-- .entry-footer -->
-</article><!-- #post--->
+</article><!-- #post-<?php the_ID();?> -->

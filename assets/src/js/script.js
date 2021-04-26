@@ -5,6 +5,7 @@ import TestJsToPhp from './_modules/_test/TestJsToPhp';
 import DatePickerTest from './_modules/_test/DatePickerTest';
 import DateTimePickerTest from './_modules/_test/DateTimePickerTest';
 import FormValdationTest from './_modules/_test/formVaidationTest';
+import TestFlagPost from './_modules/_test/TestFlagPost';
 // PRODUCTION CODE HERE
 import SelflistSearch from './_modules/SelflistSearch';
 import SelflistCatSearch from './_modules/SelflistCatSearch';
@@ -61,6 +62,9 @@ import ProfileAdditionalDataValidation from './_modules/selflist-profile-data/Pr
 import ProfileDataToIndexDb from './_modules/selflist-profile-data/ProfileDataToIndexDb';
 // HMU RELATED
 import HmuLinkMaker from './_modules/selflist-hmu/HmuLinkMaker';
+// FLAG RELATED
+import FlagListButtonUi from './_modules/selflist-flag/FlagListButtonUi';
+import FlagListFormAjax from './_modules/selflist-flag/FlagListFormAjax';
 
 class App {
   constructor() {
@@ -151,6 +155,10 @@ class App {
 
     // HMU Email Link Maker
     new HmuLinkMaker();
+
+    // Flag Related
+    new FlagListButtonUi();
+    new FlagListFormAjax();
   }
 
   runTestCode = () => {
@@ -160,6 +168,7 @@ class App {
     // new DatePickerTest();
     // new TestJsToPhp();
     // new DateTimePickerTest();
+    // new TestFlagPost();
   };
 }
 
