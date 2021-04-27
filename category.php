@@ -147,7 +147,7 @@ $current_post_count = $current_category->count;
             autocomplete="off">
           </textarea>
           <small class="float-right mb-3">140 Character Limit</small>
-          <button id="flag-ajax-submit-btn" type="button" class="btn btn-primary btn-block">
+          <button id="flag-ajax-submit-btn" type="submit" class="btn btn-primary btn-block">
             Flag It Now
           </button>
           <button id="flag-close-btn" type="button" class="btn btn-secondary btn-block" data-dismiss="modal">

@@ -1,8 +1,15 @@
 import $ from 'jquery';
+import { get, set } from 'idb-keyval';
 
 class FlagListFormAjax {
   constructor() {
     this.init();
+    // GLOBALS
+    this.flagKey;
+    this.flagListId;
+    this.flagEmail;
+    this.flagTitle;
+    this.flagContent;
     // COLLECTING AJAX INFO
     this.ajaxUrl = selflistData.ajax_url;
     this.ajaxFunction = 'list_flag_ajax';
@@ -24,36 +31,47 @@ class FlagListFormAjax {
 
   clickInsertHandler = (e) => {
     e.preventDefault();
-    // console.log('flag clicked');
-    const flagKey = this.flagAjaxSubmitBtn.data('key');
-    const flagId = this.flagAjaxSubmitBtn.data('list-id');
-    // console.log('flag key: ', flagKey);
-    // console.log('list Id: ', flagId);
-    const flagTitle = `Flagged List ID: ${flagId}`;
+    this.flagKey = this.flagAjaxSubmitBtn.data('key');
+    console.log('Flag Key: ', this.flagKey);
+    // GET FLAG INFO DATA FROM INDEXED DB
+    get(this.flagKey)
+      .then((data) => {
+        console.info(data.listId);
+        console.info(data.email);
 
-    let newPostData = {
-      title: flagTitle,
-      content: this.flagTextArea.val(),
-    };
-    $.ajax({
-      url: this.ajaxUrl,
-      type: 'POST',
-      data: {
-        action: this.ajaxFunction,
-        newPostData,
-      },
-    })
-      .done((response) => {
-        console.info(response);
-        console.log('Awesome! ... Ajax Success');
+        // PREPING LIST DATA
+        this.flagTitle = `Flagged List ID: ${this.flagListId}`;
+        this.flagContent = this.flagTextArea.val();
+        this.flagListId = data.listId;
+        this.flagEmail = data.email;
+
+        let newListData = {
+          title: this.flagTitle,
+          content: this.flagContent,
+          email: this.flagEmail,
+          listId: this.flagListId,
+        };
+        $.ajax({
+          url: this.ajaxUrl,
+          type: 'POST',
+          data: {
+            action: this.ajaxFunction,
+            newListData,
+          },
+        })
+          .done((response) => {
+            console.info(response);
+            console.log('Awesome! ... Ajax Success');
+          })
+          .fail((response) => {
+            console.error('Sorry ... Ajax failed');
+            console.error('[FlagListFormAjax.js]', response);
+          })
+          .always(() => {
+            // console.info('Ajax finished as always...');
+          });
       })
-      .fail((response) => {
-        console.error('Sorry ... Ajax failed');
-        console.error('[FlagListFormAjax.js]', response);
-      })
-      .always(() => {
-        // console.info('Ajax finished as always...');
-      });
+      .catch(console.error);
   };
 }
 

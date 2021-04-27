@@ -192,12 +192,14 @@ the_excerpt();
               <div class="input-group-text"><i class="fab fa-font-awesome-flag text-danger"></i>
               </div>
               <button class="btn btn-danger btn-sm flag-form-btn" data-key="flag-<?php echo get_the_ID(); ?>"
-                data-post-id="<?php echo $post->ID; ?>">Flag</button>
+                data-list-id="<?php echo $post->ID; ?>" data-flag-email="<?php echo get_field('your_email'); ?>">
+                Flag
+              </button>
             </div>
           </div>
         </div>
       </div>
-      <div class="flex-icon-item ml-3">
+      <div class=" flex-icon-item ml-3">
         <input type="checkbox" name="list-hmu-checkbox" class="list-hmu-checkbox ml-5" autocomplete="off"
           data-hmu="<?php echo get_field('your_email'); ?>">
         <small class="" style="margin-left: 2.5rem;">HMU</small>
