@@ -15,8 +15,9 @@ class FlagListButtonUi {
     // COLLECTING BUTTON
     this.flagListBtn = $('.flag-form-btn');
     this.theFlagModal = $('#the-flag-modal');
-    // SETTING EVENTS
+    // CALLING METHODS
     this.setEvents();
+    this.flagStatus();
   }
 
   init = () => {
@@ -25,6 +26,26 @@ class FlagListButtonUi {
 
   setEvents = () => {
     this.flagListBtn.on('click', this.clickInsertHandler);
+  };
+
+  flagStatus = () => {
+    // console.log(this.flagBtn);
+    this.flagListBtn.map((indx, btn) => {
+      // console.log(indx, btn.dataset.listId);
+      // console.log(indx, btn.dataset.key);
+      // FROM INDEX DB
+      get(btn.dataset.key)
+        .then((data) => {
+          // console.info(data.listId);
+          if (data) {
+            if (data.listId == btn.dataset.listId && data.disabled == true) {
+              $(btn).addClass('disabled').off('click');
+              // btn.classList.add('disabled');
+            }
+          }
+        })
+        .catch(console.error);
+    });
   };
 
   clickInsertHandler = (e) => {
@@ -38,6 +59,7 @@ class FlagListButtonUi {
     const flaggedList = {
       listId: this.flagListId,
       email: this.flagEmail,
+      disabled: false,
     };
 
     // ADDING INFO TO INDEX DB
