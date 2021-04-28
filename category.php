@@ -141,7 +141,7 @@ $current_post_count = $current_category->count;
       </div> -->
       <div class="modal-footer justify-content-center">
 
-        <form action="" class="form">
+        <form id="flag-insert-form" class="form">
           <label for="flag-textara">Insert your reason for flagging this list:</label>
           <textarea class="form-control mb-3" name="flag-textarea" id="flag-textarea" cols="30" rows="10"
             autocomplete="off">

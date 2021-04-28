@@ -26,10 +26,10 @@ class FlagListFormAjax {
   };
 
   setEvents = () => {
-    this.flagAjaxSubmitBtn.on('click', this.clickInsertHandler);
+    this.flagAjaxSubmitBtn.on('click', this.clickFlagAjaxHandler);
   };
 
-  clickInsertHandler = (e) => {
+  clickFlagAjaxHandler = (e) => {
     e.preventDefault();
 
     this.flagKey = e.target.dataset.key;

@@ -19,8 +19,6 @@ class CityFormValidationEvents extends CityInsertAjaxEvents {
     );
     // RUNNING VALIDATE
     this.validateCityForm();
-    // TEST VAR
-    this.testVar = 'A var from the child';
   }
 
   init = () => {
