@@ -1,11 +1,11 @@
 import $ from 'jquery';
 import 'jquery-validation';
 import 'jquery-validation/dist/additional-methods.js';
-// import FlagListFormAjax from './FlagListFormAjax';
+import FlagListFormAjax from './FlagListFormAjax';
 
-// class FlagListFormValidation extends FlagListFormAjax {
-class FlagListFormValidation {
+class FlagListFormValidation extends FlagListFormAjax {
   constructor() {
+    super();
     this.init();
     // COLLECTING CITY FORM ELEMENT
     this.flagInsertForm = $('#flag-insert-form');
@@ -18,7 +18,7 @@ class FlagListFormValidation {
       'Letters and numbers only please ... cannot begin with numbers.'
     );
     // RUNNING VALIDATE
-    this.validateFlagForm();
+    // this.validateFlagForm();
     // this.testApp();
   }
 
@@ -33,8 +33,6 @@ class FlagListFormValidation {
   // MAIN FORM VALIDATION
   validateFlagForm = () => {
     alert('Running Child Validation ... remove me');
-
-    this.flagInsertForm.css('border', '10px dotted green');
 
     this.flagInsertForm.validate({
       onkeyup: function (element, event) {

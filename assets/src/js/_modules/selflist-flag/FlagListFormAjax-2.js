@@ -22,45 +22,29 @@ class FlagListFormAjax {
     this.flagListBtn = $('.flag-form-btn');
     this.flagAjaxSubmitBtn = $('.flag-ajax-submit-btn');
     this.flagTextArea = $('#flag-textarea');
-    // COLLECTING FLAG FORM ELEMENT
+    // COLLECTING CITY FORM ELEMENT
     this.flagInsertForm = $('#flag-insert-form');
-    // RUNNING METHODS
-    // ADDING LETTERS & NUMBERS ONLY + NO NUMBER TO START -- METHOD TO JQ VALIDATION
-    $.validator.addMethod(
-      'lettersnumbersdotsonly',
-      function (value, element) {
-        return (
-          this.optional(element) || /^[A-Za-z][a-z0-9\. ]+$/i.test(value)
-          // this.optional(element) || /^[A-Za-z\-d ][a-z0-9 ]+$/i.test(value)
-        );
-      },
-      'Letters and numbers only please ... <br>(cannot begin with numbers.)'
-    );
+    // SETTING EVENTS
+    this.setEvents();
     this.validateFlagForm();
-    // DISABLE ENTER KEY FOR FLAG FORM
-    // Cuz Enter key invokes validation error
-    this.disableEnterKeyInForm();
   }
 
   init = () => {
     console.log('Flag submit Ajax');
   };
 
-  disableEnterKeyInForm = () => {
-    // THIS IS SO THAT IT WORKS FOR ALL BROWSERS
-    $('form').on('keypress', (event) => {
-      if (event.key == 13) {
-        return false;
-      } else if (event.keyIdentifier == 13) {
-        return false;
-      } else if (event.keyCode == 13) {
-        return false;
-      }
-    });
+  setEvents = () => {
+    // this.flagAjaxSubmitBtn.on('click', this.clickFlagAjaxHandler);
   };
 
   clickFlagAjaxHandler = (e) => {
     e.preventDefault();
+
+    this.flagKey = e.target.dataset.key;
+    // JQUERY BUG!!
+    // the following doesn't work! Use JS
+    // let flagKey = $(e.target).data('key');
+    console.log('Flag Key: ', this.flagKey);
 
     // CALLING VALIDATION
     // this.testApp();
@@ -69,6 +53,8 @@ class FlagListFormAjax {
 
   // MAIN FORM VALIDATION
   validateFlagForm = () => {
+    this.flagInsertForm.css('border', '10px dotted green');
+
     this.flagInsertForm.validate({
       onkeyup: function (element, event) {
         if (event.keyCode === 9 && this.elementValue(element) === '') {
@@ -79,33 +65,26 @@ class FlagListFormAjax {
       },
       rules: {
         'flag-textarea': {
-          // required: true,
+          lettersonly: true,
           maxlength: 140,
           minlength: 10,
-          lettersnumbersdotsonly: true,
         },
       },
       submitHandler: (form, event) => {
         event.preventDefault();
         // INSERT CITY WITH AJAX
-        this.insertFlagDataAjaxHandler(event);
-        // alert('Running Validation ... remove me');
+        // this.insertFlagAjaxHandler();
+        alert('Running Validation ... remove me');
       },
     });
   };
 
-  insertFlagDataAjaxHandler = (e) => {
-    console.log(e.target);
-    this.flagKey = e.target.dataset.key;
-    // JQUERY BUG!!
-    // the following doesn't work! Use JS
-    // let flagKey = $(e.target).data('key');
-    console.log('Flag Key: ', this.flagKey);
+  insertFlagDataAjax = () => {
     // GET FLAG INFO DATA FROM INDEXED DB
     get(this.flagKey)
       .then((data) => {
         // PREPING LIST DATA
-        this.flagTitle = `Flagged List ID: ${data.listId}`;
+        this.flagTitle = `Flagged List ID: ${this.flagListId}`;
         this.flagContent = this.flagTextArea.val();
         this.flagListId = data.listId;
         this.flagEmail = data.email;

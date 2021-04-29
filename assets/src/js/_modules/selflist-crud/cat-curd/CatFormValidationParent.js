@@ -21,7 +21,10 @@ class CatFormValdationParent {
     $.validator.addMethod(
       'lettersnumbersonly',
       function (value, element) {
-        return this.optional(element) || /^[a-z\-d ][a-z0-9 ]+$/i.test(value);
+        return (
+          this.optional(element) || /^[A-Za-z][a-z0-9 ]+$/i.test(value)
+          // this.optional(element) || /^[A-Za-z\-d ][a-z0-9 ]+$/i.test(value)
+        );
       },
       'Letters and numbers only please ... cannot begin with numbers.'
     );
@@ -72,24 +75,24 @@ class CatFormValdationParent {
       },
       rules: {
         'main-input-main-cat': {
-          lettersnumbersonly: true,
           maxlength: 25,
           minlength: 3,
+          lettersnumbersonly: true,
         },
         'main-input-primo-cat': {
-          lettersnumbersonly: true,
           maxlength: 20,
           minlength: 3,
+          lettersnumbersonly: true,
         },
         'main-input-secondo-cat': {
-          lettersnumbersonly: true,
           maxlength: 20,
           minlength: 3,
+          lettersnumbersonly: true,
         },
         'main-input-terzo-cat': {
-          lettersnumbersonly: true,
           maxlength: 20,
           minlength: 3,
+          lettersnumbersonly: true,
         },
       },
       submitHandler: (form, event) => {

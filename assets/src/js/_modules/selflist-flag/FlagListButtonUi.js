@@ -12,9 +12,11 @@ class FlagListButtonUi {
     this.flagKey;
     this.flagListId;
     this.flagEmail;
-    // COLLECTING BUTTON
+    // COLLECTING ELEMENTS
     this.flagListBtn = $('.flag-form-btn');
     this.theFlagModal = $('#the-flag-modal');
+    this.flagTextArea = $('#flag-textarea');
+
     // CALLING METHODS
     this.setEvents();
     this.flagStatus();
@@ -75,10 +77,20 @@ class FlagListButtonUi {
       keyboard: false,
     });
 
+    // EMPTY OUT THE FLAG TEXT BOX
+    // This way validation will work properly, otherwize
+    // it acts crazy ...
+    this.flagTextArea.val('');
+
     // ADDING THE DATA ATTRS DYNAMICALLY FOR INDEX DB
     // To maintain flag button status. One person should only be
-    // able to Flag a List once.
-    $('#flag-ajax-submit-btn').attr('data-key', this.flagKey);
+    // able to Flag a List once. Had to replace the button with
+    // [Form]cuz in Validation code [event.target] is the whole Form,
+    // not the submit button as I hoped for
+    // $('#flag-ajax-submit-btn').attr('data-key', this.flagKey);
+
+    // ADDING [flagKey] TO THE FLAG FORM ELEMENT
+    $('#flag-insert-form').attr('data-key', this.flagKey);
   };
 }
 

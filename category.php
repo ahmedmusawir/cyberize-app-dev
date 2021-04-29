@@ -20,6 +20,38 @@ $current_post_count = $current_category->count;
 //   print_r($current_category);
 // echo "</pre>";
 ?>
+<style>
+.error {
+  display: block;
+  border: 1px solid red;
+  border-radius: 10px;
+  background-color: #ffdddc;
+  padding: .5rem;
+  color: red;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+input {
+  color: red;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+textarea {
+  color: red;
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+input::placeholder {
+  font-size: .8rem !important;
+}
+
+textarea::placeholder {
+  font-size: .8rem !important;
+}
+</style>
 <main id="primary" class="site-main container">
 
   <button id="filter-by-state-city-btn" class="btn btn-outline-danger mb-2">Filter by State & City</button>
@@ -143,7 +175,7 @@ $current_post_count = $current_category->count;
 
         <form id="flag-insert-form" class="form">
           <label for="flag-textara">Insert your reason for flagging this list:</label>
-          <textarea class="form-control mb-3" name="flag-textarea" id="flag-textarea" cols="30" rows="10"
+          <textarea class="form-control mb-3" name="flag-textarea" id="flag-textarea" cols="30" rows="10" required
             autocomplete="off">
           </textarea>
           <small class="float-right mb-3">140 Character Limit</small>
