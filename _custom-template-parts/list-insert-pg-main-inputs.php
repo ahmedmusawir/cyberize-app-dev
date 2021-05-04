@@ -37,25 +37,6 @@
       placeholder="Your Website">
     <small id="textHelp" class="form-text text-muted">Ex: https://you-website.com</small>
   </div>
-  <!-- ADDRESS -->
-  <!-- <div class="form-group row">
-    <div class="col-12">
-      <input type="text" class="form-control" id="lister-city" name="lister-city" aria-describedby="textHelp"
-        placeholder="City">
-      <small id="textHelp" class="form-text text-muted">Ex: Atlanta</small>
-    </div>
-    <div class="col-12 col-sm-6">
-      <input type="text" class="form-control" id="lister-zip" name="lister-zip" aria-describedby="textHelp"
-        placeholder="Zip">
-      <small id="textHelp" class="form-text text-muted">Ex: 30324</small>
-    </div>
-
-    <div class="col-12 col-sm-6">
-      <input type="text" class="form-control" id="lister-state" name="lister-state" aria-describedby="textHelp"
-        placeholder="State">
-      <small id="textHelp" class="form-text text-muted">Ex: GA</small>
-    </div>
-  </div> -->
 
   <!-- SOCIAL MEDIA  -->
   <!-- Facebook -->
@@ -102,17 +83,7 @@
     </div>
     <small id="textHelp" class="form-text text-muted">Example: https://linkedin.com/mypage</small>
   </div>
-  <!-- Google Plus -->
-  <div class="form-group">
-    <div class="input-group mb-2">
-      <div class="input-group-prepend">
-        <div class="input-group-text"><i class="text-danger fab fa-google-plus-g"></i></div>
-      </div>
-      <input type="url" class="form-control" id="lister-google-plus" name="lister-google-plus"
-        placeholder="https://googleplus.com/mypage">
-    </div>
-    <small id="textHelp" class="form-text text-muted">Example: https://googleplus.com/mypage</small>
-  </div>
+
   <!-- Twitter -->
   <div class="form-group">
     <div class="input-group mb-2">

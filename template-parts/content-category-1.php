@@ -128,73 +128,61 @@ the_excerpt();
   <footer class="entry-footer">
     <section class="flex-icon-five">
 
-      <?php if (get_field('your_facebook')): ?>
       <div class="flex-icon-item">
-        <a href="<?php the_field('your_facebook') ?>" target="_blank">
+        <a href="#">
           <img title="Your Facebook Page" src="/wp-content/uploads/fb-icon.png" alt="Facebook Link">
         </a>
       </div>
-      <?php endif;?>
-
-      <?php if (get_field('your_twitter')): ?>
       <div class="flex-icon-item">
-        <a href="<?php the_field('your_twitter') ?>" target="_blank">
+        <a href="#">
           <img title="Your Twitter Page" src="/wp-content/uploads/Twitter-Icon.png" alt="Twitter Link">
         </a>
       </div>
-      <?php endif;?>
-
-      <?php if (get_field('your_yelp')): ?>
       <div class="flex-icon-item">
-        <a href="<?php the_field('your_yelp') ?>" target="_blank">
+        <a href="#">
           <img title="Your Yelp Page" src="/wp-content/uploads/Yelp-icon.png" alt="Yelp Link">
         </a>
       </div>
-      <?php endif;?>
-
-      <?php if (get_field('your_instagram')): ?>
       <div class="flex-icon-item">
-        <a href="<?php the_field('your_instagram') ?>" target="_blank">
+        <a href="#">
           <img title="Your Instagram Page" src="/wp-content/uploads/Instagram-icon.png" alt="Instagram Link">
         </a>
       </div>
-      <?php endif;?>
-
-      <?php if (get_field('your_linkedin')): ?>
       <div class="flex-icon-item">
-        <a href="<?php the_field('your_linkedin') ?>" target="_blank">
+        <a href="#">
           <img title="Your Linkedin Page" src="/wp-content/uploads/Linkedin-Icon.png" alt="Linkedin Link">
         </a>
       </div>
-      <?php endif;?>
+      <div class="flex-icon-item">
+        <a href="#">
+          <img title="Your Google Plus Page" src="/wp-content/uploads/Google-icon.png" alt="Google Plus Link">
+        </a>
+      </div>
 
     </section>
 
     <section class="flex-icon-five">
 
       <div class="flex-icon-item">
-        <a href="tel:<?php the_field('your_phone') ?>">
-          <img title="Phone: <?php the_field('your_phone') ?>" src="/wp-content/uploads/Cell-icon.png"
-            alt="Phone Number">
+        <a href="tel:404-321-1234">
+          <img title="Phone: 404-321-1234" src="/wp-content/uploads/Cell-icon.png" alt="Phone Number">
         </a>
       </div>
       <div class="flex-icon-item">
         <!-- <a href="mailto:webmaster@example.com"> -->
         <a href="mailto:<?php echo get_field('your_email'); ?>" target="_blank">
-          <img title="<?php echo get_field('your_email'); ?>" src="/wp-content/uploads/Email-icon.png"
-            alt="Email Address">
+          <img title="your@email.com" src="/wp-content/uploads/Email-icon.png" alt="Email Address">
         </a>
       </div>
       <div class="flex-icon-item">
-        <a href="<?php echo get_field('your_site'); ?>" target="_blank">
-          <img title="<?php echo get_field('your_site'); ?>" src="/wp-content/uploads/Website-icon.png"
-            alt="Website Link">
+        <a href="#">
+          <img title="http://website.com" src="/wp-content/uploads/Website-icon.png" alt="Website Link">
         </a>
       </div>
 
       <div class="flex-icon-item">
-        <a href="/list-chat/" target="_blank">
-          <img title="Chat Page" src="/wp-content/uploads/Instant-Messaging-icon.png" alt="Chat Link">
+        <a href="#">
+          <img title="Your Chat Page" src="/wp-content/uploads/Instant-Messaging-icon.png" alt="Chat Link">
         </a>
       </div>
       <div class="flex-icon-item mr-3">

@@ -86,6 +86,9 @@ textarea::placeholder {
         </h3>' );
         // the_archive_description( '<div class="archive-description">', '</div>' );
         ?>
+
+
+
       </header><!-- .page-header -->
 
       <?php
@@ -98,7 +101,15 @@ textarea::placeholder {
       // CITY & STATE TAXONMY DISPLAY BY LIST START
       // $tax = get_the_terms( get_the_ID(), 'states');
       
+      // echo '
+      // <p class="text-dark text-uppercase" style="font-size: .8rem; margin-bottom: 0;">
+      //   <small class="font-weight-bold">City: 
+      //     <span class="text-info">' . $tax[0]->name .',</span> State: <span class="text-info">' . $tax[1]->name .'</span>
+      //   </small>
+      // </p>';
+      
       // CITY & STATE TAXONMY DISPLAY BY LIST END
+      
       /**
        * Include the Post-Type-specific template for the content.
 			 * If you want to override this in a child theme, then include a file
@@ -126,6 +137,7 @@ textarea::placeholder {
       <article class="category-sidebar">
         <ul class="primo">
           <?php 
+        
         
         $cat_list = get_selflist_sub_cats($current_cat_id);
         

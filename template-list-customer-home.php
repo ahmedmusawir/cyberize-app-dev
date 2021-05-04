@@ -279,17 +279,7 @@ textarea::placeholder {
               </div>
               <small id="textHelp" class="form-text text-muted">Example: https://linkedin.com/mypage</small>
             </div>
-            <!-- Google Plus -->
-            <div class="form-group">
-              <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"><i class="text-danger fab fa-google-plus-g"></i></div>
-                </div>
-                <input type="url" class="form-control" id="lister-google-plus" name="lister-google-plus"
-                  placeholder="https://googleplus.com/mypage" value="<?php echo $user_google_plus; ?>" readonly>
-              </div>
-              <small id="textHelp" class="form-text text-muted">Example: https://googleplus.com/mypage</small>
-            </div>
+
             <!-- Twitter -->
             <div class="form-group">
               <div class="input-group mb-2">

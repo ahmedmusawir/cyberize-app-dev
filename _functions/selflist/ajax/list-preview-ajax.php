@@ -135,13 +135,6 @@ function list_preview_ajax()
             </a>
           </div>
           <?php endif;?>
-          <?php if (get_field('your_google_plus')): ?>
-          <div class="flex-icon-item">
-            <a href="#">
-              <img src="/wp-content/uploads/Google-icon.png" alt="Google Plus Link">
-            </a>
-          </div>
-          <?php endif;?>
 
         </section>
 
